@@ -74,7 +74,15 @@ const NEW = [
     tags: ["Story", "Parallax", "Match cuts", "Sound design"],
     sum: "A title sequence for an original fantasy short. An old royal guard keeps the last watch over a sleeping city the night before it falls — quiet, cinematic, and hopeful at the end.",
     brief: "Carry a story with motion alone: mood, pacing, a character and a turn. Flat 2D silhouettes in layered parallax, deep navy, lantern amber and paper white, with a serif title face.",
-    extras: [["teaser", "9:16 teaser · 0:30–0:50", true]] },
+    extras: [["teaser", "9:16 teaser · 0:30–0:50", true]],
+    tools: ["Made in code: HTML canvas, frame-by-frame render", "Original score and sound design"],
+    notes: {
+      "frame-1": "The film opens on one light in the dark. Everything after it is about that lantern.",
+      "frame-2": "The guard stands against the sky, not the buildings, so his silhouette reads at a glance.",
+      "frame-3": "A close-up with no face: the hand tightening on the hilt carries the fear.",
+      "frame-4": "During the fast cuts the moon sits behind each silhouette, so every 0.5-second shot reads instantly.",
+      "frame-5": "The turn: a second lantern, and the city answers. The light spreads outward from the flame.",
+    } },
   { slug: "say-it-slower", title: "Say It Slower", kind: "Kinetic typography", format: "35s · 16:9 + 9:16", vertical: false,
     tags: ["Kinetic type", "Voice sync", "Vertical"],
     sum: "A spoken-word piece about patience in a fast world, set entirely in type. Every word lands on the voice.",
@@ -133,6 +141,7 @@ const picks = FEATURED.map((f) => bySlug[f]).filter((w) => w.ready);
 // Never on the homepage (their pages stay up for direct links).
 const OFF_HOME = ["raise-trap", "bez-and-the-boos"];
 const HOME = [...picks, ...WORK.filter((w) => !picks.includes(bySlug[w.slug]) && !OFF_HOME.includes(w.slug))].slice(0, HOME_COUNT);
+if (HOME.length % 2 && HOME.length > 1) HOME.pop(); // two-column grid: keep rows full
 // prev/next on case studies: homepage pieces first, then every other finished piece
 const SHOWN = [...HOME, ...ALL.filter((w) => w.ready && !HOME.includes(w))];
 
