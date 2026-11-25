@@ -9,7 +9,7 @@ const NAME = "Clown";
 const EMAIL = "tun832061@gmail.com";
 const YEAR = 2026;
 
-const page = ({ title, desc, depth = 0, body, current }) => {
+const page = ({ title, desc, depth = 0, body, current, noindex = false }) => {
   const r = depth ? "../" : "";
   const link = (href, label, key, cls = "") => `<li${cls ? ` class="${cls}"` : ""}><a href="${r}${href}"${current === key ? ' aria-current="page"' : ""}>${label}</a></li>`;
   return `<!doctype html>
@@ -19,7 +19,7 @@ const page = ({ title, desc, depth = 0, body, current }) => {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${title}</title>
 <meta name="description" content="${desc}">
-<meta property="og:title" content="${title}">
+${noindex ? '<meta name="robots" content="noindex">\n' : ""}<meta property="og:title" content="${title}">
 <meta property="og:description" content="${desc}">
 <meta property="og:image" content="${r}assets/img/poster-showreel.jpg">
 <link rel="stylesheet" href="${r}assets/site.css">
@@ -58,6 +58,56 @@ const WORK = [
     tags: ["Kinetic type", "Vertical", "Score"] },
 ];
 
+// ---------------------------------------------------------------- new pieces (portfolio rebuild)
+// Six self-initiated pieces from the rebuild plan. Each one gets a page now; it joins the
+// home grid automatically once its main video exists. Drop files in with these names:
+//   assets/video/<slug>.mp4               main video (this is what flips the piece to "ready")
+//   assets/video/<slug>-<extra>.mp4       extra cuts listed in `extras` below
+//   assets/img/<slug>/poster.jpg          card + player poster
+//   assets/img/<slug>/moodboard.jpg       process: moodboard
+//   assets/img/<slug>/frame-1.jpg …       process: styleframes (up to 6)
+//   assets/img/<slug>/board-1.jpg …       process: storyboard / animatic stills (up to 12)
+// Fill `role`, `tools` and `notes` (one line per process image: the decision and why) as you go.
+const has = (rel) => fs.existsSync(path.join(ROOT, rel));
+const NEW = [
+  { slug: "the-last-watch", title: "The Last Watch", kind: "Story trailer", format: "50s · 16:9", vertical: false,
+    tags: ["Story", "Parallax", "Match cuts", "Sound design"],
+    sum: "A title sequence for an original fantasy short. An old royal guard keeps the last watch over a sleeping city the night before it falls — quiet, cinematic, and hopeful at the end.",
+    brief: "Carry a story with motion alone: mood, pacing, a character and a turn. Flat 2D silhouettes in layered parallax, deep navy, lantern amber and paper white, with a serif title face.",
+    extras: [["teaser", "9:16 teaser · 0:30–0:50", true]] },
+  { slug: "say-it-slower", title: "Say It Slower", kind: "Kinetic typography", format: "35s · 16:9 + 9:16", vertical: false,
+    tags: ["Kinetic type", "Voice sync", "Vertical"],
+    sum: "A spoken-word piece about patience in a fast world, set entirely in type. Every word lands on the voice.",
+    brief: "Prove type skill and timing. Black, off-white and one accent colour, a single grotesk in three weights, original words read slowly. The 9:16 is re-composed, not cropped.",
+    extras: [["vertical", "Re-composed 9:16", true]] },
+  { slug: "kettle-and-kiln", title: "Kettle & Kiln", kind: "Brand identity in motion", format: "25s · 16:9 + 1:1", vertical: false,
+    tags: ["Logo animation", "Motion system", "Templates"],
+    sum: "A motion system for an invented coffee roaster: a logo built from a pour, one circle transition reused across price tags, menu boards and stories, plus lower-third and end-card templates.",
+    brief: "Build a motion system a brand can reuse, not just a logo animated once. Warm, crafted, slow-poured.",
+    extras: [["square", "1:1 cut", false], ["sting", "Logo sting · 3s", false]] },
+  { slug: "splitly", title: "Splitly", kind: "Explainer / app UI", format: "50s · 16:9", vertical: false,
+    tags: ["Explainer", "UI animation", "Voiceover"],
+    sum: "An explainer for an invented bill-splitting app: snap the receipt, tap who had what, and everyone gets a link.",
+    brief: "Make something clear, not just pretty. Friendly and fast for young adults, a clean UI with one bright brand colour, every move under 400 ms and eased like a real product.",
+    extras: [] },
+  { slug: "kicks-drop", title: "Kicks Drop", kind: "Social ad pack", format: "3 ads · 9:16 / 1:1 / 4:5", vertical: true,
+    tags: ["Product ad", "3 formats", "Sound-off"],
+    sum: "A three-ad launch pack for an invented sneaker colourway — a hook, a product ad and an offer — each readable with the sound off.",
+    brief: "Deliver what most paying clients buy: short ads that stop the scroll, in every format, fast. Text kept clear of the TikTok and Reels interface.",
+    main: "Ad A · Hook · 6s",
+    extras: [["product", "Ad B · Product · 15s", true], ["offer", "Ad C · Offer · 10s", true], ["square", "1:1 re-compose", false]] },
+  { slug: "lagos-in-24-frames", title: "Lagos in 24 Frames", kind: "Experimental", format: "20s", vertical: false,
+    tags: ["Experimental", "Frame-by-frame", "Shape morph"],
+    sum: "Twenty-four shots of under a second each, each a different motion technique, one palette, cut to a single drum loop: the danfo, the market, the generator hum, the traffic light.",
+    brief: "No client. Show my own voice and my craft ceiling, with the same finish as the client-style pieces.",
+    extras: [] },
+].map((n) => ({ ...n, role: n.role || "Concept, design, animation, sound", tools: n.tools || [], notes: n.notes || {},
+  ready: has(`assets/video/${n.slug}.mp4`), meta: `${n.kind} · ${n.format}` }));
+for (const n of NEW) n.poster = has(`assets/img/${n.slug}/poster.jpg`) ? `${n.slug}/poster.jpg` : null;
+
+// Home grid + prev/next order: finished new pieces first, then the existing work.
+const SHOWN = [...NEW.filter((n) => n.ready), ...WORK];
+
 // ---------------------------------------------------------------- home
 const home = page({
   title: `${NAME} — Motion design`,
@@ -75,8 +125,8 @@ const home = page({
   <div class="eyebrow">Selected work</div>
   <h2 class="display">Work</h2>
   <div class="grid">
-${WORK.map((w) => `    <a class="card" href="work/${w.slug}.html">
-      <div class="thumb"><img src="assets/img/${w.poster}" alt="${w.title} still" loading="lazy"></div>
+${SHOWN.map((w) => `    <a class="card" href="work/${w.slug}.html">
+      <div class="thumb">${w.poster ? `<img src="assets/img/${w.poster}" alt="${w.title} still" loading="lazy">` : ""}</div>
       <div class="body"><h3>${w.title}</h3><div class="meta">${w.meta}</div><div class="tags">${w.tags.map((t) => `<span>${t}</span>`).join("")}</div></div>
     </a>`).join("\n")}
   </div>
@@ -114,8 +164,8 @@ fs.writeFileSync(path.join(ROOT, "index.html"), home);
 // ---------------------------------------------------------------- case studies
 fs.mkdirSync(path.join(ROOT, "work"), { recursive: true });
 const cs = (slug, title, desc, inner) => {
-  const idx = WORK.findIndex((w) => w.slug === slug);
-  const prev = WORK[(idx + WORK.length - 1) % WORK.length], next = WORK[(idx + 1) % WORK.length];
+  const idx = SHOWN.findIndex((w) => w.slug === slug);
+  const prev = SHOWN[(idx + SHOWN.length - 1) % SHOWN.length], next = SHOWN[(idx + 1) % SHOWN.length];
   fs.writeFileSync(path.join(ROOT, "work", slug + ".html"), page({ title: `${title} — ${NAME}`, desc, depth: 1, current: "work", body: inner + `
 <section><div class="wrap next"><a class="btn" href="${prev.slug}.html">← ${prev.title}</a><a class="btn primary" href="../index.html#contact">Start a project</a><a class="btn" href="${next.slug}.html">${next.title} →</a></div></section>` }));
 };
@@ -306,4 +356,53 @@ cs("make-it-move", "Make It Move", "A 15-second vertical kinetic type piece, rem
   <li>An original score with hits on every cut, mastered for social.</li></ul>
 </div></section>`);
 
-console.log("built: index.html + work/*.html");
+// ---------------------------------------------------------------- new piece pages (case study template)
+// Order: video, brief, my role, process (each image with its one-line decision), tools.
+// Until the main video exists the page shows "In production" and is kept out of search.
+const esc = (t) => t.replace(/&(?!amp;)/g, "&amp;");
+for (const n of NEW) {
+  const img = (f) => `../assets/img/${n.slug}/${f}`;
+  const poster = n.poster ? `../assets/img/${n.poster}` : "";
+  const shot = (f, alt) => has(`assets/img/${n.slug}/${f}`)
+    ? `<figure><img src="${img(f)}" alt="${alt}" loading="lazy">${n.notes[f.replace(".jpg", "")] ? `<figcaption>${n.notes[f.replace(".jpg", "")]}</figcaption>` : ""}</figure>` : "";
+  const series = (prefix, max, label) => Array.from({ length: max }, (_, i) => shot(`${prefix}-${i + 1}.jpg`, `${label} ${i + 1}`)).join("");
+  const mood = shot("moodboard.jpg", "Moodboard"), frames = series("frame", 6, "Styleframe"), boards = series("board", 12, "Storyboard frame");
+  const process = [
+    mood && `<h3 class="sub">Moodboard</h3><div class="shots one">${mood}</div>`,
+    frames && `<h3 class="sub">Styleframes</h3><div class="shots">${frames}</div>`,
+    boards && `<h3 class="sub">Storyboard &amp; animatic</h3><div class="shots">${boards}</div>`,
+  ].filter(Boolean).join("");
+  const extras = n.extras.filter(([k]) => has(`assets/video/${n.slug}-${k}.mp4`));
+  const video = !n.ready
+    ? `<div class="pending"><b>In production</b><span>The final film and process frames will appear here.</span></div>`
+    : extras.length || n.main
+      ? `<div class="cuts"><figure>${vid(`../assets/video/${n.slug}.mp4`, poster, { cls: n.vertical ? "vertical" : "" })}<figcaption>${n.main || "Main cut"}</figcaption></figure>${extras.map(([k, label, vert]) =>
+          `<figure>${vid(`../assets/video/${n.slug}-${k}.mp4`, "", { cls: vert ? "vertical" : "" })}<figcaption>${label}</figcaption></figure>`).join("")}</div>`
+      : vid(`../assets/video/${n.slug}.mp4`, poster, { cls: n.vertical ? "vertical" : "" });
+  const nav = n.ready && SHOWN.length > 1 ? (() => {
+    const i = SHOWN.findIndex((w) => w.slug === n.slug), p = SHOWN[(i + SHOWN.length - 1) % SHOWN.length], x = SHOWN[(i + 1) % SHOWN.length];
+    return `<a class="btn" href="${p.slug}.html">← ${p.title}</a><a class="btn primary" href="../index.html#contact">Start a project</a><a class="btn" href="${x.slug}.html">${x.title} →</a>`;
+  })() : `<a class="btn" href="../index.html#work">← All work</a><a class="btn primary" href="../index.html#contact">Start a project</a>`;
+  const body = `
+<header class="cs-hero"><div class="wrap">
+  <div class="eyebrow">${n.kind}</div>
+  <h1 class="display">${esc(n.title)}</h1>
+  <p class="sum">${n.sum}</p>
+  ${facts([["Format", n.format], ["Role", n.role], ["Brief", "Self-initiated"], ["Year", YEAR]])}
+  ${video}
+</div></header>
+<section><div class="wrap prose">
+  <h3>The brief</h3>
+  <p>${n.brief}</p>
+  <h3>My role</h3>
+  <p>${n.role}.</p>
+  ${n.tools.length ? `<h3>Tools</h3><p>${n.tools.join(" · ")}</p>` : ""}
+  <p class="note">Self-initiated brief: ${esc(n.title)} is a fictional project made for this portfolio.</p>
+</div></section>
+${process ? `<section><div class="wrap"><div class="eyebrow">Process</div>${process}</div></section>` : ""}
+<section><div class="wrap next">${nav}</div></section>`;
+  fs.writeFileSync(path.join(ROOT, "work", n.slug + ".html"),
+    page({ title: `${esc(n.title)} — ${NAME}`, desc: n.sum, depth: 1, current: "work", noindex: !n.ready, body }));
+}
+
+console.log(`built: index.html + work/*.html · new pieces ready: ${NEW.filter((n) => n.ready).length}/${NEW.length}`);
