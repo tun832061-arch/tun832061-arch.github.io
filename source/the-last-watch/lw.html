@@ -93,31 +93,76 @@ function drawMoon(x, y, r, a = 1) {
 
 // ---------- characters & props (silhouettes; feet at 0,0, ~1 unit = 1 px * s)
 function guard(x, y, s, t, opt = {}) {
-  const face = opt.face ?? 1, sway = Math.sin(t * 1.3) * 4 + (opt.wind ?? 0);
-  cx.save(); cx.translate(x, y); cx.scale(s * face, s); cx.fillStyle = opt.color || C.ink;
-  // legs
-  cx.beginPath(); cx.moveTo(-22, 0); cx.lineTo(-14, -150); cx.lineTo(-2, -150); cx.lineTo(-6, 0); cx.closePath(); cx.fill();
-  cx.beginPath(); cx.moveTo(6, 0); cx.lineTo(4, -150); cx.lineTo(18, -150); cx.lineTo(24, 0); cx.closePath(); cx.fill();
-  // cloak
-  cx.beginPath(); cx.moveTo(-34, -300); cx.quadraticCurveTo(-58, -170, -62 - sway, -60); cx.lineTo(48 - sway * 0.6, -70); cx.quadraticCurveTo(44, -190, 34, -300); cx.closePath(); cx.fill();
-  // torso + shoulders
-  cx.beginPath(); cx.moveTo(-38, -298); cx.quadraticCurveTo(0, -322, 38, -298); cx.lineTo(30, -150); cx.lineTo(-30, -150); cx.closePath(); cx.fill();
-  // head + helmet + crest
-  cx.beginPath(); cx.arc(0, -342, 24, 0, 6.29); cx.fill();
-  cx.beginPath(); cx.moveTo(-28, -340); cx.quadraticCurveTo(0, -392, 28, -340); cx.lineTo(28, -332); cx.lineTo(-28, -332); cx.fill();
-  cx.beginPath(); cx.moveTo(20, -370); cx.quadraticCurveTo(-2, -408, -36, -386); cx.quadraticCurveTo(-62 - sway * 2, -372, -74 - sway * 3, -326); cx.quadraticCurveTo(-50, -356, -28, -364); cx.quadraticCurveTo(-6, -378, 12, -360); cx.closePath(); cx.fill();
-  // spear
-  cx.fillRect(40, -470, 6, 470); cx.beginPath(); cx.moveTo(36, -470); cx.lineTo(43, -512); cx.lineTo(50, -470); cx.fill();
-  // arm to spear
-  cx.beginPath(); cx.moveTo(26, -292); cx.lineTo(48, -230); cx.lineTo(40, -222); cx.lineTo(18, -270); cx.fill();
-  // sword at hip
-  cx.save(); cx.translate(-26, -168); cx.rotate(0.5); cx.fillRect(-3, 0, 6, 92); cx.fillRect(-14, -4, 28, 6); cx.restore();
+  // Armoured guard, side-on, facing +x. Feet at (0,0); body ~500 units tall, spear ~700.
+  const face = opt.face ?? 1, wind = opt.wind ?? 0, col = opt.color || C.ink;
+  const br = Math.sin(t * 1.25) * 1.8, shift = Math.sin(t * 0.45) * 1.5;           // breathing, weight shift
+  const w = (u, sp = 1) => Math.sin(t * 2.3 * sp + u) * (4 + wind * 0.8);          // cloth wave
+  cx.save(); cx.translate(x, y); cx.scale(s * face, s); cx.fillStyle = col;
+  const P = (pts) => { cx.beginPath(); cx.moveTo(pts[0][0], pts[0][1]); for (let i = 1; i < pts.length; i++) cx.lineTo(pts[i][0], pts[i][1]); cx.closePath(); cx.fill(); };
+  // ---- cloak (behind everything)
+  cx.beginPath(); cx.moveTo(-26, -414 - br); cx.quadraticCurveTo(-52, -330, -70 - wind * 2 + w(0), -200);
+  cx.quadraticCurveTo(-92 - wind * 4 + w(1), -110, -104 - wind * 6 + w(2), -36);
+  const hem = [[-104, -36], [-80, -28], [-58, -40], [-36, -30], [-14, -44]];
+  hem.forEach(([hx, hy], i) => cx.lineTo(hx - wind * (6 - i) + w(i * 1.3, 1.4), hy + Math.sin(t * 3 + i) * 3));
+  cx.quadraticCurveTo(-6, -200, 18, -414 - br); cx.closePath(); cx.fill();
+  // ---- spear (planted in front of the toes)
+  cx.fillRect(62, -650, 6, 650);
+  cx.beginPath(); cx.moveTo(65, -720); cx.quadraticCurveTo(80, -682, 65, -648); cx.quadraticCurveTo(50, -682, 65, -720); cx.fill();
+  cx.fillRect(56, -650, 18, 5);
+  // ---- back arm (hand resting on the sword pommel)
+  P([[-30, -410 - br], [-12, -404 - br], [-26, -340], [-18, -312], [-30, -300], [-44, -314], [-42, -344]]);
+  // ---- sword in scabbard, angled back
+  cx.save(); cx.translate(-14, -304); cx.rotate(0.62);
+  cx.fillRect(-4, 0, 9, 150); cx.beginPath(); cx.moveTo(-4, 150); cx.lineTo(5, 150); cx.lineTo(0.5, 162); cx.fill();
+  cx.fillRect(-14, -4, 30, 6); cx.fillRect(-3, -26, 7, 24); cx.beginPath(); cx.arc(0.5, -30, 6, 0, 6.29); cx.fill(); cx.restore();
+  // ---- legs (back leg first), greaves and boots
+  const leg = (dx, toe) => { P([[dx - 4, -300], [dx + 24, -300], [dx + 26, -164], [dx + 20, -34], [dx + 24, -26], [dx + toe, -8], [dx + toe + 2, 0], [dx + 2, 0], [dx, -14], [dx + 4, -32], [dx - 2, -112], [dx + 2, -164]]);
+    cx.beginPath(); cx.arc(dx + 21, -162, 11, 0, 6.29); cx.fill(); };
+  leg(-24 + shift, 26); leg(10 + shift, 30);
+  // ---- hip plates (tassets) + belt
+  P([[-36 + shift, -306], [38 + shift, -306], [44 + shift, -236], [6 + shift, -228], [-40 + shift, -238]]);
+  cx.fillRect(-35 + shift, -314, 72, 12);
+  // ---- torso: breastplate rises with breath
+  cx.save(); cx.translate(shift * 0.6, -br);
+  P([[-32, -306], [32, -306], [40, -352], [42, -384], [30, -418], [-26, -418], [-36, -384], [-34, -346]]);
+  // gorget + neck
+  P([[-16, -418], [18, -418], [14, -444], [-10, -444]]);
+  // back pauldron, front pauldron (two lames each)
+  cx.beginPath(); cx.ellipse(-24, -404, 22, 15, -0.25, 0, 6.29); cx.fill();
+  cx.beginPath(); cx.ellipse(24, -406, 27, 17, 0.25, 0, 6.29); cx.fill();
+  cx.beginPath(); cx.ellipse(30, -386, 22, 12, 0.35, 0, 6.29); cx.fill();
+  // front arm: upper arm, vambrace, fist around the spear
+  P([[18, -404], [40, -390], [48, -346], [36, -340], [22, -380]]);
+  P([[36, -350], [50, -350], [66, -332], [58, -318], [42, -324]]);
+  cx.beginPath(); cx.roundRect(54, -352, 22, 34, 8); cx.fill();
+  // ---- head: kettle helm with brim, cheek guard and nasal bar
+  cx.beginPath(); cx.moveTo(-22, -446); cx.lineTo(-26, -470); cx.arc(2, -470, 28, Math.PI, 0); cx.lineTo(30, -462); cx.lineTo(22, -452); cx.lineTo(18, -444); cx.closePath(); cx.fill();
+  P([[-34, -470], [38, -470], [34, -464], [-30, -464]]);
+  cx.fillRect(28, -470, 4, 22);
+  // horsehair crest streaming back in the wind
+  cx.beginPath(); cx.moveTo(22, -488); cx.quadraticCurveTo(4, -514, -28, -500);
+  const tip = (k) => [-58 - wind * 3 - k * 10 + Math.sin(t * 4 + k) * 5, -470 + k * 14 + Math.sin(t * 3.3 + k * 2) * 4];
+  const [ax1, ay1] = tip(0), [ax2, ay2] = tip(1), [ax3, ay3] = tip(2);
+  cx.quadraticCurveTo(-46, -496, ax1, ay1); cx.lineTo(-40, -478); cx.quadraticCurveTo(-48, -472, ax2, ay2); cx.lineTo(-34, -470);
+  cx.quadraticCurveTo(-40, -462, ax3, ay3); cx.quadraticCurveTo(-22, -474, -8, -494); cx.quadraticCurveTo(6, -500, 18, -484); cx.closePath(); cx.fill();
+  cx.restore();
+  // ---- plate edges catch the light
+  if (opt.detail) {
+    cx.save(); cx.translate(shift * 0.6, 0); cx.globalCompositeOperation = "lighter"; cx.strokeStyle = opt.detail; cx.lineWidth = 2.2; cx.lineCap = "round";
+    const L2 = (a, b, c, d) => { cx.beginPath(); cx.moveTo(a, b); cx.lineTo(c, d); cx.stroke(); };
+    L2(-34, -302, 37, -302); L2(-38, -270, 41, -270); L2(-30, -464 - br, 34, -464 - br);
+    cx.beginPath(); cx.ellipse(24, -406 - br, 27, 17, 0.25, -2.6, -0.2); cx.stroke();
+    cx.beginPath(); cx.ellipse(30, -386 - br, 22, 12, 0.35, -2.4, 0); cx.stroke();
+    cx.beginPath(); cx.arc(2, -470 - br, 28, -2.2, -0.3); cx.stroke();
+    L2(40, -352 - br, 42, -384 - br); cx.beginPath(); cx.arc(31 + shift, -162, 11, -1.4, 1.2); cx.stroke();
+    cx.restore();
+  }
   cx.restore();
 }
 function guardLit(x, y, s, t, opt = {}, dx = -4) {
-  cx.save(); cx.globalAlpha = 0.9; guard(x + dx, y - 1, s, t, { ...opt, color: "rgba(255,170,80,0.85)" }); cx.restore();
-  cx.save(); cx.globalAlpha = 0.6; guard(x - dx * 0.6, y - 1, s, t, { ...opt, color: "rgba(120,140,200,0.6)" }); cx.restore();
-  guard(x, y, s, t, opt);
+  cx.save(); cx.globalAlpha = 0.5 * flick(t, 2); guard(x + dx * 0.7, y - 1, s, t, { ...opt, color: "rgba(255,165,80,0.9)" }); cx.restore();
+  cx.save(); cx.globalAlpha = 0.28; guard(x - dx * 0.5, y - 1, s, t, { ...opt, color: "rgba(120,140,200,0.7)" }); cx.restore();
+  guard(x, y, s, t, { ...opt, detail: `rgba(255,170,90,${0.35 * flick(t, 2)})` });
 }
 function lantern(x, y, s, t, on = 1, seed = 0, glowSize = 1) {
   const f = flick(t, seed) * on;
@@ -235,7 +280,7 @@ function shotB(t) { // 6–14 parallax push across rooftops, guard on the wall
     skyline(L.mid, -cam * 0.45 - 150, 900, 0.8, "#0b1229", (x, kk) => (kk < 0.08 ? 0.75 : 0), "rgba(38,56,104,0.3)");
     skyline(L.near, -cam * 0.7 - 300, 1010, 0.85, "#070c1d", (x, kk) => (kk < 0.05 ? 0.9 : 0));
     wall(0, 905, "#04060f", cam * 1.0);
-    const gx = 560 - cam * 1.0; lantern(gx - 120, 650, 0.6, t, 1, 2, 1.5); guardLit(gx, 862, 0.92, t, { wind: 3 }, -4);
+    const gx = 560 - cam * 1.0; lantern(gx - 120, 650, 0.6, t, 1, 2, 1.5); guardLit(gx, 864, 0.74, t, { wind: 3 }, -4);
     dust(t, gx - 120, 650, 320, 30, 4);
   });
   caption("Every night, someone has to stay awake.", t, 7.6, 13.4);
@@ -258,15 +303,30 @@ function shotC1(t) { // 14–18.2 close: gloved hand tightens on the hilt, lante
     cx.save(); cx.globalCompositeOperation = "lighter"; cx.strokeStyle = rim; cx.lineWidth = 6;
     cx.beginPath(); cx.arc(0, -100, 64, -1.3, 0.9); cx.stroke(); cx.beginPath(); cx.moveTo(300, 296); cx.lineTo(300, 330); cx.moveTo(-300, 292); cx.lineTo(300, 292); cx.stroke();
     cx.beginPath(); cx.moveTo(24, 340); cx.lineTo(18, 1100); cx.stroke(); cx.restore();
-    const g = ss(15.2, 17.4, t);
+    // armoured fist closing on the grip; forearm runs to lower left
+    const g = ss(15.2, 17.4, t), jit = Math.sin(t * 38) * 1.3 * g;
     cx.fillStyle = ink;
-    cx.beginPath(); cx.moveTo(-60, 60); cx.quadraticCurveTo(-420, 180, -620, 760); cx.lineTo(-330, 820); cx.quadraticCurveTo(-200, 320, -40, 250); cx.fill();
-    cx.beginPath(); cx.roundRect(-95, 20, 150, 250, 60); cx.fill();
-    for (let i = 0; i < 4; i++) { const fy = 30 + i * 58; cx.beginPath(); cx.roundRect(30, fy, lerp(92, 70, g), 54, 26); cx.fill(); }
-    cx.beginPath(); cx.roundRect(-50, -10 + 18 * g, 120, 48, 24); cx.fill();
-    cx.save(); cx.globalCompositeOperation = "lighter"; cx.strokeStyle = rim; cx.lineWidth = 5;
-    for (let i = 0; i < 4; i++) { const fy = 30 + i * 58, fx = 30 + lerp(92, 70, g); cx.beginPath(); cx.arc(fx - 26, fy + 27, 25, -1.4, 1.2); cx.stroke(); }
-    cx.beginPath(); cx.arc(46, 14 + 18 * g, 23, -1.5, 0.9); cx.stroke(); cx.restore();
+    cx.beginPath(); cx.moveTo(-120, 120); cx.quadraticCurveTo(-330, 300, -560, 820); cx.lineTo(-250, 880); cx.quadraticCurveTo(-170, 470, -60, 300); cx.closePath(); cx.fill();   // forearm
+    cx.beginPath(); cx.moveTo(-150, 90); cx.lineTo(-40, 60); cx.lineTo(-20, 300); cx.lineTo(-150, 330); cx.quadraticCurveTo(-175, 210, -150, 90); cx.fill();            // flared cuff
+    cx.save(); cx.translate(jit, 40); cx.scale(1.4, 1.4);
+    cx.beginPath(); cx.moveTo(-60, 18); cx.quadraticCurveTo(-120, 20, -132, 120); cx.quadraticCurveTo(-138, 230, -70, 282); cx.lineTo(-30, 280); cx.lineTo(-30, 20); cx.fill(); // back of hand
+    const reach = lerp(70, 54, g);
+    for (let i = 0; i < 4; i++) { const fy = 24 + i * 62, fh = 58 - i * 3;
+      cx.beginPath(); cx.roundRect(-44, fy, 44 + reach, fh, [10, fh / 2, fh / 2, 10]); cx.fill();                        // finger wrapped over the grip
+      cx.beginPath(); cx.arc(-44, fy + fh / 2, 15 + 4 * g, 0, 6.29); cx.fill(); }                                         // knuckle
+    cx.save(); cx.translate(-70, 20 + 10 * g); cx.rotate(-0.32); cx.beginPath(); cx.roundRect(0, -26, 128, 46, 23); cx.fill(); cx.restore(); // thumb over the top
+    cx.strokeStyle = "#1b2347"; cx.lineWidth = 3.5;
+    for (let i = 1; i < 4; i++) { const fy = 24 + i * 62 - 2; cx.beginPath(); cx.moveTo(-50, fy); cx.lineTo(reach - 18, fy); cx.stroke(); }
+    cx.save(); cx.globalCompositeOperation = "lighter"; cx.strokeStyle = rim; cx.lineWidth = 5; cx.lineCap = "round";
+    for (let i = 0; i < 4; i++) { const fy = 24 + i * 62, fh = 58 - i * 3, ex = reach;
+      cx.globalAlpha = 0.55; cx.lineWidth = 3; cx.beginPath(); cx.moveTo(-40, fy + 3); cx.lineTo(ex - fh / 2, fy + 3); cx.stroke();
+      cx.beginPath(); cx.arc(-44, fy + fh / 2, 15 + 4 * g, -2.4, -0.9); cx.stroke(); cx.globalAlpha = 1; cx.lineWidth = 5;
+      cx.beginPath(); cx.arc(ex - fh / 2, fy + fh / 2, fh / 2 - 2, -1.35, 1.2); cx.stroke();                              // fingertip rim
+      cx.globalAlpha = 0.45; cx.lineWidth = 3; cx.beginPath(); cx.moveTo(4, fy + 6); cx.lineTo(4, fy + fh - 6); cx.stroke();
+      cx.beginPath(); cx.moveTo(ex - fh / 2 - 6, fy + 6); cx.lineTo(ex - fh / 2 - 6, fy + fh - 6); cx.stroke(); cx.globalAlpha = 1; cx.lineWidth = 5; }
+    cx.save(); cx.translate(-70, 20 + 10 * g); cx.rotate(-0.32); cx.beginPath(); cx.moveTo(20, -26); cx.lineTo(105, -26); cx.arc(105, -3, 23, -1.57, 0.4); cx.stroke(); cx.restore();
+    cx.lineWidth = 4; cx.beginPath(); cx.moveTo(-40, 62); cx.lineTo(-22, 300); cx.stroke();
+    cx.restore(); cx.restore();
     cx.restore();
   });
 }
@@ -321,7 +381,7 @@ function bell(t, k) {
 function turning(t, k) {
   sky(t, 0, 0.35, { x: W / 2 + 40, y: 470, r: 330 }); skyline(L.mid, -600, 1010, 0.7, "#0b1229", (x, kk) => (kk < 0.05 ? 0.7 : 0));
   wall(0, 960, "#03050c", 0);
-  const face = Math.cos(eio(clamp(k * 1.6)) * Math.PI); guard(W / 2, 935, 1.25, t, { face: Math.abs(face) < 0.12 ? 0.12 * Math.sign(face || 1) : face, wind: 10 });
+  const face = Math.cos(eio(clamp(k * 1.6)) * Math.PI); guard(W / 2, 938, 0.98, t, { detail: "rgba(150,170,220,0.35)", face: Math.abs(face) < 0.12 ? 0.12 * Math.sign(face || 1) : face, wind: 10 });
 }
 function shotE(t) {
   const cuts = [[30.0, "gate"], [31.0, "w:HOLD"], [31.5, "bell"], [32.5, "w:THE"], [33.0, "turn"], [34.0, "w:LINE"], [34.5, "army"], [35.5, "gate2"], [36.0, "bell2"], [36.5, "hand"], [37.0, "flash"], [37.4, "black"]];
@@ -348,7 +408,7 @@ function shotF(t) { // 38–44 second lantern, the city lights up behind him
     skyline(L.near, -cam * 0.7 - 380, 1010, 0.85, "#070c1d", lit);
     wall(0, 900, "#04060f", cam);
     lantern(1290, 640, 0.6, t, 1, 2, 1.5);
-    guardLit(1140, 862, 0.92, t, { face: -1 }, 4);
+    guardLit(1140, 864, 0.74, t, { face: -1 }, 4);
     lantern(lx, ly, 0.6, t, light, 6, 1.3 + 0.8 * light);
     if (t > 39.2 && t < 39.6) { cx.save(); cx.globalCompositeOperation = "lighter"; const s = 1 - Math.abs(t - 39.35) / 0.25; cx.fillStyle = `rgba(255,220,170,${s})`; cx.beginPath(); cx.arc(lx, ly + 20, 14, 0, 6.29); cx.fill(); cx.restore(); }
     dust(t, lx, ly, 300, 30, 12);
@@ -385,6 +445,7 @@ function scene(t) {
 // motion blur: average sub-frames in the fast sections
 const acc = document.createElement("canvas"); acc.width = W; acc.height = H; const ax = acc.getContext("2d");
 window.render = (frame) => {
+  if (cx.reset) cx.reset(); cx.setTransform(1, 0, 0, 1, 0, 0); cx.globalAlpha = 1; cx.globalCompositeOperation = "source-over";
   const t = frame / FPS, blur = (t >= 27.4 && t < 30) || (t >= 30 && t < 37) ? 4 : 1;
   if (blur === 1) scene(t);
   else { ax.clearRect(0, 0, W, H); for (let i = 0; i < blur; i++) { scene(t + (i / blur) * (0.5 / FPS)); ax.globalAlpha = 1 / (i + 1); ax.drawImage(cv, 0, 0); } cx.globalAlpha = 1; cx.drawImage(acc, 0, 0); }
