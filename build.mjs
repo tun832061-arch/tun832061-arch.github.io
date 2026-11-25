@@ -105,18 +105,39 @@ const NEW = [
   ready: has(`assets/video/${n.slug}.mp4`), meta: `${n.kind} · ${n.format}` }));
 for (const n of NEW) n.poster = has(`assets/img/${n.slug}/poster.jpg`) ? `${n.slug}/poster.jpg` : null;
 
-// Home grid + prev/next order: finished new pieces first, then the existing work.
-const SHOWN = [...NEW.filter((n) => n.ready), ...WORK];
+// ---------------------------------------------------------------- homepage picks
+// FEATURED is the homepage, in order: one piece per skill a hirer looks for. To swap a piece,
+// change its slug here. A featured piece only appears once its video exists; until then the
+// homepage is topped up with your other finished work so it always shows HOME_COUNT pieces.
+// Pieces left off the homepage keep their pages, so you can still send their links directly.
+const FEATURED = [
+  "the-last-watch",     // story
+  "raise-trap",         // explainer
+  "splitly",            // app / UI
+  "kettle-and-kiln",    // brand
+  "say-it-slower",      // kinetic type
+  "kicks-drop",         // social ads (or "corvo", whichever comes out better)
+  "nova",               // product launch
+  "lagos-in-24-frames", // your own voice
+];
+const HOME_COUNT = 8;
+const ALL = [...NEW, ...WORK.map((w) => ({ ...w, ready: true }))];
+const bySlug = Object.fromEntries(ALL.map((w) => [w.slug, w]));
+for (const f of FEATURED) if (!bySlug[f]) throw new Error(`FEATURED has unknown slug "${f}"`);
+const picks = FEATURED.map((f) => bySlug[f]).filter((w) => w.ready);
+const HOME = [...picks, ...WORK.filter((w) => !picks.includes(bySlug[w.slug]))].slice(0, HOME_COUNT);
+// prev/next on case studies: homepage pieces first, then every other finished piece
+const SHOWN = [...HOME, ...ALL.filter((w) => w.ready && !HOME.includes(w))];
 
 // ---------------------------------------------------------------- home
 const home = page({
   title: `${NAME} — Motion design`,
-  desc: "Motion design for brands and explainers: animated explainers, social ad packs and product launch promos.",
+  desc: "Motion design for story, brand, product and social: trailers, explainers, brand systems and ad packs.",
   body: `
 <header class="hero"><div class="wrap">
   <div class="eyebrow">Motion designer</div>
   <h1 class="display">Make it <span class="acc">move.</span></h1>
-  <p class="lede">I design and animate explainer videos, social ads and launch promos — story, design, motion and sound, delivered in every format your channels need.</p>
+  <p class="lede">I design and animate story, brand, product and social motion — from title sequences and explainers to brand systems and ad packs. Story, design, motion and sound, delivered in every format your channels need.</p>
   <div class="cta"><a class="btn primary" href="#contact">Start a project</a><a class="btn" href="#work">See the work</a></div>
   <div class="reel"><video src="assets/video/showreel.mp4" poster="assets/img/poster-showreel.jpg" controls playsinline preload="metadata"></video></div>
 </div></header>
@@ -125,7 +146,7 @@ const home = page({
   <div class="eyebrow">Selected work</div>
   <h2 class="display">Work</h2>
   <div class="grid">
-${SHOWN.map((w) => `    <a class="card" href="work/${w.slug}.html">
+${HOME.map((w) => `    <a class="card" href="work/${w.slug}.html">
       <div class="thumb">${w.poster ? `<img src="assets/img/${w.poster}" alt="${w.title} still" loading="lazy">` : ""}</div>
       <div class="body"><h3>${w.title}</h3><div class="meta">${w.meta}</div><div class="tags">${w.tags.map((t) => `<span>${t}</span>`).join("")}</div></div>
     </a>`).join("\n")}
