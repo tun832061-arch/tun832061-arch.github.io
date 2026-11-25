@@ -9,7 +9,7 @@ const NAME = "Clown";
 const EMAIL = "tun832061@gmail.com";
 const YEAR = 2026;
 
-const page = ({ title, desc, depth = 0, body, current, noindex = false }) => {
+const page = ({ title, desc, depth = 0, body, current, noindex = false, bodyClass = "" }) => {
   const r = depth ? "../" : "";
   const link = (href, label, key, cls = "") => `<li${cls ? ` class="${cls}"` : ""}><a href="${r}${href}"${current === key ? ' aria-current="page"' : ""}>${label}</a></li>`;
   return `<!doctype html>
@@ -24,10 +24,10 @@ ${noindex ? '<meta name="robots" content="noindex">\n' : ""}<meta property="og:t
 <meta property="og:image" content="${r}assets/img/poster-showreel.jpg">
 <link rel="stylesheet" href="${r}assets/site.css">
 </head>
-<body>
+<body${bodyClass ? ` class="${bodyClass}"` : ""}>
 <nav class="nav"><div class="wrap">
   <a class="logo" href="${r}index.html">${NAME.toUpperCase()}<span>.</span></a>
-  <ul>${link("index.html#work", "Work", "work")}${link("index.html#services", "Services", "services", "hide-sm")}${link("index.html#contact", "Contact", "contact")}</ul>
+  <ul>${link("index.html#work", "Work", "work")}${link("index.html#services", "Services", "services", "hide-sm")}<li><a class="nav-cta" href="mailto:${EMAIL}">Email me</a></li></ul>
 </div></nav>
 ${body}
 <footer><div class="wrap"><div>© ${YEAR} ${NAME} · Motion design</div><div><a href="mailto:${EMAIL}">${EMAIL}</a></div></div></footer>
@@ -40,6 +40,8 @@ const vid = (src, poster, { cls = "", loop = false, auto = false } = {}) =>
   `<div class="player ${cls}"><video src="${src}" poster="${poster}" controls playsinline preload="metadata"${loop ? " loop" : ""}${auto ? " autoplay muted" : ""}></video></div>`;
 
 const WORK = [
+  { slug: "corvo", title: "CORVO Knockout", meta: "Social ad pack · 9:16 · 1:1 · 16:9", poster: "poster-corvo-bumper.jpg",
+    tags: ["Product ad", "3 formats", "Kinetic type", "Sound design"] },
   { slug: "nova", title: "NOVA", meta: "Product launch · 15s · 9:16", poster: "poster-nova.jpg",
     tags: ["Product ad", "Vertical", "Shape morph", "Sound design"] },
   { slug: "clown-club", title: "Clown Club — Pack & Unpack", meta: "Product motion · 15s · 16:9", poster: "poster-clown-club.jpg",
@@ -50,8 +52,6 @@ const WORK = [
     tags: ["Character", "UI animation", "Beat-synced"] },
   { slug: "raise-trap", title: "The Raise Trap", meta: "Animated explainer · 60s · 16:9", poster: "poster-raise-trap.jpg",
     tags: ["Explainer", "Character", "Data viz", "Voiceover", "Captions"] },
-  { slug: "corvo", title: "CORVO Knockout", meta: "Social ad pack · 9:16 · 1:1 · 16:9", poster: "poster-corvo-bumper.jpg",
-    tags: ["Product ad", "3 formats", "Kinetic type", "Sound design"] },
   { slug: "pulse", title: "Pulse", meta: "SaaS launch promo · 15s · remaster", poster: "poster-pulse.jpg",
     tags: ["UI animation", "Logo sting", "Launch promo"] },
   { slug: "make-it-move", title: "Make It Move", meta: "Kinetic type · 15s · 9:16 · remaster", poster: "poster-mim.jpg",
@@ -118,7 +118,6 @@ for (const n of NEW) n.poster = has(`assets/img/${n.slug}/poster.jpg`) ? `${n.sl
 // Pieces left off the homepage keep their pages, so you can still send their links directly.
 const FEATURED = [
   "the-last-watch",     // story
-  "raise-trap",         // explainer
   "splitly",            // app / UI
   "kettle-and-kiln",    // brand
   "say-it-slower",      // kinetic type
@@ -131,60 +130,76 @@ const ALL = [...NEW, ...WORK.map((w) => ({ ...w, ready: true }))];
 const bySlug = Object.fromEntries(ALL.map((w) => [w.slug, w]));
 for (const f of FEATURED) if (!bySlug[f]) throw new Error(`FEATURED has unknown slug "${f}"`);
 const picks = FEATURED.map((f) => bySlug[f]).filter((w) => w.ready);
-const HOME = [...picks, ...WORK.filter((w) => !picks.includes(bySlug[w.slug]))].slice(0, HOME_COUNT);
+// Never on the homepage (their pages stay up for direct links).
+const OFF_HOME = ["raise-trap", "bez-and-the-boos"];
+const HOME = [...picks, ...WORK.filter((w) => !picks.includes(bySlug[w.slug]) && !OFF_HOME.includes(w.slug))].slice(0, HOME_COUNT);
 // prev/next on case studies: homepage pieces first, then every other finished piece
 const SHOWN = [...HOME, ...ALL.filter((w) => w.ready && !HOME.includes(w))];
 
 // ---------------------------------------------------------------- home
 const home = page({
-  title: `${NAME} — Motion design`,
-  desc: "Motion design for story, brand, product and social: trailers, explainers, brand systems and ad packs.",
+  title: `${NAME} — Motion designer`,
+  desc: "Motion designer for story, brand, product and social: title sequences, explainers, brand systems and ad packs.",
+  bodyClass: "home",
   body: `
-<header class="hero"><div class="wrap">
-  <div class="eyebrow">Motion designer</div>
-  <h1 class="display">Make it <span class="acc">move.</span></h1>
-  <p class="lede">I design and animate story, brand, product and social motion — from title sequences and explainers to brand systems and ad packs. Story, design, motion and sound, delivered in every format your channels need.</p>
-  <div class="cta"><a class="btn primary" href="#contact">Start a project</a><a class="btn" href="#work">See the work</a></div>
-  <div class="reel"><video src="assets/video/showreel.mp4" poster="assets/img/poster-showreel.jpg" controls playsinline preload="metadata"></video></div>
-</div></header>
+<header class="stage">
+  <video class="stage-video" src="assets/video/showreel.mp4" poster="assets/img/poster-showreel.jpg" autoplay muted loop playsinline preload="auto"></video>
+  <div class="stage-shade"></div>
+  <div class="wrap stage-copy">
+    <h1><span class="display">${NAME}<i>.</i></span> Motion designer for story, brand, product and social.</h1>
+    <div class="stage-actions">
+      <button class="btn primary" type="button" data-sound>▶ Watch the reel with sound</button>
+      <a class="btn ghost" href="#work">See the work ↓</a>
+    </div>
+  </div>
+</header>
 
-<section id="work"><div class="wrap">
-  <div class="eyebrow">Selected work</div>
-  <h2 class="display">Work</h2>
-  <div class="grid">
-${HOME.map((w) => `    <a class="card" href="work/${w.slug}.html">
-      <div class="thumb">${w.poster ? `<img src="assets/img/${w.poster}" alt="${w.title} still" loading="lazy">` : ""}</div>
-      <div class="body"><h3>${w.title}</h3><div class="meta">${w.meta}</div><div class="tags">${w.tags.map((t) => `<span>${t}</span>`).join("")}</div></div>
-    </a>`).join("\n")}
+<section id="work" class="work"><div class="wrap">
+  <div class="work-head"><h2 class="display">Selected work</h2><p class="muted">${HOME.length} projects · tap any to see the brief, the process and the final film.</p></div>
+  <div class="reelgrid">
+${HOME.map((w, i) => {
+    const prev = has(`assets/video/preview/${w.slug}.mp4`) ? `assets/video/preview/${w.slug}.mp4` : "";
+    const img = w.poster ? `assets/img/${w.poster}` : "";
+    return `    <a class="tile" href="work/${w.slug}.html">
+      <div class="tile-media">${prev ? `<video src="${prev}"${img ? ` poster="${img}"` : ""} muted loop playsinline preload="none" data-preview></video>` : img ? `<img src="${img}" alt="" loading="lazy">` : ""}</div>
+      <div class="tile-text"><span class="tile-num">${String(i + 1).padStart(2, "0")}</span><h3>${w.title}</h3><span class="tile-meta">${w.meta}</span></div>
+    </a>`;
+  }).join("\n")}
   </div>
 </div></section>
 
-<section id="services"><div class="wrap">
-  <div class="eyebrow">What I make</div>
-  <h2 class="display">Services</h2>
-  <div class="services">
-    <div class="svc"><h3>Explainer videos</h3><div class="price">Quote on request</div><p class="muted">60–90s animated explainers that make one idea land.</p>
-      <ul><li>Script &amp; storyboard</li><li>Illustration &amp; data visualisation</li><li>Voiceover, captions, music</li><li>16:9 + vertical cutdown</li></ul></div>
-    <div class="svc"><h3>Social ad packs</h3><div class="price">Quote on request</div><p class="muted">Scroll-stopping product ads, built sound-off first.</p>
-      <ul><li>15s hero + 6s bumper</li><li>9:16, 1:1 and 16:9 versions</li><li>Offer &amp; CTA end cards</li><li>Original music + sound design</li></ul></div>
-    <div class="svc"><h3>Launch promos</h3><div class="price">Quote on request</div><p class="muted">Logo stings and UI-driven promos for apps and SaaS.</p>
-      <ul><li>Logo animation</li><li>Product UI animation</li><li>Tagline &amp; end card</li><li>Web + social exports</li></ul></div>
-  </div>
-  <h3 style="margin:48px 0 18px;font-size:22px">How a project runs</h3>
-  <div class="steps">
-    <div class="step"><b>1 · Brief</b><p>Your goal, audience and channels in one page.</p></div>
-    <div class="step"><b>2 · Storyboard</b><p>A beat-by-beat plan and still frames to approve.</p></div>
-    <div class="step"><b>3 · Animate</b><p>Motion, sound and a preview to review.</p></div>
-    <div class="step"><b>4 · Deliver</b><p>Final renders in every format you need.</p></div>
-  </div>
+<section id="services" class="make"><div class="wrap">
+  <h2 class="display">What I make</h2>
+  <ul class="make-list">
+    <li><b>Story &amp; title sequences</b><span>Trailers, openers and short films that carry a mood and a turn.</span></li>
+    <li><b>Explainers &amp; product UI</b><span>One idea made clear, with interfaces that move like the real product.</span></li>
+    <li><b>Brand motion systems</b><span>Logo animation plus the transitions and templates your team reuses.</span></li>
+    <li><b>Social ad packs</b><span>Hooks in the first second, built sound-off, in every format you post.</span></li>
+  </ul>
+  <p class="make-how muted">Every project runs brief → styleframes → animatic → animation → sound → delivery, and you approve each step before the next one.</p>
 </div></section>
 
 <section id="contact" class="contact"><div class="wrap">
-  <div class="eyebrow">Contact</div>
-  <h2 class="display">Let's make it move</h2>
-  <p class="muted">Tell me what you're launching or explaining, and where it will run.</p>
-  <a class="mail" href="mailto:${EMAIL}?subject=Motion%20design%20project">${EMAIL}</a>
-</div></section>`,
+  <p class="muted">Got something to launch, explain or tell?</p>
+  <a class="mail display" href="mailto:${EMAIL}?subject=Motion%20design%20project">${EMAIL}</a>
+  <p class="muted small">I reply within a day, with a rough idea of how I'd approach it.</p>
+</div></section>
+<script>
+(() => {
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const stage = document.querySelector(".stage-video");
+  if (reduce) stage.removeAttribute("autoplay"), stage.pause();
+  document.querySelector("[data-sound]").addEventListener("click", (e) => {
+    stage.currentTime = 0; stage.muted = false; stage.loop = false; stage.controls = true; stage.play();
+    document.body.classList.add("watching"); e.currentTarget.blur();
+  });
+  stage.addEventListener("ended", () => { document.body.classList.remove("watching"); stage.muted = true; stage.loop = true; stage.controls = false; stage.play(); });
+  const vids = document.querySelectorAll("[data-preview]");
+  if (reduce || !("IntersectionObserver" in window)) return;
+  const io = new IntersectionObserver((es) => es.forEach((x) => { const v = x.target; if (x.isIntersecting) { v.preload = "auto"; v.play().catch(() => {}); } else v.pause(); }), { threshold: 0.35 });
+  vids.forEach((v) => io.observe(v));
+})();
+</script>`,
 });
 fs.writeFileSync(path.join(ROOT, "index.html"), home);
 
