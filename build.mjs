@@ -169,17 +169,14 @@ for (const n of NEW) n.poster = has(`assets/img/${n.slug}/poster.jpg`) ? `${n.sl
 // homepage is topped up with your other finished work so it always shows HOME_COUNT pieces.
 // Pieces left off the homepage keep their pages, so you can still send their links directly.
 const FEATURED = [
-  "corvo",              // bold commercial work first
+  "kicks-drop",         // real product, social ads: what most clients buy
+  "splitly",            // app explainer
   "nova",               // premium product launch
-  "splitly",            // app / UI explainer
-  "pulse",              // SaaS launch promo
-  "the-last-watch",     // story, in the middle as proof of range
+  "the-last-watch",     // story, in the middle to show range
   "kettle-and-kiln",    // brand system
-  "say-it-slower",      // kinetic type
-  "kicks-drop",         // social ads
-  "lagos-in-24-frames", // your own voice
-  "clown-club",
-  "no-after-effects",
+  "say-it-slower",      // kinetic type, my own voice
+  "corvo",              // a second ad pack, different style
+  "lagos-in-24-frames", // my own voice, ending strong
 ];
 const HOME_COUNT = 8;
 const ALL = [...NEW, ...WORK.map((w) => ({ ...w, ready: true }))];

@@ -1,5 +1,4 @@
 # Showreel — source
 
-Collage intro → one piece at a time (each enters over the last) → grid → end card. 32 s, 120 BPM.
-`reel.html` draws frames from JPEG sequences cut from the finished videos (frames/<clip>_<mode>/f00001.jpg; the
-clips and source times are listed in `CL` at the top). `music2.py` makes the beat; `render.cjs` renders and encodes.
+Collage intro → each piece enters over the last → The Last Watch from HOLD THE LINE to its title card (with its own score) → a flash of Lagos → end card. 45 s.
+`reel.html` draws frames from JPEG sequences cut from the finished videos (clips and source times are in `CL`); `music3.py music.wav lw.wav` builds the soundtrack, using The Last Watch audio from 29.45 s.
