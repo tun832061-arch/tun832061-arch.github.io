@@ -56,6 +56,15 @@
     setState();
   }
 
+  // about intro: muted loop while visible; one click restarts it with sound and native controls
+  const intro = document.querySelector("[data-intro]");
+  if (intro) {
+    const v = intro.querySelector("video"), b = intro.querySelector(".intro-play");
+    if (!reduce && "IntersectionObserver" in window) new IntersectionObserver((es) => es.forEach((e) => { if (intro.classList.contains("on")) return; e.isIntersecting ? v.play().catch(() => {}) : v.pause(); }), { threshold: 0.4 }).observe(v);
+    b.addEventListener("click", () => { intro.classList.add("on"); v.muted = false; v.loop = false; v.controls = true; v.currentTime = 0; v.play(); });
+    v.addEventListener("ended", () => { intro.classList.remove("on"); v.controls = false; v.muted = true; v.loop = true; });
+  }
+
   // copy email
   document.querySelectorAll("[data-copy]").forEach((b) => b.addEventListener("click", async () => {
     const out = document.querySelector(".copied");

@@ -266,3 +266,17 @@ h3.sub { font-size: 20px; font-weight: 750; margin: 32px 0 16px; }
 .cs-page > section:not(.next-proj) { padding: var(--s6) 0; border-top: 1px solid var(--line); }
 .cs-page > section .eyebrow + h3 { font-size: 22px !important; font-weight: 750; margin: 10px 0 18px !important; }
 .cs-hero + section { margin-top: var(--s6); }
+
+/* about: intro video */
+.intro { position: relative; margin-top: var(--s4); max-width: 360px; }
+.intro video { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: var(--radius); border: 1px solid var(--line); background: #000; }
+.intro-play { position: absolute; left: 14px; top: 14px; display: inline-flex; align-items: center; gap: 10px; background: rgba(12,12,14,.75); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); color: var(--ink); border: 1px solid rgba(255,255,255,.16); border-radius: 999px; padding: 6px 16px 6px 6px; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; transition: background .3s var(--ease); }
+.intro-play:hover { background: rgba(12,12,14,.92); }
+.intro-play .ico { width: 32px; height: 32px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; }
+.intro-play .ico svg { width: 12px; height: 12px; fill: #140603; }
+.intro figcaption { margin-top: 12px; font-size: 13px; color: var(--muted); }
+.intro figcaption a { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--line-2); }
+.intro.on .intro-play { opacity: 0; pointer-events: none; }
+@media (max-width: 860px) { .intro { max-width: 420px; } }
+.cuts.mixed { grid-template-columns: minmax(0, 1fr) minmax(0, 2.4fr); align-items: center; }
+@media (max-width: 860px) { .cuts.mixed { grid-template-columns: 1fr; } .cuts.mixed figure:first-child { max-width: 420px; } }

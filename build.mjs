@@ -204,6 +204,22 @@ const NEW = [
       "frame-5": "The payoff: the bag drops in and the food bursts out of it.",
       "frame-6": "A short wordmark and a two-beat tagline to close.",
     } },
+  { slug: "behind-the-frame", title: "Behind the Frame", kind: "Talking-head edit", format: "23s · 9:16", vertical: true,
+    tags: ["Talking head", "Captions", "Cut-aways", "Vertical"],
+    sum: "A creator-style talking-head edit that introduces me: three takes cut on the words, with animated captions, punch-ins, a name lower third and cut-aways to the projects I mention.",
+    brief: "Turn three plain, locked-off takes into a short intro people watch to the end. Built 9:16 first, captions that read with the sound off, and every project I mention shown on screen as I say it.",
+    main: "Edited · 9:16",
+    extras: [["compare", "Raw takes vs the edit, same cuts", false]],
+    role: "Script, edit, captions, graphics and sound",
+    notes: {
+      "frame-1": "A name lower third and the first caption, so you know who is talking in the first second.",
+      "frame-2": "Projects pop up as they are mentioned: Kairo appears on the word “apps”.",
+      "frame-3": "The cards sit above and beside the speaker, never over the face.",
+      "frame-4": "On “before anything moves”, a full-screen cut to Say It Slower’s MOVE.",
+      "frame-5": "Key words change colour, so the captions carry the message on mute.",
+      "frame-6": "It ends on the same end card as the showreel, with the email.",
+    },
+    credit: "The presenter footage was generated with AI (Google Flow) from a reference image of me. The script, edit, captions, graphics and sound design are mine." },
 ].map((n) => ({ ...n, role: n.role || "Concept, design, animation, sound", tools: n.tools || [], notes: n.notes || {},
   ready: has(`assets/video/${n.slug}.mp4`), meta: `${n.kind} · ${n.format}` }));
 for (const n of NEW) n.poster = has(`assets/img/${n.slug}/poster.jpg`) ? `${n.slug}/poster.jpg` : null;
@@ -228,7 +244,7 @@ const bySlug = Object.fromEntries(ALL.map((w) => [w.slug, w]));
 for (const f of FEATURED) if (!bySlug[f]) throw new Error(`FEATURED has unknown slug "${f}"`);
 const HOME = FEATURED.map((f) => bySlug[f]).filter((w) => w.ready);
 // Earlier work, listed under the grid. Pages not listed here still exist for direct links.
-const ARCHIVE = ["nova", "corvo", "pulse", "clown-club", "no-after-effects", "make-it-move"].map((f) => bySlug[f]).filter(Boolean);
+const ARCHIVE = ["behind-the-frame", "nova", "corvo", "pulse", "clown-club", "no-after-effects", "make-it-move"].map((f) => bySlug[f]).filter(Boolean);
 // prev/next on case studies: the selected six first, then the archive, then everything else
 const SHOWN = [...HOME, ...ARCHIVE, ...ALL.filter((w) => w.ready && !HOME.includes(w) && !ARCHIVE.includes(w))];
 const SHORT = {
@@ -306,7 +322,7 @@ ${HOME.map((w, i) => {
   </div>
   <div class="more" data-reveal>
     <h3>More work</h3>
-    <ul>${ARCHIVE.map((w) => `<li><a href="work/${w.slug}.html"><span class="t">${w.title}</span><span class="c">${w.meta}</span><span class="a" aria-hidden="true">→</span></a></li>`).join("")}</ul>
+    <ul>${ARCHIVE.map((w) => `<li><a href="work/${w.slug}.html"><span class="t">${w.title}</span><span class="c">${w.meta || `${w.kind} · ${w.format}`}</span><span class="a" aria-hidden="true">→</span></a></li>`).join("")}</ul>
   </div>
 </div></section>
 
@@ -325,7 +341,13 @@ ${PROCESS.map(([t, d], i) => `    <li data-reveal style="--d:${i * 0.06}s"><b>${
 </div></section>
 
 <section id="about" class="section"><div class="wrap about">
-  <div data-reveal><div class="eyebrow">About</div><h2 class="display">Design first, then make it move.</h2></div>
+  <div data-reveal><div class="eyebrow">About</div><h2 class="display">Design first, then make it move.</h2>
+    <figure class="intro" data-intro>
+      <video src="assets/video/behind-the-frame.mp4" poster="assets/img/behind-the-frame/poster.jpg" muted loop playsinline preload="metadata" aria-label="A short video introduction"></video>
+      <button class="intro-play" type="button"><span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11a.6.6 0 0 0 .9.5l9-5.5a.6.6 0 0 0 0-1l-9-5.5a.6.6 0 0 0-.9.5z"/></svg></span><span class="lbl">Play with sound</span></button>
+      <figcaption>A 23-second intro. AI-generated presenter; script, edit and sound by me. <a href="work/behind-the-frame.html">See the edit →</a></figcaption>
+    </figure>
+  </div>
   <div class="copy" data-reveal style="--d:.08s">
     <p>${NAME} is the studio name of an independent motion designer working across brand, product, social and story.</p>
     <p>I design, animate and make the sound for every piece myself. Much of the work is built frame by frame, often in code, which keeps the timing exact and leaves room for things a template can’t do.</p>
@@ -578,7 +600,7 @@ for (const n of NEW) {
   const video = !n.ready
     ? `<div class="pending"><b>In production</b><span>The final film and process frames will appear here.</span></div>`
     : extras.length || n.main
-      ? `<div class="cuts"><figure>${vid(`../assets/video/${n.slug}.mp4`, poster, { cls: n.vertical ? "vertical" : "" })}<figcaption>${n.main || "Main cut"}</figcaption></figure>${extras.map(([k, label, vert]) =>
+      ? `<div class="cuts${n.vertical && extras.length === 1 && !extras[0][2] ? " mixed" : ""}"><figure>${vid(`../assets/video/${n.slug}.mp4`, poster, { cls: n.vertical ? "vertical" : "" })}<figcaption>${n.main || "Main cut"}</figcaption></figure>${extras.map(([k, label, vert]) =>
           `<figure>${vid(`../assets/video/${n.slug}-${k}.mp4`, "", { cls: vert ? "vertical" : "" })}<figcaption>${label}</figcaption></figure>`).join("")}</div>`
       : vid(`../assets/video/${n.slug}.mp4`, poster, { cls: n.vertical ? "vertical" : "" });
   const body = `<div class="cs-page">
