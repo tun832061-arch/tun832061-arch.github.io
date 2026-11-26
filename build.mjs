@@ -159,12 +159,6 @@ const NEW = [
       "frame-6": "The only slow shot: five seconds of sunset over the bridge, with grain and tiny danfos crossing.",
       "frame-7": "The title builds from the shapes that opened the film.",
     } },
-  { slug: "behind-the-frame", title: "Behind the Frame", kind: "Talking-head edit", format: "45s · 9:16 + 16:9", vertical: true,
-    tags: ["Talking head", "Animated captions", "B-roll", "Vertical"],
-    sum: "A creator-style talking-head edit, with me as the speaker: animated captions, punch-ins, B-roll cut from my own work, and sound design. Shown next to the raw footage it came from.",
-    brief: "Turn one plain, locked-off take into a video people watch to the end. Built 9:16 first for Reels, TikTok and Shorts, with captions that read with the sound off and stay clear of the app interface.",
-    main: "Edited · 9:16",
-    extras: [["raw", "Raw footage (before)", true], ["wide", "16:9 cut", false]] },
 ].map((n) => ({ ...n, role: n.role || "Concept, design, animation, sound", tools: n.tools || [], notes: n.notes || {},
   ready: has(`assets/video/${n.slug}.mp4`), meta: `${n.kind} · ${n.format}` }));
 for (const n of NEW) n.poster = has(`assets/img/${n.slug}/poster.jpg`) ? `${n.slug}/poster.jpg` : null;
@@ -183,7 +177,6 @@ const FEATURED = [
   "kettle-and-kiln",    // brand system
   "say-it-slower",      // kinetic type
   "kicks-drop",         // social ads
-  "behind-the-frame",   // talking-head edit
   "lagos-in-24-frames", // your own voice
   "clown-club",
   "no-after-effects",

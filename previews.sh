@@ -33,5 +33,4 @@ kettle-and-kiln    kettle-and-kiln.mp4    0    5
 splitly            splitly.mp4            24.4 5
 kicks-drop         kicks-drop.mp4         0    5
 lagos-in-24-frames lagos-in-24-frames.mp4 4.0  5
-behind-the-frame   behind-the-frame.mp4   0    5
 LIST
