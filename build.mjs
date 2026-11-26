@@ -176,6 +176,32 @@ const NEW = [
       "frame-6": "The only slow shot: five seconds of sunset over the bridge, with grain and tiny danfos crossing.",
       "frame-7": "The title builds from the shapes that opened the film.",
     } },
+  { slug: "kairo", title: "Kairo", kind: "App launch promo", format: "15s · 9:16", vertical: true,
+    tags: ["App promo", "UI animation", "Kinetic type", "Vertical"],
+    sum: "A 15-second vertical launch promo for a fictional trading app: a live price, candlesticks, a one-swipe buy and the order filling, cut to fast type.",
+    brief: "Sell one idea, catching the moment, in 15 seconds on a phone screen. Dark UI with a single green, type that moves as fast as the market, and every beat readable with the sound off.",
+    extras: [],
+    notes: {
+      "frame-1": "The hook is the product itself: a live price ticking up under the first line.",
+      "frame-2": "Candlesticks build on the beat, so the market feels fast before the app appears.",
+      "frame-3": "The phone arrives already doing the job: portfolio, watchlist and a buy button.",
+      "frame-4": "One swipe to buy. The whole promise of the app, shown as a single gesture.",
+      "frame-5": "Feature callouts pop out of the UI instead of sitting in a list.",
+      "frame-6": "The K mark carries a candle and a rising line, then the tagline lands.",
+    } },
+  { slug: "bite", title: "Bite", kind: "App promo", format: "18s · 9:16", vertical: true,
+    tags: ["App promo", "UI animation", "Food", "Vertical"],
+    sum: "An 18-second vertical promo for a fictional food delivery app: a craving, one tap, a rider tracked across a 3D map and the bag landing at the door.",
+    brief: "Make ordering food feel instant. One craving, one tap, a map that moves and dinner at the door, in 18 seconds, warm and bright, and readable with the sound off.",
+    extras: [],
+    notes: {
+      "frame-1": "Open on the craving, not the app: the burger fills the frame first.",
+      "frame-2": "The app does the talking: search, pick and add to cart, with captions under each step.",
+      "frame-3": "The selected item lifts and the cart bar slides up, so the tap reads at a glance.",
+      "frame-4": "Live tracking on a small 3D city, with the minutes counting down.",
+      "frame-5": "The payoff: the bag drops in and the food bursts out of it.",
+      "frame-6": "A short wordmark and a two-beat tagline to close.",
+    } },
 ].map((n) => ({ ...n, role: n.role || "Concept, design, animation, sound", tools: n.tools || [], notes: n.notes || {},
   ready: has(`assets/video/${n.slug}.mp4`), meta: `${n.kind} · ${n.format}` }));
 for (const n of NEW) n.poster = has(`assets/img/${n.slug}/poster.jpg`) ? `${n.slug}/poster.jpg` : null;
@@ -187,9 +213,11 @@ for (const n of NEW) n.poster = has(`assets/img/${n.slug}/poster.jpg`) ? `${n.sl
 // Pieces left off the homepage keep their pages, so you can still send their links directly.
 const FEATURED = [
   "say-it-slower",      // kinetic type, my own voice
+  "kairo",              // app launch promo
   "kettle-and-kiln",    // brand system
   "splitly",            // app explainer
   "the-last-watch",     // story
+  "bite",               // app promo, food
   "kicks-drop",         // social ads with a real product
   "lagos-in-24-frames", // experimental
 ];
@@ -208,6 +236,8 @@ const SHORT = {
   "the-last-watch": "A title sequence for an original fantasy short.",
   "kicks-drop": "Three social ads for a sneaker launch, built to read with the sound off.",
   "lagos-in-24-frames": "24 shots, 24 techniques, one drum loop.",
+  "kairo": "A trading app launch promo: fast type, live charts, one-swipe buy.",
+  "bite": "A food delivery app promo, from craving to doorstep in 18 seconds.",
 };
 const kindOf = (w) => w.kind || w.meta.split(" · ")[0];
 const FOCUS = { splitly: "68% 50%" }; // where a card crops its preview
@@ -216,10 +246,10 @@ const FOCUS = { splitly: "68% 50%" }; // where a card crops its preview
 const L = (slug) => `<a href="work/${slug}.html">${bySlug[slug].title}</a>`;
 const SERVICES = [
   ["Motion design", "Design and animation for any screen, from a five-second logo sting to a full launch film.", ["say-it-slower", "lagos-in-24-frames"]],
-  ["Product animation", "Products and interfaces shown the way they really work, with every move timed and eased.", ["splitly", "nova"]],
+  ["Product animation", "Products and interfaces shown the way they really work, with every move timed and eased.", ["kairo", "splitly", "bite"]],
   ["Brand motion systems", "Logo animation plus the rules, transitions and templates a team can keep using.", ["kettle-and-kiln"]],
   ["Explainer videos", "One idea made clear in under a minute, with script, captions and sound.", ["splitly"]],
-  ["Social media ads", "Hooks in the first second, readable with the sound off, delivered in every format you post.", ["kicks-drop", "corvo"]],
+  ["Social media ads", "Hooks in the first second, readable with the sound off, delivered in every format you post.", ["kicks-drop", "bite", "corvo"]],
   ["Story sequences", "Title sequences and trailers that carry a mood, a character and a turn.", ["the-last-watch"]],
 ];
 const PROCESS = [
@@ -230,7 +260,7 @@ const PROCESS = [
   ["Sound design", "Music, effects and the mix, so every cut lands and the film works on a phone speaker."],
   ["Final delivery", "Masters in every format and size you need, named and ready to post."],
 ];
-const W7 = ["w7", "w5", "w5", "w7", "", ""];
+const W7 = ["w7", "w5", "w5", "w7", "w7", "w5", "w5", "w7"];
 const home = page({
   title: `${NAME} — Independent motion designer`,
   desc: "Independent motion designer: brand motion, product animation, explainers, social ads and story sequences. Design, animation and sound.",
@@ -260,7 +290,7 @@ const home = page({
 </div></section>
 
 <section id="work" class="section"><div class="wrap">
-  <div class="sec-head" data-reveal><div><div class="eyebrow">Selected work</div><h2 class="display">Projects</h2></div><p>Six recent projects across brand, product, social and story. Each one opens a case study with the brief, the process and the final films.</p></div>
+  <div class="sec-head" data-reveal><div><div class="eyebrow">Selected work</div><h2 class="display">Projects</h2></div><p>${HOME.length === 6 ? "Six" : HOME.length === 8 ? "Eight" : HOME.length} recent projects across brand, product, social and story. Each one opens a case study with the brief, the process and the final films.</p></div>
   <div class="work-grid">
 ${HOME.map((w, i) => {
     const prev = has(`assets/video/preview/${w.slug}.mp4`) ? `assets/video/preview/${w.slug}.mp4` : "";
