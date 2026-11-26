@@ -6,6 +6,7 @@ import path from "node:path";
 const ROOT = path.dirname(new URL(import.meta.url).pathname.replace(/^\/(\w:)/, "$1"));
 
 const NAME = "Clown";
+const LINKEDIN = "https://www.linkedin.com/in/tun-tun-2b8991399";
 const EMAIL = "tun832061@gmail.com";
 const YEAR = 2026;
 
@@ -44,7 +45,7 @@ ${noindex ? '<meta name="robots" content="noindex">\n' : ""}<meta name="theme-co
 ${body}
 </main>
 <footer><div class="wrap">
-  <div>© ${YEAR} ${NAME} · Independent motion design</div>
+  <div>© ${YEAR} ${NAME} · Launch videos · Motion design &amp; AI actors</div>
   <ul>${SOCIAL.filter(([, u]) => u).map(([n, u]) => `<li><a href="${u}" rel="me noopener" target="_blank">${n}</a></li>`).join("")}<li><a href="mailto:${EMAIL}">${EMAIL}</a></li></ul>
   <a class="top-link" href="#top">Back to top ↑</a>
 </div></footer>
@@ -73,6 +74,14 @@ const WORK = [
     tags: ["UI animation", "Logo sting", "Launch promo"] },
   { slug: "make-it-move", title: "Make It Move", meta: "Kinetic type · 15s · 9:16 · remaster", poster: "poster-mim.jpg",
     tags: ["Kinetic type", "Vertical", "Score"] },
+  { slug: "north", title: "NORTH", kind: "SaaS launch film", meta: "SaaS launch film · 16s · 16:9", poster: "poster-north.jpg",
+    tags: ["SaaS launch", "UI animation", "Logo sting", "Sound design"] },
+  { slug: "kairo", title: "KAIRO", meta: "App launch · 15s · 9:16", poster: "poster-kairo.jpg",
+    tags: ["App launch", "UI animation", "3D charts", "Sound design"] },
+  { slug: "bite", title: "BITE", meta: "App launch ad · 18s · 9:16 + 16:9", poster: "poster-bite.jpg",
+    tags: ["App launch", "Voiceover", "3D map", "2 formats"] },
+  { slug: "prince-and-guard", title: "The Prince and Her Guard", meta: "Story concept with AI actors · 23s · 16:9", poster: "poster-prince.jpg",
+    tags: ["AI actors", "Title design", "Atmosphere", "Grade"] },
 ];
 
 // ---------------------------------------------------------------- new pieces (portfolio rebuild)
@@ -186,22 +195,23 @@ for (const n of NEW) n.poster = has(`assets/img/${n.slug}/poster.jpg`) ? `${n.sl
 // homepage is topped up with your other finished work so it always shows HOME_COUNT pieces.
 // Pieces left off the homepage keep their pages, so you can still send their links directly.
 const FEATURED = [
+  "north",              // SaaS launch film
+  "splitly",            // app explainer
+  "kicks-drop",         // product launch social ads
   "say-it-slower",      // kinetic type, my own voice
   "kettle-and-kiln",    // brand system
-  "splitly",            // app explainer
   "the-last-watch",     // story
-  "kicks-drop",         // social ads with a real product
-  "lagos-in-24-frames", // experimental
 ];
 const ALL = [...NEW, ...WORK.map((w) => ({ ...w, ready: true }))];
 const bySlug = Object.fromEntries(ALL.map((w) => [w.slug, w]));
 for (const f of FEATURED) if (!bySlug[f]) throw new Error(`FEATURED has unknown slug "${f}"`);
 const HOME = FEATURED.map((f) => bySlug[f]).filter((w) => w.ready);
 // Earlier work, listed under the grid. Pages not listed here still exist for direct links.
-const ARCHIVE = ["nova", "corvo", "pulse", "clown-club", "no-after-effects", "make-it-move"].map((f) => bySlug[f]).filter(Boolean);
+const ARCHIVE = ["nova", "kairo", "bite", "prince-and-guard", "corvo", "lagos-in-24-frames"].map((f) => bySlug[f]).filter((w) => w && w.ready);
 // prev/next on case studies: the selected six first, then the archive, then everything else
 const SHOWN = [...HOME, ...ARCHIVE, ...ALL.filter((w) => w.ready && !HOME.includes(w) && !ARCHIVE.includes(w))];
 const SHORT = {
+  "north": "A SaaS launch film: too many tabs, one dashboard, one click.",
   "say-it-slower": "Kinetic type timed word by word to my own voice.",
   "kettle-and-kiln": "A coffee brand’s logo, motion rules and reusable templates.",
   "splitly": "An app explainer: snap the receipt, tap who had what, everyone pays.",
@@ -215,12 +225,12 @@ const FOCUS = { splitly: "68% 50%" }; // where a card crops its preview
 // ---------------------------------------------------------------- home
 const L = (slug) => `<a href="work/${slug}.html">${bySlug[slug].title}</a>`;
 const SERVICES = [
-  ["Motion design", "Design and animation for any screen, from a five-second logo sting to a full launch film.", ["say-it-slower", "lagos-in-24-frames"]],
-  ["Product animation", "Products and interfaces shown the way they really work, with every move timed and eased.", ["splitly", "nova"]],
+  ["Launch films", "A 15–30s film for your product or app launch, from logo sting to end card. From $150.", ["north", "nova"]],
+  ["App & UI promos", "Your app's screens brought to life: real flows, features and interactions, every move timed and eased.", ["splitly", "kairo"]],
+  ["Ads with AI actors", "Characters, scenes and skits made with AI, then directed, edited, graded and designed into a finished ad.", ["prince-and-guard", "bite"]],
+  ["Social ad packs", "Hooks in the first second, readable with the sound off, delivered in every format you post.", ["kicks-drop", "corvo"]],
   ["Brand motion systems", "Logo animation plus the rules, transitions and templates a team can keep using.", ["kettle-and-kiln"]],
-  ["Explainer videos", "One idea made clear in under a minute, with script, captions and sound.", ["splitly"]],
-  ["Social media ads", "Hooks in the first second, readable with the sound off, delivered in every format you post.", ["kicks-drop", "corvo"]],
-  ["Story sequences", "Title sequences and trailers that carry a mood, a character and a turn.", ["the-last-watch"]],
+  ["Explainers & story", "One idea made clear in under a minute, or a title sequence that carries a mood.", ["say-it-slower", "the-last-watch"]],
 ];
 const PROCESS = [
   ["Brief", "We agree what it has to say, who it is for, where it runs and when it is due."],
@@ -232,21 +242,21 @@ const PROCESS = [
 ];
 const W7 = ["w7", "w5", "w5", "w7", "", ""];
 const home = page({
-  title: `${NAME} — Independent motion designer`,
-  desc: "Independent motion designer: brand motion, product animation, explainers, social ads and story sequences. Design, animation and sound.",
+  title: `${NAME} — Launch videos with motion design & AI actors`,
+  desc: "Launch videos for apps and products, made with motion design and AI actors: launch films, app promos, social ad packs and AI-actor ads.",
   bodyClass: "home",
   body: `
 <header class="hero"><div class="wrap">
-  <div class="eyebrow" data-reveal>${NAME} · Independent motion designer</div>
-  <h1 class="display" data-reveal style="--d:.08s">Motion design for brands, products <em>&amp;</em> stories.</h1>
+  <div class="eyebrow" data-reveal>${NAME} · Motion designer &amp; AI creator</div>
+  <h1 class="display" data-reveal style="--d:.08s">Launch videos for apps <em>&amp;</em> products.</h1>
   <div class="hero-foot">
-    <p class="lede" data-reveal style="--d:.16s">I design, animate and score short films: brand systems, product launches, explainers, social ads and title sequences. Each one is planned frame by frame and delivered ready to post.</p>
+    <p class="lede" data-reveal style="--d:.16s">I make launch films, app promos and social ads with motion design and AI actors: concept, animation, AI characters and sound, planned frame by frame and delivered ready to post.</p>
     <div class="hero-actions" data-reveal style="--d:.24s">
       <a class="btn primary down" href="#work">View selected work <span class="arr" aria-hidden="true">↓</span></a>
       <a class="btn" href="#contact">Start a project</a>
     </div>
   </div>
-  <div class="hero-meta" data-reveal style="--d:.3s"><span><b>Focus</b>Brand · Product · Social · Story</span><span><b>Craft</b>Design, animation &amp; sound</span><span><b>Formats</b>16:9 · 9:16 · 1:1</span></div>
+  <div class="hero-meta" data-reveal style="--d:.3s"><span><b>Focus</b>App &amp; product launches</span><span><b>Craft</b>Motion design, AI actors &amp; sound</span><span><b>Formats</b>16:9 · 9:16 · 1:1</span></div>
 </div></header>
 
 <section class="reel-sec" aria-label="Showreel"><div class="wrap" data-reveal>
@@ -260,7 +270,7 @@ const home = page({
 </div></section>
 
 <section id="work" class="section"><div class="wrap">
-  <div class="sec-head" data-reveal><div><div class="eyebrow">Selected work</div><h2 class="display">Projects</h2></div><p>Six recent projects across brand, product, social and story. Each one opens a case study with the brief, the process and the final films.</p></div>
+  <div class="sec-head" data-reveal><div><div class="eyebrow">Selected work</div><h2 class="display">Projects</h2></div><p>Six recent projects, launches first. Each one opens a case study with the brief, the process and the final films.</p></div>
   <div class="work-grid">
 ${HOME.map((w, i) => {
     const prev = has(`assets/video/preview/${w.slug}.mp4`) ? `assets/video/preview/${w.slug}.mp4` : "";
@@ -295,12 +305,13 @@ ${PROCESS.map(([t, d], i) => `    <li data-reveal style="--d:${i * 0.06}s"><b>${
 <section id="about" class="section"><div class="wrap about">
   <div data-reveal><div class="eyebrow">About</div><h2 class="display">Design first, then make it move.</h2></div>
   <div class="copy" data-reveal style="--d:.08s">
-    <p>${NAME} is the studio name of an independent motion designer working across brand, product, social and story.</p>
-    <p>I design, animate and make the sound for every piece myself. Much of the work is built frame by frame, often in code, which keeps the timing exact and leaves room for things a template can’t do.</p>
+    <p>${NAME} is the studio of Tun, a motion designer and AI creator making launch videos for apps and products.</p>
+    <p>I design, animate, direct the AI characters and make the sound for every piece myself. Much of the work is built frame by frame, often in code, which keeps the timing exact and leaves room for things a template can’t do.</p>
     <p>Every project starts with a written brief and still frames that already look finished, so you can see where it is going before anything moves. The test for the final film is simple: it should read with the sound off and feel better with it on.</p>
     <ul class="about-list">
-      <li><b>Focus</b>Brand, product, social and story</li>
-      <li><b>Craft</b>Design, animation, sound and edit</li>
+      <li><b>Focus</b>App and product launches</li>
+      <li><b>Craft</b>Motion design, AI actors, sound and edit</li>
+      <li><b>Rates</b>Launch ads from $150</li>
       <li><b>Formats</b>16:9, 9:16, 1:1 and 4:5</li>
       <li><b>Delivery</b>Final files for web and social, in every size you need</li>
     </ul>
@@ -315,7 +326,7 @@ ${PROCESS.map(([t, d], i) => `    <li data-reveal style="--d:${i * 0.06}s"><b>${
     <div class="contact-grid">
       <div><h3>To get a useful first reply, tell me</h3><ol><li>What you are launching, explaining or telling</li><li>Where it will run, and in which formats</li><li>Your deadline and rough budget</li></ol></div>
       <div><h3>What happens next</h3><p class="muted">I reply within a day with questions and a rough idea of how I would approach it.</p>
-        <div class="contact-actions" style="margin-top:20px"><a class="btn primary" href="mailto:${EMAIL}?subject=Project%20enquiry">Email me about a project <span class="arr" aria-hidden="true">→</span></a><button class="btn" type="button" data-copy="${EMAIL}">Copy email</button></div>
+        <div class="contact-actions" style="margin-top:20px"><a class="btn primary" href="mailto:${EMAIL}?subject=Project%20enquiry">Email me about a project <span class="arr" aria-hidden="true">→</span></a><button class="btn" type="button" data-copy="${EMAIL}">Copy email</button><a class="btn" href="${LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a></div>
         <p class="copied" aria-live="polite"></p></div>
     </div>
   </div>
@@ -524,6 +535,84 @@ cs("make-it-move", "Make It Move", "A 15-second vertical kinetic type piece, rem
   <li>Re-composed for vertical: larger type, frame furniture, a progress hairline.</li>
   <li>The sphere is now a motif: it drops in, zooms through to the next beat and lands as the period of "MOVE."</li>
   <li>An original score with hits on every cut, mastered for social.</li></ul>
+</div></section>`);
+
+cs("north", "NORTH", "A 16-second SaaS launch film for an ops dashboard.", `
+<header class="cs-hero"><div class="wrap">
+  <div class="eyebrow">SaaS launch film</div>
+  <h1 class="display">NORTH</h1>
+  <p class="sum">"Know your next move." A launch film for an ops dashboard: a swarm of notifications collapses into the logo, the product builds itself on screen, and one click approves the next best action.</p>
+  ${facts([["Format", "16s · 1920×1080"], ["Role", "Concept, UI design, animation, sound"], ["Channels", "LinkedIn · website · YouTube"], ["Type", "Spec ad · fictional brand"]])}
+  ${vid("../assets/video/north.mp4", "../assets/img/poster-north.jpg")}
+</div></header>
+<section><div class="wrap prose">
+  <h3>The challenge</h3>
+  <p>SaaS launch videos usually show a dashboard floating in space. NORTH had to show the problem first, then make the product feel like the answer in one smooth move.</p>
+  <h3>The approach</h3>
+  <ul><li>Hook on the pain: "Too many tabs." with real-looking notifications swarming the frame, on screen from the very first frame.</li>
+  <li>Every notification collapses into one point that becomes the logo, so the brand is literally the thing that clears the noise.</li>
+  <li>The dashboard builds itself: KPIs count up, the chart draws on, and the cursor approves the "next best action" before a camera push lands on it.</li></ul>
+  <h3>Craft notes</h3>
+  <ul><li>Every UI element is designed and animated, not screen-recorded, so it stays sharp at any size.</li>
+  <li>Sound design with a click, tick or chime on every interaction, over a 120 BPM bed.</li></ul>
+  <p class="note">Spec work: NORTH is a fictional brand created for this portfolio.</p>
+</div></section>`);
+
+cs("kairo", "KAIRO", "A 15-second vertical launch film for a trading app.", `
+<header class="cs-hero"><div class="wrap">
+  <div class="eyebrow">App launch</div>
+  <h1 class="display">KAIRO</h1>
+  <p class="sum">A launch film for a trading app with the line "Catch the moment." A price line becomes a dive through a 3D candlestick chart, which lands inside the phone: swipe to buy, order filled, price alert, feature chips and the K-mark lockup.</p>
+  ${facts([["Format", "15s · 1080×1920"], ["Role", "Concept, UI design, animation, sound"], ["Channels", "Reels · TikTok · Shorts"], ["Type", "Spec ad · fictional brand"]])}
+  ${vid("../assets/video/kairo.mp4", "../assets/img/poster-kairo.jpg", { cls: "vertical" })}
+</div></header>
+<section><div class="wrap prose">
+  <h3>The challenge</h3>
+  <p>Finance apps all show the same phone and the same chart. KAIRO needed one idea a viewer remembers: the moment a price moves, and catching it.</p>
+  <h3>The approach</h3>
+  <ul><li>One continuous camera move: from the price line, through the market, into the app, so the product feels like the answer to the chart.</li>
+  <li>The app UI is designed and animated for real: a swipe-to-buy gesture, an order confirmation and a live alert.</li>
+  <li>The very first frame already carries the hook, because the first frame is the thumbnail.</li></ul>
+  <h3>Craft notes</h3>
+  <ul><li>3D candlestick flythrough with depth and motion blur, rendered frame by frame.</li>
+  <li>Original sound design with a hit on every UI moment.</li></ul>
+  <p class="note">Spec work: KAIRO is a fictional brand created for this portfolio. The end card carries a risk disclaimer, as a real trading ad must.</p>
+</div></section>`);
+
+cs("bite", "BITE", "An 18-second vertical launch ad for a food delivery app, plus a 16:9 cut.", `
+<header class="cs-hero"><div class="wrap">
+  <div class="eyebrow">App launch ad</div>
+  <h1 class="display">BITE</h1>
+  <p class="sum">"Your cravings. Your call." A narrated launch ad for a food delivery app: the craving, the order, live tracking on a 3D city map, and the knock at the door, with captions timed to every phrase of the voiceover.</p>
+  ${facts([["Formats", "18s · 9:16 voiceover cut · 15s · 16:9"], ["Role", "Script, design, animation, voiceover, sound"], ["Channels", "Reels · TikTok · YouTube"], ["Type", "Spec ad · fictional brand"]])}
+  ${vid("../assets/video/bite-vertical.mp4", "../assets/img/poster-bite.jpg", { cls: "vertical" })}
+  ${vid("../assets/video/bite.mp4", "../assets/img/poster-bite.jpg")}
+</div></header>
+<section><div class="wrap prose">
+  <h3>The challenge</h3>
+  <p>Delivery ads usually show a phone and a burger. BITE had to make the waiting part, the live tracking, feel exciting, using stock food photos instead of a shoot.</p>
+  <h3>The approach</h3>
+  <ul><li>Food photos cut out cleanly and placed in a bright cream-and-yellow design system that keeps food off dark backgrounds.</li>
+  <li>A 3D city map with the camera looking along the route, so you ride with the courier.</li>
+  <li>The vertical version leads with a voiceover; every visual beat lands on a spoken line and the music dips under the voice.</li></ul>
+  <p class="note">Spec work: BITE is a fictional brand created for this portfolio. Food photos from Unsplash (Unsplash License).</p>
+</div></section>`);
+
+cs("prince-and-guard", "The Prince and Her Guard", "A 23-second story concept with AI actors: title design, kinetic type, atmosphere and grade.", `
+<header class="cs-hero"><div class="wrap">
+  <div class="eyebrow">Story concept · AI actors</div>
+  <h1 class="display">The Prince and Her Guard</h1>
+  <p class="sum">"The kingdom called her the Prince. Only her guard knew why." A style concept for an animated story: AI-generated characters and shots, finished with a narrated hook, designed type, atmosphere, grade and a title where a crown redraws itself into a sword.</p>
+  ${facts([["Format", "23s · 1920×1080"], ["Role", "Story, AI characters, title design, type, grade, sound"], ["Plates", "AI-generated characters and shots"], ["Type", "Style concept"]])}
+  ${vid("../assets/video/prince-and-guard.mp4", "../assets/img/poster-prince.jpg")}
+</div></header>
+<section><div class="wrap prose">
+  <h3>The approach</h3>
+  <ul><li>Consistent AI characters across three shots, directed shot by shot from one character reference.</li>
+  <li>A three-line hook timed to the narration with designed serif type.</li>
+  <li>Light rays, drifting fog, embers and a grade unify the shots into one film; designed transitions carry the cuts.</li>
+  <li>The film ends with a before/after breakdown: AI plate, then grade, atmosphere, and type and motion.</li></ul>
+  <p class="note">Music: “Despair and Triumph” by Kevin MacLeod (incompetech.com), licensed under CC BY 4.0.</p>
 </div></section>`);
 
 // ---------------------------------------------------------------- new piece pages (case study template)
