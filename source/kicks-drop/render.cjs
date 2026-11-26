@@ -1,7 +1,7 @@
 const { chromium } = require('playwright'); const { spawn } = require('child_process');
 (async () => {
   const [out, audio, mode] = process.argv.slice(2);
-  const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1080, height: mode === 'as' ? 1080 : 1920 } });
+  const b = await chromium.launch({ args: ['--allow-file-access-from-files', '--disable-web-security'] }); const p = await b.newPage({ viewport: { width: 1080, height: mode === 'as' ? 1080 : 1920 } });
   p.on('pageerror', e => console.log('ERR', e.message));
   await p.goto('file://' + __dirname + '/kd.html#' + mode); await p.evaluate(() => window.ready); const N = Math.round((await p.evaluate(() => window.DUR)) * 30);
   const ff = spawn('ffmpeg', ['-v','error','-y','-f','image2pipe','-framerate','30','-c:v','mjpeg','-i','-','-i',audio,

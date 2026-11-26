@@ -129,20 +129,21 @@ const NEW = [
     } },
   { slug: "kicks-drop", title: "Kicks Drop", kind: "Social ad pack", format: "3 ads · 9:16 / 1:1 / 4:5", vertical: true,
     tags: ["Product ad", "3 formats", "Sound-off"],
-    sum: "A three-ad launch pack for an invented sneaker colourway — a hook, a product ad and an offer — each readable with the sound off.",
+    sum: "A three-ad launch pack for an invented sneaker brand, built around one product photo: a hook, a product ad and an offer, each readable with the sound off.",
     brief: "Deliver what most paying clients buy: short ads that stop the scroll, in every format, fast. Text kept clear of the TikTok and Reels interface.",
     main: "Ad A · Hook · 6s",
     extras: [["product", "Ad B · Product · 15s", true], ["offer", "Ad C · Offer · 10s", true], ["square", "Ad A re-composed for 1:1", false]],
-    tools: ["Made in code: sneaker drawn and animated in HTML canvas", "Original beat and sound design"],
+    tools: ["Animated in code: HTML canvas, frame-by-frame render", "Product photo cut out and colour-matched", "Original beat and sound design"],
     notes: {
       "frame-1": "The hook: the box lid slams off toward camera in the first half second.",
-      "frame-2": "The 360 spin is eight stills 45 degrees apart, like a product turntable shoot.",
+      "frame-2": "One product photo, turned and tilted in 3D with a light sweep, so it feels like a turntable shot.",
       "frame-3": "One reason at a time, each with a line to the exact part of the shoe.",
       "frame-4": "The end card: logo, price and a pulsing button, all inside the safe area.",
       "frame-5": "The offer hook: −20% crashes in and shakes. It reads with the sound off.",
       "frame-6": "The code is the last thing on screen, big enough to read on a phone.",
       "frame-7": "The same hook re-composed for 1:1: the title, shoe and date are rearranged, not cropped.",
-    } },
+    },
+    credit: "Product photo from Pexels, used under the Pexels licence. An unbranded shoe was chosen so no real brand appears in a fictional brand's ads." },
   { slug: "lagos-in-24-frames", title: "Lagos in 24 Frames", kind: "Experimental", format: "20s", vertical: false,
     tags: ["Experimental", "Frame-by-frame", "Shape morph"],
     sum: "Twenty-four shots of under a second each, each a different motion technique, one palette, cut to a single drum loop: the danfo, the market, the generator hum, the traffic light.",
@@ -502,7 +503,7 @@ for (const n of NEW) {
   <h3>My role</h3>
   <p>${n.role}.</p>
   ${n.tools.length ? `<h3>Tools</h3><p>${n.tools.join(" · ")}</p>` : ""}
-  <p class="note">Self-initiated brief: ${esc(n.title)} is a fictional project made for this portfolio.</p>
+  <p class="note">Self-initiated brief: ${esc(n.title)} is a fictional project made for this portfolio.${n.credit ? " " + n.credit : ""}</p>
 </div></section>
 ${process ? `<section><div class="wrap"><div class="eyebrow">Process</div>${process}</div></section>` : ""}
 <section><div class="wrap next">${nav}</div></section>`;

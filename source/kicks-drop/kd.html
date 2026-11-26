@@ -20,33 +20,16 @@ function fitSize(s, size, maxW, font = "Anton", weight = 400) { cx.font = `${wei
 const SAFE = { top: SQ ? 80 : 260, bottom: SQ ? 1000 : 1460, left: 80, right: SQ ? 1000 : 920 };   // clear of the Reels / TikTok UI
 
 // ---------- the sneaker: side view, toe to the right, origin at the middle of the sole
-function sneaker(x, y, s, opt = {}) {
-  const flip = opt.flip ?? 1, sx = (opt.sx ?? 1) * flip;
-  cx.save(); cx.translate(x, y); cx.scale(s * sx, s); cx.rotate(opt.rot || 0);
-  const P = (pts, fill) => { cx.beginPath(); pts.forEach(([a, b], i) => (i ? cx.lineTo(a, b) : cx.moveTo(a, b))); cx.closePath(); cx.fillStyle = fill; cx.fill(); };
-  // outsole (gum black) with tread
-  cx.beginPath(); cx.moveTo(-440, -6); cx.quadraticCurveTo(-450, 8, -420, 10); cx.lineTo(380, 10); cx.quadraticCurveTo(470, 0, 470, -40); cx.lineTo(450, -30); cx.lineTo(-440, -24); cx.closePath(); cx.fillStyle = "#1c1c1c"; cx.fill();
-  cx.fillStyle = "#3a3a3a"; for (let i = -420; i < 400; i += 34) cx.fillRect(i, 2, 18, 6);
-  // midsole: thick foam with a wave
-  cx.beginPath(); cx.moveTo(-440, -24); cx.lineTo(-445, -100); cx.quadraticCurveTo(-300, -112, 0, -108); cx.quadraticCurveTo(300, -104, 420, -120); cx.quadraticCurveTo(480, -110, 470, -40); cx.lineTo(450, -30); cx.closePath(); cx.fillStyle = "#ffffff"; cx.fill();
-  cx.strokeStyle = CORAL; cx.lineWidth = 6; cx.beginPath(); for (let i = -420; i <= 430; i += 10) cx.lineTo(i, -64 + Math.sin(i / 60) * 10); cx.stroke();
-  // upper
-  cx.beginPath(); cx.moveTo(-445, -100); cx.lineTo(-450, -250); cx.quadraticCurveTo(-445, -330, -380, -345); cx.quadraticCurveTo(-320, -330, -260, -350);
-  cx.lineTo(-150, -430); cx.lineTo(-90, -420); cx.lineTo(-60, -340); cx.quadraticCurveTo(140, -260, 330, -190); cx.quadraticCurveTo(470, -150, 460, -112); cx.quadraticCurveTo(300, -104, 0, -108); cx.quadraticCurveTo(-300, -112, -445, -100); cx.closePath(); cx.fillStyle = opt.upper || CORAL; cx.fill();
-  // overlays: heel counter + toe cap (cream)
-  P([[-445, -100], [-450, -250], [-420, -300], [-330, -250], [-300, -110]], opt.overlay || CREAM);
-  cx.beginPath(); cx.moveTo(250, -106); cx.quadraticCurveTo(300, -200, 400, -170); cx.quadraticCurveTo(470, -150, 460, -112); cx.quadraticCurveTo(360, -106, 250, -106); cx.fillStyle = opt.overlay || CREAM; cx.fill();
-  // side bolt (the brand mark)
-  P([[-280, -150], [-60, -290], [-90, -220], [140, -260], [-100, -120], [-70, -180]], opt.mark || BK);
-  // eyestay, eyelets and laces
-  cx.strokeStyle = opt.overlay || CREAM; cx.lineWidth = 34; cx.lineCap = "round"; cx.beginPath(); cx.moveTo(-170, -380); cx.quadraticCurveTo(0, -300, 150, -250); cx.stroke();
-  for (let i = 0; i < 6; i++) { const u = i / 5, ex = lerp(-160, 140, u), ey = lerp(-376, -254, u) + Math.sin(u * Math.PI) * 18; cx.fillStyle = BK; cx.beginPath(); cx.arc(ex, ey, 7, 0, 6.29); cx.fill();
-    if (i < 5) { cx.strokeStyle = opt.lace || "#ffffff"; cx.lineWidth = 9; cx.beginPath(); cx.moveTo(ex, ey - 4); cx.lineTo(ex + 40, ey - 28 + u * 12); cx.stroke(); } }
-  // tongue + pull tabs
-  P([[-150, -430], [-110, -470], [-70, -460], [-90, -420]], opt.overlay || CREAM); P([[-450, -250], [-480, -270], [-470, -340], [-440, -320]], BK);
-  // stitching
-  cx.setLineDash([10, 9]); cx.strokeStyle = "rgba(0,0,0,0.35)"; cx.lineWidth = 3; cx.beginPath(); cx.moveTo(-438, -240); cx.lineTo(-412, -288); cx.lineTo(-336, -244); cx.lineTo(-310, -118); cx.stroke();
-  cx.beginPath(); cx.moveTo(262, -114); cx.quadraticCurveTo(305, -186, 396, -160); cx.stroke(); cx.setLineDash([]);
+const SHOE = new Image(); SHOE.src = "photo/shoe.png";
+const SHOP = document.createElement("canvas"), sx2 = SHOP.getContext("2d");
+function sneaker(x, y, s, opt = {}) { // the photographed pair (Pexels), cut out; bottom-centre at (x, y)
+  const k = 0.7 * s, w = 1147 * k, h = 1055 * k, sx = (opt.sx ?? 1) * (opt.flip ?? 1);
+  cx.save(); cx.translate(x, y); cx.globalAlpha = 0.45; cx.beginPath(); cx.ellipse(0, 26 * s, w * 0.42 * Math.abs(sx), 26 * s, 0, 0, 6.29); cx.fillStyle = "#000"; cx.fill(); cx.globalAlpha = 1;
+  cx.rotate(opt.rot || 0); cx.scale(sx, 1);
+  if (opt.sweep != null) { SHOP.width = Math.ceil(w); SHOP.height = Math.ceil(h); sx2.clearRect(0, 0, w, h); sx2.globalCompositeOperation = "source-over"; sx2.drawImage(SHOE, 0, 0, w, h);
+    sx2.globalCompositeOperation = "source-atop"; const px = lerp(-0.3, 1.3, opt.sweep) * w, g = sx2.createLinearGradient(px - 160, 0, px + 160, 0); g.addColorStop(0, "rgba(255,255,255,0)"); g.addColorStop(0.5, "rgba(255,255,255,0.55)"); g.addColorStop(1, "rgba(255,255,255,0)"); sx2.fillStyle = g; sx2.fillRect(0, 0, w, h);
+    cx.drawImage(SHOP, -w / 2, -h); }
+  else cx.drawImage(SHOE, -w / 2, -h, w, h);
   cx.restore();
 }
 function sneakerFront(x, y, s) { // toe-on view for the spin
@@ -57,10 +40,9 @@ function sneakerFront(x, y, s) { // toe-on view for the spin
   cx.strokeStyle = "#fff"; cx.lineWidth = 9; for (let i = 0; i < 4; i++) { cx.beginPath(); cx.moveTo(-40, -340 + i * 40); cx.lineTo(40, -330 + i * 40); cx.stroke(); }
   rr(-50, -470, 100, 60, 18, CREAM); cx.restore();
 }
-function spin(x, y, s, t, t0, dur = 1.44) { // 8 stills, 45° apart: stop-motion turntable
-  const step = Math.floor(clamp((t - t0) / dur) * 8) % 8, ang = (step * Math.PI) / 4, c = Math.cos(ang);
-  cx.save(); cx.globalAlpha = 0.35; cx.beginPath(); cx.ellipse(x, y + 14, 470 * s * (Math.abs(c) * 0.8 + 0.3), 30 * s, 0, 0, 6.29); cx.fillStyle = "#000"; cx.fill(); cx.restore();
-  if (Math.abs(c) < 0.2) sneakerFront(x, y, s * 1.1); else sneaker(x, y, s, { sx: Math.abs(c) * 0.85 + 0.15, flip: c < 0 ? -1 : 1, rot: 0 });
+function spin(x, y, s, t, t0, dur = 1.6) { // one photo: a 3D-style turn and tilt, with a light sweep
+  const k = clamp((t - t0) / dur), e = eio(k);
+  sneaker(x, y, s, { sx: lerp(0.45, 1, back(clamp(k * 1.25))), rot: lerp(-0.32, 0.04, e) + Math.sin(t * 2.2) * 0.015, sweep: k });
 }
 function logo(x, y, size, color = CREAM) { // KICKS wordmark with the bolt
   cx.save(); cx.translate(x, y); T("KICKS", 0, 0, size, color); cx.font = `400 ${size}px Anton`; const w = cx.measureText("KICKS").width;
@@ -86,10 +68,10 @@ function adA(t) {
     if (hk < 1) { cx.fillStyle = BK; cx.fillRect(0, SAFE.top - 20, W * (1 - hk), 160); }
   } else if (t < 4.0) { // the shoe rises out of the box and spins: 8 stills
     const rise = eout5(inv(1.6, 1.9, t));
-    spin(cxm, cy + 160 - rise * 80, SQ ? 0.85 : 1.0, t, 1.9, 1.6);
-    T("SUNSET RUN", cxm, SAFE.top + 60, fitSize("SUNSET RUN", 140, 900), CREAM); T("COLOURWAY 04", cxm, SAFE.top + 160, 34, LIME, "center", "Inter", 800, 8);
+    spin(cxm, SQ ? 1000 - rise * 60 : cy + 330 - rise * 80, SQ ? 0.62 : 1.0, t, 1.9, 1.9);
+    T("WAVE RUNNER", cxm, SAFE.top + 60, fitSize("WAVE RUNNER", 140, 900), CREAM); T("CLOUD WHITE", cxm, SAFE.top + 160, 34, LIME, "center", "Inter", 800, 8);
   } else { // end: drops Friday + date
-    sneaker(cxm + 20, cy + 60, SQ ? 0.8 : 0.95, { rot: -0.18 + Math.sin(t * 2) * 0.02 });
+    sneaker(cxm + 20, SQ ? 870 : cy + 310, SQ ? 0.62 : 1.0, { rot: -0.08 + Math.sin(t * 2) * 0.02, sweep: inv(4.2, 5.4, t) });
     const k = back(inv(4.0, 4.35, t)), k2 = back(inv(4.3, 4.65, t));
     cx.save(); cx.translate(cxm, SAFE.top + 90); cx.scale(k, k); T("DROPS FRIDAY", 0, 0, fitSize("DROPS FRIDAY", 160, 920), LIME); cx.restore();
     pill("FRI 10 AM · ONLINE ONLY", SQ ? cxm + 150 : cxm, SQ ? 960 : SAFE.bottom - 40, k2, CREAM, BK, SQ ? 32 : 40);
@@ -100,12 +82,12 @@ function adA(t) {
 // ================= AD B — PRODUCT (15 s) =================
 function adB(t) {
   cx.fillStyle = BK; cx.fillRect(0, 0, W, H); grid(t);
-  const cy = 1050;
+  const cy = 1290;
   if (t < 1.8) { // hook
     const lines = ["3 REASONS", "THESE SOLD", "OUT LAST TIME"]; lines.forEach((l, i) => { const k = eout5(inv(0.05 + i * 0.18, 0.35 + i * 0.18, t)); T(l, W / 2 + (1 - k) * (i % 2 ? 1 : -1) * W, 700 + i * 170, fitSize(l, 190, 900), i === 0 ? LIME : CREAM); });
     return;
   }
-  const R = [[1.8, "01", "CLOUD FOAM SOLE", "18 mm of foam. All-day soft.", [0, -60], [-120, -220], 1.8], [5.2, "02", "LOCK-IN LACES", "Six eyelets. Zero heel slip.", [-20, -320], [10, -470], 1.9], [8.6, "03", "SUNSET COLOURWAY", "Coral, cream, black. 2,000 pairs.", [300, -200], [140, -440], 1.6]];
+  const R = [[1.8, "01", "CLOUD FOAM SOLE", "A chunky sole. All-day soft.", [18.6, -80.5], [0, 0], 1.7], [5.2, "02", "LOOP LACES", "Lace loops that lock your heel in.", [-79.5, -374.5], [0, 0], 1.9], [8.6, "03", "WAVE PANELS", "Reflective trim over breathable mesh.", [-65.5, -234.5], [0, 0], 1.8]];
   let ri = R.length - 1; while (ri > 0 && t < R[ri][0]) ri--; const [t0, num, head, sub, anchor, lab, zoom] = R[ri];
   if (t < 12) {
     const zk = eio(inv(t0, t0 + 0.5, t)) * (1 - eio(inv(t0 + 2.9, t0 + 3.4, t))), z = lerp(1, zoom, zk), s = 0.95;
@@ -116,6 +98,7 @@ function adB(t) {
     const sxp = W / 2 + z * ax * (1 - zk), syp = cy + z * ay * (1 - zk), ex = 130, ey = SAFE.top + 320;
     cx.strokeStyle = LIME; cx.lineWidth = 5; cx.beginPath(); cx.moveTo(sxp, syp); cx.lineTo(lerp(sxp, ex + 40, lk), lerp(syp, ey + 60, lk)); cx.lineTo(lerp(sxp, ex, lk), lerp(syp, ey + 60, lk)); cx.stroke();
     const ck = eout5(inv(t0 + 0.6, t0 + 0.9, t)), out = inv(t0 + 3.1, t0 + 3.4, t);
+    const shade = cx.createLinearGradient(0, 0, 0, SAFE.top + 420); shade.addColorStop(0, "rgba(17,17,17,0.97)"); shade.addColorStop(0.75, "rgba(17,17,17,0.85)"); shade.addColorStop(1, "rgba(17,17,17,0)"); cx.fillStyle = shade; cx.fillRect(0, 0, W, SAFE.top + 420);
     cx.save(); cx.globalAlpha = ck * (1 - out); cx.translate(0, (1 - ck) * 40);
     T(num, 110, SAFE.top + 40, 120, LIME, "left"); T(head, 110, SAFE.top + 170, fitSize(head, 110, 820), CREAM, "left"); T(sub, 112, SAFE.top + 260, 40, MUT, "left", "Inter", 600); cx.restore();
     // progress: 3 dots
@@ -123,8 +106,8 @@ function adB(t) {
     return;
   }
   // end: logo + shop now
-  const k = eout5(inv(12, 12.4, t)); sneaker(W / 2, 1000, 0.9 * lerp(1.2, 1, k), { rot: -0.15 }); logo(W / 2 - 60, SAFE.top + 80, 140, CREAM);
-  T("SUNSET RUN · $120", W / 2, SAFE.top + 220, 44, MUT, "center", "Inter", 700, 4);
+  const k = eout5(inv(12, 12.4, t)); sneaker(W / 2, 1290, 1.0 * lerp(1.12, 1, k), { rot: -0.06, sweep: inv(12.2, 13.6, t) }); logo(W / 2 - 60, SAFE.top + 80, 140, CREAM);
+  T("WAVE RUNNER · $120", W / 2, SAFE.top + 220, 44, MUT, "center", "Inter", 700, 4);
   const pulse = 1 + 0.05 * Math.sin((t - 12.6) * 8) * (t > 12.6 ? 1 : 0); pill("SHOP NOW →", W / 2, SAFE.bottom - 60, back(inv(12.5, 12.9, t)) * pulse, LIME, BK, 54);
 }
 // ================= AD C — OFFER (10 s) =================
@@ -133,7 +116,7 @@ function adC(t) {
   if (t < 1.8) { const k = eout5(inv(0.05, 0.25, t)), shake = Math.sin(t * 80) * 18 * Math.exp(-(t - 0.25) * 6) * (t > 0.25 ? 1 : 0);
     cx.save(); cx.translate(W / 2 + shake, H / 2 - 80); cx.scale(lerp(3, 1, k), lerp(3, 1, k)); cx.rotate(-0.08); T("−20%", 0, 0, 380, BK); cx.restore();
     T("THIS WEEKEND ONLY", W / 2, H / 2 + 220, 64, BK, "center", "Anton", 400, 4); return; }
-  sneaker(W / 2, 980, 0.9, { rot: -0.12 });
+  sneaker(W / 2, 1240, 0.95, { rot: -0.06 });
   // price slash: old -> new
   const sk = eio(inv(2.2, 2.6, t)), nk = back(inv(2.6, 2.95, t));
   T("$120", W / 2 - 170, SAFE.top + 120, 150, sk > 0 ? MUT : CREAM); if (sk > 0) { cx.strokeStyle = CORAL; cx.lineWidth = 14; cx.beginPath(); cx.moveTo(W / 2 - 300, SAFE.top + 150); cx.lineTo(W / 2 - 300 + 260 * sk, SAFE.top + 90); cx.stroke(); }
@@ -148,5 +131,5 @@ function adC(t) {
 const AD = { a: [adA, 6], b: [adB, 15], c: [adC, 10], as: [adA, 6] }[MODE];
 window.DUR = AD[1];
 window.render = (f) => { if (cx.reset) cx.reset(); const t = f / FPS; AD[0](t); const out = inv(AD[1] - 0.25, AD[1], t); if (out > 0) { cx.fillStyle = `rgba(0,0,0,${out})`; cx.fillRect(0, 0, W, H); } };
-window.ready = document.fonts.ready.then(() => Promise.all([document.fonts.load("40px Anton"), document.fonts.load("800 40px Inter"), document.fonts.load("600 40px Inter")]));
+window.ready = document.fonts.ready.then(() => Promise.all([SHOE.decode(), document.fonts.load("40px Anton"), document.fonts.load("800 40px Inter"), document.fonts.load("600 40px Inter")]));
 </script></body></html>
