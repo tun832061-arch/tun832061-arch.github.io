@@ -10,7 +10,9 @@ const EMAIL = "tun832061@gmail.com";
 const YEAR = 2026;
 
 // Social profiles for the footer, e.g. ["Instagram", "https://instagram.com/yourhandle"]. Empty entries are not shown.
-const SOCIAL = [];
+const SOCIAL = [
+  ["LinkedIn", "https://www.linkedin.com/in/tun-tun-2b8991399"],
+];
 const AVAILABLE = true; // shows "Available for projects" in the nav
 
 const page = ({ title, desc, depth = 0, body, current, noindex = false, bodyClass = "", ogImage }) => {
