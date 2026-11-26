@@ -1,0 +1,167 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face { font-family: "Inter"; src: url("fonts/Inter-Variable.ttf"); font-weight: 100 900; }
+@font-face { font-family: "Anton"; src: url("fonts/Anton-Regular.ttf"); }
+html, body { margin: 0; background: #000; }
+</style></head>
+<body><canvas id="c"></canvas>
+<script src="words.js"></script>
+<script>
+// Say It Slower — kinetic type timed word by word to the voice. #v renders the 9:16 re-composition.
+const VERT = location.hash === "#v", W = VERT ? 1080 : 1920, H = VERT ? 1920 : 1080, FPS = 30, OFF = 0.5;
+const cv = document.getElementById("c"); cv.width = W; cv.height = H; const cx = cv.getContext("2d");
+const BK = "#0b0b0c", WH = "#f1ede6", ACC = "#ff4d2e", DIM = "#6f6a63";
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x)), lerp = (a, b, k) => a + (b - a) * k, inv = (a, b, x) => clamp((x - a) / (b - a));
+const eout = (k) => 1 - Math.pow(1 - k, 3), eout5 = (k) => 1 - Math.pow(1 - k, 5), eio = (k) => (k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2);
+const back = (k) => { const c1 = 1.8, c3 = c1 + 1; return k <= 0 ? 0 : 1 + c3 * Math.pow(k - 1, 3) + c1 * Math.pow(k - 1, 2); };
+const B = (i) => WD[i][1], E = (i) => WD[i][2];             // word start / end in voice time
+const U = VERT ? 1 : 1;                                      // sizes are designed for a 1080 short side
+const MAXW = W * 0.86;
+function font(w, s) { return `${w} ${s}px Inter`; }
+function fit(str, weight, size, maxW = MAXW, ls = 0) { cx.font = font(weight, size); cx.letterSpacing = ls + "px"; const w = cx.measureText(str).width; cx.letterSpacing = "0px"; return w > maxW ? size * (maxW / w) : size; }
+function word(str, x, y, size, weight = 900, color = WH, align = "center", ls = 0, a = 1) {
+  if (a <= 0) return; cx.save(); cx.globalAlpha = a; cx.font = font(weight, size); cx.fillStyle = color; cx.textAlign = align; cx.textBaseline = "middle"; cx.letterSpacing = ls + "px"; cx.fillText(str, x, y); cx.restore();
+}
+function bg(c = BK) { cx.fillStyle = c; cx.fillRect(0, 0, W, H); }
+const UP = (s) => s.toUpperCase().replace("I'VE", "I’VE").replace("IT'S", "IT’S");
+
+// ---------- 1. Everyone wants it FAST — hard slams
+function s1(a, t) {
+  bg(); const words = [0, 1, 2, 3]; let i = words.length - 1; while (i > 0 && a < B(words[i])) i--;
+  const wi = words[i], k = eout5(inv(B(wi), B(wi) + 0.12, a)), dir = [[-1, 0], [1, 0], [0, -1], [0, 1]][i];
+  const isFast = wi === 3, size = fit(UP(WD[wi][0]), 900, isFast ? 520 : 300);
+  const shake = isFast ? Math.sin(a * 90) * 14 * Math.exp(-(a - B(3)) * 6) : 0;
+  word(UP(WD[wi][0]), W / 2 + dir[0] * W * (1 - k) + shake, H / 2 + dir[1] * H * (1 - k), size, 900, isFast ? ACC : WH);
+}
+// ---------- 2. FAST stacks, smaller and quicker, then floods the screen
+function s2(a, t) {
+  bg(); const lines = [[4, 5], [6, 7], [8, 9]];
+  const n = lines.filter(([f]) => a >= B(f)).length, flood = inv(4.76, 5.8, a);
+  const base = VERT ? 150 : 200, gap = 1.0;
+  const step = VERT ? base * 1.95 : base * 0.92;
+  let y = H / 2 - ((n - 1) * step) / 2 - flood * H * 0.6;
+  lines.forEach(([f, w], i) => { if (i >= n) return;
+    const s = base * Math.pow(0.78, n - 1 - i) * (VERT ? 0.9 : 1), k = eout5(inv(B(f), B(f) + 0.1, a)), k2 = eout5(inv(B(w), B(w) + 0.1, a));
+    const ly = y + i * step;
+    if (VERT) { word("FAST", W / 2 - (1 - k) * W, ly - s * 0.5, fit("FAST", 900, s), 900, ACC); word(UP(WD[w][0]), W / 2 + (1 - k2) * W, ly + s * 0.45, fit(UP(WD[w][0]), 900, s * 0.8), 900, WH, "center", 0, k2); }
+    else { const fs = fit("FAST " + UP(WD[w][0]), 900, s); cx.font = font(900, fs); const tw = cx.measureText("FAST " + UP(WD[w][0])).width, fw = cx.measureText("FAST ").width;
+      word("FAST", W / 2 - tw / 2 - (1 - k) * W, ly, fs, 900, ACC, "left"); word(UP(WD[w][0]), W / 2 - tw / 2 + fw + (1 - k2) * W, ly, fs, 900, WH, "left", 0, k2); }
+  });
+  if (flood > 0) { // speed ramp: more and more FASTs, smaller and quicker
+    const count = Math.floor(Math.pow(flood, 1.6) * 220), rowH = VERT ? 46 : 40, cols = VERT ? 6 : 12;
+    for (let j = 0; j < count; j++) { const r = Math.floor(j / cols), c = j % cols, yy = H - ((r * rowH + flood * flood * 2600) % (H + rowH)), xx = (c + 0.5) * (W / cols) + (r % 2) * 20;
+      word("FAST", xx, yy, rowH * 0.8, 900, j % 7 === 0 ? ACC : DIM); }
+  }
+}
+// ---------- 3. but the best things I've made... (calm)
+function s3(a) {
+  bg(); const ws = [10, 11, 12, 13, 14, 15];
+  if (VERT) { const lines = [[10, 11, 12], [13, 14, 15]]; lines.forEach((ln, li) => { const str = ln.map((i) => UP(WD[i][0])).join(" "); const s = fit(str, 400, 96);
+      cx.font = font(400, s); let x = W / 2 - cx.measureText(str).width / 2; ln.forEach((i) => { const k = eout(inv(B(i), B(i) + 0.4, a)); const wd = UP(WD[i][0]) + (i === 15 ? "…" : "");
+        word(wd, x, H / 2 - 70 + li * 140 + (1 - k) * 20, s, 400, WH, "left", 0, k); cx.font = font(400, s); x += cx.measureText(wd + " ").width; }); }); return; }
+  const str = ws.map((i) => UP(WD[i][0])).join(" ") + "…", s = fit(str, 400, 92); cx.font = font(400, s); let x = W / 2 - cx.measureText(str).width / 2;
+  ws.forEach((i) => { const k = eout(inv(B(i), B(i) + 0.45, a)); const wd = UP(WD[i][0]) + (i === 15 ? "…" : ""); word(wd, x, H / 2 + (1 - k) * 20, s, 400, WH, "left", 0, k); cx.font = font(400, s); x += cx.measureText(wd + " ").width; });
+}
+// ---------- 4. took TIME — everything stops, tracking widens
+function s4(a) {
+  bg(); word("TOOK", W / 2, H / 2 - (VERT ? 260 : 200), 70, 400, DIM, "center", 12, eout(inv(B(16), B(16) + 0.3, a)));
+  const k = eout5(inv(B(17), B(17) + 0.15, a)), ls = lerp(0, VERT ? 40 : 90, eio(inv(E(17), 8.68, a)));
+  word("TIME", W / 2, H / 2, fit("TIME", 900, 400, MAXW, ls) * lerp(1.15, 1, k), 900, WH, "center", ls, k);
+}
+// ---------- 5. hours on one FRAME — film strip grid, one frame fills the screen
+function s5(a, t) {
+  bg(); const cols = VERT ? 4 : 6, rows = VERT ? 7 : 4, fw = W * 0.82 / cols, fh = fw * (VERT ? 0.62 : 0.6), gx = (W - fw * cols) / 2, gy = (H - fh * rows) / 2 - (VERT ? 0 : 30);
+  const hero = VERT ? 13 : 9, grow = eio(inv(B(21), 9.95, a));
+  for (let j = 0; j < cols * rows; j++) { const c = j % cols, r = Math.floor(j / cols), k = eout(inv(B(18) + j * 0.012, B(18) + j * 0.012 + 0.3, a)); if (k <= 0) continue;
+    const x = gx + c * fw + 6, y = gy + r * fh + 6, w = fw - 12, h = fh - 12;
+    cx.save(); cx.globalAlpha = k * (j === hero ? 1 : 1 - grow); cx.strokeStyle = j === hero && a > B(20) ? ACC : "#3a3733"; cx.lineWidth = 3; cx.strokeRect(x, y, w, h);
+    for (let s = 0; s < 6; s++) { cx.fillStyle = "#2a2724"; cx.fillRect(x + 8 + s * (w - 16) / 6, y + 6, (w - 16) / 10, 8); cx.fillRect(x + 8 + s * (w - 16) / 6, y + h - 14, (w - 16) / 10, 8); }
+    cx.restore(); }
+  // the hero frame grows to fill
+  if (a > B(20)) { const c = hero % cols, r = Math.floor(hero / cols), x0 = gx + c * fw + 6, y0 = gy + r * fh + 6, x = lerp(x0, 0, grow), y = lerp(y0, 0, grow), w = lerp(fw - 12, W, grow), h = lerp(fh - 12, H, grow);
+    cx.fillStyle = ACC; cx.globalAlpha = lerp(0.85, 1, grow); cx.fillRect(x, y, w, h); cx.globalAlpha = 1; }
+  const label = [18, 19, 20, 21], lx = VERT ? W / 2 : 120, ly = VERT ? H - 280 : H - 110;
+  let x = lx; const s = VERT ? 78 : 88; cx.font = font(900, s); if (VERT) x = W / 2 - cx.measureText("HOURS ON ONE FRAME").width / 2;
+  label.forEach((i) => { const k = eout5(inv(B(i), B(i) + 0.12, a)); word(UP(WD[i][0]), x, ly + (1 - k) * 30, s, 900, i === 21 ? (grow > 0.4 ? BK : ACC) : WH, "left", 0, k * (1 - grow * (i === 21 ? 0 : 1))); cx.font = font(900, s); x += cx.measureText(UP(WD[i][0]) + " ").width; });
+}
+// ---------- 6. DAYS on one SECOND — on the accent frame, a one-second ruler
+function s6(a) {
+  bg(ACC); const k = eout5(inv(B(22), B(22) + 0.12, a));
+  word("DAYS", W / 2, H / 2 - (VERT ? 330 : 230), fit("DAYS", 900, 300), 900, BK, "center", 0, k);
+  const str = "ON ONE SECOND", s = fit(str, 900, VERT ? 120 : 150); cx.font = font(900, s); let x = W / 2 - cx.measureText(str).width / 2;
+  [23, 24, 25].forEach((i) => { const kk = eout5(inv(B(i), B(i) + 0.12, a)); word(UP(WD[i][0]), x, H / 2 + (VERT ? -40 : 10) + (1 - kk) * 30, s, 900, i === 25 ? WH : BK, "left", 0, kk); cx.font = font(900, s); x += cx.measureText(UP(WD[i][0]) + " ").width; });
+  // ruler: 24 frames, playhead creeping through one second
+  const rk = eout(inv(B(25), B(25) + 0.3, a)), rw = W * 0.7, rx = (W - rw) / 2, ry = H / 2 + (VERT ? 160 : 190);
+  cx.globalAlpha = rk; cx.fillStyle = BK; cx.fillRect(rx, ry, rw, 4);
+  for (let f = 0; f <= 24; f++) { const h = f % 6 === 0 ? 34 : 16; cx.fillRect(rx + (rw * f) / 24 - 2, ry - h, 4, h); }
+  const ph = inv(B(25), 11.8, a); cx.fillStyle = WH; cx.fillRect(rx + rw * ph - 3, ry - 60, 6, 80); cx.beginPath(); cx.arc(rx + rw * ph, ry - 62, 10, 0, 6.29); cx.fill(); cx.globalAlpha = 1;
+}
+// ---------- 7. because... the timecode freezes on one second
+function s7(a) {
+  bg(); word("BECAUSE", W / 2, VERT ? 520 : 230, 64, 400, DIM, "center", 10, eout(inv(B(26), B(26) + 0.3, a)));
+  const fr = Math.floor(clamp(inv(12.63, B(28) + 0.35, a)) * 24), frozen = a >= B(28) + 0.35;
+  const tc = `00:00:${fr >= 24 ? "01" : "00"}:${String(fr % 24).padStart(2, "0")}`;
+  const tk = eout(inv(12.5, 12.8, a)); cx.save(); cx.globalAlpha = tk; cx.font = `400 ${fit("00:00:00:00", 400, VERT ? 170 : 230, MAXW)}px Anton`; cx.fillStyle = frozen ? ACC : WH; cx.textAlign = "center"; cx.textBaseline = "middle"; cx.fillText(tc, W / 2, H / 2 - 30); cx.restore();
+  if (frozen) { const fk = inv(B(28) + 0.35, B(28) + 0.6, a); cx.strokeStyle = `rgba(255,77,46,${1 - fk})`; cx.lineWidth = 4; const bw = W * 0.8 * (1 + fk * 0.06), bh = (VERT ? 220 : 280) * (1 + fk * 0.2); cx.strokeRect(W / 2 - bw / 2, H / 2 - 30 - bh / 2, bw, bh); }
+  const ws = [27, 28, 29, 30, 31, 32, 33], str = ws.map((i) => UP(WD[i][0])).join(" "), s = fit(str, 700, VERT ? 64 : 76); cx.font = font(700, s);
+  let x = W / 2 - cx.measureText(str).width / 2; const y = H / 2 + (VERT ? 200 : 210);
+  ws.forEach((i) => { const k = eout(inv(B(i), B(i) + 0.25, a)); word(UP(WD[i][0]), x, y + (1 - k) * 16, s, 700, i === 33 ? ACC : WH, "left", 0, k); cx.font = font(700, s); x += cx.measureText(UP(WD[i][0]) + " ").width; });
+}
+// ---------- 8. a feed: words arrive as posts, then SCROLL AWAY flicks it off
+function s8(a) {
+  bg(); const posts = [[34, 35], [36], [37], [38, 39], [40], [41], [42, 43]], cw = VERT ? W * 0.84 : 960, ch = VERT ? 230 : 200, gap = 26, x0 = (W - cw) / 2;
+  const shown = posts.filter((p) => a >= B(p[0])).length;
+  const target = (shown - 1) * (ch + gap), follow = lerp(0, target, 1); // camera keeps the newest post centred
+  let scroll = 0; for (let i = 1; i < shown; i++) scroll += (ch + gap) * eout5(inv(B(posts[i][0]), B(posts[i][0]) + 0.3, a));
+  const fling = Math.pow(inv(B(42), 19.1, a), 2.2) * (H * 1.6);
+  posts.forEach((p, i) => { if (i >= shown) return; const k = eout5(inv(B(p[0]), B(p[0]) + 0.28, a)); const y = H / 2 - ch / 2 + i * (ch + gap) - scroll - fling;
+    cx.save(); cx.globalAlpha = k; cx.fillStyle = "#161514"; cx.beginPath(); cx.roundRect(x0, y + (1 - k) * 40, cw, ch, 26); cx.fill();
+    cx.fillStyle = "#2a2724"; cx.beginPath(); cx.arc(x0 + 56, y + 52 + (1 - k) * 40, 22, 0, 6.29); cx.fill(); cx.fillRect(x0 + 92, y + 40 + (1 - k) * 40, 140, 10); cx.fillRect(x0 + 92, y + 58 + (1 - k) * 40, 90, 8);
+    const str = p.map((j) => UP(WD[j][0])).join(" "); const s = fit(str, 900, VERT ? 96 : 110, cw - 80);
+    word(str, x0 + 40, y + ch * 0.66 + (1 - k) * 40, s, 900, p[0] === 42 ? ACC : WH, "left"); cx.restore(); });
+}
+// ---------- 9. so I SLOW down
+function s9(a) {
+  bg(); word("SO I", W / 2, H / 2 - (VERT ? 260 : 220), 80, 400, DIM, "center", 8, eout(inv(B(44), B(44) + 0.4, a)));
+  const sk = eout(inv(B(46), B(46) + 1.4, a)); if (sk > 0) { cx.save(); cx.translate(W / 2, H / 2 - 20); cx.scale(lerp(0.6, VERT ? 1.25 : 1.5, sk), 1); word("SLOW", 0, 0, fit("SLOW", 900, 300, MAXW / (VERT ? 1.25 : 1.5)), 900, WH, "center", 0, clamp(sk * 2)); cx.restore(); }
+  const dk = eout(inv(B(47), B(47) + 1.2, a)); if (dk > 0) for (let g = 4; g >= 0; g--) word("DOWN", W / 2, H / 2 + (VERT ? 200 : 210) + dk * 50 - g * 14 * (1 - dk), 130, 900, g ? DIM : ACC, "center", 0, g ? 0.18 * (1 - dk) : dk);
+}
+// ---------- 10. I get it RIGHT — loose words snap to a grid
+function s10(a) {
+  bg(); const ws = [48, 49, 50, 51], str = "I GET IT RIGHT", s = fit(str, 900, VERT ? 150 : 200); cx.font = font(900, s);
+  const snap = back(inv(B(51) + 0.35, B(51) + 0.65, a)); let x = W / 2 - cx.measureText(str).width / 2; const y = H / 2;
+  const gk = eout(inv(B(51) + 0.3, B(51) + 0.6, a)); if (gk > 0) { cx.strokeStyle = `rgba(255,77,46,${0.6 * gk})`; cx.lineWidth = 2; for (const yy of [y - s * 0.36, y + s * 0.36]) { cx.beginPath(); cx.moveTo(W / 2 - W * 0.45 * gk, yy); cx.lineTo(W / 2 + W * 0.45 * gk, yy); cx.stroke(); } }
+  ws.forEach((i, n) => { const k = eout(inv(B(i), B(i) + 0.2, a)); const jy = [-60, 40, -30, 70][n] * (1 - snap), jr = [-0.12, 0.08, -0.05, 0.1][n] * (1 - snap);
+    cx.save(); cx.translate(x, y + jy); cx.rotate(jr); word(UP(WD[i][0]), 0, 0, s, 900, i === 51 && snap > 0.5 ? ACC : WH, "left", 0, k); cx.restore(); cx.font = font(900, s); x += cx.measureText(UP(WD[i][0]) + " ").width; });
+}
+// ---------- 11. then I make it MOVE — the word breaks into letters, then the name
+function s11(a) {
+  bg(); const pre = "THEN I MAKE IT", ps = fit(pre, 400, VERT ? 70 : 80), pk = eout(inv(B(52), B(52) + 0.3, a)) * (1 - inv(24.1, 24.4, a));
+  word(pre, W / 2, H / 2 - (VERT ? 260 : 230), ps, 400, DIM, "center", 6, pk);
+  const L = ["M", "O", "V", "E"], s = fit("MOVE", 900, VERT ? 330 : 380); cx.font = font(900, s); const tw = cx.measureText("MOVE").width; let x = W / 2 - tw / 2;
+  const t0 = B(56);
+  L.forEach((ch, n) => { const cw = cx.measureText(ch).width, lt = a - t0 - n * 0.07; if (lt < 0) { cx.font = font(900, s); x += cw; return; }
+    const bounce = Math.abs(Math.sin(lt * 7 + n)) * 70 * Math.exp(-lt * 0.9), rot = Math.sin(lt * 5 + n * 2) * 0.25 * Math.exp(-lt * 0.8);
+    const out = eio(inv(24.0 + n * 0.05, 24.6 + n * 0.05, a)), dx = (n - 1.5) * W * 0.9 * out, dy = -H * 1.1 * out * (n % 2 ? 1 : -1);
+    cx.save(); cx.translate(x + cw / 2 + dx, H / 2 + 40 - bounce + dy); cx.rotate(rot + out * (n - 1.5)); word(ch, 0, 0, s * back(inv(0, 0.3, lt)), 900, n === 0 ? ACC : WH, "center", 0, 1 - inv(0.6, 1, out)); cx.restore(); cx.font = font(900, s); x += cw; });
+  const ek = eout(inv(24.4, 25.0, a)); if (ek > 0) { cx.save(); cx.globalAlpha = ek; cx.font = `400 ${VERT ? 220 : 260}px Anton`; const nw = cx.measureText("CLOWN").width, dw = cx.measureText(".").width; const nx = W / 2 - (nw + dw) / 2, ny = H / 2 + 20 + (1 - ek) * 30;
+    cx.fillStyle = WH; cx.textBaseline = "middle"; cx.fillText("CLOWN", nx, ny); cx.fillStyle = ACC; cx.fillText(".", nx + nw, ny);
+    cx.font = font(500, 34); cx.textAlign = "center"; cx.fillStyle = DIM; cx.letterSpacing = "10px"; cx.fillText("MOTION DESIGNER", W / 2 + 5, ny + (VERT ? 170 : 190)); cx.letterSpacing = "0px"; cx.restore(); }
+  const out = inv(27.0, 27.5, a); if (out > 0) { cx.fillStyle = `rgba(0,0,0,${out})`; cx.fillRect(0, 0, W, H); }
+}
+function scene(t) {
+  const a = t - OFF;
+  if (a < 2.45) s1(a, t); else if (a < 5.85) s2(a, t); else if (a < 7.4) s3(a); else if (a < 8.68) s4(a); else if (a < 9.95) s5(a, t);
+  else if (a < 11.8) s6(a); else if (a < 15.65) s7(a); else if (a < 19.25) s8(a); else if (a < 20.88) s9(a); else if (a < 22.12) s10(a); else s11(a);
+}
+window.render = (f) => { if (cx.reset) cx.reset(); const t = f / FPS, a = t - OFF;
+  const blur = (a >= 0.5 && a < 5.85) || (a >= 18.3 && a < 19.2) ? 3 : 1;
+  if (blur === 1) return scene(t);
+  const acc = window._acc || (window._acc = Object.assign(document.createElement("canvas"), { width: W, height: H })), ax = acc.getContext("2d");
+  ax.clearRect(0, 0, W, H); for (let i = 0; i < blur; i++) { scene(t + (i / blur) * (0.6 / FPS)); ax.globalAlpha = 1 / (i + 1); ax.drawImage(cv, 0, 0); }
+  cx.globalAlpha = 1; cx.drawImage(acc, 0, 0);
+};
+window.DUR = 28.0;
+window.ready = document.fonts.ready.then(() => Promise.all([document.fonts.load("900 40px Inter"), document.fonts.load("400 40px Inter"), document.fonts.load("700 40px Inter"), document.fonts.load("40px Anton")]));
+</script></body></html>
