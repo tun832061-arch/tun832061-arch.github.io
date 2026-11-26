@@ -1,0 +1,183 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face { font-family: "CG"; src: url("fonts/f2.ttf"); font-weight: 600; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-Variable.ttf"); font-weight: 100 900; }
+html, body { margin: 0; background: #000; }
+</style></head>
+<body><canvas id="c"></canvas>
+<script>
+// Kettle & Kiln — brand identity in motion. 25 s. #sq renders the 1:1 re-composition.
+const SQ = location.hash === "#sq", W = SQ ? 1080 : 1920, H = 1080, FPS = 30;
+const cv = document.getElementById("c"); cv.width = W; cv.height = H; const cx = cv.getContext("2d");
+const C = { cream: "#f4ebdf", paper: "#fbf6ef", esp: "#2b1a12", coffee: "#5a3523", crema: "#d9a46b", kiln: "#c4532c", sub: "#8a7362", line: "#e4d6c4" };
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x)), lerp = (a, b, k) => a + (b - a) * k, inv = (a, b, x) => clamp((x - a) / (b - a));
+const eio = (k) => (k < 0.5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2), eout = (k) => 1 - Math.pow(1 - k, 3);
+// the brand ease: slow in, gentle out  = cubic-bezier(.6, 0, .2, 1)
+function bez(x1, y1, x2, y2) { return (x) => { let lo = 0, hi = 1, s = 0.5; for (let i = 0; i < 24; i++) { s = (lo + hi) / 2; const bx = 3 * (1 - s) * (1 - s) * s * x1 + 3 * (1 - s) * s * s * x2 + s * s * s; if (bx < x) lo = s; else hi = s; } return 3 * (1 - s) * (1 - s) * s * y1 + 3 * (1 - s) * s * s * y2 + s * s * s; }; }
+const POUR = bez(0.6, 0, 0.2, 1), pe = (a, b, t) => POUR(inv(a, b, t));
+const settle = (k) => (k <= 0 ? 0 : 1 + Math.sin(k * 9) * Math.exp(-k * 5) * 0.08 - Math.exp(-k * 9) * 0); // tiny liquid wobble
+function rr(x, y, w, h, r, f) { cx.beginPath(); cx.roundRect(x, y, w, h, r); if (f) { cx.fillStyle = f; cx.fill(); } }
+function txt(s, x, y, size, font = "Inter", weight = 600, color = C.esp, align = "left", ls = 0) { cx.font = `${weight} ${size}px ${font}`; cx.fillStyle = color; cx.textAlign = align; cx.letterSpacing = ls + "px"; cx.fillText(s, x, y); cx.letterSpacing = "0px"; }
+function shadow(b = 30, y = 14, a = 0.16) { cx.shadowColor = `rgba(43,26,18,${a})`; cx.shadowBlur = b; cx.shadowOffsetY = y; }
+function noShadow() { cx.shadowColor = "transparent"; cx.shadowBlur = 0; cx.shadowOffsetY = 0; }
+const L = (wide, sq) => (SQ ? sq : wide);
+
+// ---------- the mark: a cup seen from above
+function mark(x, y, r, k = 1, opt = {}) {
+  if (k <= 0) return; const ring = opt.ring ?? 1, fill = opt.fill ?? 1, crema = opt.crema ?? 1, wob = opt.wob ?? 0;
+  cx.save(); cx.translate(x, y); cx.scale(k, k);
+  if (fill > 0) { cx.beginPath(); for (let a = 0; a <= 6.3; a += 0.05) { const rr2 = r * 0.8 * fill * (1 + Math.sin(a * 6 + wob * 20) * 0.03 * wob); cx.lineTo(Math.cos(a) * rr2, Math.sin(a) * rr2); } cx.fillStyle = C.coffee; cx.fill(); }
+  if (crema > 0) { cx.save(); cx.globalAlpha = crema; cx.beginPath(); cx.arc(0, 0, r * 0.62, -2.5, -0.6); cx.lineWidth = r * 0.1; cx.lineCap = "round"; cx.strokeStyle = C.crema; cx.stroke(); cx.restore(); }
+  if (ring > 0) { cx.beginPath(); cx.arc(0, 0, r, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * ring); cx.lineWidth = r * 0.2; cx.lineCap = "round"; cx.strokeStyle = opt.ringColor || C.esp; cx.stroke(); }
+  cx.restore();
+}
+function wordmark(x, y, size, t, t0, color = C.esp, align = "center") {
+  const s = "Kettle & Kiln"; cx.font = `600 ${size}px CG`; const w = cx.measureText(s).width; let px = align === "center" ? x - w / 2 : x;
+  for (let i = 0; i < s.length; i++) { const ch = s[i], k = t0 === null ? 1 : eout(inv(t0 + i * 0.07, t0 + i * 0.07 + 0.35, t)), cw = cx.measureText(ch).width;
+    if (k > 0) { cx.save(); cx.globalAlpha = k; txt(ch, px, y + (1 - k) * 16, size, "CG", 600, ch === "&" ? C.kiln : color); cx.restore(); } px += cw; }
+}
+// ---------- the brand transition: a circle that pours open from the mark
+function wipe(t, t0, x, y, drawNext, dur = 0.7) {
+  const k = pe(t0, t0 + dur, t); if (k <= 0) return false;
+  const R = Math.hypot(Math.max(x, W - x), Math.max(y, H - y)) * 1.05 * k;
+  cx.save(); cx.beginPath(); for (let a = 0; a <= 6.3; a += 0.04) { const rr2 = R * (1 + Math.sin(a * 7 + t * 6) * 0.012 * (1 - k)); cx.lineTo(x + Math.cos(a) * rr2, y + Math.sin(a) * rr2); } cx.closePath(); cx.clip(); drawNext(); cx.restore();
+  if (k < 1) { cx.beginPath(); cx.arc(x, y, R, 0, 6.29); cx.lineWidth = 14 * (1 - k); cx.strokeStyle = C.crema; cx.stroke(); }
+  return k >= 1;
+}
+function steam(x, y, t, a = 1) {
+  cx.save(); cx.lineCap = "round";
+  for (let i = 0; i < 3; i++) { const ph = t * 0.9 + i * 0.37; const k = ph % 1; const al = Math.sin(Math.PI * k) * 0.55 * a; if (al <= 0) continue;
+    cx.strokeStyle = `rgba(138,115,98,${al})`; cx.lineWidth = 7 - 3 * k; cx.beginPath();
+    for (let s = 0; s <= 1; s += 0.05) { const yy = y - 40 - s * 150 - k * 80, xx = x + (i - 1) * 46 + Math.sin(s * 6 + t * 2 + i) * 16 * s; s === 0 ? cx.moveTo(xx, yy) : cx.lineTo(xx, yy); } cx.stroke(); }
+  cx.restore();
+}
+
+// ================= SCENES =================
+const MX = W / 2, MY = L(H / 2 - 70, H / 2 - 90), MR = L(118, 112);
+function sceneLogo(t, build = true) {
+  cx.fillStyle = C.cream; cx.fillRect(0, 0, W, H);
+  if (!build) { mark(MX, MY, MR, 1); wordmark(MX, MY + MR + 150, L(104, 92), t, null); txt("SMALL-BATCH COFFEE · SLOW-POURED", MX, MY + MR + 206, 22, "Inter", 600, C.sub, "center", 5); return; }
+  // the pour: a stream falls into the centre, then the cup draws itself around it
+  const fall = pe(0.15, 0.85, t), stop = pe(1.3, 1.7, t);
+  if (t > 0.15 && t < 1.75) { const top = lerp(-20, -20, 0) + (MY + 20) * stop, bot = lerp(-20, MY, fall);
+    if (bot > top) { cx.beginPath(); const w0 = 10 * (1 - stop * 0.6); cx.moveTo(MX - w0, top); cx.quadraticCurveTo(MX - w0 * 0.6, (top + bot) / 2, MX - w0 * 1.2, bot); cx.lineTo(MX + w0 * 1.2, bot); cx.quadraticCurveTo(MX + w0 * 0.6, (top + bot) / 2, MX + w0, top); cx.fillStyle = C.coffee; cx.fill(); } }
+  const fill = pe(0.85, 1.9, t), ring = pe(1.0, 2.0, t), crema = eout(inv(1.9, 2.4, t)), wob = 1 - inv(1.8, 2.8, t);
+  const sk = settle(inv(1.95, 2.9, t)) || (t < 1.95 ? 1 : 1);
+  mark(MX, MY, MR, sk, { fill, ring, crema, wob: wob * fill });
+  if (t > 0.85 && t < 2.2) { const sp = inv(0.85, 2.2, t); for (let i = 0; i < 6; i++) { const a = i * 1.05 + 0.3, d = MR * 0.5 + sp * 90; cx.globalAlpha = 1 - sp; cx.fillStyle = C.coffee; cx.beginPath(); cx.arc(MX + Math.cos(a) * d, MY + Math.sin(a) * d - Math.sin(sp * 3) * 20, 7 * (1 - sp), 0, 6.29); cx.fill(); cx.globalAlpha = 1; } }
+  wordmark(MX, MY + MR + 150, L(104, 92), t, 2.2);
+  const tk = eout(inv(3.3, 3.9, t)); cx.globalAlpha = tk; txt("SMALL-BATCH COFFEE · SLOW-POURED", MX, MY + MR + 206 + (1 - tk) * 10, 22, "Inter", 600, C.sub, "center", 5); cx.globalAlpha = 1;
+}
+function scenePrinciples(t) {
+  cx.fillStyle = C.esp; cx.fillRect(0, 0, W, H);
+  const ax = L(150, 110), ay = L(330, 200);
+  txt("MOTION PRINCIPLES", ax, ay, 22, "Inter", 700, C.crema, "left", 5);
+  const hk = eout(inv(5.3, 5.9, t)); cx.globalAlpha = hk; txt("Slow in,", ax, ay + 110 + (1 - hk) * 20, L(96, 84), "CG", 600, C.cream); txt("gentle out.", ax, ay + 205 + (1 - hk) * 20, L(96, 84), "CG", 600, C.cream); cx.globalAlpha = 1;
+  const tokens = [["Duration", "600 ms, never rushed"], ["Ease", "cubic-bezier(.6, 0, .2, 1)"], ["Transition", "The pour: a circle opens from the mark"]];
+  tokens.forEach(([k, v], i) => { const tk = eout(inv(7.0 + i * 0.3, 7.5 + i * 0.3, t)); if (tk <= 0) return; cx.globalAlpha = tk; const y = ay + L(330, 290) + i * 62;
+    txt(k, ax, y, 22, "Inter", 700, C.crema); txt(v, ax + 170, y, 22, "Inter", 500, C.cream); cx.globalAlpha = 1; });
+  // graph: the curve drawn as a pour
+  const gx = L(1100, 160), gy = L(250, 640), gw = L(620, 760), gh = L(520, 330);
+  const gk = eout(inv(5.4, 5.9, t)); cx.globalAlpha = gk; cx.strokeStyle = "rgba(244,235,223,0.25)"; cx.lineWidth = 2;
+  cx.strokeRect(gx, gy, gw, gh); for (let i = 1; i < 4; i++) { cx.beginPath(); cx.moveTo(gx + (gw * i) / 4, gy); cx.lineTo(gx + (gw * i) / 4, gy + gh); cx.moveTo(gx, gy + (gh * i) / 4); cx.lineTo(gx + gw, gy + (gh * i) / 4); cx.stroke(); }
+  txt("time →", gx + gw - 4, gy + gh + 34, 18, "Inter", 500, "rgba(244,235,223,0.6)", "right"); cx.globalAlpha = 1;
+  const dk = inv(5.8, 7.0, t), N = 80;
+  if (dk > 0) { cx.beginPath(); let hx = gx, hy = gy + gh; for (let i = 0; i <= N * dk; i++) { const u = i / N; hx = gx + u * gw; hy = gy + gh - POUR(u) * gh; i === 0 ? cx.moveTo(hx, hy) : cx.lineTo(hx, hy); }
+    cx.lineWidth = 12; cx.lineCap = "round"; cx.lineJoin = "round"; cx.strokeStyle = C.crema; cx.stroke();
+    if (dk < 1) { cx.fillStyle = C.crema; cx.beginPath(); cx.arc(hx, hy + 4, 11, 0, 6.29); cx.fill(); } }
+  // the mark travels with the curve to prove it
+  const mk = inv(7.4, 8.6, t); if (mk > 0) { const u = POUR(mk); mark(gx + gw * 0.08 + u * gw * 0.84, gy + gh + L(90, 70), 26, 1, { ringColor: C.cream }); }
+}
+// --- system in use
+function priceTag(x, y, s, v) {
+  cx.save(); cx.translate(x, y); cx.scale(s, s); shadow(); rr(-170, -220, 340, 440, 22, C.paper); noShadow();
+  cx.beginPath(); cx.arc(0, -180, 12, 0, 6.29); cx.fillStyle = C.cream; cx.fill(); cx.lineWidth = 3; cx.strokeStyle = C.line; cx.stroke();
+  if (v >= 0) { const d = [["Ethiopia Guji", "Light roast · 250 g", "$16"], ["Kiln Roast", "Dark roast · 250 g", "$15"]][v];
+    mark(0, -90, 42, 1); txt(d[0], 0, 20, 40, "CG", 600, C.esp, "center"); txt(d[1], 0, 58, 20, "Inter", 500, C.sub, "center"); txt(d[2], 0, 150, 64, "CG", 600, C.kiln, "center"); }
+  cx.restore();
+}
+function menuBoard(x, y, s, v) {
+  cx.save(); cx.translate(x, y); cx.scale(s, s); shadow(40, 18, 0.25); rr(-300, -220, 600, 440, 18, C.esp); noShadow();
+  if (v >= 0) { mark(-230, -150, 26, 1, { ringColor: C.cream }); txt(v ? "THIS WEEK" : "MENU", -190, -140, 24, "Inter", 700, C.crema, "left", 5);
+    const rows = v ? [["Kiln Roast pour-over", "4.8"], ["Kiln Roast espresso", "3.2"], ["Bag to take home", "15"]] : [["Espresso", "3.0"], ["Flat white", "4.2"], ["Pour-over", "4.8"], ["Cold brew", "4.5"]];
+    rows.forEach(([a, b], i) => { txt(a, -230, -60 + i * 62, 34, "CG", 600, C.cream); txt(b, 230, -60 + i * 62, 32, "CG", 600, C.crema, "right"); }); }
+  cx.restore();
+}
+function story(x, y, s, v) {
+  cx.save(); cx.translate(x, y); cx.scale(s, s); shadow(40, 18, 0.22); rr(-150, -265, 300, 530, 30, v === 1 ? C.kiln : C.esp); noShadow();
+  if (v >= 0) { rr(-130, -248, 260, 4, 2, "rgba(255,255,255,0.35)"); rr(-130, -248, 260 * 0.6, 4, 2, "#fff");
+    mark(0, -70, 64, 1, { ringColor: C.cream }); txt(v ? "New: Kiln Roast" : "Slow mornings.", 0, 60, 38, "CG", 600, C.cream, "center");
+    txt(v ? "Dark, sweet, small-batch" : "Open daily, 7–7", 0, 96, 18, "Inter", 500, "rgba(244,235,223,0.8)", "center");
+    rr(-100, 170, 200, 50, 25, C.cream); txt(v ? "Order ahead" : "Find us", 0, 202, 18, "Inter", 700, C.esp, "center"); }
+  cx.restore();
+}
+function wipeIn(t, t0, x, y, drawEmpty, drawFull, r) { // the same pour transition, scoped to one object
+  drawEmpty(); const k = pe(t0, t0 + 0.7, t); if (k <= 0) return;
+  cx.save(); cx.beginPath(); cx.arc(x, y, r * k, 0, 6.29); cx.clip(); drawFull(); cx.restore();
+  if (k < 1) { cx.beginPath(); cx.arc(x, y, r * k, 0, 6.29); cx.lineWidth = 8 * (1 - k); cx.strokeStyle = C.crema; cx.stroke(); }
+}
+function sceneSystem(t) {
+  cx.fillStyle = C.cream; cx.fillRect(0, 0, W, H);
+  const ck = eout(inv(10.2, 10.7, t)); cx.globalAlpha = ck; txt("One transition, everywhere.", W / 2, L(150, 140), L(56, 50), "CG", 600, C.esp, "center"); cx.globalAlpha = 1;
+  const v2 = t >= 13.8, items = [[priceTag, L(380, W / 2), L(620, 600), 1.15, 10.4], [menuBoard, L(960, W / 2), L(620, 600), 1.1, 11.2], [story, L(1540, W / 2), L(620, 600), 1.15, 12.0]];
+  if (!SQ) items.forEach(([fn, x, y, s, t0], i) => {
+    const pop = eout(inv(10.1 + i * 0.1, 10.5 + i * 0.1, t)); if (pop <= 0) return; const sc = s * lerp(0.9, 1, pop);
+    cx.save(); cx.globalAlpha = pop;
+    if (!v2) wipeIn(t, t0, x, y, () => fn(x, y, sc, -1), () => fn(x, y, sc, 0), 420);
+    else wipeIn(t, 13.8 + i * 0.25, x, y, () => fn(x, y, sc, 0), () => fn(x, y, sc, 1), 420);
+    cx.restore();
+  });
+  else { // square: one at a time, each wiping into the next
+    const seq = [[priceTag, 10.2], [menuBoard, 12.0], [story, 13.8]], x = W / 2, y = 620;
+    let i = seq.length - 1; while (i > 0 && t < seq[i][1]) i--;
+    const [fn, t0] = seq[i], sc = fn === menuBoard ? 1.15 : 1.05, prev = seq[i - 1];
+    if (prev && t < t0 + 0.7) { prev[0](x, y, prev[0] === menuBoard ? 1.15 : 1.05, 1); cx.save(); const k = pe(t0, t0 + 0.7, t); cx.beginPath(); cx.arc(x, y, 700 * k, 0, 6.29); cx.clip(); cx.fillStyle = C.cream; cx.fillRect(0, 0, W, H); fn(x, y, sc, 0); cx.restore(); }
+    else { const flip = t0 + 0.9; wipeIn(t, flip, x, y, () => fn(x, y, sc, 0), () => fn(x, y, sc, 1), 520); }
+  }
+}
+// --- templates
+function lowerThird(x, y, w, h, t, t0) {
+  cx.save(); rr(x, y, w, h, 18); cx.clip();
+  const g = cx.createLinearGradient(x, y, x + w, y + h); g.addColorStop(0, "#6b4630"); g.addColorStop(1, "#2b1a12"); cx.fillStyle = g; cx.fillRect(x, y, w, h);
+  for (let i = 0; i < 7; i++) { const bx = x + ((i * 173 + t * 12) % w), by = y + 60 + ((i * 97) % (h - 120)); const rg = cx.createRadialGradient(bx, by, 0, bx, by, 70 + i * 6); rg.addColorStop(0, "rgba(217,164,107,0.28)"); rg.addColorStop(1, "rgba(217,164,107,0)"); cx.fillStyle = rg; cx.fillRect(bx - 90, by - 90, 180, 180); }
+  const k = pe(t0, t0 + 0.6, t), k2 = pe(t0 + 0.25, t0 + 0.85, t), bx = x + 50, by = y + h - 150;
+  mark(bx + 34, by + 46, 30 * k, 1, { ringColor: C.cream });
+  cx.save(); cx.beginPath(); cx.rect(bx + 80, by, 560 * k2, 100); cx.clip(); rr(bx + 80, by + 6, 440, 84, 14, "rgba(244,235,223,0.96)");
+  txt("Maya Okafor", bx + 104, by + 46, 34, "CG", 600, C.esp); txt("HEAD ROASTER", bx + 104, by + 76, 16, "Inter", 700, C.kiln, "left", 4); cx.restore();
+  cx.restore();
+}
+function endCard(x, y, w, h, t, t0) {
+  cx.save(); rr(x, y, w, h, 18, C.esp); cx.clip();
+  const k = pe(t0, t0 + 0.7, t); cx.beginPath(); cx.arc(x + w / 2, y + h / 2 - 40, Math.hypot(w, h) * k, 0, 6.29); cx.fillStyle = C.kiln; cx.fill();
+  mark(x + w / 2, y + h / 2 - 70, 52, eout(inv(t0 + 0.3, t0 + 0.8, t)), { ringColor: C.cream });
+  cx.globalAlpha = eout(inv(t0 + 0.5, t0 + 1.0, t)); txt("Kettle & Kiln", x + w / 2, y + h / 2 + 50, 52, "CG", 600, C.cream, "center");
+  txt("Open daily 7–7 · 14 Market Street", x + w / 2, y + h / 2 + 96, 20, "Inter", 500, "rgba(244,235,223,0.85)", "center"); cx.globalAlpha = 1; cx.restore();
+}
+function sceneTemplates(t) {
+  cx.fillStyle = C.cream; cx.fillRect(0, 0, W, H);
+  const ck = eout(inv(16.1, 16.6, t)); cx.globalAlpha = ck; txt("Templates the team can reuse.", W / 2, L(150, 130), L(56, 50), "CG", 600, C.esp, "center"); cx.globalAlpha = 1;
+  const A = L([150, 260, 800, 450], [140, 190, 800, 380]), B = L([970, 260, 800, 450], [140, 640, 800, 380]);
+  const pk = eout(inv(16.2, 16.7, t)); cx.globalAlpha = pk;
+  shadow(); lowerThird(...A, t, 16.6); noShadow(); txt("LOWER THIRD", A[0], A[1] + A[3] + 40, 16, "Inter", 700, C.sub, "left", 4);
+  shadow(); endCard(...B, t, 17.6); noShadow(); txt("END CARD", B[0], B[1] + B[3] + 40, 16, "Inter", 700, C.sub, "left", 4);
+  cx.globalAlpha = 1;
+}
+function sceneOutro(t) {
+  sceneLogo(t, false); steam(MX, MY - MR + 30, t - 21.5, eout(inv(21.9, 22.8, t)));
+}
+// ---------- timeline with the brand wipe between scenes
+function frame(t) {
+  if (t < 4.6) sceneLogo(t);
+  else if (t < 5.3) { sceneLogo(t); wipe(t, 4.6, MX, MY, () => scenePrinciples(t)); }
+  else if (t < 9.4) scenePrinciples(t);
+  else if (t < 10.1) { scenePrinciples(t); wipe(t, 9.4, L(1100 + 0.92 * 620, 160 + 0.92 * 760), L(250 + 520, 640 + 330) + L(90, 70) - 0, () => sceneSystem(t)); }
+  else if (t < 15.4) sceneSystem(t);
+  else if (t < 16.1) { sceneSystem(t); wipe(t, 15.4, L(1540, W / 2), 620, () => sceneTemplates(t)); }
+  else if (t < 20.6) sceneTemplates(t);
+  else if (t < 21.3) { sceneTemplates(t); wipe(t, 20.6, L(1370, W / 2), L(485, 760), () => sceneOutro(t)); }
+  else sceneOutro(t);
+}
+window.render = (f) => { if (cx.reset) cx.reset(); frame(f / FPS); };
+window.ready = document.fonts.ready.then(() => Promise.all([document.fonts.load("600 40px CG"), document.fonts.load("600 40px Inter"), document.fonts.load("500 40px Inter")]));
+</script></body></html>
