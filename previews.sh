@@ -30,7 +30,7 @@ make-it-move       make-it-move-v2.mp4    7.5  5
 the-last-watch     the-last-watch.mp4     36   6
 say-it-slower      say-it-slower.mp4      0    5
 kettle-and-kiln    kettle-and-kiln.mp4    0    5
-splitly            splitly.mp4            12   5
+splitly            splitly.mp4            24.4 5
 kicks-drop         kicks-drop.mp4         0    5
 lagos-in-24-frames lagos-in-24-frames.mp4 0    5
 behind-the-frame   behind-the-frame.mp4   0    5
