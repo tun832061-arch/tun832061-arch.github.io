@@ -285,14 +285,20 @@ const home = page({
   bodyClass: "home",
   body: `
 <header class="hero"><div class="wrap">
-  <div class="eyebrow" data-reveal>${NAME} · Independent motion designer</div>
-  <h1 class="display" data-reveal style="--d:.08s">Motion design for brands, products <em>&amp;</em> stories.</h1>
-  <div class="hero-foot">
-    <p class="lede" data-reveal style="--d:.16s">I design, animate and score short films: brand systems, product launches, explainers, social ads and title sequences. Each one is planned frame by frame and delivered ready to post.</p>
-    <div class="hero-actions" data-reveal style="--d:.24s">
-      <a class="btn primary down" href="#work">View selected work <span class="arr" aria-hidden="true">↓</span></a>
-      <a class="btn" href="#contact">Start a project</a>
+  <div class="hero-grid">
+    <div class="hero-main">
+      <div class="eyebrow" data-reveal><img class="avatar" src="assets/img/portrait-face.jpg" alt="" width="44" height="44">${NAME} · Independent motion designer</div>
+      <h1 class="display" data-reveal style="--d:.08s">Motion design for brands, products <em>&amp;</em> stories.</h1>
+      <p class="lede" data-reveal style="--d:.16s">I design, animate and score short films: brand systems, product launches, explainers, social ads and title sequences. Each one is planned frame by frame and delivered ready to post.</p>
+      <div class="hero-actions" data-reveal style="--d:.24s">
+        <a class="btn primary down" href="#work">View selected work <span class="arr" aria-hidden="true">↓</span></a>
+        <a class="btn" href="#contact">Start a project</a>
+      </div>
     </div>
+    <figure class="portrait" data-reveal style="--d:.12s">
+      <img src="assets/img/portrait.jpg" alt="Portrait of Tun, motion designer, at his desk" width="720" height="900">
+      <figcaption><span class="dot" aria-hidden="true"></span>Hi, I’m Tun</figcaption>
+    </figure>
   </div>
   <div class="hero-meta" data-reveal style="--d:.3s"><span><b>Focus</b>Brand · Product · Social · Story</span><span><b>Craft</b>Design, animation &amp; sound</span><span><b>Formats</b>16:9 · 9:16 · 1:1</span></div>
 </div></header>
