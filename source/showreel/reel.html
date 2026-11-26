@@ -19,7 +19,7 @@ const expoIO = (k) => (k <= 0 ? 0 : k >= 1 ? 1 : k < 0.5 ? Math.pow(2, 20 * k - 
 const CL = {
   K: { vert: 1, r: { col: [0.6, 156], solo: [2.45, 108] } },  S: { vert: 0, r: { col: [14.0, 156], solo: [26.25, 108] } },
   N: { vert: 1, r: { col: [0.5, 156], solo: [3.15, 108] } }, KK: { vert: 0, r: { col: [10.2, 156], solo: [0.0, 108] } },
-  SS: { vert: 0, r: { col: [0.0, 156], solo: [4.45, 109] } }, C: { vert: 0, r: { col: [0.3, 156], solo: [0.0, 78] } },
+  SS: { vert: 0, r: { col: [0.0, 156], solo: [4.45, 156] } }, C: { vert: 0, r: { col: [0.3, 156], solo: [0.0, 78] } },
   LW: { vert: 0, r: { col: [38.5, 156], solo: [0, 381] } }, LG: { vert: 0, r: { col: [5.0, 156], solo: [4.45, 72] } },
 };
 const LABEL = { K: ["Kicks Drop", "Social ad pack"], S: ["Splitly", "App explainer"], N: ["NOVA", "Product launch"], KK: ["Kettle & Kiln", "Brand identity in motion"],
@@ -82,7 +82,7 @@ async function collage(t) {
 const ein = (k) => k * k * k;
 
 // ---------------- 2. one by one (5–26): each enters as a card over the last, then fills the frame
-const SEG = [["SS", 5.0, 8.0], ["KK", 8.0, 11.0], ["S", 11.0, 14.0], ["N", 14.0, 16.5], ["LW", 16.5, 28.5], ["K", 28.5, 31.0], ["C", 31.0, 33.0], ["LG", 33.0, 35.0]];
+const SEG = [["SS", 5.0, 9.0], ["KK", 9.0, 12.0], ["S", 12.0, 15.0], ["N", 15.0, 17.5], ["LW", 17.5, 29.5], ["K", 29.5, 32.0], ["C", 32.0, 34.0], ["LG", 34.0, 36.0]];
 const DIRS = [[1, 0], [0, 1], [-1, 0], [0, -1]];
 const soloSrc = (id, start, t) => CL[id].r.solo[0] + (t - (start - 0.55));
 async function solos(t) {
@@ -143,7 +143,7 @@ function endCard(t) {
 
 window.render = async (frame) => {
   if (cx.reset) cx.reset(); const t = frame / FPS;
-  if (t < 5) await collage(t); else if (t < 35.0) await solos(t); else endCard(t - 6.0);
+  if (t < 5) await collage(t); else if (t < 36.0) await solos(t); else endCard(t - 7.0);
 };
 window.ready = document.fonts.ready.then(() => Promise.all([document.fonts.load('400 40px "Anton"'), document.fonts.load('500 40px "Inter"'), document.fonts.load('600 40px "Inter"')]));
 </script></body></html>

@@ -1,6 +1,6 @@
 import numpy as np, wave, sys
 from scipy.signal import butter, sosfilt
-SR = 48000; T = 38.0; n = int(SR * T); rng = np.random.default_rng(4); out = np.zeros((n, 2))
+SR = 48000; T = 39.0; n = int(SR * T); rng = np.random.default_rng(4); out = np.zeros((n, 2))
 def tt(d): return np.arange(int(d * SR)) / SR
 def put(s, at, g=1.0, pan=0.0):
     i = int(at * SR); m = min(len(s), n - i)
@@ -22,9 +22,9 @@ def groove(a, b):
         put(kick(), at, 1.0); put(hat(), at + B / 2, 0.8, 0.3); put(hat(), at, 0.5, -0.3)
         if k % 4 in (1, 3): put(snare(), at, 0.55)
         put(bass(r, B * 0.9), at, 0.55); put(bass(r * 2, B * 0.4), at + B * 0.5, 0.25); k += 1
-groove(8.0, 15.95); groove(28.5, 35.0)
-for c in [8.0, 11.0, 14.0, 28.5, 31.0, 33.0]: put(hit(), c, 0.5)
-put(riser(1.4), 14.55, 0.8)
+groove(9.0, 16.95); groove(29.5, 36.0)
+for c in [9.0, 12.0, 15.0, 29.5, 32.0, 34.0]: put(hit(), c, 0.5)
+put(riser(1.4), 15.55, 0.8)
 out = np.tanh(out / np.max(np.abs(out)) * 1.1) / 1.12
 def lay(seg, at, fi=0.05, fo=0.05, g=0.95):
     seg = seg.copy() * g; a, b = int(fi * SR), int(fo * SR)
@@ -32,12 +32,12 @@ def lay(seg, at, fi=0.05, fo=0.05, g=0.95):
     if b: seg[-b:] *= np.linspace(1, 0, b)[:, None]
     i = int(at * SR); m = min(len(seg), n - i); out[i:i+m] += seg[:m]
 # Say It Slower's own voice + sound design opens the reel
-ss = load(sys.argv[2]); lay(ss[: int(8.15 * SR)], 0.0, 0.0, 0.45, 1.0)
+ss = load(sys.argv[2]); lay(ss[: int(9.15 * SR)], 0.0, 0.0, 0.4, 1.0)
 # The Last Watch: HOLD THE LINE cuts, then straight to the embers title (its own score)
 lwa, lwb = load(sys.argv[3]), load(sys.argv[4])
-i0 = int(15.95 * SR); j = i0 + len(lwa); k2 = j + len(lwb)
+i0 = int(16.95 * SR); j = i0 + len(lwa); k2 = j + len(lwb)
 out[i0:k2] *= 0.0
-lay(lwa, 15.95, 0.3, 0.12); lay(lwb, 15.95 + len(lwa) / SR - 0.1, 0.12, 0.3)
-put(hit(), 35.0, 0.9); put(pad([110, 164.81, 220, 277.18], 3.0), 35.0, 0.9)
+lay(lwa, 16.95, 0.3, 0.12); lay(lwb, 16.95 + len(lwa) / SR - 0.1, 0.12, 0.3)
+put(hit(), 36.0, 0.9); put(pad([110, 164.81, 220, 277.18], 3.0), 36.0, 0.9)
 kk = int(0.8 * SR); out[-kk:] *= np.linspace(1, 0, kk)[:, None]; out /= np.max(np.abs(out)) * 1.05
 wv = wave.open(sys.argv[1], 'wb'); wv.setnchannels(2); wv.setsampwidth(2); wv.setframerate(SR); wv.writeframes((out * 32767).astype('<i2').tobytes()); wv.close()
