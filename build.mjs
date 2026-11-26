@@ -216,7 +216,7 @@ const NEW = [
       "frame-2": "Projects pop up as they are mentioned: Kairo appears on the word “apps”.",
       "frame-3": "The cards sit above and beside the speaker, never over the face.",
       "frame-4": "On “before anything moves”, a full-screen cut to Say It Slower’s MOVE.",
-      "frame-5": "Key words change colour, so the captions carry the message on mute.",
+      "frame-5": "Captions are kinetic: each word pops in as it is spoken, and key words grow and turn orange.",
       "frame-6": "It ends on the same end card as the showreel, with the email.",
     },
     credit: "The presenter footage was generated with AI (Google Flow) from a reference image of me. The script, edit, captions, graphics and sound design are mine." },
