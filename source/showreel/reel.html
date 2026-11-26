@@ -19,8 +19,8 @@ const expoIO = (k) => (k <= 0 ? 0 : k >= 1 ? 1 : k < 0.5 ? Math.pow(2, 20 * k - 
 const CL = {
   K: { vert: 1, r: { col: [0.6, 156], solo: [2.45, 108] } },  S: { vert: 0, r: { col: [14.0, 156], solo: [26.25, 108] } },
   N: { vert: 1, r: { col: [0.5, 156], solo: [3.15, 108] } }, KK: { vert: 0, r: { col: [10.2, 156], solo: [0.0, 108] } },
-  SS: { vert: 0, r: { col: [2.5, 156], solo: [0.5, 108] } }, C: { vert: 0, r: { col: [0.3, 156], solo: [0.0, 78] } },
-  LW: { vert: 0, r: { col: [38.5, 156], solo: [29.45, 579] } }, LG: { vert: 0, r: { col: [5.0, 156], solo: [4.45, 72] } },
+  SS: { vert: 0, r: { col: [0.0, 156], solo: [4.45, 109] } }, C: { vert: 0, r: { col: [0.3, 156], solo: [0.0, 78] } },
+  LW: { vert: 0, r: { col: [38.5, 156], solo: [0, 381] } }, LG: { vert: 0, r: { col: [5.0, 156], solo: [4.45, 72] } },
 };
 const LABEL = { K: ["Kicks Drop", "Social ad pack"], S: ["Splitly", "App explainer"], N: ["NOVA", "Product launch"], KK: ["Kettle & Kiln", "Brand identity in motion"],
   SS: ["Say It Slower", "Kinetic typography"], C: ["CORVO Knockout", "Social ad pack"], LW: ["The Last Watch", "Story trailer"], LG: ["Lagos in 24 Frames", "Experimental"] };
@@ -56,15 +56,15 @@ const lerpRect = (a, b, k) => ({ x: lerp(a.x, b.x, k), y: lerp(a.y, b.y, k), w: 
 
 // ---------------- 1. collage (0–5)
 const COL = [
-  ["K", tall(600, 430, 660), -2, [-1, 0]], ["S", wide(1390, 320, 720), 2.5, [1, -1]], ["N", tall(990, 480, 600), -1, [0, 1]], ["LW", wide(1190, 770, 860), -1.5, [1, 0]],
-  ["KK", wide(460, 810, 640), 2, [-1, 1]], ["SS", wide(1660, 640, 560), 3, [1, 0]], ["C", wide(1480, 960, 600), -2, [0, 1]], ["LG", wide(240, 420, 520), -3, [-1, -1]],
+  ["SS", wide(600, 400, 820), -2, [-1, 0]], ["S", wide(1390, 320, 720), 2.5, [1, -1]], ["N", tall(990, 480, 600), -1, [0, 1]], ["LW", wide(1190, 770, 860), -1.5, [1, 0]],
+  ["KK", wide(460, 810, 640), 2, [-1, 1]], ["K", tall(1700, 640, 560), 3, [1, 0]], ["C", wide(1480, 960, 600), -2, [0, 1]], ["LG", wide(240, 420, 520), -3, [-1, -1]],
 ];
 async function collage(t) {
   cx.fillStyle = BG; cx.fillRect(0, 0, W, H);
   const out = inv(3.8, 5.0, t), ko = eio(out), z = 1 + 0.06 * eout(inv(0, 3.8, t));
   cx.save(); cx.translate(W / 2, H / 2); cx.scale(lerp(z, 1, ko), lerp(z, 1, ko)); cx.translate(-W / 2, -H / 2);
   const order = COL.map((p, i) => [p, i]);
-  order.sort((a, b) => (a[0][0] === "K" ? 1 : 0) - (b[0][0] === "K" ? 1 : 0)); // A on top once it grows
+  order.sort((a, b) => (a[0][0] === "SS" ? 1 : 0) - (b[0][0] === "SS" ? 1 : 0)); // A on top once it grows
   for (const [[id, rect, rot, dir], i] of (out > 0 ? order : COL.map((p, i) => [p, i]))) {
     const te = i * 0.25, k = inv(te, te + 0.6, t); if (k <= 0) continue;
     const kb = back(k), drift = Math.sin(t * 0.7 + i * 1.7) * 8;
@@ -72,17 +72,17 @@ async function collage(t) {
     const src = CL[id].r.col[0] + Math.max(0, t - te);
     let a = 1, r = 16;
     if (out > 0) {
-      if (id === "K") { c = lerpRect(c, FULL, ko); c.s = lerp(c.s, 1, ko); r = lerp(16, 0, ko); }
+      if (id === "SS") { c = lerpRect(c, FULL, ko); c.s = lerp(c.s, 1, ko); r = lerp(16, 0, ko); }
       else { const dx = rect.x - W / 2, dy = rect.y - H / 2, d = Math.hypot(dx, dy) || 1; c.x += (dx / d) * 1100 * ein(out); c.y += (dy / d) * 800 * ein(out); a = 1 - out; c.s *= 1 + 0.25 * out; }
     }
-    await panel(id, "col", src, c, { r, a, shadow: id === "K" && out > 0 ? 0 : 1 });
+    await panel(id, "col", src, c, { r, a, shadow: id === "SS" && out > 0 ? 0 : 1 });
   }
   cx.restore();
 }
 const ein = (k) => k * k * k;
 
 // ---------------- 2. one by one (5–26): each enters as a card over the last, then fills the frame
-const SEG = [["K", 5.0, 8.0], ["S", 8.0, 11.0], ["N", 11.0, 13.5], ["KK", 13.5, 16.5], ["SS", 16.5, 19.5], ["C", 19.5, 21.5], ["LW", 21.5, 40.1], ["LG", 40.1, 42.1]];
+const SEG = [["SS", 5.0, 8.0], ["KK", 8.0, 11.0], ["S", 11.0, 14.0], ["N", 14.0, 16.5], ["LW", 16.5, 28.5], ["K", 28.5, 31.0], ["C", 31.0, 33.0], ["LG", 33.0, 35.0]];
 const DIRS = [[1, 0], [0, 1], [-1, 0], [0, -1]];
 const soloSrc = (id, start, t) => CL[id].r.solo[0] + (t - (start - 0.55));
 async function solos(t) {
@@ -143,7 +143,7 @@ function endCard(t) {
 
 window.render = async (frame) => {
   if (cx.reset) cx.reset(); const t = frame / FPS;
-  if (t < 5) await collage(t); else if (t < 42.1) await solos(t); else endCard(t - 13.1);
+  if (t < 5) await collage(t); else if (t < 35.0) await solos(t); else endCard(t - 6.0);
 };
 window.ready = document.fonts.ready.then(() => Promise.all([document.fonts.load('400 40px "Anton"'), document.fonts.load('500 40px "Inter"'), document.fonts.load('600 40px "Inter"')]));
 </script></body></html>

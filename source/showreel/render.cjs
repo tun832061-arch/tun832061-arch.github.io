@@ -1,6 +1,6 @@
 const { chromium } = require('playwright'); const { spawn } = require('child_process');
 (async () => {
-  const [out, audio] = process.argv.slice(2); const N = Math.round(45.1 * 30);
+  const [out, audio] = process.argv.slice(2); const N = Math.round(38.0 * 30);
   const ff = spawn('ffmpeg', ['-v','error','-y','-f','image2pipe','-framerate','30','-c:v','mjpeg','-i','-','-i',audio,
     '-c:v','libx264','-preset','slow','-crf','21','-pix_fmt','yuv420p','-c:a','aac','-b:a','224k','-movflags','+faststart','-shortest',out], { stdio: ['pipe','inherit','inherit'] });
   const b = await chromium.launch({ args: ['--allow-file-access-from-files', '--disable-web-security'] }); const p = await b.newPage({ viewport: { width: 1920, height: 1080 } });

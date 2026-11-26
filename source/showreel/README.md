@@ -1,4 +1,5 @@
 # Showreel — source
 
-Collage intro → each piece enters over the last → The Last Watch from HOLD THE LINE to its title card (with its own score) → a flash of Lagos → end card. 45 s.
-`reel.html` draws frames from JPEG sequences cut from the finished videos (clips and source times are in `CL`); `music3.py music.wav lw.wav` builds the soundtrack, using The Last Watch audio from 29.45 s.
+38 s. Collage intro with Say It Slower (and its voice) landing first and filling the screen, then Kettle & Kiln, Splitly, NOVA,
+The Last Watch (HOLD THE LINE cuts, then straight to the embers title, with its own score), Kicks Drop, CORVO, a flash of Lagos, end card.
+`reel.html` draws frames from JPEG sequences cut from the finished videos (see `CL`); `music4.py music.wav ss.wav lwa.wav lwb.wav` builds the soundtrack.
