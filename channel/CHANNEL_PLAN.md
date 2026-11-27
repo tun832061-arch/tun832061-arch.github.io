@@ -56,6 +56,24 @@ Tax season, Valentine's Day and "month two" motivation drive February searches. 
 | Feb 16 | ✅ Ep23 *Buy Now, Pay Later* · ✅ Ep24 *Pay Off Debt or Save First?* | BNPL is a high-search topic |
 | Feb 23 | ✅ Ep25 *Your Credit Score, Explained in Numbers* · ✅ Ep26 *The 60-Day Money Check-In* | Strong end-of-quarter retention |
 
+## March calendar (Episodes 27–34)
+By March the channel should have 4 months of uploads, so the plan shifts: keep the evergreen money-math format, and start answering **real viewer comments**. Comment questions make the best titles because someone already asked.
+
+| Post date | Episode | Angle and key number to build around |
+|---|---|---|
+| Fri Mar 5 | Ep27 *Owe Taxes? How to Pay Without a Credit Card* | Federal tax day is usually mid-April (check IRS.gov). Compare an IRS payment plan's setup fee and interest with putting the bill on a 24% card. |
+| Tue Mar 9 | Ep28 *The Subscription Audit: Find $50 a Month in 15 Minutes* | Example list of 9 subscriptions; cutting 4 frees $50/mo = $600/yr, or about 2 months off the Ep1 card. |
+| Fri Mar 12 | Ep29 *High-Yield Savings Accounts, Explained in Numbers* | $9,033 emergency fund (Ep10) at a big-bank rate vs a high-yield rate for a year. Always say rates change. |
+| Tue Mar 16 | Ep30 *How Much House Can You Afford? (The Real Number)* | Completes the rent (Ep14) and car (Ep22) trilogy: work back from take-home, include taxes, insurance and repairs, not just the mortgage. |
+| Fri Mar 19 | Ep31 *Side Hustle Money: Set Aside Taxes First* | $500/month of side income: set aside a share for taxes before spending (tell viewers to check their own rate). Pairs with Ep9. |
+| Tue Mar 23 | Ep32 *401(k) vs IRA in Numbers (Beginner Version)* | Builds on Ep24's employer match. $100/month for 30 years at an illustrative rate; label it an illustration, not a prediction. |
+| Fri Mar 26 | Ep33 *Your Questions, Answered: Real Comment Math* | Pick 3 real comments and run their numbers (no personal details on screen). |
+| Tue Mar 30 | Ep34 *Q1 Review: 90 Days of the Paycheck Plan* | Wraps the Ep1 → Ep18 → Ep26 storyline: the card is gone if the refund went to it (Ep26), and now the $453 flips into savings. |
+
+**March Shorts:** one per episode, as before (Shorts 27–34), posted 2 days after each episode.
+
+**Before writing each March episode, check:** current IRS figures (Ep27, Ep31, Ep32) and current savings rates (Ep29). These change, so they're checked at script time, not now.
+
 **Shorts:** for each long video, cut 1–2 Shorts of 20–40 s around its single most surprising number, and link each Short to its long video (*Related video*).
 
 ## Rules that protect the channel

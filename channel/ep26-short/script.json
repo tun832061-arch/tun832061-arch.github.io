@@ -1,0 +1,70 @@
+{
+ "title": "60 days in: is your plan working? (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "60 days in.",
+      "Is it working?"
+     ]
+    ],
+    "stamp": "Ask 4 questions."
+   },
+   "say": "Two months into the year. Is your money plan working?"
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "THE CHECK-IN",
+    "items": [
+     "Is the debt going down?",
+     "Did the surprise fund work?",
+     "Is the plan still true?",
+     "What's the next big move?"
+    ],
+    "at": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "stagger": 1.6
+   },
+   "say": "Ask four questions. Is the debt going down? Did the surprise fund work? Is the plan still true? And what's the next big move?"
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Card balance after 60 days",
+    "value": "$2,576",
+    "c": "green",
+    "sub": "down $624 from $3,200"
+   },
+   "cap": "In our example, the card went from $3,200 to $2,576.",
+   "say": "In our example, the card went from thirty-two hundred to twenty-five seventy-six."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Debt-free in month 5, not 10.",
+    "hi": [
+     "month",
+     "5,"
+    ]
+   },
+   "say": "And a tax refund on the card makes it debt-free in month five, instead of ten."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "The 60-day check-in, on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "say": "Do your check-in with the full video on my channel."
+  }
+ ]
+}

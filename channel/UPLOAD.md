@@ -808,3 +808,15 @@ Educational content, not financial advice.
 **`ep24-short/build/video.mp4`** → Related video: Episode 24
 - **Title:** Pay off debt or save first? Do it in this order #shorts
 - **Description:** `The 5-step money order. Full video on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
+
+---
+
+## Shorts for Episodes 25 and 26
+
+**`ep25-short/build/video.mp4`** → Related video: Episode 25
+- **Title:** The 2 things that move your credit score most #shorts
+- **Description:** `Payment history and utilization, in numbers. Full breakdown on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
+
+**`ep26-short/build/video.mp4`** → Related video: Episode 26
+- **Title:** 60 days in: is your money plan working? #shorts
+- **Description:** `Four check-in questions, with real numbers. Full video on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`

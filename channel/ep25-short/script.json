@@ -1,0 +1,92 @@
+{
+ "title": "Credit score: the two that matter (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Your credit score.",
+      "What moves it?"
+     ]
+    ],
+    "stamp": "Two big ones."
+   },
+   "say": "What actually moves your credit score?"
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "Of a FICO score",
+    "fmt": "pct",
+    "stagger": 1.6,
+    "items": [
+     [
+      "Payment history",
+      35,
+      "green"
+     ],
+     [
+      "Amounts owed",
+      30,
+      "green"
+     ]
+    ]
+   },
+   "cap": "Payment history is 35%. Amounts owed, 30%. Together, that's most of it.",
+   "say": "Payment history is thirty-five percent. Amounts owed, thirty. Together, that's most of it."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Autopay the minimum. Never be late.",
+    "hi": [
+     "Never"
+    ]
+   },
+   "say": "Autopay at least the minimum, so you're never late."
+  },
+  {
+   "scene": {
+    "type": "months",
+    "head": "Utilization, paying $453 a month",
+    "vals": [
+     64,
+     56,
+     48,
+     40,
+     32,
+     24,
+     15,
+     6,
+     0
+    ],
+    "labels": [
+     "Now",
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7",
+     "8"
+    ],
+    "fmt": "pct",
+    "c": "gold"
+   },
+   "cap": "And use less of your limit. A $3,200 balance on a $5,000 limit is 64%. Paying it down drops that every month.",
+   "say": "And use less of your limit. A thirty-two hundred balance on a five thousand limit is sixty-four percent. Paying it down drops that every month."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Credit score, explained on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "say": "The full breakdown is on my channel."
+  }
+ ]
+}
