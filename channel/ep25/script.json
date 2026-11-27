@@ -1,0 +1,217 @@
+{
+ "title": "Your Credit Score, Explained in Numbers",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Your credit score.",
+      "What moves it?"
+     ]
+    ],
+    "stamp": "Five numbers."
+   },
+   "say": "What actually moves your credit score?"
+  },
+  {
+   "say": "Not your income, and not checking your own score. Here's what really counts, in numbers."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Episode 25 · real numbers",
+    "text": "Your Credit Score"
+   },
+   "cap": "The common FICO score runs from 300 to 850, and it's built from five parts.",
+   "say": "The common FICO score runs from three hundred to eight fifty, and it's built from five parts."
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "What goes into a FICO score",
+    "fmt": "pct",
+    "stagger": 0.9,
+    "items": [
+     [
+      "Payment history",
+      35,
+      "green"
+     ],
+     [
+      "Amounts owed",
+      30,
+      "green"
+     ],
+     [
+      "Length of history",
+      15,
+      "gold"
+     ]
+    ]
+   },
+   "say": "Here's the recipe."
+  },
+  {
+   "say": "Payment history, thirty-five percent. Amounts owed, thirty percent. Length of history, fifteen."
+  },
+  {
+   "cap": "New credit and credit mix make up the last 20%: 10% each.",
+   "say": "New credit and credit mix make up the last twenty, ten percent each."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "Pay on time, every time",
+    "kicker": "35%"
+   },
+   "say": "Two of these matter most."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Autopay the minimum. Then pay more on purpose.",
+    "hi": [
+     "Autopay"
+    ]
+   },
+   "cap": "Payment history is the biggest piece. A payment 30 days late can stay on your report for up to seven years. The simplest fix: autopay at least the minimum on every card, then pay more by hand.",
+   "say": "Payment history is the biggest piece. A payment thirty days late can stay on your report for up to seven years. The simplest fix: autopay at least the minimum on every card, then pay more by hand."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "Use less of your limit",
+    "kicker": "30%"
+   },
+   "say": "Second, amounts owed, mostly your utilization."
+  },
+  {
+   "scene": {
+    "type": "equation",
+    "parts": [
+     "$3,200",
+     "÷",
+     "$5,000",
+     "=",
+     "64%"
+    ],
+    "under": [
+     "balance",
+     "",
+     "limit",
+     "",
+     "utilization"
+    ],
+    "at": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "kw": [
+     "thirty-two hundred",
+     "on a",
+     "five thousand",
+     "sixty",
+     "sixty-four"
+    ]
+   },
+   "cap": "Utilization is your balance divided by your limit. Our episode one card has $3,200 on a $5,000 limit: 64%.",
+   "say": "Utilization is your balance divided by your limit. Our episode one card has thirty-two hundred on a five thousand dollar limit. Sixty-four percent."
+  },
+  {
+   "cap": "Lower is better. Under 30% is a common guideline, and under 10% is even better.",
+   "say": "Lower is better. Under thirty percent is a common guideline, and under ten is even better."
+  },
+  {
+   "scene": {
+    "type": "months",
+    "head": "Card utilization, paying $453 a month",
+    "vals": [
+     64,
+     56,
+     48,
+     40,
+     32,
+     24,
+     15,
+     6,
+     0
+    ],
+    "labels": [
+     "Start",
+     "M1",
+     "M2",
+     "M3",
+     "M4",
+     "M5",
+     "M6",
+     "M7",
+     "M8"
+    ],
+    "fmt": "pct",
+    "c": "gold"
+   },
+   "say": "Here's the paycheck plan from episode one, month by month."
+  },
+  {
+   "say": "By month five, it's under thirty percent. By month eight, zero. Paying down debt helps your score as a side effect."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "03",
+    "text": "The other 35%",
+    "kicker": "THE REST"
+   },
+   "say": "The other three, quickly."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "THE OTHER THREE",
+    "items": [
+     "Length: keep your oldest card open",
+     "New credit: space out applications",
+     "Mix: never borrow just for this"
+    ],
+    "at": [
+     0,
+     0,
+     0
+    ],
+    "stagger": 3.4
+   },
+   "say": "Length of history: keep your oldest card open, even if you barely use it. New credit: each application can mean a hard inquiry, so space them out. Credit mix matters least. Never borrow just to improve it."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Checking your own score doesn't hurt it.",
+    "hi": [
+     "doesn't",
+     "hurt"
+    ]
+   },
+   "cap": "And checking your own score or report doesn't hurt it. You can get free reports at AnnualCreditReport.com.",
+   "say": "And checking your own score or report doesn't hurt it. You can get free reports at AnnualCreditReport dot com."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "See your payoff timeline with the Paycheck Planner: link in the description",
+    "next": "Next: The 60-day money check-in"
+   },
+   "say": "The Paycheck Planner in the description shows your payoff timeline, which is also your utilization timeline. This is general education, not financial advice."
+  },
+  {
+   "say": "Subscribe for more money math, with real numbers."
+  }
+ ]
+}

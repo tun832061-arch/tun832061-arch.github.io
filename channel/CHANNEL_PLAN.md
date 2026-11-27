@@ -54,7 +54,7 @@ Tax season, Valentine's Day and "month two" motivation drive February searches. 
 | Feb 2 | ✅ Ep19 *Valentine's Day on a Budget* · ✅ Ep20 *Tax Refund Advances: What They Really Cost* | Valentine's searches peak the week before Feb 14 |
 | Feb 9 | ✅ Ep21 *How to File Your Taxes for Free* · ✅ Ep22 *How Much Car Can You Really Afford?* | Pairs with Ep14's rent math |
 | Feb 16 | ✅ Ep23 *Buy Now, Pay Later* · ✅ Ep24 *Pay Off Debt or Save First?* | BNPL is a high-search topic |
-| Feb 23 | Your credit score explained in numbers · 90 days in: the check-in (revisit Eps 1, 7 and 18) | Strong end-of-quarter retention |
+| Feb 23 | ✅ Ep25 *Your Credit Score, Explained in Numbers* · ✅ Ep26 *The 60-Day Money Check-In* | Strong end-of-quarter retention |
 
 **Shorts:** for each long video, cut 1–2 Shorts of 20–40 s around its single most surprising number, and link each Short to its long video (*Related video*).
 

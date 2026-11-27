@@ -1,0 +1,72 @@
+{
+ "title": "Pay off debt or save? The order (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Pay off debt",
+      "or save?"
+     ]
+    ],
+    "stamp": "Both, in order."
+   },
+   "say": "Pay off debt, or save first?"
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "THE ORDER",
+    "items": [
+     "Starter emergency fund",
+     "Employer match",
+     "High-interest debt",
+     "Full emergency fund",
+     "Bigger goals"
+    ],
+    "at": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "stagger": 1.3
+   },
+   "say": "Starter emergency fund. Employer match. High-interest debt. Full emergency fund. Then bigger goals."
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "Every $1 you put in",
+    "fmt": "cents",
+    "stagger": 3.6,
+    "items": [
+     [
+      "50% match adds",
+      50,
+      "green"
+     ],
+     [
+      "24% card saves",
+      24,
+      "gold"
+     ]
+    ]
+   },
+   "cap": "Why the match comes before the card: a 50% match adds 50¢ per dollar. Paying a 24% card saves 24¢.",
+   "say": "Why the match comes before the card: a fifty percent match adds fifty cents per dollar. Paying a twenty-four percent card saves twenty-four."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "The money order, on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "say": "The full order, with the math, is on my channel."
+  }
+ ]
+}

@@ -746,3 +746,65 @@ Educational content, not financial advice. Retirement plans vary; check yours.
 **`ep22-short/build/video.mp4`** → Related video: Episode 22
 - **Title:** How much car can you afford on $60K? #shorts
 - **Description:** `The 20/4/10 math and the long-loan trap. Full video on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
+
+---
+
+## Episode 25: `ep25/build/video.mp4` · thumbnail `ep25/build/thumbnail.png` · captions `ep25/build/video.srt`
+
+**Title:** Your Credit Score, Explained in Numbers
+
+**Description:**
+```
+A FICO score is five parts: payment history 35%, amounts owed 30%, length of history 15%, new credit 10%, credit mix 10%. The two that matter most: pay on time (autopay the minimum) and keep utilization low. The episode-one card goes from 64% utilization to under 30% by month 5. Checking your own score doesn't hurt it; free reports are at AnnualCreditReport.com.
+
+📊 See your payoff timeline with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:25 Pay on time, every time
+0:39 Use less of your limit
+1:09 The other 35%
+1:31 Get the planner
+
+Educational content, not financial advice. 
+```
+**Tags:** credit score explained, how to improve credit score, credit utilization, FICO score, payment history, credit report, annualcreditreport, credit score tips
+
+**Pinned comment:** `What's the one credit habit you're working on this year? 👇`
+
+---
+
+## Episode 26: `ep26/build/video.mp4` · thumbnail `ep26/build/thumbnail.png` · captions `ep26/build/video.srt`
+
+**Title:** The 60-Day Money Check-In: Is Your Plan Working?
+
+**Description:**
+```
+Two months into the year, four questions: Is the debt going down? ($3,200 to $2,576.) Did the surprise fund work? (About $284 saved.) Is the plan still true? What's the next big move? (A $1,800 tax refund makes the card debt-free in month 5 instead of 10.)
+
+📊 Do your check-in with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:10 Is the debt going down?
+0:31 Did the surprise fund work?
+0:48 Is the plan still true?
+0:59 What's the next big move?
+
+Educational content, not financial advice. 
+```
+**Tags:** budget check in, monthly budget review, is my budget working, debt payoff progress, sinking funds, budgeting 2027, money check in, personal finance
+
+**Pinned comment:** `Your check-in: how many of the 4 questions got a yes? 👇`
+
+**Upload order and timing:** these are February Week 4 videos (week of Feb 23), the last on the current calendar.
+
+---
+
+## Shorts for Episodes 23 and 24
+
+**`ep23-short/build/video.mp4`** → Related video: Episode 23
+- **Title:** Pay in 4 is 0%... until you stack them #shorts
+- **Description:** `Four small plans, $190 every two weeks. Full math on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
+
+**`ep24-short/build/video.mp4`** → Related video: Episode 24
+- **Title:** Pay off debt or save first? Do it in this order #shorts
+- **Description:** `The 5-step money order. Full video on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`

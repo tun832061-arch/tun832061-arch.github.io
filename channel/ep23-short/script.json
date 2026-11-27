@@ -1,0 +1,62 @@
+{
+ "title": "Pay in 4: the stacking trap (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Pay in 4.",
+      "0% interest?"
+     ]
+    ],
+    "stamp": "The catch: stacking."
+   },
+   "say": "Pay in four. Zero interest. What's the catch?"
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Four \"small\" purchases",
+    "value": "$760",
+    "c": "gold",
+    "sub": "each split into 4 payments"
+   },
+   "cap": "Four small plans: sneakers, headphones, groceries, a gift. $760 in total.",
+   "say": "Four small plans. Sneakers, headphones, groceries, a gift. Seven sixty in total."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Due every two weeks",
+    "value": "$190",
+    "c": "coral",
+    "sub": "vs $100 of fun money per paycheck"
+   },
+   "cap": "That's $190 due every two weeks. Almost double the fun money in our example budget.",
+   "say": "That's a hundred ninety due every two weeks. Almost double the fun money in our example budget."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "One plan at a time. Only if you could pay today.",
+    "hi": [
+     "One",
+     "plan"
+    ]
+   },
+   "cap": "Miss one, and a late fee plus an overdraft fee can add up to $43.",
+   "say": "Miss one, and a late fee plus an overdraft fee can add up to forty-three dollars."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Buy now, pay later: full math on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "say": "The full rule is on my channel."
+  }
+ ]
+}

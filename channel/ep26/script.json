@@ -1,0 +1,179 @@
+{
+ "title": "The 60-Day Money Check-In: Is Your Plan Working?",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "60 days in.",
+      "Is it working?"
+     ]
+    ],
+    "stamp": "Let's check."
+   },
+   "say": "Two months into the year. Is your plan working?"
+  },
+  {
+   "say": "Let's check our example from episodes one and eighteen, then you do yours, in four questions."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Episode 26 · the check-in",
+    "text": "The 60-Day Check-In"
+   },
+   "say": "Four questions."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "Is the debt going down?",
+    "kicker": "QUESTION 1"
+   },
+   "say": "Question one. Is the debt going down?"
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Card balance after 60 days",
+    "value": "$2,576",
+    "c": "green",
+    "sub": "down $624 from $3,200"
+   },
+   "cap": "On the real plan from episode 18 ($373 a month), the card went from $3,200 to $2,576. Down $624 in 60 days.",
+   "say": "On the real plan from episode eighteen, three seventy-three a month, the card went from thirty-two hundred to twenty-five seventy-six. Down six twenty-four in sixty days."
+  },
+  {
+   "cap": "About $122 of the payments went to interest. That's the cost of carrying the balance, and why every extra dollar matters.",
+   "say": "About a hundred twenty-two of the payments went to interest. That's the cost of carrying the balance, and why every extra dollar matters."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "Did the surprise fund work?",
+    "kicker": "QUESTION 2"
+   },
+   "say": "Question two. Did the surprise fund work?"
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Surprise fund after 4 paychecks",
+    "value": "$284",
+    "c": "green",
+    "sub": "the next oil change is already covered"
+   },
+   "cap": "Two paychecks at $66, then two at $76 after the month-one fix: about $284 saved. In month one, the oil change broke the budget. Next time, it comes out of the fund. That's the system working.",
+   "say": "Two paychecks at sixty-six, then two at seventy-six after the month-one fix. About two eighty-four saved. In month one, the oil change broke the budget. Next time, it comes out of the fund. That's the system working."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "03",
+    "text": "Is the plan still true?",
+    "kicker": "QUESTION 3"
+   },
+   "say": "Question three. Is the plan still true?"
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Keeps missing? Change the number, not your willpower.",
+    "hi": [
+     "Change",
+     "the",
+     "number,"
+    ]
+   },
+   "say": "Put planned next to actual again. If a category keeps missing, change the number, not your willpower. Episode eighteen shows how."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "04",
+    "text": "What's the next big move?",
+    "kicker": "QUESTION 4"
+   },
+   "say": "Question four. What's the next big move?"
+  },
+  {
+   "scene": {
+    "type": "compare",
+    "head": "The rest of the $3,200 card",
+    "rows": [
+     {
+      "label": "Keep going at $373/mo",
+      "months": 10,
+      "interest": 347,
+      "c": "gold"
+     },
+     {
+      "label": "$373/mo + $1,800 refund in March",
+      "months": 5,
+      "interest": 184,
+      "c": "green"
+     }
+    ]
+   },
+   "cap": "For our example, it's the tax refund. Put $1,800 on the card in March, and look what happens.",
+   "say": "For our example, it's the tax refund. Put eighteen hundred on the card in March, and look what happens."
+  },
+  {
+   "cap": "Debt-free in month 5 instead of 10, and about $163 less interest.",
+   "say": "Debt-free in month five instead of ten, and about a hundred sixty less interest."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "YOUR 60-DAY CHECK-IN",
+    "items": [
+     "Is the debt going down?",
+     "Did the surprise fund work?",
+     "Is the plan still true?",
+     "What's the next big move?"
+    ],
+    "at": [
+     1,
+     1,
+     2,
+     2
+    ]
+   },
+   "say": "So, your four questions."
+  },
+  {
+   "join": true,
+   "say": "Debt going down? Surprise fund working?"
+  },
+  {
+   "join": true,
+   "say": "Plan still true? And what's the next big move?"
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Mostly yes? You're ahead of most January budgets.",
+    "hi": [
+     "ahead"
+    ]
+   },
+   "say": "If the answers are mostly yes, you're doing better than most people who started a budget in January. Keep going."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Do your check-in with the Paycheck Planner: link in the description",
+    "next": "New money math every week"
+   },
+   "say": "The Paycheck Planner in the description makes the check-in a five-minute job."
+  },
+  {
+   "say": "Subscribe, and see you at the next check-in."
+  }
+ ]
+}

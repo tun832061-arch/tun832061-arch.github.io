@@ -289,8 +289,8 @@ D.months = sc => {
   A(rv(0, 0, 0.5)); X.fillStyle = P.dim; X.fillRect(x0, base, x1 - x0, 3 * U); A(1);
   (sc.labels || 'JFMAMJJASOND'.split('')).forEach((m, i) => {
     const x = x0 + i * slot + (slot - bw) / 2, p = rv(0, 0.3 + i * 0.12, 0.5), h = v[i] * hs * p;
-    if (v[i] > 0) { box(x, base - h, bw, h, 10 * U, sc.c || 'coral', 0.95 * (1 - 0.6 * avgP)); txt(money(v[i]), x + bw / 2, base - h - 30 * U, { sz: vsz, fam: 'Anton', w: 400, c: sc.c || 'coral', a: p * (1 - 0.6 * avgP) }); }
-    else if (sc.labels) txt('$0', x + bw / 2, base - 30 * U, { sz: 40, fam: 'Anton', w: 400, c: 'green', a: p });
+    if (v[i] > 0) { box(x, base - h, bw, h, 10 * U, sc.c || 'coral', 0.95 * (1 - 0.6 * avgP)); txt(sc.fmt === 'pct' ? v[i] + '%' : money(v[i]), x + bw / 2, base - h - 30 * U, { sz: vsz, fam: 'Anton', w: 400, c: sc.c || 'coral', a: p * (1 - 0.6 * avgP) }); }
+    else if (sc.labels) txt(sc.fmt === 'pct' ? '0%' : '$0', x + bw / 2, base - 30 * U, { sz: 40, fam: 'Anton', w: 400, c: 'green', a: p });
     txt(m, x + bw / 2, base + 40 * U, { sz: 28, w: 700, c: 'muted', a: rv(0, 0, 0.5) });
     if (avgP > 0) box(x, base - avg * hs * avgP, bw, avg * hs * avgP, 10 * U, 'green', 0.9);
   });
