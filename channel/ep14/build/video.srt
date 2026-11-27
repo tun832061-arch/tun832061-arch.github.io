@@ -1,0 +1,75 @@
+1
+00:00:00,600 --> 00:00:02,498
+How much rent can you actually afford?
+
+2
+00:00:02,918 --> 00:00:05,910
+The popular rules give you a number. It's usually too high.
+
+3
+00:00:06,680 --> 00:00:11,079
+Let's compare the rules with the real number, using our example from episode one.
+
+4
+00:00:11,499 --> 00:00:18,001
+Our example earns $60,000 a year. After taxes and benefits, that's $1,850 every two weeks.
+
+5
+00:00:18,771 --> 00:00:20,272
+First, the popular rules.
+
+6
+00:00:20,692 --> 00:00:28,509
+Landlords often want your gross income to be 3× the rent. $5,000 a month, divided by 3: $1,667.
+
+7
+00:00:28,929 --> 00:00:33,590
+The famous 30% rule: 30% of $5,000. $1,500.
+
+8
+00:00:34,010 --> 00:00:39,306
+Here's the problem. Both rules use your gross income. But you pay rent from take-home pay.
+
+9
+00:00:40,076 --> 00:00:43,300
+So let's work backwards, from what actually lands in your account.
+
+10
+00:00:43,720 --> 00:00:58,616
+Start with two paychecks: $3,700. Minus other bills, $1,071. Minus groceries and gas, $640. Minus surprise funds, $132. Minus fun money, $200. Minus 10% for goals, $370.
+
+11
+00:00:59,036 --> 00:01:02,116
+What's left is your real rent number: $1,287.
+
+12
+00:01:02,536 --> 00:01:10,992
+Side by side: the landlord rule says $1,667. 30% says $1,500. The real number is $1,287.
+
+13
+00:01:11,412 --> 00:01:16,401
+Rent at $1,500 leaves just $157 a month for every goal you have.
+
+14
+00:01:16,821 --> 00:01:20,480
+And at the landlord's number, you'd come up ten dollars short. Every month.
+
+15
+00:01:20,900 --> 00:01:27,690
+Our example pays $1,300, just over the line. Which is why episode one had to work so hard to find money.
+
+16
+00:01:28,460 --> 00:01:31,442
+If your rent is over your real number, you have options.
+
+17
+00:01:31,862 --> 00:01:40,529
+Add a roommate. Negotiate at renewal, or move when the lease ends. Cut a different fixed bill. Or raise your income, because the real number moves with it.
+
+18
+00:01:41,299 --> 00:01:48,135
+The Paycheck Planner in the description does this subtraction for you. Put in your paychecks and bills, and see what's really left.
+
+19
+00:01:48,555 --> 00:01:51,310
+Subscribe for more money math, with real numbers.

@@ -1,0 +1,23 @@
+1
+00:00:00,600 --> 00:00:02,902
+Minimum payment due: $150.
+
+2
+00:00:03,322 --> 00:00:04,208
+Here's the catch.
+
+3
+00:00:04,628 --> 00:00:10,697
+The minimum shrinks as you pay. $150. Then $134. Then $83. Then $45.
+
+4
+00:00:11,117 --> 00:00:17,513
+Paying only the minimum on $5,000: 201 months, and $8,442 in interest.
+
+5
+00:00:17,933 --> 00:00:22,088
+The fix: freeze your payment at today's minimum. Fifty-six months instead.
+
+6
+00:00:22,858 --> 00:00:24,468
+The full math is on my channel.

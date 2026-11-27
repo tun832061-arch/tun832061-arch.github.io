@@ -428,7 +428,8 @@
       100
      ]
     ],
-    "end": "To your goal"
+    "end": "To your goal",
+    "note": "Paycheck 2 leaves $178"
    },
    "cap": "Paycheck 1: $665, minus $66, minus $320, minus $100.",
    "say": "Paycheck one. Six sixty-five, minus sixty-six, minus three twenty, minus a hundred."

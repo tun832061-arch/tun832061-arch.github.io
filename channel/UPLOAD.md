@@ -374,3 +374,65 @@ Educational content, not financial advice. Minimum-payment formulas vary by card
 **`ep10-short/build/video.mp4`** → Related video: Episode 10
 - **Title:** How big should your emergency fund be? #shorts
 - **Description:** `Count essentials, not income. Find your number on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
+
+---
+
+## Episode 13: `ep13/build/video.mp4` · thumbnail `ep13/build/thumbnail.png` · captions `ep13/build/video.srt`
+
+**Title:** Where Your Tax Refund Should Go (A Simple Decision Path)
+
+**Description:**
+```
+Getting a tax refund? Give it a job before it lands. Take 10% for fun, then ask four questions in order and stop at the first no: bills caught up? Starter emergency fund? High-interest debt gone? Sinking funds on track? Plus the math: $1,800 earns $72 a year in savings, but saves $432 on a 24% card. And why a big refund means you overpaid all year.
+
+📊 Plan your refund with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:21 Ask four questions
+0:49 The math on question three
+1:14 Next year's refund
+1:38 Get the planner
+
+Educational content, not financial advice. Not tax advice. Ask a tax professional about your withholding.
+```
+**Tags:** tax refund, what to do with tax refund, tax refund 2027, pay off debt with tax refund, W-4 withholding, emergency fund, budgeting, money decisions
+
+**Pinned comment:** `What's your refund going toward this year? 👇`
+
+---
+
+## Episode 14: `ep14/build/video.mp4` · thumbnail `ep14/build/thumbnail.png` · captions `ep14/build/video.srt`
+
+**Title:** How Much Rent Can You Really Afford? (The Real Number)
+
+**Description:**
+```
+The landlord rule says $1,667. The 30% rule says $1,500. Working backwards from take-home pay, the real number for a $60,000 salary is $1,287. Rent at the 30% rule leaves just $157 a month for every goal. Here's the subtraction, and what to do if your rent is over your number.
+
+📊 Find your real rent number with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:18 The popular rules
+0:39 Work backwards
+1:28 If you're over
+1:40 Get the planner
+
+Educational content, not financial advice. Example salary and take-home are illustrative.
+```
+**Tags:** how much rent can i afford, rent to income ratio, 30 percent rule rent, rent budget, rent calculator, renting tips, budgeting for rent, take home pay
+
+**Pinned comment:** `What percent of your take-home goes to rent? 👇`
+
+**Upload order and timing:** these are Week 7 videos (week of Jan 12). Episode 13 lands as tax season opens.
+
+---
+
+## Shorts for Episodes 11 and 12
+
+**`ep11-short/build/video.mp4`** → Related video: Episode 11
+- **Title:** $10,000 of debt: 56 months or 16? #shorts
+- **Description:** `Three plans for the same $10,000 card. All three on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
+
+**`ep12-short/build/video.mp4`** → Related video: Episode 12
+- **Title:** The minimum payment trap: 201 months #shorts
+- **Description:** `Why the minimum shrinks, and how to escape it. Full math on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`

@@ -43,7 +43,7 @@ Each episode takes about 1–2 hours of your time: write `script.json`, render, 
 | Dec 22 | ✅ Ep7 *How to Undo Holiday Debt in 90 Days* · ✅ Ep8 *Your 2027 Money Reset Checklist* | Publish before Jan 1 for the search spike |
 | Dec 29 | ✅ Ep9 *How to Budget on an Irregular Income* · ✅ Ep10 *Emergency Fund: How Much Is Enough?* | Peak week; consider a 3rd upload |
 | Jan 5 | ✅ Ep11 *How to Pay Off $10,000 of Debt* · ✅ Ep12 *Credit Card Minimum Payments: The 17-Year Trap* | |
-| Jan 12 | Where your tax refund should go (decision tree) · Rent vs income: the real number | Tax season starts |
+| Jan 12 | ✅ Ep13 *Where Your Tax Refund Should Go* · ✅ Ep14 *How Much Rent Can You Really Afford?* | Tax season starts |
 | Jan 19 | Why you're broke on a good salary (lifestyle creep math) · Balance transfer cards: when they're worth it | |
 | Jan 26 | Budgeting as a couple: 3 systems compared · One month in: fixing the budget you started | Reaction to January; strong retention topic |
 

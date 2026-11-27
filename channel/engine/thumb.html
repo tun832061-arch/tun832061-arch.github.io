@@ -4,7 +4,7 @@
 body{margin:0}</style></head><body><canvas id="c" width="1280" height="720"></canvas><script>
 // thumb.html — episode 1 thumbnail, 1280x720. Rendered by thumb.cjs.
 const X=document.getElementById('c').getContext('2d');
-window.draw=(ep)=>{ if(ep==='ep02') return draw2(); if(ep==='ep03') return draw3(); if(ep==='ep04') return draw4(); if(ep==='ep05') return draw5(); if(ep==='ep06') return draw6(); if(ep==='ep07') return draw7(); if(ep==='ep08') return draw8(); if(ep==='ep09') return draw9(); if(ep==='ep10') return draw10(); if(ep==='ep11') return draw11(); if(ep==='ep12') return draw12();
+window.draw=(ep)=>{ if(ep==='ep02') return draw2(); if(ep==='ep03') return draw3(); if(ep==='ep04') return draw4(); if(ep==='ep05') return draw5(); if(ep==='ep06') return draw6(); if(ep==='ep07') return draw7(); if(ep==='ep08') return draw8(); if(ep==='ep09') return draw9(); if(ep==='ep10') return draw10(); if(ep==='ep11') return draw11(); if(ep==='ep12') return draw12(); if(ep==='ep13') return draw13(); if(ep==='ep14') return draw14();
  const g=X.createLinearGradient(0,0,1280,720);g.addColorStop(0,'#16324F');g.addColorStop(1,'#0A1522');X.fillStyle=g;X.fillRect(0,0,1280,720);
  const t=(s,x,y,f,c,al='left')=>{X.font=f;X.fillStyle=c;X.textAlign=al;X.textBaseline='alphabetic';X.fillText(s,x,y)};
  t('YOUR BUDGET',60,190,'900 92px Inter','#F3EFE6');
@@ -104,5 +104,21 @@ function draw12(){ base();
  X.fillStyle='#0C1A2A';X.beginPath();X.roundRect(800,150,420,420,36);X.fill();X.strokeStyle='#FF6B5B';X.lineWidth=8;X.stroke();
  T('$5,000 CARD',1010,230,'800 36px Inter','#8C9CB2','center'); T('201',1010,400,'400 170px Anton','#FF6B5B','center'); T('months',1010,470,'800 44px Inter','#F3EFE6','center');
  T('$8,442 interest',1010,535,'800 32px Inter','#FFC857','center');
+}
+
+function draw13(){ base();
+ T('TAX REFUND?',60,190,'400 130px Anton','#3DDC97'); T('DO THIS FIRST',64,290,'900 78px Inter','#F3EFE6');
+ T('a 4-question path →',64,400,'800 46px Inter','#8C9CB2');
+ X.fillStyle='#0C1A2A';X.beginPath();X.roundRect(800,160,420,400,36);X.fill();X.strokeStyle='#FFC857';X.lineWidth=8;X.stroke();
+ T('$1,800 FOR A YEAR',1010,230,'800 30px Inter','#8C9CB2','center');
+ T('savings',840,330,'800 32px Inter','#8C9CB2'); T('+$72',1185,335,'400 76px Anton','#FFC857','right');
+ T('24% card',840,460,'800 32px Inter','#8C9CB2'); T('+$432',1185,465,'400 76px Anton','#3DDC97','right');
+}
+function draw14(){ base();
+ T('HOW MUCH RENT',60,170,'400 104px Anton','#F3EFE6'); T('CAN YOU AFFORD?',60,290,'400 104px Anton','#F3EFE6'); T('not 30% →',64,400,'800 50px Inter','#FF6B5B');
+ X.fillStyle='#0C1A2A';X.beginPath();X.roundRect(800,150,420,420,36);X.fill();X.strokeStyle='#3DDC97';X.lineWidth=8;X.stroke();
+ T('30% RULE',1010,220,'800 32px Inter','#8C9CB2','center'); T('$1,500',1010,300,'400 80px Anton','#8C9CB2','center');
+ X.strokeStyle='#FF6B5B';X.lineWidth=10;X.beginPath();X.moveTo(890,272);X.lineTo(1130,272);X.stroke();
+ T('REAL NUMBER',1010,390,'800 32px Inter','#8C9CB2','center'); T('$1,287',1010,500,'400 120px Anton','#3DDC97','center');
 }
 </script></body></html>

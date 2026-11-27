@@ -1,0 +1,77 @@
+{
+ "title": "The minimum payment trap (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Minimum payment",
+      "due: $150"
+     ]
+    ],
+    "stamp": "Almost 17 years."
+   },
+   "cap": "Minimum payment due: $150.",
+   "say": "Minimum payment due: a hundred and fifty."
+  },
+  {
+   "say": "Here's the catch."
+  },
+  {
+   "scene": {
+    "type": "months",
+    "head": "Your minimum over time",
+    "vals": [
+     150,
+     134,
+     106,
+     83,
+     45
+    ],
+    "labels": [
+     "Now",
+     "Yr 1",
+     "Yr 3",
+     "Yr 5",
+     "Yr 10"
+    ]
+   },
+   "cap": "The minimum shrinks as you pay. $150. Then $134. Then $83. Then $45.",
+   "say": "The minimum shrinks as you pay. One fifty. Then one thirty-four. Then eighty-three. Then forty-five."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Minimum only · $5,000 at 24%",
+    "value": "201 months",
+    "c": "coral",
+    "sub": "and $8,442 in interest"
+   },
+   "cap": "Paying only the minimum on $5,000: 201 months, and $8,442 in interest.",
+   "say": "Paying only the minimum on five thousand dollars: two hundred and one months, and eighty-four forty-two in interest."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Freeze the payment. Never pay less than today.",
+    "hi": [
+     "Freeze",
+     "the",
+     "payment."
+    ]
+   },
+   "say": "The fix: freeze your payment at today's minimum. Fifty-six months instead."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "The full math on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "say": "The full math is on my channel."
+  }
+ ]
+}

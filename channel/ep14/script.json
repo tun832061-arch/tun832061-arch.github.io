@@ -1,0 +1,224 @@
+{
+ "title": "How Much Rent Can You Really Afford? (The Real Number)",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "How much rent",
+      "can you afford?"
+     ]
+    ],
+    "stamp": "Not what the rules say."
+   },
+   "say": "How much rent can you actually afford?"
+  },
+  {
+   "say": "The popular rules give you a number. It's usually too high."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Episode 14 · real numbers",
+    "text": "The Real Rent Number"
+   },
+   "say": "Let's compare the rules with the real number, using our example from episode one."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Our example salary",
+    "value": "$60,000",
+    "sub": "after taxes and benefits: $1,850 every two weeks"
+   },
+   "cap": "Our example earns $60,000 a year. After taxes and benefits, that's $1,850 every two weeks.",
+   "say": "Our example earns sixty thousand a year. After taxes and benefits, that's eighteen fifty every two weeks."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "The popular rules",
+    "kicker": "THE RULES"
+   },
+   "say": "First, the popular rules."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Landlord rule: income = 3× rent",
+    "value": "$1,667",
+    "c": "coral",
+    "sub": "the most a landlord would approve"
+   },
+   "cap": "Landlords often want your gross income to be 3× the rent. $5,000 a month, divided by 3: $1,667.",
+   "say": "Landlords often want your gross income to be three times the rent. Five thousand a month, divided by three. Sixteen sixty-seven."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "The 30% rule",
+    "value": "$1,500",
+    "c": "gold",
+    "sub": "30% of $5,000 gross a month"
+   },
+   "cap": "The famous 30% rule: 30% of $5,000. $1,500.",
+   "say": "The famous thirty percent rule. Thirty percent of five thousand. Fifteen hundred."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "The rules use gross pay. Rent comes out of take-home.",
+    "hi": [
+     "take-home."
+    ]
+   },
+   "say": "Here's the problem. Both rules use your gross income. But you pay rent from take-home pay."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "Work backwards",
+    "kicker": "THE REAL NUMBER"
+   },
+   "say": "So let's work backwards, from what actually lands in your account."
+  },
+  {
+   "scene": {
+    "type": "waterfall",
+    "start": [
+     "Two paychecks",
+     3700
+    ],
+    "steps": [
+     [
+      "Other bills",
+      1071
+     ],
+     [
+      "Groceries & gas",
+      640
+     ],
+     [
+      "Surprise funds",
+      132
+     ],
+     [
+      "Fun money",
+      200
+     ],
+     [
+      "Goals (10%)",
+      370
+     ]
+    ],
+    "end": "Max rent"
+   },
+   "cap": "Start with two paychecks: $3,700. Minus other bills, $1,071. Minus groceries and gas, $640. Minus surprise funds, $132. Minus fun money, $200. Minus 10% for goals, $370.",
+   "say": "Start with two paychecks, thirty-seven hundred. Minus the other bills, ten seventy-one. Minus groceries and gas, six forty. Minus surprise funds, one thirty-two. Minus fun money, two hundred. Minus ten percent for goals, three seventy."
+  },
+  {
+   "cap": "What's left is your real rent number: $1,287.",
+   "say": "What's left is your real rent number. Twelve eighty-seven."
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "Max rent, three ways",
+    "stagger": 2.3,
+    "items": [
+     [
+      "Landlord rule (3×)",
+      1667,
+      "coral"
+     ],
+     [
+      "The 30% rule",
+      1500,
+      "gold"
+     ],
+     [
+      "Your real number",
+      1287,
+      "green"
+     ]
+    ]
+   },
+   "cap": "Side by side: the landlord rule says $1,667. 30% says $1,500. The real number is $1,287.",
+   "say": "Side by side. The landlord rule says sixteen sixty-seven. Thirty percent says fifteen hundred. The real number is twelve eighty-seven."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Rent at the 30% rule ($1,500)",
+    "value": "$157",
+    "c": "coral",
+    "sub": "a month left for debt, savings, everything"
+   },
+   "cap": "Rent at $1,500 leaves just $157 a month for every goal you have.",
+   "say": "Rent at fifteen hundred leaves just a hundred fifty-seven a month for every goal you have."
+  },
+  {
+   "say": "And at the landlord's number, you'd come up ten dollars short. Every month."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Our example pays $1,300: right at the edge.",
+    "hi": [
+     "right",
+     "at",
+     "the",
+     "edge."
+    ],
+    "hc": "gold"
+   },
+   "cap": "Our example pays $1,300, just over the line. Which is why episode one had to work so hard to find money.",
+   "say": "Our example pays thirteen hundred, just over the line. Which is why episode one had to work so hard to find money."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "03",
+    "text": "If you're over",
+    "kicker": "OPTIONS"
+   },
+   "say": "If your rent is over your real number, you have options."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "IF RENT IS OVER YOUR NUMBER",
+    "items": [
+     "Add a roommate or rent out a room",
+     "Negotiate at renewal, or move at lease end",
+     "Cut a different fixed bill",
+     "Raise income: the number moves with it"
+    ],
+    "at": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "stagger": 2.1
+   },
+   "say": "Add a roommate. Negotiate at renewal, or move when the lease ends. Cut a different fixed bill. Or raise your income, because the real number moves with it."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Find your real rent number with the Paycheck Planner: link in the description",
+    "next": "Next: Why you're broke on a good salary"
+   },
+   "say": "The Paycheck Planner in the description does this subtraction for you. Put in your paychecks and bills, and see what's really left."
+  },
+  {
+   "say": "Subscribe for more money math, with real numbers."
+  }
+ ]
+}

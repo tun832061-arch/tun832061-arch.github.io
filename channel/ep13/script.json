@@ -1,0 +1,181 @@
+{
+ "title": "Where Your Tax Refund Should Go (A Simple Decision Path)",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Tax refund",
+      "coming?"
+     ]
+    ],
+    "stamp": "Give it a job first."
+   },
+   "say": "Getting a tax refund this year?"
+  },
+  {
+   "say": "Decide where it goes now, before it lands and quietly disappears."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Our example refund",
+    "value": "$2,000",
+    "sub": "arriving in March"
+   },
+   "cap": "Our example: a $2,000 refund, arriving in March.",
+   "say": "Our example: a two thousand dollar refund, arriving in March."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Episode 13 · real numbers",
+    "text": "Your Tax Refund"
+   },
+   "say": "Here's a simple decision path, one question at a time."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "Take 10% for fun",
+    "kicker": "FIRST"
+   },
+   "cap": "First, take 10% for something fun: $200. You'll stick to a plan better when part of it is yours.",
+   "say": "First, take ten percent for something fun. Two hundred dollars. You'll stick to a plan better when part of it is yours."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "Ask four questions",
+    "kicker": "THE PATH"
+   },
+   "say": "Then ask four questions, in order. Stop at the first no."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "ASK IN ORDER · STOP AT THE FIRST NO",
+    "items": [
+     "Are all bills caught up?",
+     "Starter emergency fund in place?",
+     "High-interest debt gone?",
+     "Sinking funds on track?"
+    ],
+    "at": [
+     1,
+     2,
+     3,
+     4
+    ],
+    "foot": "All yes? It goes to your bigger savings goals.",
+    "footAt": 5
+   },
+   "say": "Here they are."
+  },
+  {
+   "say": "One. Are all your bills caught up? If not, the refund catches them up. Late fees and shutoffs cost more than anything."
+  },
+  {
+   "say": "Two. Do you have a starter emergency fund, one month of bills? If not, start there."
+  },
+  {
+   "say": "Three. Is your high-interest debt gone? If not, that's where it goes."
+  },
+  {
+   "say": "Four. Are your sinking funds on track? If not, top them up."
+  },
+  {
+   "say": "All yes? Then it goes to your bigger savings goals."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "03",
+    "text": "The math on question three",
+    "kicker": "THE MATH"
+   },
+   "say": "Here's why question three beats a savings account."
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "$1,800 for one year",
+    "stagger": 4.2,
+    "items": [
+     [
+      "Savings at 4%: earns",
+      72,
+      "gold"
+     ],
+     [
+      "24% card: saves",
+      432,
+      "green"
+     ]
+    ]
+   },
+   "cap": "$1,800 in savings at 4% earns about $72 in a year. Put on a 24% card, it saves about $432 in interest.",
+   "say": "Eighteen hundred in savings at four percent earns about seventy-two dollars in a year. Put it on a twenty-four percent card, and it saves about four thirty-two in interest."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "$1,800 on the $10,000 card from episode 11",
+    "value": "5 months",
+    "c": "green",
+    "sub": "sooner, and about $905 less interest"
+   },
+   "cap": "On the $10,000 card from episode 11, paying $500 a month, that $1,800 finishes it 5 months sooner and saves about $905 in interest.",
+   "say": "On the ten thousand dollar card from episode eleven, paying five hundred a month, that eighteen hundred finishes it five months sooner, and saves about nine hundred in interest."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "04",
+    "text": "Next year's refund",
+    "kicker": "BONUS"
+   },
+   "say": "One more thing."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "A big refund means you overpaid all year.",
+    "hi": [
+     "overpaid"
+    ]
+   },
+   "say": "A big refund means you overpaid tax all year. In the US, you can adjust your W-4 withholding, so that money comes in each paycheck instead."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "A $2,000 refund, spread over 26 paychecks",
+    "value": "$77",
+    "c": "green",
+    "sub": "more in every paycheck, if you adjust withholding"
+   },
+   "cap": "$2,000 spread over 26 paychecks is about $77 more per check.",
+   "say": "Two thousand, spread over twenty-six paychecks, is about seventy-seven dollars more per check."
+  },
+  {
+   "say": "Some people like the forced savings of a refund, and that's fine. Just make it a choice. If you're unsure, ask a tax professional."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Plan your refund with the Paycheck Planner: link in the description",
+    "next": "Next: Rent vs income: the real number"
+   },
+   "say": "The Paycheck Planner in the description shows where every dollar is going, refund included."
+  },
+  {
+   "say": "Subscribe. Next time: how much rent you can really afford."
+  }
+ ]
+}

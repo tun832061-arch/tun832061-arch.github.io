@@ -231,18 +231,18 @@ D.waterfall = sc => {
     const hh = (bot - top) * p; const yy = isStart || isEnd ? bot - hh : top;
     box(x, yy, bw, Math.max(hh, 2 * U), 12 * U, c, 0.95);
     txt(lab, x + bw / 2, (isStart || isEnd ? yy : yy) - 34 * U, { sz: isEnd ? 64 : 46, fam: 'Anton', w: 400, c: c === 'ink' ? 'ink' : c, a: p });
-    wrap(b[0], bw + 70 * U, 26, 700).forEach((s, j) => txt(s, x + bw / 2, base + 40 * U + j * 32 * U, { sz: 26, w: 700, c: 'muted', a: p }));
+    wrap(b[0], Math.min(bw + 70 * U, step - 12 * U), 26, 700).forEach((s, j) => txt(s, x + bw / 2, base + 40 * U + j * 32 * U, { sz: 26, w: 700, c: 'muted', a: p }));
     if (i < n - 1 && i > 0 || isStart) { A(p * 0.5); X.strokeStyle = P.muted; X.lineWidth = 2 * U; X.setLineDash([6 * U, 8 * U]); X.beginPath();
       const ly = isStart ? top : bot; X.moveTo(x + bw, ly); X.lineTo(x + step, ly); X.stroke(); X.setLineDash([]); A(1); }
   });
-  if (sc.li.length > 1) txt('Paycheck 2 leaves $178', W / 2, 150 * U, { sz: 36, w: 700, c: 'muted', a: rv(1, kt(1, 'paycheck two'), 0.5) });
+  if (sc.note && sc.li.length > 1) txt(sc.note, W / 2, 150 * U, { sz: 36, w: 700, c: 'muted', a: rv(1, kt(1, 'paycheck two'), 0.5) });
 };
 D.compare = sc => {
   const cw = PORT ? W - 160 * U : 1360 * U, x = W / 2 - cw / 2, maxM = Math.max(...sc.rows.map(r => r.months));
   txt(sc.head, W / 2, PORT ? H * 0.2 : 170 * U, { sz: PORT ? 52 : 54, w: 800, a: rv(0, 0, 0.5) });
   sc.rows.forEach((r, i) => {
     const d0 = i === 0 ? (sc.kw0 ? kt(0, sc.kw0) : 0.2) : 0.1, p = rv(i, d0, 0.4); if (p <= 0) return;
-    const y = PORT ? H * 0.3 + i * 380 * U : 300 * U + i * (sc.rows.length > 2 ? 190 : 260) * U; const g = eo((L(i) - d0) / 1.6);
+    const y = PORT ? H * (sc.rows.length > 2 ? 0.25 : 0.3) + i * (sc.rows.length > 2 ? 300 : 380) * U : 300 * U + i * (sc.rows.length > 2 ? 190 : 260) * U; const g = eo((L(i) - d0) / 1.6);
     txt(r.label, x, y, { sz: 40, w: 700, c: 'muted', al: 'left', a: p });
     const bh = 90 * U, bwid = Math.max(cw * (r.months / maxM) * g, 10 * U) * (PORT ? 1 : 0.72);
     box(x, y + 36 * U, bwid, bh, 16 * U, r.c, 0.95);

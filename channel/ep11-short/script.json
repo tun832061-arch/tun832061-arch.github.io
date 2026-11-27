@@ -1,0 +1,81 @@
+{
+ "title": "$10,000 of debt: 3 plans (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "$10,000",
+      "of debt?"
+     ]
+    ],
+    "stamp": "3 ways out."
+   },
+   "cap": "$10,000 on a 24% card.",
+   "say": "Ten thousand dollars on a twenty-four percent card."
+  },
+  {
+   "say": "Three plans. Very different endings."
+  },
+  {
+   "scene": {
+    "type": "compare",
+    "head": "$10,000 at 24% APR",
+    "rows": [
+     {
+      "label": "$300 a month",
+      "months": 56,
+      "interest": 6644,
+      "c": "coral"
+     },
+     {
+      "label": "$500 a month",
+      "months": 26,
+      "interest": 2899,
+      "c": "gold"
+     },
+     {
+      "label": "$500 + refund & extra paychecks",
+      "months": 16,
+      "interest": 1543,
+      "c": "green"
+     }
+    ]
+   },
+   "cap": "$300 a month: 56 months, and $6,644 in interest.",
+   "say": "Three hundred a month: fifty-six months, and sixty-six forty-four in interest."
+  },
+  {
+   "cap": "$500 a month: 26 months.",
+   "say": "Five hundred a month: twenty-six months."
+  },
+  {
+   "cap": "$500, plus your tax refund and two extra paychecks: 16 months.",
+   "say": "Five hundred, plus your tax refund and two extra paychecks: sixteen months."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "40 months and $5,100 apart.",
+    "hi": [
+     "40",
+     "months",
+     "$5,100"
+    ]
+   },
+   "cap": "Same debt. 40 months and $5,100 apart.",
+   "say": "Same debt. Forty months and fifty-one hundred dollars apart."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "All 3 plans on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "say": "All three plans are on my channel."
+  }
+ ]
+}
