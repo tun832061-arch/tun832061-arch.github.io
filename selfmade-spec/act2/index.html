@@ -105,8 +105,8 @@ A2[1].el.style.fontSize='76px'; A2[1].el.style.fontWeight='700'; A2[1].el.style.
 const B1=words(ctaB,[['GO',CW[5]],['BUY',CW[6]],['YOUR',CW[7]],['OWN',CW[8]]],{font:'800 italic 92px/1 BX',color:'#0b0b0b',letterSpacing:'.02em'});
 const B2=words(ctaB,[['NOW.',CW[9]]],{font:'800 italic 330px/1 BX',color:'#7A1F2B',marginTop:'6px'});
 const pill=el('div','a pill',stage); pill.style.border='1.5px solid rgba(255,255,255,.12)';
-const pAv=el('div','a',pill,'C'); Object.assign(pAv.style,{width:'64px',height:'64px',borderRadius:'50%',background:'linear-gradient(145deg,#3b3b40,#1b1b1e)',display:'flex',alignItems:'center',justifyContent:'center',font:'800 italic 32px BX'});
-const pTxt=el('div','a',pill,'Collins'); pTxt.style.font='600 34px Inter';
+const pAv=el('div','a',pill,'O'); Object.assign(pAv.style,{width:'64px',height:'64px',borderRadius:'50%',background:'linear-gradient(145deg,#3b3b40,#1b1b1e)',display:'flex',alignItems:'center',justifyContent:'center',font:'800 italic 32px BX'});
+const pTxt=el('div','a',pill,'Octobersrich'); pTxt.style.font='600 32px Inter';
 const pTim=el('div','a',pill,'00:33'); pTim.style.font='500 32px Inter'; pTim.style.fontVariantNumeric='tabular-nums'; pTim.style.color='#c7c7cc';
 const pBars=[...Array(14)].map(()=>{const b=el('div','a',pill);b.style.background='#fff';b.style.borderRadius='3px';return b});
 const svg2=sv('svg',{width:1080,height:1920,viewBox:'0 0 1080 1920',class:'a'},stage);
@@ -207,7 +207,7 @@ function render(t){
  const inner=P(t,c0+0.05,c0+0.3)*(1-P(t,endS+0.95,endS+1.1));
  pAv.style.transform=`translate(24px,${(ph-64)/2}px)`; pAv.style.opacity=inner;
  const ended=t>=endS+0.35;
- pTxt.textContent=ended?'Call ended':'Collins'; pTxt.style.color=ended?'#ff6b6b':'#fff';
+ pTxt.textContent=ended?'Call ended':'Octobersrich'; pTxt.style.color=ended?'#ff6b6b':'#fff';
  pTxt.style.transform=`translate(108px,${ph/2-21}px)`; pTxt.style.opacity=inner;
  pTim.style.transform=`translate(${pw-32-pTim.offsetWidth}px,${ph/2-19}px)`; pTim.style.opacity=inner*(ended?1:0);
  const va=t<endS?voice(t):0;
