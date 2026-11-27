@@ -24,17 +24,17 @@ def join(parts,xf=0.03):
     return out
 # ---- edit decisions (raw seconds -> film seconds) ----
 C1=(0.62,2.88,4.55); F1=(3.84,6.97,7.15); C2a=(7.76,8.42,10.40)
-C2b_parts=[(9.10,11.45),(11.75,13.22)]; C2b_start=11.30
-SETS_RAW=12.52   # start of "sets" -> the phone filter opens here
+C2b_parts=[(9.10,11.34)]; C2b_start=11.30
+SETS_RAW=11.00   # start of "sets" -> the phone filter opens here
 FZ=None
 ACT1_LEN_BASE=17.5
 # words (raw times) for captions
 W_C1=[('How',0.70),('far?',0.95),('We',1.80),('still',1.97),('dey',2.17),('go',2.29),('that',2.44),('party?',2.60)]
 W_F1=[('Omo,',3.90),('I',4.90),('no',5.34),('get',5.45),('wetin',5.62),('to',5.88),('wear',6.10),('o.',6.32)]
 W_C2a=[('Oya',7.82),('na,',8.00)]
-W_C2b=[('make',9.16),('I',9.28),('find',9.52),('you',9.80),('one',10.02),('of',10.76),('my',11.14),('new',12.00),('sets.',12.52)]
-def c2b_map(r): return C2b_start+(r-9.10) if r<11.45 else C2b_start+(11.45-9.10)+(r-11.75)
-FZ=round(c2b_map(13.16),2)
+W_C2b=[('make',9.16),('I',9.28),('find',9.52),('you',9.80),('one',10.02),('of',10.25),('my',10.44),('new',10.76),('sets.',11.00)]
+def c2b_map(r): return C2b_start+(r-9.10)
+FZ=round(c2b_map(11.30),2)
 DSH=FZ-12.3; G=17.5+DSH
 # CTA (friend_2, take 2): raw 19.10-22.00 placed at act2 local cta0
 CTA_RAW=(0.44,2.84); CTA0_LOCAL=16.3; CTA_LEAD=0.15
@@ -50,7 +50,7 @@ x=cut(*F1[:2]); place(proc(x,CLEAN,'F'),F1[2],film); place(x,F1[2],dry)
 # Collins 2a (phone)
 x=cut(*C2a[:2]); place(proc(x,PHONE,'C'),C2a[2],film); place(x,C2a[2],dry)
 # Collins 2b: phone, then "sets" opens up to full voice with a short tail
-x=join([cut(a,b) for a,b in C2b_parts])
+x=cut(*C2b_parts[0],f=0.04)
 ph=proc(x,PHONE,'C'); cl=proc(x,CLEAN+",aecho=0.8:0.55:70|140:0.22|0.12",'C')
 k=int((c2b_map(SETS_RAW)-C2b_start)*SR); n=int(0.1*SR); m=np.ones(len(x)); m[k:]=0; m[k:k+n]=np.linspace(1,0,n)
 y=ph*m+cl*(1-m)*1.15
