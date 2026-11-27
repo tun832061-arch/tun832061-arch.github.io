@@ -1,0 +1,63 @@
+{
+ "title": "Where your raises went (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Good salary.",
+      "Still broke?"
+     ]
+    ],
+    "stamp": "Lifestyle creep."
+   },
+   "say": "Good salary, and still broke?"
+  },
+  {
+   "say": "Here's where four years of raises went."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Four years of raises",
+    "value": "+$1,200",
+    "c": "gold",
+    "sub": "a month, all absorbed by nicer everything"
+   },
+   "cap": "$1,200 more a month, gone on a nicer apartment, a newer car, takeout, and everything a bit nicer.",
+   "say": "Twelve hundred more a month, gone on a nicer apartment, a newer car, takeout, and everything a bit nicer."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Saved from four years of raises",
+    "value": "$0",
+    "c": "coral",
+    "sub": "same stress, nicer stuff"
+   },
+   "say": "Saved from all of it? Zero."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "The half-raise rule, 4 years at 4%",
+    "value": "$19,096",
+    "c": "green",
+    "sub": "from money you never got used to spending"
+   },
+   "cap": "The fix: half of every raise to your life, half to your future. That's about $19,096 in four years.",
+   "say": "The fix: half of every raise to your life, half to your future. That's about nineteen thousand in four years."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Lifestyle creep, explained on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "say": "The full math is on my channel."
+  }
+ ]
+}

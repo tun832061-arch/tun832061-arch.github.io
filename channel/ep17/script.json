@@ -1,0 +1,224 @@
+{
+ "title": "Budgeting as a Couple: 3 Systems Compared (Real Numbers)",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Budgeting",
+      "as a couple?"
+     ]
+    ],
+    "stamp": "Pick a system."
+   },
+   "say": "Budgeting as a couple?"
+  },
+  {
+   "say": "There are three main systems. Let's run real numbers through all three, and see what fair actually looks like."
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "Take-home pay, per month",
+    "stagger": 2.4,
+    "items": [
+     [
+      "Alex",
+      4000,
+      "green"
+     ],
+     [
+      "Sam",
+      2500,
+      "gold"
+     ]
+    ]
+   },
+   "cap": "Our example couple: Alex takes home $4,000 a month. Sam takes home $2,500.",
+   "say": "Our example couple. Alex takes home four thousand a month. Sam takes home twenty-five hundred."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Shared bills, per month",
+    "value": "$3,250",
+    "sub": "rent, utilities, groceries, insurance, the car"
+   },
+   "cap": "Their shared bills come to $3,250 a month.",
+   "say": "Their shared bills come to thirty-two fifty a month."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Episode 17 · real numbers",
+    "text": "Budgeting as a Couple"
+   },
+   "say": "Three systems. Same couple."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "Split it 50/50",
+    "kicker": "SYSTEM 1"
+   },
+   "say": "System one. Split everything fifty-fifty."
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "Each pays $1,625 · left over",
+    "stagger": 2.6,
+    "items": [
+     [
+      "Alex",
+      2375,
+      "green"
+     ],
+     [
+      "Sam",
+      875,
+      "coral"
+     ]
+    ]
+   },
+   "cap": "Each pays $1,625. Alex has $2,375 left. Sam has $875.",
+   "say": "Each pays sixteen twenty-five. Alex has twenty-three seventy-five left. Sam has eight seventy-five."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "50/50 takes 65% of Sam's pay, and 41% of Alex's.",
+    "hi": [
+     "65%"
+    ],
+    "hc": "coral"
+   },
+   "cap": "It sounds fair. But it takes 65% of Sam's pay, and only 41% of Alex's.",
+   "say": "It sounds fair. But it takes sixty-five percent of Sam's pay, and only forty-one percent of Alex's."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "Split it by income",
+    "kicker": "SYSTEM 2"
+   },
+   "say": "System two. Split by income."
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "Both pay half their pay · left over",
+    "stagger": 3.6,
+    "items": [
+     [
+      "Alex",
+      2000,
+      "green"
+     ],
+     [
+      "Sam",
+      1250,
+      "gold"
+     ]
+    ]
+   },
+   "cap": "Alex earns about 62% of the total, so Alex pays about 62% of the bills: $2,000. Sam pays $1,250. Now both pay exactly half their income.",
+   "say": "Alex earns about sixty-two percent of the total, so Alex pays about sixty-two percent of the bills. Two thousand. Sam pays twelve fifty. Now both pay exactly half their income."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "03",
+    "text": "One shared pot",
+    "kicker": "SYSTEM 3"
+   },
+   "say": "System three. One shared pot."
+  },
+  {
+   "scene": {
+    "type": "waterfall",
+    "start": [
+     "Both paychecks",
+     6500
+    ],
+    "steps": [
+     [
+      "Shared bills",
+      3250
+     ],
+     [
+      "Alex's fun money",
+      300
+     ],
+     [
+      "Sam's fun money",
+      300
+     ]
+    ],
+    "end": "Joint goals"
+   },
+   "cap": "Both paychecks go in: $6,500. Minus the bills, $3,250. Minus $300 of fun money for Alex. Minus $300 for Sam.",
+   "say": "Both paychecks go in. Sixty-five hundred. Minus the bills, thirty-two fifty. Minus three hundred of fun money for Alex. Minus three hundred for Sam."
+  },
+  {
+   "cap": "$2,650 a month goes to shared goals.",
+   "say": "Twenty-six fifty a month goes to shared goals."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "04",
+    "text": "Which one fits?",
+    "kicker": "PICK ONE"
+   },
+   "say": "So which one fits?"
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "WHICH SYSTEM FITS?",
+    "items": [
+     "50/50: similar incomes, newer relationship",
+     "By income: different pay, separate accounts",
+     "One pot: fully shared goals",
+     "Every system: no-questions money for each"
+    ],
+    "at": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "stagger": 3.0
+   },
+   "say": "Fifty-fifty works when incomes are similar, or the relationship is newer. Split by income when pay is different. One pot fits couples with fully shared goals. And in every system, each person gets some money with no questions asked."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Fair isn't equal dollars. It's a deal you both agree on.",
+    "hi": [
+     "both",
+     "agree"
+    ]
+   },
+   "say": "Fair doesn't have to mean equal dollars. It means a deal you both agree is fair. And talk numbers once a month, together."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Plan your shared bills with the Paycheck Planner: link in the description",
+    "next": "Next: One month in: fixing the budget you started"
+   },
+   "say": "The Paycheck Planner in the description works for one paycheck, or two."
+  },
+  {
+   "say": "Subscribe. Next time: one month in, and how to fix the budget you started."
+  }
+ ]
+}

@@ -298,7 +298,7 @@ D.months = sc => {
 D.trim = sc => {
   const n = sc.rows.length, rh = 76 * U, w = 1140 * U, x = W / 2 - w / 2, y0 = 200 * U, oc = x + w - 300 * U, nc = x + w - 40 * U;
   txt(sc.head.toUpperCase(), x + 36 * U, y0 - 50 * U, { sz: 30, w: 700, c: 'muted', al: 'left', a: rv(0, 0, 0.5) });
-  txt('NEW', nc, y0 - 50 * U, { sz: 26, w: 800, c: 'green', al: 'right', a: rv(0, 0, 0.5) });
+  txt(sc.newLabel || 'NEW', nc, y0 - 50 * U, { sz: 26, w: 800, c: 'green', al: 'right', a: rv(0, 0, 0.5) });
   const when = a => typeof a[1] === 'string' ? kt(a[0], a[1]) : a[1];
   let oldT = 0, newT = 0;
   sc.rows.forEach((r, i) => {

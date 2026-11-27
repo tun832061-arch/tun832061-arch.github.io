@@ -4,7 +4,7 @@
 body{margin:0}</style></head><body><canvas id="c" width="1280" height="720"></canvas><script>
 // thumb.html — episode 1 thumbnail, 1280x720. Rendered by thumb.cjs.
 const X=document.getElementById('c').getContext('2d');
-window.draw=(ep)=>{ if(ep==='ep02') return draw2(); if(ep==='ep03') return draw3(); if(ep==='ep04') return draw4(); if(ep==='ep05') return draw5(); if(ep==='ep06') return draw6(); if(ep==='ep07') return draw7(); if(ep==='ep08') return draw8(); if(ep==='ep09') return draw9(); if(ep==='ep10') return draw10(); if(ep==='ep11') return draw11(); if(ep==='ep12') return draw12(); if(ep==='ep13') return draw13(); if(ep==='ep14') return draw14(); if(ep==='ep15') return draw15(); if(ep==='ep16') return draw16();
+window.draw=(ep)=>{ if(ep==='ep02') return draw2(); if(ep==='ep03') return draw3(); if(ep==='ep04') return draw4(); if(ep==='ep05') return draw5(); if(ep==='ep06') return draw6(); if(ep==='ep07') return draw7(); if(ep==='ep08') return draw8(); if(ep==='ep09') return draw9(); if(ep==='ep10') return draw10(); if(ep==='ep11') return draw11(); if(ep==='ep12') return draw12(); if(ep==='ep13') return draw13(); if(ep==='ep14') return draw14(); if(ep==='ep15') return draw15(); if(ep==='ep16') return draw16(); if(ep==='ep17') return draw17(); if(ep==='ep18') return draw18();
  const g=X.createLinearGradient(0,0,1280,720);g.addColorStop(0,'#16324F');g.addColorStop(1,'#0A1522');X.fillStyle=g;X.fillRect(0,0,1280,720);
  const t=(s,x,y,f,c,al='left')=>{X.font=f;X.fillStyle=c;X.textAlign=al;X.textBaseline='alphabetic';X.fillText(s,x,y)};
  t('YOUR BUDGET',60,190,'900 92px Inter','#F3EFE6');
@@ -135,5 +135,19 @@ function draw16(){ base();
  T('ON $5,000',1010,225,'800 32px Inter','#8C9CB2','center');
  T('saved',1010,290,'800 34px Inter','#8C9CB2','center'); T('$1,059',1010,380,'400 90px Anton','#3DDC97','center');
  T('or still owe',1010,450,'800 34px Inter','#8C9CB2','center'); T('$2,450',1010,530,'400 70px Anton','#FF6B5B','center');
+}
+
+function draw17(){ base();
+ T('COUPLES',60,190,'400 170px Anton','#F3EFE6'); T('& MONEY',60,350,'400 150px Anton','#FFC857'); T('3 systems, real numbers →',64,450,'800 44px Inter','#3DDC97');
+ X.fillStyle='#0C1A2A';X.beginPath();X.roundRect(800,150,420,420,36);X.fill();X.strokeStyle='#FF6B5B';X.lineWidth=8;X.stroke();
+ T('50/50 TAKES',1010,225,'800 32px Inter','#8C9CB2','center'); T('65%',1010,370,'400 150px Anton','#FF6B5B','center');
+ T("of one partner's pay",1010,440,'800 30px Inter','#F3EFE6','center'); T('is that fair?',1010,520,'800 34px Inter','#FFC857','center');
+}
+function draw18(){ base();
+ T('ONE MONTH IN.',60,180,'400 112px Anton','#F3EFE6'); T('BUDGET BROKE?',60,320,'400 112px Anton','#FF6B5B'); T("fix it, don't quit →",64,430,'800 46px Inter','#3DDC97');
+ X.fillStyle='#0C1A2A';X.beginPath();X.roundRect(800,150,420,420,36);X.fill();X.strokeStyle='#FFC857';X.lineWidth=8;X.stroke();
+ T('PLANNED',1010,225,'800 32px Inter','#8C9CB2','center'); T('$990',1010,310,'400 80px Anton','#8C9CB2','center');
+ X.strokeStyle='#FF6B5B';X.lineWidth=10;X.beginPath();X.moveTo(900,282);X.lineTo(1120,282);X.stroke();
+ T('ACTUAL',1010,400,'800 32px Inter','#8C9CB2','center'); T('$1,215',1010,505,'400 100px Anton','#FFC857','center');
 }
 </script></body></html>

@@ -496,3 +496,65 @@ Educational content, not financial advice. Card terms vary; read your card's ter
 **`ep14-short/build/video.mp4`** → Related video: Episode 14
 - **Title:** The 30% rent rule is too high. Here's the real number #shorts
 - **Description:** `Landlord rule vs 30% vs your real number. Full math on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
+
+---
+
+## Episode 17: `ep17/build/video.mp4` · thumbnail `ep17/build/thumbnail.png` · captions `ep17/build/video.srt`
+
+**Title:** Budgeting as a Couple: 3 Systems Compared (Real Numbers)
+
+**Description:**
+```
+One partner takes home $4,000 a month, the other $2,500, with $3,250 of shared bills. Split 50/50, it takes 65% of one paycheck and 41% of the other. Split by income, both pay exactly half. Or run one shared pot with no-questions money for each. Here's the math on all three, and how to pick.
+
+📊 Plan your shared bills with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:20 Split it 50/50
+0:36 Split it by income
+0:50 One shared pot
+1:06 Which one fits?
+1:30 Get the planner
+
+Educational content, not financial advice.
+```
+**Tags:** budgeting as a couple, couples finances, split bills with partner, 50/50 vs proportional, joint bank account, money and relationships, couples budget, shared expenses
+
+**Pinned comment:** `Which system do you use: 50/50, by income, or one pot? 👇`
+
+---
+
+## Episode 18: `ep18/build/video.mp4` · thumbnail `ep18/build/thumbnail.png` · captions `ep18/build/video.srt`
+
+**Title:** One Month In: How to Fix the Budget You Started
+
+**Description:**
+```
+Month one ran $225 over plan, so only $132 reached the credit card. Don't quit; fix the numbers. Plan groceries you can actually hit, give fun money its own card, turn the "surprise" oil change into a sinking fund, and leave one-off months alone. The real plan clears the card in 10 months instead of 8, for about $62 more. A budget you keep beats a perfect one you quit.
+
+📊 Adjust your plan in seconds with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:12 Planned vs. actual
+0:34 Fix the numbers, not yourself
+1:17 Get the planner
+
+Educational content, not financial advice.
+```
+**Tags:** budget not working, fix my budget, budgeting tips, how to stick to a budget, monthly budget review, budget for beginners, new year budget, realistic budget
+
+**Pinned comment:** `What blew up your budget in month one? 👇`
+
+**Upload order and timing:** these are Week 9 videos (week of Jan 26), the last week before the Feb 1 rule change.
+
+---
+
+## Shorts for Episodes 15 and 16
+
+**`ep15-short/build/video.mp4`** → Related video: Episode 15
+- **Title:** Good salary, still broke? Here's where your raises went #shorts
+- **Description:** `Lifestyle creep and the half-raise rule. Full math on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
+
+**`ep16-short/build/video.mp4`** → Related video: Episode 16
+- **Title:** 0% balance transfer: $1,059 saved, or a trap? #shorts
+- **Description:** `Do the math before you move the debt. Full breakdown on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`

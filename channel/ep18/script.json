@@ -1,0 +1,223 @@
+{
+ "title": "One Month In: How to Fix the Budget You Started",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "One month in.",
+      "Budget broke?"
+     ]
+    ],
+    "stamp": "Fix it. Don't quit."
+   },
+   "say": "One month into your new budget, and it didn't go to plan?"
+  },
+  {
+   "say": "Good. That's normal. Month one is for finding out what's true. Here's how to fix it, with real numbers."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Episode 18 · real numbers",
+    "text": "The Month-One Fix"
+   },
+   "say": "Let's review our example from episode one."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "Planned vs. actual",
+    "kicker": "STEP 1"
+   },
+   "say": "Step one. Put planned next to actual."
+  },
+  {
+   "scene": {
+    "type": "trim",
+    "head": "Month one",
+    "newLabel": "ACTUAL",
+    "rows": [
+     [
+      "Groceries & gas",
+      640,
+      760
+     ],
+     [
+      "Fun money",
+      200,
+      260
+     ],
+     [
+      "Utilities",
+      150,
+      120
+     ],
+     [
+      "Oil change (forgot it)",
+      0,
+      75
+     ]
+    ],
+    "at": [
+     [
+      1,
+      0.1
+     ],
+     [
+      2,
+      0.1
+     ],
+     [
+      3,
+      0.1
+     ],
+     [
+      4,
+      0.1
+     ]
+    ],
+    "totalAt": [
+     5,
+     0.1
+    ]
+   },
+   "say": "Here's the month."
+  },
+  {
+   "cap": "Groceries and gas ran $120 over.",
+   "say": "Groceries and gas ran one twenty over."
+  },
+  {
+   "cap": "Fun money, $60 over.",
+   "say": "Fun money, sixty over."
+  },
+  {
+   "cap": "Utilities came in $30 under.",
+   "say": "Utilities came in thirty under."
+  },
+  {
+   "cap": "And an oil change nobody planned for, $75.",
+   "say": "And an oil change nobody planned for, seventy-five."
+  },
+  {
+   "cap": "Net: $225 over plan.",
+   "say": "Net, two twenty-five over plan."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Reached the credit card this month",
+    "value": "$132",
+    "c": "coral",
+    "sub": "instead of the planned $357"
+   },
+   "cap": "That came out of the goal money, so only $132 reached the credit card this month.",
+   "say": "That came out of the goal money, so only one thirty-two reached the credit card this month."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "Fix the numbers, not yourself",
+    "kicker": "STEP 2"
+   },
+   "say": "Step two. Fix the numbers, not yourself."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "THE FIXES",
+    "items": [
+     "Groceries: plan $700, not $640",
+     "Fun money: $200, on its own card or cash",
+     "Car upkeep: +$10 a paycheck to surprise funds",
+     "Utilities: leave it; one month isn't a trend"
+    ],
+    "at": [
+     1,
+     2,
+     3,
+     4
+    ]
+   },
+   "say": "Four fixes."
+  },
+  {
+   "cap": "Groceries were planned too low. Make it $700, a number you can actually hit.",
+   "say": "Groceries were planned too low. Make it seven hundred, a number you can actually hit."
+  },
+  {
+   "cap": "Fun money stays at $200, but it moves to its own card or cash, so you can see it running out.",
+   "say": "Fun money stays at two hundred, but it moves to its own card or cash, so you can see it running out."
+  },
+  {
+   "cap": "The oil change wasn't a surprise. Add $10 a paycheck to your surprise funds for car upkeep.",
+   "say": "The oil change wasn't a surprise. Add ten dollars a paycheck to your surprise funds for car upkeep."
+  },
+  {
+   "say": "And leave utilities alone. One cheap month isn't a trend."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "New goal money, every month",
+    "value": "$277",
+    "c": "gold",
+    "sub": "down from $357, but it's real"
+   },
+   "cap": "New goal money: $277 a month. Lower than before. But it's real.",
+   "say": "New goal money: two seventy-seven a month. Lower than before. But it's real."
+  },
+  {
+   "scene": {
+    "type": "compare",
+    "head": "The $3,200 card from episode one",
+    "rows": [
+     {
+      "label": "The perfect plan · $453/mo",
+      "months": 8,
+      "interest": 285,
+      "c": "gold"
+     },
+     {
+      "label": "The real plan · $373/mo",
+      "months": 10,
+      "interest": 347,
+      "c": "green"
+     }
+    ]
+   },
+   "say": "The perfect plan cleared the card in eight months."
+  },
+  {
+   "say": "The real plan takes ten, and about sixty dollars more in interest."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "A budget you keep beats a perfect one you quit.",
+    "hi": [
+     "you",
+     "keep"
+    ]
+   },
+   "say": "Two extra months beats quitting in February. A budget you keep beats a perfect one you abandon."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Adjust your plan in seconds with the Paycheck Planner: link in the description",
+    "next": "New money math every week"
+   },
+   "say": "The Paycheck Planner in the description makes these changes in seconds. Change one number, and everything updates."
+  },
+  {
+   "say": "Subscribe, and keep going. Month two is easier."
+  }
+ ]
+}

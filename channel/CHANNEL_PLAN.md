@@ -45,7 +45,16 @@ Each episode takes about 1–2 hours of your time: write `script.json`, render, 
 | Jan 5 | ✅ Ep11 *How to Pay Off $10,000 of Debt* · ✅ Ep12 *Credit Card Minimum Payments: The 17-Year Trap* | |
 | Jan 12 | ✅ Ep13 *Where Your Tax Refund Should Go* · ✅ Ep14 *How Much Rent Can You Really Afford?* | Tax season starts |
 | Jan 19 | ✅ Ep15 *Why You're Broke on a Good Salary* · ✅ Ep16 *Balance Transfer Cards: When They're Worth It* | |
-| Jan 26 | Budgeting as a couple: 3 systems compared · One month in: fixing the budget you started | Reaction to January; strong retention topic |
+| Jan 26 | ✅ Ep17 *Budgeting as a Couple* · ✅ Ep18 *One Month In: How to Fix the Budget You Started* | Reaction to January; strong retention topic |
+
+## February calendar (after the Jan 31 deadline)
+Tax season, Valentine's Day and "month two" motivation drive February searches. From Feb 1, ad revenue needs 8,000 watch hours, so planner sales, affiliates and sponsors stay the focus.
+| Week | Long videos | Note |
+|---|---|---|
+| Feb 2 | Valentine's Day on a budget: the real cost of "one nice dinner" · Tax refund advance loans: what they really cost | Valentine's searches peak the week before Feb 14 |
+| Feb 9 | How to file your taxes for free (and who qualifies) · Car payment vs. income: how much car can you afford? | Pairs with Ep14's rent math |
+| Feb 16 | Buy now, pay later: the math on 4 payments · Pay off debt or save? The order that works | BNPL is a high-search topic |
+| Feb 23 | Your credit score explained in numbers · 90 days in: the check-in (revisit Eps 1, 7 and 18) | Strong end-of-quarter retention |
 
 **Shorts:** for each long video, cut 1–2 Shorts of 20–40 s around its single most surprising number, and link each Short to its long video (*Related video*).
 

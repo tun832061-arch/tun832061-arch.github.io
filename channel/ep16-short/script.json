@@ -1,0 +1,65 @@
+{
+ "title": "0% balance transfer: worth it? (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "0% balance",
+      "transfer?"
+     ]
+    ],
+    "stamp": "Do the math first."
+   },
+   "cap": "0% balance transfer?",
+   "say": "Zero percent balance transfer?"
+  },
+  {
+   "say": "It can save you a thousand dollars, or it can backfire."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Clears $5,000 + fee in 18 months",
+    "value": "$287",
+    "c": "green",
+    "sub": "a month · saves about $1,059 vs a 24% card"
+   },
+   "cap": "$5,000 plus a $150 fee, over an 18-month promo: pay $287 a month and it's gone. You save about $1,059 versus a 24% card.",
+   "say": "Five thousand dollars, plus a hundred fifty dollar fee, over an eighteen month promo: pay two eighty-seven a month, and it's gone. You save about ten fifty-nine versus a twenty-four percent card."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Paying only $150 a month",
+    "value": "$2,450",
+    "c": "coral",
+    "sub": "still owed when the 0% ends"
+   },
+   "cap": "But pay only $150, and $2,450 is left when the promo ends, back at full interest.",
+   "say": "But pay only a hundred fifty, and twenty-four fifty is left when the promo ends, back at full interest."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "A transfer buys time. It doesn't pay the debt.",
+    "hi": [
+     "buys",
+     "time."
+    ]
+   },
+   "say": "A transfer buys time. It doesn't pay the debt."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Full breakdown on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "say": "The full breakdown is on my channel."
+  }
+ ]
+}
