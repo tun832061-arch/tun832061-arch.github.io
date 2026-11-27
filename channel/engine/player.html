@@ -182,13 +182,13 @@ D.ledger = sc => {
   txt((sc.head || 'IRREGULAR COSTS · LAST YEAR').toUpperCase(), W / 2, y0 - 40 * U, { sz: 30, w: 700, c: 'muted', a: rv(0, 0, 0.5) });
   let tot = 0;
   sc.items.forEach((it, i) => {
-    const q = rb(i + 1, 0.0, 0.4); if (q <= 0) return; tot += it[1] * eo((L(i + 1)) / 0.6);
+    const [lk, ld] = sc.stagger ? [0, 0.4 + i * sc.stagger] : [i + 1, 0]; const q = rb(lk, ld, 0.4); if (q <= 0) return; tot += it[1] * eo((L(lk) - ld) / 0.6);
     const y = y0 + i * rh; box(x, y, w, rh - 14 * U, 18 * U, 'bg2', cl(q));
     txt(it[0], x + 36 * U, y + (rh - 14 * U) / 2, { sz: 40, w: 700, al: 'left', a: cl(q) });
     txt(money(it[1]), x + w - 36 * U, y + (rh - 14 * U) / 2, { sz: 54, fam: 'Anton', w: 400, c: 'gold', al: 'right', a: cl(q) });
   });
   if (sc.noTotal) return;
-  const ty = y0 + n * rh + 30 * U, tp = rv(1, 0, 0.4);
+  const ty = y0 + n * rh + 30 * U, tp = sc.stagger ? rv(0, 0.4, 0.4) : rv(1, 0, 0.4);
   A(tp); X.fillStyle = P.muted; X.fillRect(x, ty - 6 * U, w, 3 * U); A(1);
   txt((sc.total || 'Total').toUpperCase(), x + 36 * U, ty + 50 * U, { sz: 32, w: 800, c: 'muted', al: 'left', a: tp });
   txt(money(tot), x + w - 36 * U, ty + 52 * U, { sz: 80, fam: 'Anton', w: 400, al: 'right', a: tp });
@@ -211,10 +211,10 @@ D.stack = sc => {
   const w = (PORT ? 900 : 1100) * U, h = 150 * U, x = W / 2 - w / 2, y0 = H / 2 - 210 * U;
   txt((sc.sub || '').toUpperCase(), W / 2, y0 - 50 * U, { sz: 30, w: 700, c: 'muted', a: rv(0, 0, 0.5) });
   sc.items.forEach((it, i) => {
-    const q = rb(i, i === 0 ? 0.1 : 0.1, 0.45); if (q <= 0) return; const y = y0 + i * (h + 30 * U);
+    const [sk, sd] = sc.stagger ? [0, 0.1 + i * sc.stagger] : [i, 0.1]; const q = rb(sk, sd, 0.45); if (q <= 0) return; const y = y0 + i * (h + 30 * U);
     box(x, y, w, h, 26 * U, 'bg2', cl(q)); box(x, y, 12 * U, h, 6 * U, it[2], cl(q));
     txt(it[0], x + 60 * U, y + h / 2, { sz: 50, w: 700, al: 'left', a: cl(q) });
-    txt(money(it[1] * eo(L(i) / 0.8)), x + w - 50 * U, y + h / 2 + 4 * U, { sz: 100, fam: 'Anton', w: 400, c: it[2], al: 'right', a: cl(q) });
+    txt(money(it[1] * eo((L(sk) - sd) / 0.8)), x + w - 50 * U, y + h / 2 + 4 * U, { sz: 100, fam: 'Anton', w: 400, c: it[2], al: 'right', a: cl(q) });
   });
 };
 D.waterfall = sc => {
@@ -262,7 +262,7 @@ D.steps = sc => {
   const n = sc.items.length, rh = (PORT ? 170 : 128) * U, x = PORT ? 110 * U : 470 * U, y0 = H / 2 - (n - 1) * rh / 2 - 40 * U;
   txt(sc.head || 'THE PAYCHECK METHOD', W / 2, y0 - 110 * U, { sz: 32, w: 800, c: 'green', a: rv(0, 0, 0.5) });
   sc.items.forEach((s, i) => {
-    const p = rv(sc.at[i], 0.05, 0.45); if (p <= 0) return; const y = y0 + i * rh, xx = x + (1 - p) * 40 * U;
+    const p = rv(sc.at[i], sc.stagger ? 0.3 + i * sc.stagger : 0.05, 0.45); if (p <= 0) return; const y = y0 + i * rh, xx = x + (1 - p) * 40 * U;
     box(xx, y - 40 * U, 80 * U, 80 * U, 40 * U, 'green', p);
     txt(String(i + 1), xx + 40 * U, y + 3 * U, { sz: 44, fam: 'Anton', w: 400, c: 'bg', a: p });
     txt(s, xx + 120 * U, y + 2 * U, { sz: PORT ? 48 : 54, w: 800, al: 'left', a: p });
@@ -283,7 +283,7 @@ D.end = sc => {
 
 D.months = sc => {
   const v = sc.vals, n = v.length, x0 = 250 * U, x1 = W - 250 * U, slot = (x1 - x0) / n, bw = slot * 0.62, base = 800 * U, mx = Math.max(...v), hs = 470 * U / mx;
-  const avgP = sc.avgAt != null ? rv(sc.avgAt, 0.2, 0.8) : 0, avg = v.reduce((a, b) => a + b, 0) / n;
+  const avgP = sc.avgAt != null ? rv(sc.avgAt, 0.2, 0.8) : 0, avg = sc.line != null ? sc.line : v.reduce((a, b) => a + b, 0) / n;
   if (sc.head) txt(sc.head.toUpperCase(), W / 2, 170 * U, { sz: 30, w: 700, c: 'muted', a: rv(0, 0, 0.5) });
   A(rv(0, 0, 0.5)); X.fillStyle = P.dim; X.fillRect(x0, base, x1 - x0, 3 * U); A(1);
   (sc.labels || 'JFMAMJJASOND'.split('')).forEach((m, i) => {

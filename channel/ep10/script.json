@@ -1,0 +1,254 @@
+{
+ "title": "Emergency Fund: How Much Is Enough, Really? (Find Your Number)",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Emergency fund:",
+      "how much?"
+     ]
+    ],
+    "stamp": "Here's your number."
+   },
+   "say": "How big should your emergency fund be?"
+  },
+  {
+   "say": "Not the internet's number. Yours."
+  },
+  {
+   "scene": {
+    "type": "chips",
+    "stagger": 1.0,
+    "items": [
+     {
+      "t": "Job loss",
+      "c": "coral"
+     },
+     {
+      "t": "Medical bill",
+      "c": "coral"
+     },
+     {
+      "t": "Car won't start",
+      "c": "coral"
+     }
+    ]
+   },
+   "say": "First, what it's for. Losing your job. A medical bill. A car that won't start."
+  },
+  {
+   "scene": {
+    "type": "chips",
+    "stagger": 0.9,
+    "items": [
+     {
+      "t": "Holidays",
+      "c": "muted",
+      "x": true
+     },
+     {
+      "t": "Car registration",
+      "c": "muted",
+      "x": true
+     },
+     {
+      "t": "Vacation",
+      "c": "muted",
+      "x": true
+     }
+    ]
+   },
+   "say": "Not the holidays, or car registration. Those are on the calendar, so they belong in sinking funds. That's episode three."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Episode 10 · real numbers",
+    "text": "Your Emergency Fund"
+   },
+   "say": "So let's find your number, in three steps."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "Count essentials, not income",
+    "kicker": "STEP 1"
+   },
+   "say": "Step one. Count essentials, not income."
+  },
+  {
+   "scene": {
+    "type": "ledger",
+    "head": "Monthly essentials · our example",
+    "total": "Per month",
+    "stagger": 0.75,
+    "items": [
+     [
+      "Rent",
+      1300
+     ],
+     [
+      "Car payment",
+      340
+     ],
+     [
+      "Insurance",
+      140
+     ],
+     [
+      "Utilities & internet",
+      210
+     ],
+     [
+      "Phone",
+      65
+     ],
+     [
+      "Student loan + card minimum",
+      316
+     ],
+     [
+      "Groceries & gas",
+      640
+     ]
+    ]
+   },
+   "say": "If your income stopped tomorrow, what would you still have to pay? Here's our example from episode one."
+  },
+  {
+   "cap": "That's $3,011 a month. Fun money, streaming and eating out don't count. You'd cut those first.",
+   "say": "That's three thousand and eleven a month. Fun money, streaming and eating out don't count. You'd cut those first."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "Pick how many months",
+    "kicker": "STEP 2"
+   },
+   "say": "Step two. Pick how many months."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "LEAN TOWARD 6 MONTHS IF…",
+    "items": [
+     "Your income is irregular",
+     "You're the only earner",
+     "You have kids or dependents",
+     "Your job is hard to replace"
+    ],
+    "at": [
+     1,
+     1,
+     1,
+     1
+    ],
+    "stagger": 1.2
+   },
+   "say": "The usual range is three to six months of essentials."
+  },
+  {
+   "say": "Lean toward six if your income is irregular, you're the only earner, you have kids, or your job would be hard to replace."
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "Your target, from $3,011 a month",
+    "items": [
+     [
+      "3 months",
+      9033,
+      "green"
+     ],
+     [
+      "6 months",
+      18066,
+      "gold"
+     ]
+    ],
+    "stagger": 3.6
+   },
+   "cap": "For our example, 3 months is $9,033. Six months is about $18,000.",
+   "say": "For our example, three months is nine thousand and thirty-three. Six months is about eighteen thousand."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "03",
+    "text": "Build it in stages",
+    "kicker": "STEP 3"
+   },
+   "say": "Step three. Build it in stages, so it never feels impossible."
+  },
+  {
+   "scene": {
+    "type": "compare",
+    "head": "Months to reach each goal",
+    "kw0": "start",
+    "rows": [
+     {
+      "label": "Starter: 1 month of bills · $453/mo",
+      "months": 6,
+      "c": "gold"
+     },
+     {
+      "label": "3 months of essentials · $453/mo",
+      "months": 20,
+      "c": "coral"
+     },
+     {
+      "label": "3 months · $453/mo + two extra paychecks a year",
+      "months": 12,
+      "c": "green"
+     }
+    ]
+   },
+   "cap": "Start with a starter goal: one month of bills, $2,371. At $453 a month (the money freed up once the credit card is gone), that's 6 months.",
+   "say": "Start with a starter goal: one month of bills, twenty-three seventy-one. At four fifty-three a month, the money freed up once the credit card is gone, that's six months."
+  },
+  {
+   "say": "Three full months at that pace takes twenty months."
+  },
+  {
+   "say": "But send your two three-paycheck-month checks there too, and it's about a year."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Keep it boring: a separate high-yield savings account.",
+    "hi": [
+     "separate"
+    ]
+   },
+   "say": "Keep it somewhere boring. A separate high-yield savings account, ideally at a different bank. Easy to reach in an emergency, but not so easy you spend it on a Tuesday."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Used it? Refill it. That's the system working.",
+    "hi": [
+     "Refill",
+     "it."
+    ]
+   },
+   "say": "And if you use it, that's what it's for. Pause the extras, refill it, then get back to your goals."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Plan your emergency fund with the Paycheck Planner: link in the description",
+    "next": "Next: Pay off $10,000 of debt: 3 real scenarios"
+   },
+   "say": "The Paycheck Planner in the description keeps your bills, funds and goals in one place."
+  },
+  {
+   "say": "Subscribe for more money math, with real numbers."
+  }
+ ]
+}

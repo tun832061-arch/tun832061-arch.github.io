@@ -1,0 +1,277 @@
+{
+ "title": "How to Budget on an Irregular Income (Gig, Tips, Commission)",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Paycheck never",
+      "the same?"
+     ]
+    ],
+    "stamp": "Budget anyway."
+   },
+   "say": "Is your paycheck different every month?"
+  },
+  {
+   "say": "Gig work, tips, commission, freelance. Here's how to budget when you can't predict the number."
+  },
+  {
+   "scene": {
+    "type": "months",
+    "head": "Take-home income, last 12 months",
+    "vals": [
+     2900,
+     3600,
+     2400,
+     4100,
+     3200,
+     2700,
+     3800,
+     2200,
+     3500,
+     4400,
+     2600,
+     3000
+    ],
+    "c": "gold"
+   },
+   "cap": "Our example: over the last year, this person averaged $3,200 a month. But some months were $2,200, and some were $4,400.",
+   "say": "Here's our example. Over the last year, this person averaged thirty-two hundred a month. But some months were twenty-two hundred, and some were forty-four hundred."
+  },
+  {
+   "say": "These are after-tax numbers. If you're self-employed, move your tax money into its own account first, every time you get paid."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Episode 9 · real numbers",
+    "text": "Irregular Income"
+   },
+   "say": "The fix is to turn a bumpy income into a steady paycheck that you pay yourself. Four steps."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "Spending the average fails",
+    "kicker": "THE TRAP"
+   },
+   "say": "First, the trap."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Spending the $3,200 average",
+    "value": "5 of 12",
+    "c": "coral",
+    "sub": "months come up short, with no cushion"
+   },
+   "cap": "Most people budget on their average. But spend $3,200 every month, and 5 months out of 12, you come up short.",
+   "say": "Most people budget on their average. But spend thirty-two hundred every month, and five months out of twelve, you come up short."
+  },
+  {
+   "say": "Those short months end up on a credit card. That's the trap."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "Find your floor",
+    "kicker": "STEP 1"
+   },
+   "say": "Step one. Find your floor."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Your floor: lowest month, last 12",
+    "value": "$2,200",
+    "sub": "your bare-bones budget has to fit under this"
+   },
+   "cap": "Your floor is your lowest month from the last year. Here, $2,200.",
+   "say": "Your floor is your lowest month from the last year. Here, twenty-two hundred."
+  },
+  {
+   "cap": "Build a bare-bones budget that fits under it: rent, utilities, groceries, insurance, minimum payments. Here, $2,100. Even your worst month covers it.",
+   "say": "Build a bare-bones budget that fits under it. Rent, utilities, groceries, insurance, minimum payments. Here, twenty-one hundred. Even your worst month covers it."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "03",
+    "text": "Pay yourself a salary",
+    "kicker": "STEP 2"
+   },
+   "say": "Step two. Pay yourself a salary."
+  },
+  {
+   "scene": {
+    "type": "chips",
+    "stagger": 2.6,
+    "items": [
+     {
+      "t": "All income → one holding account",
+      "c": "coral"
+     },
+     {
+      "t": "Fixed salary → your checking, on schedule",
+      "c": "muted"
+     }
+    ]
+   },
+   "say": "Every dollar you earn goes into one holding account. Then, on a set schedule, you pay yourself a fixed amount from it, like a regular paycheck."
+  },
+  {
+   "scene": {
+    "type": "months",
+    "head": "Same income, smoothed",
+    "vals": [
+     2900,
+     3600,
+     2400,
+     4100,
+     3200,
+     2700,
+     3800,
+     2200,
+     3500,
+     4400,
+     2600,
+     3000
+    ],
+    "c": "gold",
+    "line": 2800,
+    "avgAt": 1,
+    "avgLabel": "Your salary: $2,800, every month"
+   },
+   "cap": "Pick a salary below your average. Here, $2,800 a month.",
+   "say": "Pick a salary below your average. Here, twenty-eight hundred a month."
+  },
+  {
+   "cap": "Now the bumps happen inside the holding account, and your life runs on a steady $2,800.",
+   "say": "Now the bumps happen inside the holding account, and your life runs on a steady twenty-eight hundred."
+  },
+  {
+   "scene": {
+    "type": "months",
+    "head": "Holding account balance, starting from $0",
+    "vals": [
+     100,
+     900,
+     500,
+     1800,
+     2200,
+     2100,
+     3100,
+     2500,
+     3200,
+     4800,
+     4600,
+     4800
+    ],
+    "c": "green"
+   },
+   "say": "Here's the holding account, starting from zero. Good months fill it. Lean months draw it down."
+  },
+  {
+   "cap": "And it never runs dry. By December, there's $4,800 extra.",
+   "say": "And it never runs dry. By December, there's forty-eight hundred extra."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "04",
+    "text": "Cushion first, then goals",
+    "kicker": "STEP 3"
+   },
+   "say": "Step three. Good months build the cushion first."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Cushion first. Then goals.",
+    "hi": [
+     "Then",
+     "goals."
+    ]
+   },
+   "cap": "Keep the extra in the holding account until it reaches one month of salary: $2,800. Here, that happens in July.",
+   "say": "Keep the extra in the holding account until it reaches one month of salary. Twenty-eight hundred. Here, that happens in July."
+  },
+  {
+   "say": "After that, the extra goes to your goals. Debt, sinking funds, savings."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "05",
+    "text": "Raise it slowly",
+    "kicker": "STEP 4"
+   },
+   "say": "Step four. Raise your salary slowly."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Raise your salary once a year, not after one good month.",
+    "hi": [
+     "once",
+     "a",
+     "year,"
+    ]
+   },
+   "say": "If the cushion keeps growing, give yourself a raise. But only after a full year of numbers. One great month isn't a trend."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "IRREGULAR INCOME",
+    "items": [
+     "Find your floor: your lowest month",
+     "Bare-bones budget under the floor",
+     "Pay yourself a fixed salary",
+     "Cushion first, then goals"
+    ],
+    "at": [
+     1,
+     2,
+     3,
+     4
+    ]
+   },
+   "say": "Recap."
+  },
+  {
+   "join": true,
+   "say": "Find your floor."
+  },
+  {
+   "join": true,
+   "say": "Build a bare-bones budget under it."
+  },
+  {
+   "join": true,
+   "say": "Pay yourself a fixed salary."
+  },
+  {
+   "join": true,
+   "say": "And fill the cushion first, then your goals."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Run your salary through the Paycheck Planner: link in the description",
+    "next": "Next: Emergency fund: how much is enough, really?"
+   },
+   "cap": "Pay yourself twice a month, $1,400 each, and the Paycheck Planner in the description handles the rest.",
+   "say": "Pay yourself twice a month, fourteen hundred each, and the Paycheck Planner in the description handles the rest."
+  },
+  {
+   "say": "Subscribe. Next time: how big your emergency fund should really be."
+  }
+ ]
+}

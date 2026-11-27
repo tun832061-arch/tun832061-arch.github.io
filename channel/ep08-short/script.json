@@ -1,0 +1,81 @@
+{
+ "title": "2027 money reset: score yourself (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "2027",
+      "money reset."
+     ]
+    ],
+    "stamp": "Score yourself."
+   },
+   "cap": "The 2027 money reset. Score yourself out of 8.",
+   "say": "The twenty twenty-seven money reset. Score yourself, out of eight."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "SET IT UP",
+    "items": [
+     "Know your take-home",
+     "Every bill gets a paycheck",
+     "Sinking funds",
+     "Mark 3-paycheck months"
+    ],
+    "at": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "stagger": 1.6
+   },
+   "say": "Set it up. Know your take-home pay. Give every bill a paycheck. Start sinking funds. Mark your three-paycheck months."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "LET IT RUN",
+    "items": [
+     "One debt target",
+     "Starter emergency fund",
+     "Automate on payday",
+     "15-minute check-in"
+    ],
+    "at": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "stagger": 1.6
+   },
+   "say": "Then let it run. One debt target. A starter emergency fund. Automate it on payday. And a fifteen-minute check-in."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Your score: __ / 8",
+    "hi": [
+     "__",
+     "/",
+     "8"
+    ]
+   },
+   "say": "What's your score? Comment it. Zero is a fine place to start."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "All 8 steps explained on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "say": "All eight steps are explained on my channel."
+  }
+ ]
+}

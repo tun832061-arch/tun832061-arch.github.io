@@ -1,0 +1,94 @@
+{
+ "title": "Holiday debt in 90 days (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Holiday debt?",
+      "90 days."
+     ]
+    ],
+    "stamp": "Gone by spring."
+   },
+   "cap": "$1,500 of holiday debt at 24%?",
+   "say": "Fifteen hundred dollars of holiday debt, at twenty-four percent?"
+  },
+  {
+   "say": "Here's the difference a plan makes."
+  },
+  {
+   "scene": {
+    "type": "compare",
+    "head": "$1,500 at 24% APR",
+    "kw0": "paying",
+    "rows": [
+     {
+      "label": "Minimum payments",
+      "months": 81,
+      "interest": 1442,
+      "c": "coral"
+     },
+     {
+      "label": "The 90-day plan",
+      "months": 3,
+      "interest": 60,
+      "c": "green"
+     }
+    ]
+   },
+   "cap": "Paying a common minimum: 81 months, and $1,442 in interest.",
+   "say": "Paying a common minimum, eighty-one months, and fourteen forty-two in interest."
+  },
+  {
+   "cap": "The 90-day plan: 3 months, about $60.",
+   "say": "The ninety-day plan, three months, about sixty dollars."
+  },
+  {
+   "scene": {
+    "type": "equation",
+    "parts": [
+     "$1,561",
+     "÷",
+     "6",
+     "=",
+     "$260"
+    ],
+    "under": [
+     "needed",
+     "",
+     "paychecks",
+     "",
+     "per paycheck"
+    ],
+    "at": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "kw": [
+     "it's",
+     "about",
+     "six",
+     "two sixty",
+     "two sixty"
+    ]
+   },
+   "cap": "The trick is about $260, every single payday, before you can spend it.",
+   "say": "The trick? It's about two sixty, every single payday, before you can spend it."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Full 4-step plan on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "say": "The full four-step plan is on my channel."
+  }
+ ]
+}

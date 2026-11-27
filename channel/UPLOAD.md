@@ -249,3 +249,67 @@ Educational content, not financial advice.
 **`ep06-short/build/video.mp4`** → Related video: Episode 6
 - **Title:** 2027 has 53 Fridays. Check your paychecks #shorts
 - **Description:** `Paid every other Friday? Some months bring a third paycheck. Find yours in the full video. Planner: [PLANNER LINK]. Educational, not financial advice.`
+
+---
+
+## Episode 9: `ep09/build/video.mp4` · thumbnail `ep09/build/thumbnail.png` · captions `ep09/build/video.srt`
+
+**Title:** How to Budget on an Irregular Income (Gig, Tips, Commission)
+
+**Description:**
+```
+Paycheck different every month? Spending your $3,200 average leaves you short 5 months out of 12. Here's the fix: find your floor, build a bare-bones budget under it, pay yourself a steady $2,800 salary from a holding account, and fill the cushion before your goals. By December the holding account is $4,800 ahead.
+
+📊 Run your salary through the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:31 Spending the average fails
+0:44 Find your floor
+1:01 Pay yourself a salary
+1:32 Cushion first, then goals
+1:48 Raise it slowly
+2:06 Get the planner
+
+Educational content, not financial advice. Numbers are after tax. If you're self-employed, ask a tax professional how much to set aside.
+```
+**Tags:** irregular income budget, budget with variable income, gig worker budget, freelancer budget, commission budget, how to budget tips income, pay yourself a salary, income smoothing
+
+**Pinned comment:** `What kind of irregular income do you have: gig, tips, commission or freelance? 👇`
+
+---
+
+## Episode 10: `ep10/build/video.mp4` · thumbnail `ep10/build/thumbnail.png` · captions `ep10/build/video.srt`
+
+**Title:** Emergency Fund: How Much Is Enough, Really? (Find Your Number)
+
+**Description:**
+```
+How big should your emergency fund be? Count essentials, not income ($3,011 a month in our example), pick 3 to 6 months based on your situation, then build it in stages: a 1-month starter in 6 months, and 3 full months in about a year using your 3-paycheck months.
+
+📊 Plan your emergency fund with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:21 Count essentials, not income
+0:36 Pick how many months
+0:56 Build it in stages
+1:33 Get the planner
+
+Educational content, not financial advice. 
+```
+**Tags:** emergency fund, how much emergency fund, emergency fund 3 or 6 months, how to build an emergency fund, starter emergency fund, high yield savings account, personal finance basics, savings goals
+
+**Pinned comment:** `Where are you right now: zero, starter, or 3+ months? 👇`
+
+**Upload order and timing:** these are Week 5 videos (week of Dec 29). That's the peak New Year's search week, so if you can manage a third upload, add one of the Shorts below as well.
+
+---
+
+## Shorts for Episodes 7 and 8
+
+**`ep07-short/build/video.mp4`** → Related video: Episode 7
+- **Title:** $1,500 holiday debt: 81 months or 90 days? #shorts
+- **Description:** `Minimum payments vs a 90-day plan, with real numbers. Full plan on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
+
+**`ep08-short/build/video.mp4`** → Related video: Episode 8
+- **Title:** The 2027 money reset: what's your score out of 8? #shorts
+- **Description:** `Eight steps that make a budget stick. All explained on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
