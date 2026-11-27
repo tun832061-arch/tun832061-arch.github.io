@@ -1,0 +1,70 @@
+{
+ "title": "Is 50/50 fair? (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Splitting 50/50.",
+      "Fair?"
+     ]
+    ],
+    "stamp": "Run the math."
+   },
+   "say": "Splitting bills fifty-fifty with your partner. Is it fair?"
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "Take-home pay, per month",
+    "stagger": 2.0,
+    "items": [
+     [
+      "Alex",
+      4000,
+      "green"
+     ],
+     [
+      "Sam",
+      2500,
+      "gold"
+     ]
+    ]
+   },
+   "cap": "Alex takes home $4,000. Sam takes home $2,500. Shared bills: $3,250.",
+   "say": "Alex takes home four thousand. Sam takes home twenty-five hundred. Shared bills: thirty-two fifty."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "50/50: share of Sam's pay",
+    "value": "65%",
+    "c": "coral",
+    "sub": "vs 41% of Alex's"
+   },
+   "cap": "50/50 takes 65% of Sam's pay, and only 41% of Alex's.",
+   "say": "Fifty-fifty takes sixty-five percent of Sam's pay, and only forty-one percent of Alex's."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Split by income",
+    "value": "50%",
+    "c": "green",
+    "sub": "of each person's pay. Equal effort, not equal dollars."
+   },
+   "say": "Split by income instead, and both pay exactly half."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "All 3 systems on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "say": "Three systems compared, on my channel."
+  }
+ ]
+}

@@ -78,8 +78,9 @@ D.bigtext = sc => {
 D.title = sc => {
   const p = rv(0, 0, 0.7), y = H / 2 - 20 * U;
   txt(sc.kicker.toUpperCase(), W / 2, y - 150 * U, { sz: 30, w: 700, c: 'muted', a: p });
-  txt(sc.text, W / 2, y + (1 - p) * 30 * U, { sz: PORT ? 150 : 210, fam: 'Anton', w: 400, a: p });
-  const lw = tw(sc.text, PORT ? 150 : 210, 400, 'Anton') * eo((L(0) - 0.4) / 0.8);
+  const tsz0 = PORT ? 150 : 210, tsz = Math.min(tsz0, tsz0 * (W - 160 * U) / tw(sc.text, tsz0, 400, 'Anton'));
+  txt(sc.text, W / 2, y + (1 - p) * 30 * U, { sz: tsz, fam: 'Anton', w: 400, a: p });
+  const lw = tw(sc.text, tsz, 400, 'Anton') * eo((L(0) - 0.4) / 0.8);
   box(W / 2 - lw / 2, y + 125 * U, lw, 12 * U, 6 * U, 'green', 1);
 };
 D.section = sc => {

@@ -1,0 +1,265 @@
+{
+ "title": "Valentine's Day on a Budget: The Real Cost of One Nice Dinner",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "One nice dinner.",
+      "How much?"
+     ]
+    ],
+    "stamp": "More than you think."
+   },
+   "say": "Valentine's Day. One nice dinner. How much could it cost?"
+  },
+  {
+   "say": "Let's add up the real number, then build a version that fits your plan."
+  },
+  {
+   "scene": {
+    "type": "ledger",
+    "head": "Dinner for two",
+    "total": "Dinner",
+    "items": [
+     [
+      "Two entrées",
+      76
+     ],
+     [
+      "Appetizer + dessert",
+      30
+     ],
+     [
+      "Four drinks",
+      48
+     ],
+     [
+      "Tax (8%)",
+      12
+     ],
+     [
+      "Tip (20%)",
+      31
+     ]
+    ]
+   },
+   "say": "Here's the dinner."
+  },
+  {
+   "cap": "Two entrées, $76.",
+   "join": true,
+   "say": "Two entrées, seventy-six."
+  },
+  {
+   "cap": "Appetizer and dessert, $30.",
+   "join": true,
+   "say": "Appetizer and dessert, thirty."
+  },
+  {
+   "cap": "Four drinks, $48.",
+   "join": true,
+   "say": "Four drinks, forty-eight."
+  },
+  {
+   "cap": "Tax, $12.",
+   "join": true,
+   "say": "Tax, twelve."
+  },
+  {
+   "cap": "And a 20% tip, $31.",
+   "join": true,
+   "say": "And a twenty percent tip, thirty-one."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Just the dinner",
+    "value": "$197",
+    "c": "gold",
+    "sub": "before flowers, a gift, or getting there"
+   },
+   "cap": "That's $197, before anything else.",
+   "say": "That's one ninety-seven, before anything else."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "The real Valentine's Day",
+    "value": "$367",
+    "c": "coral",
+    "sub": "dinner $197 · flowers $65 · gift $75 · rides $30"
+   },
+   "cap": "Add flowers, $65. A gift, $75. And rides there and back, $30.",
+   "say": "Add flowers, sixty-five. A gift, seventy-five. And rides there and back, thirty."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Episode 19 · real numbers",
+    "text": "The Real Cost of Romance"
+   },
+   "cap": "In our example budget, fun money is $100 a paycheck. That one night is almost four paychecks of it.",
+   "say": "In our example budget, fun money is a hundred dollars a paycheck. That one night is almost four paychecks of it."
+  },
+  {
+   "say": "So here are two ways to do it without wrecking February."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "The planned night in",
+    "kicker": "OPTION 1"
+   },
+   "say": "Option one. The planned night in."
+  },
+  {
+   "scene": {
+    "type": "ledger",
+    "head": "A $100 Valentine's Day",
+    "total": "Total",
+    "items": [
+     [
+      "Groceries for a nice dinner",
+      48
+     ],
+     [
+      "A bottle of wine",
+      18
+     ],
+     [
+      "Grocery-store flowers",
+      15
+     ],
+     [
+      "A dessert to share",
+      12
+     ],
+     [
+      "A printed photo + handwritten card",
+      7
+     ]
+    ]
+   },
+   "say": "Here's a hundred dollar version."
+  },
+  {
+   "cap": "Groceries for a really nice dinner, $48.",
+   "join": true,
+   "say": "Groceries for a really nice dinner, forty-eight."
+  },
+  {
+   "cap": "A bottle of wine, $18.",
+   "join": true,
+   "say": "A bottle of wine, eighteen."
+  },
+  {
+   "cap": "Grocery-store flowers, $15.",
+   "join": true,
+   "say": "Grocery-store flowers, fifteen."
+  },
+  {
+   "cap": "Dessert to share, $12.",
+   "join": true,
+   "say": "Dessert to share, twelve."
+  },
+  {
+   "cap": "And a printed photo with a handwritten card, $7. Often the part people remember most.",
+   "join": true,
+   "say": "And a printed photo with a handwritten card, seven. Often the part people remember most."
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "Same holiday, two budgets",
+    "stagger": 1.5,
+    "items": [
+     [
+      "The night out",
+      367,
+      "coral"
+     ],
+     [
+      "The planned night in",
+      100,
+      "green"
+     ]
+    ]
+   },
+   "cap": "$100. One paycheck of fun money. $267 less than the night out.",
+   "say": "One hundred dollars. One paycheck of fun money. Two sixty-seven less than the night out."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "Splurge on purpose",
+    "kicker": "OPTION 2"
+   },
+   "say": "Option two. Splurge on purpose."
+  },
+  {
+   "scene": {
+    "type": "equation",
+    "parts": [
+     "$367",
+     "÷",
+     "26",
+     "=",
+     "$15"
+    ],
+    "under": [
+     "the night out",
+     "",
+     "paychecks",
+     "",
+     "per paycheck"
+    ],
+    "at": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "kw": [
+     "three sixty",
+     "over",
+     "twenty-six",
+     "is fifteen",
+     "fifteen"
+    ]
+   },
+   "cap": "The night out isn't wrong. Unplanned is the problem. If you love it, plan for it: $367 over 26 paychecks is $15 each.",
+   "say": "The night out isn't wrong. Unplanned is the problem. If you love it, plan for it. Three sixty-seven over twenty-six paychecks is fifteen dollars each."
+  },
+  {
+   "say": "Start a sinking fund now, and next February is already paid for. Episode three shows how."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Decide the number before you sit down.",
+    "hi": [
+     "before"
+    ]
+   },
+   "say": "Either way, decide the number before you're sitting at the table."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Plan next year's splurge with the Paycheck Planner: link in the description",
+    "next": "Next: Tax refund advances: what they really cost"
+   },
+   "say": "The Paycheck Planner in the description has a surprise fund tab for exactly this kind of plan."
+  },
+  {
+   "say": "Subscribe. Next time: tax refund advances, and what they really cost."
+  }
+ ]
+}

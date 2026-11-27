@@ -1,0 +1,170 @@
+{
+ "title": "Tax Refund Advances: What They Really Cost",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Refund advance?",
+      "Get it today?"
+     ]
+    ],
+    "stamp": "Read the fine print."
+   },
+   "say": "Get your tax refund today?"
+  },
+  {
+   "say": "Refund advances are everywhere in February. Some are fine. Some cost far more than they look. Let's run the numbers."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Episode 20 · real numbers",
+    "text": "Refund Advances"
+   },
+   "say": "Here's the idea. A tax preparer or lender gives you part of your refund now, often a few hundred to a few thousand dollars, and gets paid back when your refund arrives."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "Where the costs hide",
+    "kicker": "THE FINE PRINT"
+   },
+   "say": "First, where the costs hide."
+  },
+  {
+   "scene": {
+    "type": "chips",
+    "stagger": 2.4,
+    "items": [
+     {
+      "t": "Paid tax prep, often required",
+      "c": "coral"
+     },
+     {
+      "t": "Refund transfer fee",
+      "c": "coral"
+     },
+     {
+      "t": "Money on their prepaid card",
+      "c": "coral"
+     }
+    ]
+   },
+   "say": "Many advances advertise zero percent. But they often come with conditions: paying for tax prep, a fee to route your refund through their bank, or your money loaded onto their prepaid card."
+  },
+  {
+   "say": "So the advance can be free, while the package around it isn't."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "The real rate",
+    "kicker": "THE MATH"
+   },
+   "say": "Here's what a small fee really means."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "A $40 fee for $1,000, three weeks early",
+    "value": "≈70%",
+    "c": "coral",
+    "sub": "as a yearly rate: about three times a typical credit card"
+   },
+   "cap": "Say you pay a $40 fee to get $1,000 about three weeks early. As a yearly rate, that's roughly 70%.",
+   "say": "Say you pay a forty dollar fee to get a thousand dollars about three weeks early. As a yearly rate, that's roughly seventy percent."
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "The real cost of a \"free\" advance",
+    "stagger": 2.8,
+    "items": [
+     [
+      "Refund transfer fee",
+      40,
+      "coral"
+     ],
+     [
+      "Paid tax prep",
+      150,
+      "coral"
+     ]
+    ],
+    "foot": "$190 to get your own money ~3 weeks sooner"
+   },
+   "cap": "And if it also means paying $150 for tax prep you could have done free, the real cost of the advance is $190.",
+   "say": "And if the package also means paying a hundred fifty for tax prep you could have done for free, the real cost of the advance is a hundred and ninety dollars."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "03",
+    "text": "The free way",
+    "kicker": "THE ALTERNATIVE"
+   },
+   "say": "Now, the alternative."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "E-file + direct deposit: most refunds in under 21 days.",
+    "hi": [
+     "under",
+     "21",
+     "days."
+    ]
+   },
+   "cap": "The IRS says most refunds from e-filed returns with direct deposit arrive within 21 days. That's the same few weeks the advance is selling.",
+   "say": "The IRS says most refunds from e-filed returns with direct deposit arrive within twenty-one days. That's the same few weeks the advance is selling."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "BEFORE YOU TAKE AN ADVANCE",
+    "items": [
+     "Can you file free? (IRS Free File, VITA)",
+     "E-file with direct deposit",
+     "Add up the total cost, not just the rate",
+     "Already gave the refund a job? (Ep. 13)"
+    ],
+    "at": [
+     1,
+     2,
+     3,
+     4
+    ]
+   },
+   "say": "So before you take one, check four things."
+  },
+  {
+   "say": "Can you file for free? If your income qualifies, IRS Free File and free VITA tax help exist for exactly this."
+  },
+  {
+   "say": "File electronically, with direct deposit."
+  },
+  {
+   "say": "If you still want an advance, add up every fee, not just the advertised rate."
+  },
+  {
+   "say": "And decide your refund's job before it lands. Episode thirteen has the four questions."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Plan your refund with the Paycheck Planner: link in the description",
+    "next": "Next: How to file your taxes for free"
+   },
+   "say": "The Paycheck Planner in the description helps you plan the refund before it arrives. This is general education, not tax advice."
+  },
+  {
+   "say": "Subscribe for more money math, with real numbers."
+  }
+ ]
+}

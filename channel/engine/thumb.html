@@ -4,7 +4,7 @@
 body{margin:0}</style></head><body><canvas id="c" width="1280" height="720"></canvas><script>
 // thumb.html — episode 1 thumbnail, 1280x720. Rendered by thumb.cjs.
 const X=document.getElementById('c').getContext('2d');
-window.draw=(ep)=>{ if(ep==='ep02') return draw2(); if(ep==='ep03') return draw3(); if(ep==='ep04') return draw4(); if(ep==='ep05') return draw5(); if(ep==='ep06') return draw6(); if(ep==='ep07') return draw7(); if(ep==='ep08') return draw8(); if(ep==='ep09') return draw9(); if(ep==='ep10') return draw10(); if(ep==='ep11') return draw11(); if(ep==='ep12') return draw12(); if(ep==='ep13') return draw13(); if(ep==='ep14') return draw14(); if(ep==='ep15') return draw15(); if(ep==='ep16') return draw16(); if(ep==='ep17') return draw17(); if(ep==='ep18') return draw18();
+window.draw=(ep)=>{ if(ep==='ep02') return draw2(); if(ep==='ep03') return draw3(); if(ep==='ep04') return draw4(); if(ep==='ep05') return draw5(); if(ep==='ep06') return draw6(); if(ep==='ep07') return draw7(); if(ep==='ep08') return draw8(); if(ep==='ep09') return draw9(); if(ep==='ep10') return draw10(); if(ep==='ep11') return draw11(); if(ep==='ep12') return draw12(); if(ep==='ep13') return draw13(); if(ep==='ep14') return draw14(); if(ep==='ep15') return draw15(); if(ep==='ep16') return draw16(); if(ep==='ep17') return draw17(); if(ep==='ep18') return draw18(); if(ep==='ep19') return draw19(); if(ep==='ep20') return draw20();
  const g=X.createLinearGradient(0,0,1280,720);g.addColorStop(0,'#16324F');g.addColorStop(1,'#0A1522');X.fillStyle=g;X.fillRect(0,0,1280,720);
  const t=(s,x,y,f,c,al='left')=>{X.font=f;X.fillStyle=c;X.textAlign=al;X.textBaseline='alphabetic';X.fillText(s,x,y)};
  t('YOUR BUDGET',60,190,'900 92px Inter','#F3EFE6');
@@ -149,5 +149,19 @@ function draw18(){ base();
  T('PLANNED',1010,225,'800 32px Inter','#8C9CB2','center'); T('$990',1010,310,'400 80px Anton','#8C9CB2','center');
  X.strokeStyle='#FF6B5B';X.lineWidth=10;X.beginPath();X.moveTo(900,282);X.lineTo(1120,282);X.stroke();
  T('ACTUAL',1010,400,'800 32px Inter','#8C9CB2','center'); T('$1,215',1010,505,'400 100px Anton','#FFC857','center');
+}
+
+function draw19(){ base();
+ T('VALENTINE’S',60,180,'400 130px Anton','#FF6B5B'); T('DAY: THE',60,310,'400 130px Anton','#F3EFE6'); T('REAL COST',60,440,'400 130px Anton','#F3EFE6');
+ T('a $100 version →',64,540,'800 46px Inter','#3DDC97');
+ X.fillStyle='#0C1A2A';X.beginPath();X.roundRect(800,150,420,420,36);X.fill();X.strokeStyle='#FF6B5B';X.lineWidth=8;X.stroke();
+ T('ONE NICE NIGHT',1010,225,'800 32px Inter','#8C9CB2','center'); T('$367',1010,380,'400 150px Anton','#FF6B5B','center');
+ T('or $100 at home',1010,480,'800 40px Inter','#3DDC97','center');
+}
+function draw20(){ base();
+ T('TAX REFUND',60,180,'400 130px Anton','#F3EFE6'); T('ADVANCE?',60,320,'400 130px Anton','#FFC857'); T('read this first →',64,420,'800 46px Inter','#FF6B5B');
+ X.fillStyle='#0C1A2A';X.beginPath();X.roundRect(800,150,420,420,36);X.fill();X.strokeStyle='#FF6B5B';X.lineWidth=8;X.stroke();
+ T('A $40 FEE ON $1,000',1010,225,'800 30px Inter','#8C9CB2','center'); T('≈70%',1010,390,'400 150px Anton','#FF6B5B','center');
+ T('as a yearly rate',1010,470,'800 38px Inter','#F3EFE6','center');
 }
 </script></body></html>

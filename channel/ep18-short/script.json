@@ -1,0 +1,83 @@
+{
+ "title": "Month one went wrong? Fix it (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "One month in.",
+      "Budget broke?"
+     ]
+    ],
+    "stamp": "Fix it. Don't quit."
+   },
+   "say": "One month in, and your budget broke?"
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Month one vs. the plan",
+    "value": "+$225",
+    "c": "coral",
+    "sub": "groceries, fun money, and a forgotten oil change"
+   },
+   "cap": "Our example went $225 over plan.",
+   "say": "Our example went two twenty-five over plan."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "FIX THE NUMBERS",
+    "items": [
+     "Realistic groceries",
+     "Fun money on its own card",
+     "Car upkeep fund"
+    ],
+    "at": [
+     0,
+     0,
+     0
+    ],
+    "stagger": 2.4
+   },
+   "say": "So fix the numbers, not yourself. Plan groceries you can actually hit, give fun money its own card, and add a small fund for car upkeep."
+  },
+  {
+   "scene": {
+    "type": "compare",
+    "head": "The $3,200 card",
+    "rows": [
+     {
+      "label": "The perfect plan",
+      "months": 8,
+      "interest": 285,
+      "c": "gold"
+     },
+     {
+      "label": "The real plan",
+      "months": 10,
+      "interest": 347,
+      "c": "green"
+     }
+    ]
+   },
+   "cap": "The perfect plan cleared the card in 8 months.",
+   "say": "The perfect plan cleared the card in eight months."
+  },
+  {
+   "cap": "The real plan takes 10. About $62 more. Way better than quitting.",
+   "say": "The real plan takes ten. About sixty dollars more. Way better than quitting."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "The month-one fix on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "say": "The full fix is on my channel."
+  }
+ ]
+}

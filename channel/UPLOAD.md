@@ -558,3 +558,64 @@ Educational content, not financial advice.
 **`ep16-short/build/video.mp4`** → Related video: Episode 16
 - **Title:** 0% balance transfer: $1,059 saved, or a trap? #shorts
 - **Description:** `Do the math before you move the debt. Full breakdown on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
+
+---
+
+## Episode 19: `ep19/build/video.mp4` · thumbnail `ep19/build/thumbnail.png` · captions `ep19/build/video.srt`
+
+**Title:** Valentine's Day on a Budget: The Real Cost of One Nice Dinner
+
+**Description:**
+```
+One nice dinner for two comes to $197 with tax and tip. Add flowers, a gift and rides, and Valentine's Day is $367, almost four paychecks of fun money. Here's a $100 planned night in, and how to splurge on purpose instead ($15 a paycheck covers next year).
+
+📊 Plan next year's splurge with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:35 The planned night in
+0:59 Splurge on purpose
+1:20 Get the planner
+
+Educational content, not financial advice. 
+```
+**Tags:** valentines day on a budget, cheap valentines day ideas, valentines day cost, date night on a budget, budget date ideas, sinking funds, couples budget, save money february
+
+**Pinned comment:** `Night out or night in this year? 👇`
+
+---
+
+## Episode 20: `ep20/build/video.mp4` · thumbnail `ep20/build/thumbnail.png` · captions `ep20/build/video.srt`
+
+**Title:** Tax Refund Advances: What They Really Cost
+
+**Description:**
+```
+Refund advances often advertise 0%, but the costs hide in paid tax prep, refund transfer fees and prepaid cards. A $40 fee to get $1,000 three weeks early is roughly a 70% yearly rate. The IRS says most e-filed refunds with direct deposit arrive within 21 days. Four things to check first.
+
+📊 Plan your refund with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:20 Where the costs hide
+0:37 The real rate
+0:56 The free way
+1:32 Get the planner
+
+Educational content, not financial advice. General education, not tax advice.
+```
+**Tags:** tax refund advance, refund advance loan, tax refund 2027, refund transfer fee, free tax filing, IRS Free File, VITA, tax refund tips
+
+**Pinned comment:** `Have you ever taken a refund advance? Was it worth it? 👇`
+
+**Upload order and timing:** these are February Week 1 videos (week of Feb 2). Get Episode 19 out well before Feb 14.
+
+---
+
+## Shorts for Episodes 17 and 18
+
+**`ep17-short/build/video.mp4`** → Related video: Episode 17
+- **Title:** Splitting bills 50/50 with your partner: fair? #shorts
+- **Description:** `$4,000 vs $2,500 take-home. Three systems compared on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
+
+**`ep18-short/build/video.mp4`** → Related video: Episode 18
+- **Title:** One month in and your budget broke? Fix it, don't quit #shorts
+- **Description:** `Fix the numbers, not yourself. Full fix on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
