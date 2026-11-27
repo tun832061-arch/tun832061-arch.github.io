@@ -1,0 +1,72 @@
+{
+ "title": "Valentine's Day: the real cost (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "One nice dinner.",
+      "How much?"
+     ]
+    ],
+    "stamp": "More than you think."
+   },
+   "say": "One nice Valentine's dinner. How much?"
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "The real Valentine's Day",
+    "value": "$367",
+    "c": "coral",
+    "sub": "dinner $197 · flowers $65 · gift $75 · rides $30"
+   },
+   "cap": "Dinner for two with tax and tip: $197. Add flowers, a gift and rides, and it's $367.",
+   "say": "Dinner for two with tax and tip, one ninety-seven. Add flowers, a gift and rides, and it's three sixty-seven."
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "Same holiday, two budgets",
+    "stagger": 1.2,
+    "items": [
+     [
+      "The night out",
+      367,
+      "coral"
+     ],
+     [
+      "The night in",
+      100,
+      "green"
+     ]
+    ]
+   },
+   "cap": "A planned night in? About $100. With a handwritten card, often the part people remember.",
+   "say": "A planned night in? About a hundred. With a handwritten card, often the part people remember."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Splurge on purpose: $15 a paycheck.",
+    "hi": [
+     "on",
+     "purpose:"
+    ]
+   },
+   "cap": "Love the night out? $15 a paycheck covers it next year.",
+   "say": "Love the night out? Fifteen dollars a paycheck covers it next year."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Full breakdown on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "say": "The full breakdown is on my channel."
+  }
+ ]
+}

@@ -619,3 +619,66 @@ Educational content, not financial advice. General education, not tax advice.
 **`ep18-short/build/video.mp4`** → Related video: Episode 18
 - **Title:** One month in and your budget broke? Fix it, don't quit #shorts
 - **Description:** `Fix the numbers, not yourself. Full fix on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
+
+---
+
+## Episode 21: `ep21/build/video.mp4` · thumbnail `ep21/build/thumbnail.png` · captions `ep21/build/video.srt`
+
+**Title:** How to File Your Taxes for Free (and Avoid the Upsells)
+
+**Description:**
+```
+Paying $150 a year for tax prep is $1,500 over ten years. Here are three free routes: IRS Free File (under an income limit, start at IRS.gov), Free File Fillable Forms (no income limit, no guidance), and free VITA/TCE help from IRS-certified volunteers. Plus the upsells to watch for in "free" software.
+
+📊 Plan your refund with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:22 IRS Free File
+0:38 Free File Fillable Forms
+0:50 VITA and TCE
+1:08 Watch the upsells
+1:36 Get the planner
+
+Educational content, not financial advice. General education, not tax advice. Programs and income limits change every year; check IRS.gov.
+```
+**Tags:** file taxes for free, IRS Free File, free tax filing, VITA tax help, free file fillable forms, tax season 2027, tax refund, avoid tax prep fees
+
+**Pinned comment:** `How did you file last year, and what did it cost? 👇`
+
+---
+
+## Episode 22: `ep22/build/video.mp4` · thumbnail `ep22/build/thumbnail.png` · captions `ep22/build/video.srt`
+
+**Title:** How Much Car Can You Really Afford? (The 20/4/10 Math)
+
+**Description:**
+```
+The 20/4/10 guideline: 20% down, a loan of 4 years or less, and all car costs under 10% of gross pay. On $60,000 a year that's $500 a month all-in, leaving about $200 for the payment, roughly a $10,440 car. Plus the long-loan trick: a 6-year loan cuts the payment but adds $2,343 in interest on $30,000.
+
+📊 See what a car payment does to your paychecks with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:17 Your car budget
+0:41 What $200 buys
+0:52 The long-loan trick
+1:33 Get the planner
+
+Educational content, not financial advice. Rates and costs are illustrative.
+```
+**Tags:** how much car can i afford, 20 4 10 rule, car payment calculator, car loan, car buying tips, car payment vs income, auto loan interest, budgeting
+
+**Pinned comment:** `What percent of your income goes to your car, all-in? 👇`
+
+**Upload order and timing:** these are February Week 2 videos (week of Feb 9).
+
+---
+
+## Shorts for Episodes 19 and 20
+
+**`ep19-short/build/video.mp4`** → Related video: Episode 19
+- **Title:** Valentine's Day: $367 or $100? #shorts
+- **Description:** `The real cost of one nice dinner. Full breakdown on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
+
+**`ep20-short/build/video.mp4`** → Related video: Episode 20
+- **Title:** Tax refund advance: the 70% catch #shorts
+- **Description:** `What "0%" refund advances really cost. The free way on the channel. Planner: [PLANNER LINK]. Educational, not tax advice.`

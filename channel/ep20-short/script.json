@@ -1,0 +1,72 @@
+{
+ "title": "Refund advance: the real rate (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Refund advance?",
+      "Get it today?"
+     ]
+    ],
+    "stamp": "Read the fine print."
+   },
+   "say": "Get your tax refund today?"
+  },
+  {
+   "scene": {
+    "type": "chips",
+    "stagger": 1.4,
+    "items": [
+     {
+      "t": "Paid tax prep",
+      "c": "coral"
+     },
+     {
+      "t": "Refund transfer fee",
+      "c": "coral"
+     },
+     {
+      "t": "Their prepaid card",
+      "c": "coral"
+     }
+    ]
+   },
+   "say": "Many advertise zero percent, but come with paid tax prep or a refund transfer fee."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "$40 fee, $1,000, 3 weeks early",
+    "value": "≈70%",
+    "c": "coral",
+    "sub": "as a yearly rate"
+   },
+   "cap": "A $40 fee to get $1,000 three weeks early is roughly a 70% yearly rate.",
+   "say": "A forty dollar fee to get a thousand dollars three weeks early is roughly a seventy percent yearly rate."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "E-file + direct deposit: usually under 21 days.",
+    "hi": [
+     "under",
+     "21",
+     "days."
+    ]
+   },
+   "say": "The IRS says most e-filed refunds with direct deposit arrive within twenty-one days."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "The free way, on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "say": "Check the free way first. Details on my channel."
+  }
+ ]
+}

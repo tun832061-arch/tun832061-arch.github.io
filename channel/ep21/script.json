@@ -1,0 +1,209 @@
+{
+ "title": "How to File Your Taxes for Free (and Avoid the Upsells)",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Paying to file",
+      "your taxes?"
+     ]
+    ],
+    "stamp": "Maybe you don't have to."
+   },
+   "say": "Paying to file your taxes?"
+  },
+  {
+   "say": "Lots of people pay for tax prep they could get free. Here are the free options, and the upsells to watch for."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "$150 a year for tax prep, 10 years",
+    "value": "$1,500",
+    "c": "coral",
+    "sub": "for something many people can do free"
+   },
+   "cap": "In our example, paid prep costs $150 a year. Over ten years, that's $1,500.",
+   "say": "In our example, paid prep costs a hundred fifty a year. Over ten years, that's fifteen hundred dollars."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Episode 21 · free routes",
+    "text": "File for Free"
+   },
+   "cap": "Here are three free routes. Rules and income limits change every year, so always check IRS.gov.",
+   "say": "Here are three free routes. Rules and income limits change every year, so always check IRS dot gov."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "IRS Free File",
+    "kicker": "ROUTE 1"
+   },
+   "say": "Route one. IRS Free File."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Start at IRS.gov/FreeFile, not a search ad.",
+    "hi": [
+     "IRS.gov/FreeFile,"
+    ]
+   },
+   "cap": "If your income is under the yearly limit, IRS Free File gives you guided tax software from partner companies at no cost. Start from IRS.gov so you land on the free version.",
+   "say": "If your income is under the yearly limit, IRS Free File gives you guided tax software from partner companies at no cost. The key is to start from IRS dot gov, so you land on the free version."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "Free File Fillable Forms",
+    "kicker": "ROUTE 2"
+   },
+   "say": "Route two. Free File Fillable Forms."
+  },
+  {
+   "scene": {
+    "type": "chips",
+    "stagger": 1.8,
+    "items": [
+     {
+      "t": "No income limit",
+      "c": "muted"
+     },
+     {
+      "t": "Electronic paper forms",
+      "c": "muted"
+     },
+     {
+      "t": "No guidance: best for simple returns",
+      "c": "muted"
+     }
+    ]
+   },
+   "say": "There's no income limit. They're electronic versions of the paper forms. No hand-holding, so they suit simple returns and people comfortable with the forms."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "03",
+    "text": "VITA and TCE",
+    "kicker": "ROUTE 3"
+   },
+   "say": "Route three. Free help from a real person."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "FREE, IN-PERSON HELP",
+    "items": [
+     "VITA: IRS-certified volunteers",
+     "Low to moderate income, disabilities, limited English",
+     "TCE: focused on people 60+",
+     "Find sites through IRS.gov"
+    ],
+    "at": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "stagger": 2.6
+   },
+   "say": "VITA sites offer free tax prep from IRS-certified volunteers, generally for people with low to moderate income, people with disabilities, and limited English speakers. TCE focuses on people sixty and older."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "04",
+    "text": "Watch the upsells",
+    "kicker": "THE TRAPS"
+   },
+   "say": "Now, the upsells."
+  },
+  {
+   "scene": {
+    "type": "chips",
+    "stagger": 1.6,
+    "items": [
+     {
+      "t": "State return fee",
+      "c": "coral"
+     },
+     {
+      "t": "\"Upgrade\" for certain forms",
+      "c": "coral"
+     },
+     {
+      "t": "Refund transfer fee",
+      "c": "coral"
+     }
+    ]
+   },
+   "say": "Free versions of commercial software can switch to paid when you add a state return, certain forms, or a premium upgrade. And remember episode twenty: refund transfer fees."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Asked to pay? Stop and check the free routes.",
+    "hi": [
+     "Stop"
+    ],
+    "hc": "gold"
+   },
+   "say": "If a screen asks for money, stop, and check whether a free route covers you."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "THIS WEEK",
+    "items": [
+     "Gather your W-2s and 1099s",
+     "Check Free File, Fillable Forms or VITA",
+     "E-file with direct deposit",
+     "Give the refund a job (Ep. 13)"
+    ],
+    "at": [
+     1,
+     2,
+     3,
+     4
+    ]
+   },
+   "say": "So, this week."
+  },
+  {
+   "join": true,
+   "say": "Gather your W-2s and 1099s."
+  },
+  {
+   "join": true,
+   "say": "Check which free route fits you."
+  },
+  {
+   "join": true,
+   "say": "E-file, with direct deposit."
+  },
+  {
+   "join": true,
+   "say": "And give the refund a job before it lands."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Plan your refund with the Paycheck Planner: link in the description",
+    "next": "Next: How much car can you really afford?"
+   },
+   "say": "This is general education, not tax advice. The Paycheck Planner in the description helps you plan the refund."
+  },
+  {
+   "say": "Subscribe. Next time: how much car you can really afford."
+  }
+ ]
+}
