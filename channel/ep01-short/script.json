@@ -1,0 +1,83 @@
+{
+ "title": "Minimum payments on a $3,200 card (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "$3,200 credit card.",
+      "Minimum only?"
+     ]
+    ],
+    "stamp": "Almost 5 years."
+   },
+   "cap": "$3,200 on a credit card, paying only the minimum?",
+   "say": "Thirty-two hundred dollars on a credit card, paying only the minimum?"
+  },
+  {
+   "say": "That's almost five years of payments."
+  },
+  {
+   "scene": {
+    "type": "compare",
+    "head": "$3,200 card · 24% APR",
+    "rows": [
+     {
+      "label": "Minimum only · $96/mo",
+      "months": 56,
+      "interest": 2126,
+      "c": "coral"
+     },
+     {
+      "label": "Paycheck method · $453/mo",
+      "months": 8,
+      "interest": 285,
+      "c": "green"
+     }
+    ],
+    "kw0": "paying"
+   },
+   "cap": "Paying a flat $96 a month, you hand over $2,126 in interest.",
+   "say": "Paying a flat ninety-six dollars a month, you hand over twenty-one hundred dollars in interest."
+  },
+  {
+   "cap": "Pay $453 a month instead: gone in 8 months, for $285.",
+   "say": "Pay four fifty-three a month instead, and it's gone in eight months, for under three hundred."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Where the extra comes from",
+    "value": "$357",
+    "sub": "a month, found by budgeting per paycheck, not per month"
+   },
+   "cap": "Where does the extra $357 come from? Budgeting by paycheck, not by month.",
+   "say": "Where does the extra three fifty-seven come from? Budgeting by paycheck, not by month."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Same income. Different plan.",
+    "hi": [
+     "Different",
+     "plan."
+    ]
+   },
+   "say": "Same income. Different plan."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Full walkthrough on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "say": "The full walkthrough is on my channel."
+  },
+  {
+   "say": "Follow for more money math, with real numbers."
+  }
+ ]
+}

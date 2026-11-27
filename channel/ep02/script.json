@@ -1,0 +1,272 @@
+{
+ "title": "Debt Snowball vs Avalanche: Which Actually Wins? (Real Numbers)",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Snowball or",
+      "Avalanche?"
+     ]
+    ],
+    "stamp": "Real numbers. One winner."
+   },
+   "say": "Debt snowball, or debt avalanche? People argue about this constantly."
+  },
+  {
+   "say": "So let's just run the numbers, and see which one actually wins."
+  },
+  {
+   "scene": {
+    "type": "ledger",
+    "head": "Our three debts",
+    "total": "Total owed",
+    "items": [
+     [
+      "Credit card · 24% APR",
+      3200
+     ],
+     [
+      "Personal loan · 12% APR",
+      800
+     ],
+     [
+      "Car loan · 7% APR",
+      9000
+     ]
+    ]
+   },
+   "say": "Here's our example. Three debts."
+  },
+  {
+   "join": true,
+   "cap": "A credit card: $3,200 at 24%.",
+   "say": "A credit card, thirty-two hundred dollars at twenty-four percent."
+  },
+  {
+   "join": true,
+   "cap": "A personal loan: $800 at 12%.",
+   "say": "A personal loan, eight hundred at twelve percent."
+  },
+  {
+   "join": true,
+   "cap": "And a car loan: $9,000 at 7%.",
+   "say": "And a car loan, nine thousand at seven percent."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Minimums add up to $376",
+    "value": "$900",
+    "sub": "a month goes to debt, every month"
+   },
+   "cap": "The minimums add up to $376. We'll put $900 a month toward debt.",
+   "say": "The minimums add up to three seventy-six. We'll put nine hundred a month toward debt, every month."
+  },
+  {
+   "say": "Both methods pay every minimum. The only question is where the extra goes."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "The avalanche",
+    "kicker": "METHOD 1"
+   },
+   "say": "First, the avalanche. Extra money goes to the highest interest rate first."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "items": [
+     "Credit card · 24%",
+     "Personal loan · 12%",
+     "Car loan · 7%"
+    ],
+    "at": [
+     0,
+     1,
+     1
+    ],
+    "head": "AVALANCHE ORDER"
+   },
+   "say": "So the credit card is first."
+  },
+  {
+   "say": "Then the personal loan, then the car."
+  },
+  {
+   "scene": {
+    "type": "compare",
+    "head": "Avalanche: month each debt is gone",
+    "rows": [
+     {
+      "label": "Credit card",
+      "months": 6,
+      "c": "green"
+     },
+     {
+      "label": "Personal loan",
+      "months": 7,
+      "c": "green"
+     },
+     {
+      "label": "Car loan",
+      "months": 16,
+      "c": "green"
+     }
+    ]
+   },
+   "say": "The credit card is gone in month six."
+  },
+  {
+   "say": "The personal loan, month seven."
+  },
+  {
+   "say": "And the car loan, month sixteen. Debt-free."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "The snowball",
+    "kicker": "METHOD 2"
+   },
+   "say": "Now the snowball. Extra money goes to the smallest balance first, no matter the rate."
+  },
+  {
+   "scene": {
+    "type": "compare",
+    "head": "Snowball: month each debt is gone",
+    "rows": [
+     {
+      "label": "Personal loan",
+      "months": 2,
+      "c": "gold"
+     },
+     {
+      "label": "Credit card",
+      "months": 7,
+      "c": "gold"
+     },
+     {
+      "label": "Car loan",
+      "months": 16,
+      "c": "gold"
+     }
+    ]
+   },
+   "say": "The personal loan is gone in month two."
+  },
+  {
+   "say": "The credit card, month seven."
+  },
+  {
+   "say": "And the car loan, month sixteen. The same finish line."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "03",
+    "text": "The verdict",
+    "kicker": "RESULTS"
+   },
+   "say": "So, which one wins?"
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "Total interest paid",
+    "items": [
+     [
+      "Avalanche",
+      805,
+      "green"
+     ],
+     [
+      "Snowball",
+      847,
+      "gold"
+     ]
+    ]
+   },
+   "cap": "Avalanche: $805 in total interest.",
+   "say": "The avalanche costs eight hundred and five dollars in interest."
+  },
+  {
+   "cap": "Snowball: $847.",
+   "say": "The snowball costs eight forty-seven."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "The difference: $42.",
+    "hi": [
+     "$42."
+    ]
+   },
+   "cap": "The difference: $42. Over sixteen months.",
+   "say": "The difference is forty-two dollars. Over sixteen months."
+  },
+  {
+   "scene": {
+    "type": "compare",
+    "head": "Your first debt is gone in…",
+    "rows": [
+     {
+      "label": "Avalanche",
+      "months": 6,
+      "c": "green"
+     },
+     {
+      "label": "Snowball",
+      "months": 2,
+      "c": "gold"
+     }
+    ]
+   },
+   "say": "But look at this. With the avalanche, your first win comes in month six."
+  },
+  {
+   "say": "With the snowball, it's month two."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "The best method is the one you don't quit.",
+    "hi": [
+     "don't",
+     "quit."
+    ]
+   },
+   "say": "And the best method is the one you don't quit."
+  },
+  {
+   "say": "If you need quick wins to stay motivated, the snowball's extra cost is small. If you're steady and want the least interest, go avalanche."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "What really made the difference",
+    "value": "$900",
+    "sub": "a month, every month. Minimums only would take 4½ years and $3,393 in interest."
+   },
+   "cap": "The real win was the $900 a month. Minimums only: about 4½ years and $3,393 in interest.",
+   "say": "And remember, the real win here was the nine hundred dollars a month. Paying only the minimums would take about four and a half years, and cost over three thousand dollars in interest."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "The Paycheck Planner runs both methods for your debts: link in the description",
+    "next": "Next: The sinking fund method that kills surprise expenses"
+   },
+   "say": "The Paycheck Planner in the description runs both methods on your own debts, and gives you your debt-free date."
+  },
+  {
+   "say": "Subscribe for more money math, with real numbers."
+  }
+ ]
+}

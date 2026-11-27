@@ -1,0 +1,207 @@
+1
+00:00:00,600 --> 00:00:04,153
+If you've ever started a budget in January and quit by February,
+
+2
+00:00:04,313 --> 00:00:05,762
+it probably wasn't your fault.
+
+3
+00:00:06,182 --> 00:00:08,974
+Most budgets are built for a life that doesn't exist.
+
+4
+00:00:09,394 --> 00:00:11,214
+One where you get paid once a month,
+
+5
+00:00:11,374 --> 00:00:12,629
+every bill is the same,
+
+6
+00:00:12,789 --> 00:00:14,786
+and nothing surprising ever happens.
+
+7
+00:00:15,556 --> 00:00:23,457
+So today I'll show you the paycheck method. A budget built around when your money actually arrives, using real numbers, start to finish.
+
+8
+00:00:24,227 --> 00:00:26,997
+First, why budgets break. There are three reasons.
+
+9
+00:00:27,417 --> 00:00:31,292
+Reason one. You budget by the month, but you get paid every two weeks.
+
+10
+00:00:31,712 --> 00:00:34,953
+Rent is due on the first. Your paycheck lands on the fifth.
+
+11
+00:00:35,373 --> 00:00:41,045
+So for a few days, a perfectly good monthly budget says you're fine, and your bank account says you're not.
+
+12
+00:00:41,465 --> 00:00:50,111
+Reason two. The surprise expenses aren't really surprises. Gifts, car registration, that subscription that renews every January.
+
+13
+00:00:50,531 --> 00:00:53,453
+They happen every single year. We just don't plan for them.
+
+14
+00:00:53,873 --> 00:01:01,925
+Reason three. The budget has no room to breathe. Cut every dollar of fun, and the first coffee you buy makes the whole thing feel broken.
+
+15
+00:01:02,345 --> 00:01:03,701
+So let's fix all three.
+
+16
+00:01:04,121 --> 00:01:09,270
+Here's our example. Take-home pay is eighteen hundred and fifty dollars, every two weeks.
+
+17
+00:01:10,040 --> 00:01:15,751
+Step one. List every bill with its due date, and give each bill to the paycheck that arrives before it.
+
+18
+00:01:16,171 --> 00:01:22,877
+Paycheck 1 covers rent, phone and the student loan: $1,585, leaving just $265.
+
+19
+00:01:23,297 --> 00:01:31,642
+Paycheck 2 covers the car, internet, insurance, utilities and the card minimum: $786, leaving $1,064.
+
+20
+00:01:32,062 --> 00:01:38,583
+See the problem? Half the month feels broke, and the other half feels rich. That's exactly when overspending happens.
+
+21
+00:01:39,003 --> 00:01:45,028
+The fix: move $400 from paycheck 2 into a buffer that pays part of next month's rent.
+
+22
+00:01:45,448 --> 00:01:50,913
+Now both paychecks have about $665 left over.
+
+23
+00:01:51,683 --> 00:01:54,010
+Step two. Turn surprises into a bill.
+
+24
+00:01:54,430 --> 00:01:56,773
+Add up every irregular cost from last year.
+
+25
+00:01:56,933 --> 00:01:58,927
+Holidays and gifts, $600.
+
+26
+00:01:59,087 --> 00:02:00,638
+Car repairs, $500.
+
+27
+00:02:00,798 --> 00:02:02,553
+Medical copays, $300.
+
+28
+00:02:02,713 --> 00:02:04,405
+Registration, $180.
+
+29
+00:02:04,565 --> 00:02:06,498
+Annual subscriptions, $120.
+
+30
+00:02:06,918 --> 00:02:08,756
+That's $1,700 a year.
+
+31
+00:02:09,176 --> 00:02:13,081
+Divide by 26 paychecks: $66 per check.
+
+32
+00:02:13,241 --> 00:02:16,220
+moved to a separate savings account the day you get paid.
+
+33
+00:02:16,640 --> 00:02:19,262
+Next January, the gifts are already paid for.
+
+34
+00:02:20,032 --> 00:02:21,841
+Step three. Pick one fun number.
+
+35
+00:02:22,261 --> 00:02:24,974
+Groceries and gas get $320 per paycheck.
+
+36
+00:02:25,394 --> 00:02:28,964
+Then $100 of fun money. No tracking, no guilt.
+
+37
+00:02:29,384 --> 00:02:33,589
+When it's gone, it's gone. But spending it isn't failing. It's the plan working.
+
+38
+00:02:34,359 --> 00:02:36,691
+Step four. Whatever's left gets one job.
+
+39
+00:02:37,111 --> 00:02:42,525
+Paycheck 1: $665, minus $66, minus $320, minus $100.
+
+40
+00:02:42,945 --> 00:02:46,639
+$179 left. Paycheck 2 leaves $178.
+
+41
+00:02:47,059 --> 00:02:52,011
+That's about $357 a month, pointed at one target: the credit card.
+
+42
+00:02:52,431 --> 00:03:02,316
+$3,200 at 24%. Paying a flat $96 minimum: 56 months and $2,126 in interest.
+
+43
+00:03:02,736 --> 00:03:07,673
+Paying $453 a month: gone in 8 months, for $285 in interest.
+
+44
+00:03:08,093 --> 00:03:10,793
+Same income. Same bills. A different plan.
+
+45
+00:03:11,213 --> 00:03:22,043
+And here's a bonus. Paid every two weeks, you get twenty-six checks a year, so twice a year, a month has three paychecks. Your bills are already covered, so that whole check can go straight to your goal.
+
+46
+00:03:22,463 --> 00:03:23,325
+So, recap.
+
+47
+00:03:23,485 --> 00:03:25,890
+Give every bill a paycheck, and even them out.
+
+48
+00:03:26,050 --> 00:03:27,511
+Turn surprises into a bill.
+
+49
+00:03:27,671 --> 00:03:28,797
+Pick one fun number.
+
+50
+00:03:28,957 --> 00:03:30,666
+And give the leftovers one job.
+
+51
+00:03:31,436 --> 00:03:39,397
+The spreadsheet from this example is linked in the description. Put in your paychecks and bills, and it does the math, including your debt-free date.
+
+52
+00:03:39,817 --> 00:03:44,813
+Subscribe, and next week we'll settle debt snowball versus avalanche, with real numbers.

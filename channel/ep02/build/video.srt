@@ -1,0 +1,115 @@
+1
+00:00:00,600 --> 00:00:04,611
+Debt snowball, or debt avalanche? People argue about this constantly.
+
+2
+00:00:05,031 --> 00:00:08,415
+So let's just run the numbers, and see which one actually wins.
+
+3
+00:00:08,835 --> 00:00:10,646
+Here's our example. Three debts.
+
+4
+00:00:10,806 --> 00:00:14,277
+A credit card: $3,200 at 24%.
+
+5
+00:00:14,437 --> 00:00:17,107
+A personal loan: $800 at 12%.
+
+6
+00:00:17,267 --> 00:00:20,016
+And a car loan: $9,000 at 7%.
+
+7
+00:00:20,436 --> 00:00:25,894
+The minimums add up to $376. We'll put $900 a month toward debt.
+
+8
+00:00:26,314 --> 00:00:30,745
+Both methods pay every minimum. The only question is where the extra goes.
+
+9
+00:00:31,515 --> 00:00:35,912
+First, the avalanche. Extra money goes to the highest interest rate first.
+
+10
+00:00:36,332 --> 00:00:37,813
+So the credit card is first.
+
+11
+00:00:38,233 --> 00:00:39,999
+Then the personal loan, then the car.
+
+12
+00:00:40,419 --> 00:00:42,312
+The credit card is gone in month six.
+
+13
+00:00:42,732 --> 00:00:44,494
+The personal loan, month seven.
+
+14
+00:00:44,914 --> 00:00:47,323
+And the car loan, month sixteen. Debt-free.
+
+15
+00:00:48,093 --> 00:00:52,940
+Now the snowball. Extra money goes to the smallest balance first, no matter the rate.
+
+16
+00:00:53,360 --> 00:00:55,221
+The personal loan is gone in month two.
+
+17
+00:00:55,641 --> 00:00:57,263
+The credit card, month seven.
+
+18
+00:00:57,683 --> 00:01:00,656
+And the car loan, month sixteen. The same finish line.
+
+19
+00:01:01,426 --> 00:01:02,644
+So, which one wins?
+
+20
+00:01:03,064 --> 00:01:06,316
+Avalanche: $805 in total interest.
+
+21
+00:01:06,736 --> 00:01:08,648
+Snowball: $847.
+
+22
+00:01:09,068 --> 00:01:12,097
+The difference: $42. Over sixteen months.
+
+23
+00:01:12,517 --> 00:01:16,374
+But look at this. With the avalanche, your first win comes in month six.
+
+24
+00:01:16,794 --> 00:01:18,509
+With the snowball, it's month two.
+
+25
+00:01:18,929 --> 00:01:21,133
+And the best method is the one you don't quit.
+
+26
+00:01:21,553 --> 00:01:29,405
+If you need quick wins to stay motivated, the snowball's extra cost is small. If you're steady and want the least interest, go avalanche.
+
+27
+00:01:29,825 --> 00:01:39,970
+The real win was the $900 a month. Minimums only: about 4½ years and $3,393 in interest.
+
+28
+00:01:40,740 --> 00:01:46,441
+The Paycheck Planner in the description runs both methods on your own debts, and gives you your debt-free date.
+
+29
+00:01:46,861 --> 00:01:49,617
+Subscribe for more money math, with real numbers.

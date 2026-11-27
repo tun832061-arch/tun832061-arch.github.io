@@ -1,0 +1,4 @@
+*/build/*.wav
+*/build/still-*.png
+*/build/render.log
+*/build/timeline.json.bak

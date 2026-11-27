@@ -1,0 +1,29 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Anton;src:url(../../assets/fonts/Anton-Regular.ttf)}
+@font-face{font-family:Inter;src:url(../../assets/fonts/Inter-Variable.ttf);font-weight:100 900}
+body{margin:0}</style></head><body><canvas id="c" width="1280" height="720"></canvas><script>
+// thumb.html — episode 1 thumbnail, 1280x720. Rendered by thumb.cjs.
+const X=document.getElementById('c').getContext('2d');
+window.draw=(ep)=>{ if(ep==='ep02') return draw2();
+ const g=X.createLinearGradient(0,0,1280,720);g.addColorStop(0,'#16324F');g.addColorStop(1,'#0A1522');X.fillStyle=g;X.fillRect(0,0,1280,720);
+ const t=(s,x,y,f,c,al='left')=>{X.font=f;X.fillStyle=c;X.textAlign=al;X.textBaseline='alphabetic';X.fillText(s,x,y)};
+ t('YOUR BUDGET',60,190,'900 92px Inter','#F3EFE6');
+ t('DIES IN',60,300,'900 92px Inter','#F3EFE6');
+ t('JANUARY',52,515,'400 220px Anton','#FF6B5B');
+ t('here\'s the fix →',64,600,'800 46px Inter','#3DDC97');
+ const card=(x,y,lab,val,c)=>{X.fillStyle='#0C1A2A';X.beginPath();X.roundRect(x,y,400,170,24);X.fill();X.strokeStyle=c;X.lineWidth=6;X.stroke();
+   t(lab,x+30,y+56,'800 32px Inter','#8C9CB2');t(val,x+30,y+145,'400 92px Anton',c)};
+ card(820,150,'PAYCHECK 1 LEFT','$265','#FF6B5B'); card(820,370,'PAYCHECK 2 LEFT','$1,064','#FFC857');
+ X.save();X.translate(1020,600);X.rotate(-0.05);X.fillStyle='#3DDC97';X.beginPath();X.roundRect(-190,-45,380,90,45);X.fill();t('BOTH → $665',0,18,'900 44px Inter','#0C1A2A','center');X.restore();
+};
+
+function draw2(){
+ const g=X.createLinearGradient(0,0,1280,720);g.addColorStop(0,'#16324F');g.addColorStop(1,'#0A1522');X.fillStyle=g;X.fillRect(0,0,1280,720);
+ const t=(s,x,y,f,c,al='left')=>{X.font=f;X.fillStyle=c;X.textAlign=al;X.textBaseline='alphabetic';X.fillText(s,x,y)};
+ t('SNOWBALL',60,200,'400 170px Anton','#FFC857'); t('vs',64,290,'900 70px Inter','#8C9CB2'); t('AVALANCHE',60,470,'400 170px Anton','#3DDC97');
+ t('real numbers →',64,580,'800 46px Inter','#F3EFE6');
+ X.fillStyle='#0C1A2A';X.beginPath();X.roundRect(860,170,360,360,40);X.fill();X.strokeStyle='#FF6B5B';X.lineWidth=8;X.stroke();
+ t('DIFFERENCE',1040,250,'800 34px Inter','#8C9CB2','center'); t('$42',1040,430,'400 170px Anton','#FF6B5B','center');
+ t('?!',1040,500,'900 44px Inter','#F3EFE6','center');
+}
+</script></body></html>

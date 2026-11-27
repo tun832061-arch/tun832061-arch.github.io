@@ -1,0 +1,543 @@
+{
+ "title": "Why Your Budget Dies in January (The Paycheck Method)",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Started a budget",
+      "in January?"
+     ],
+     [
+      "Quit by",
+      "February?"
+     ]
+    ]
+   },
+   "say": "If you've ever started a budget in January and quit by February,"
+  },
+  {
+   "join": true,
+   "say": "it probably wasn't your fault."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Most budgets are built for a life that doesn't exist.",
+    "hi": [
+     "doesn't",
+     "exist."
+    ]
+   },
+   "say": "Most budgets are built for a life that doesn't exist."
+  },
+  {
+   "scene": {
+    "type": "chips",
+    "items": [
+     {
+      "t": "Paid once a month",
+      "c": "muted",
+      "x": true
+     },
+     {
+      "t": "Same bills every month",
+      "c": "muted",
+      "x": true
+     },
+     {
+      "t": "No surprises, ever",
+      "c": "muted",
+      "x": true
+     }
+    ]
+   },
+   "say": "One where you get paid once a month,"
+  },
+  {
+   "join": true,
+   "say": "every bill is the same,"
+  },
+  {
+   "join": true,
+   "say": "and nothing surprising ever happens."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Real numbers, start to finish",
+    "text": "The Paycheck Method"
+   },
+   "say": "So today I'll show you the paycheck method. A budget built around when your money actually arrives, using real numbers, start to finish."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "Why budgets break"
+   },
+   "say": "First, why budgets break. There are three reasons."
+  },
+  {
+   "scene": {
+    "type": "calendar",
+    "pay": [
+     5,
+     19
+    ],
+    "bills": [
+     [
+      1,
+      "Rent"
+     ],
+     [
+      8,
+      "Phone"
+     ],
+     [
+      15,
+      "Car"
+     ],
+     [
+      22,
+      "Insurance"
+     ]
+    ],
+    "gap": [
+     1,
+     5
+    ]
+   },
+   "say": "Reason one. You budget by the month, but you get paid every two weeks."
+  },
+  {
+   "say": "Rent is due on the first. Your paycheck lands on the fifth."
+  },
+  {
+   "say": "So for a few days, a perfectly good monthly budget says you're fine, and your bank account says you're not."
+  },
+  {
+   "scene": {
+    "type": "chips",
+    "items": [
+     {
+      "t": "Holiday gifts",
+      "c": "coral"
+     },
+     {
+      "t": "Car registration",
+      "c": "coral"
+     },
+     {
+      "t": "Annual subscription renewal",
+      "c": "coral"
+     },
+     {
+      "t": "Dentist copay",
+      "c": "coral"
+     }
+    ],
+    "stagger": 0.55
+   },
+   "say": "Reason two. The surprise expenses aren't really surprises. Gifts, car registration, that subscription that renews every January."
+  },
+  {
+   "say": "They happen every single year. We just don't plan for them."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Zero fun money = zero chance.",
+    "hi": [
+     "zero",
+     "chance."
+    ]
+   },
+   "say": "Reason three. The budget has no room to breathe. Cut every dollar of fun, and the first coffee you buy makes the whole thing feel broken."
+  },
+  {
+   "say": "So let's fix all three."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Our example: take-home pay",
+    "value": "$1,850",
+    "sub": "every two weeks"
+   },
+   "say": "Here's our example. Take-home pay is eighteen hundred and fifty dollars, every two weeks."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "Give every bill a paycheck"
+   },
+   "say": "Step one. List every bill with its due date, and give each bill to the paycheck that arrives before it."
+  },
+  {
+   "scene": {
+    "type": "paychecks",
+    "pay": 1850,
+    "a": {
+     "name": "Paycheck 1",
+     "when": "around the 1st",
+     "bills": [
+      [
+       "Rent",
+       1300
+      ],
+      [
+       "Phone",
+       65
+      ],
+      [
+       "Student loan",
+       220
+      ]
+     ]
+    },
+    "b": {
+     "name": "Paycheck 2",
+     "when": "around the 15th",
+     "bills": [
+      [
+       "Car",
+       340
+      ],
+      [
+       "Internet",
+       60
+      ],
+      [
+       "Insurance",
+       140
+      ],
+      [
+       "Utilities",
+       150
+      ],
+      [
+       "Card minimum",
+       96
+      ]
+     ]
+    },
+    "shift": 400,
+    "steps": {
+     "a": 0,
+     "b": 1,
+     "warn": 2,
+     "shift": 4
+    }
+   },
+   "cap": "Paycheck 1 covers rent, phone and the student loan: $1,585, leaving just $265.",
+   "say": "Paycheck one covers rent, phone, and the student loan. That's fifteen eighty-five, leaving just two sixty-five."
+  },
+  {
+   "cap": "Paycheck 2 covers the car, internet, insurance, utilities and the card minimum: $786, leaving $1,064.",
+   "say": "Paycheck two covers the car, internet, insurance, utilities, and the credit card minimum. Seven eighty-six, leaving ten sixty-four."
+  },
+  {
+   "say": "See the problem? Half the month feels broke, and the other half feels rich. That's exactly when overspending happens."
+  },
+  {
+   "cap": "The fix: move $400 from paycheck 2 into a buffer that pays part of next month's rent.",
+   "say": "The fix. Move four hundred dollars from paycheck two into a buffer that pays part of next month's rent."
+  },
+  {
+   "cap": "Now both paychecks have about $665 left over.",
+   "say": "Now both paychecks have about six sixty-five left over. Same money, no more broke weeks."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "03",
+    "text": "Turn surprises into a bill"
+   },
+   "say": "Step two. Turn surprises into a bill."
+  },
+  {
+   "scene": {
+    "type": "ledger",
+    "items": [
+     [
+      "Holidays & gifts",
+      600
+     ],
+     [
+      "Car repairs",
+      500
+     ],
+     [
+      "Medical copays",
+      300
+     ],
+     [
+      "Registration",
+      180
+     ],
+     [
+      "Annual subscriptions",
+      120
+     ]
+    ],
+    "total": "Per year"
+   },
+   "say": "Add up every irregular cost from last year."
+  },
+  {
+   "join": true,
+   "cap": "Holidays and gifts, $600.",
+   "say": "Holidays and gifts, six hundred."
+  },
+  {
+   "join": true,
+   "cap": "Car repairs, $500.",
+   "say": "Car repairs, five hundred."
+  },
+  {
+   "join": true,
+   "cap": "Medical copays, $300.",
+   "say": "Medical copays, three hundred."
+  },
+  {
+   "join": true,
+   "cap": "Registration, $180.",
+   "say": "Registration, one eighty."
+  },
+  {
+   "join": true,
+   "cap": "Annual subscriptions, $120.",
+   "say": "Annual subscriptions, one twenty."
+  },
+  {
+   "scene": {
+    "type": "equation",
+    "parts": [
+     "$1,700",
+     "÷",
+     "26",
+     "=",
+     "$66"
+    ],
+    "under": [
+     "per year",
+     "",
+     "paychecks",
+     "",
+     "per paycheck"
+    ],
+    "at": [
+     0,
+     1,
+     1,
+     1,
+     1
+    ]
+   },
+   "cap": "That's $1,700 a year.",
+   "say": "That's seventeen hundred dollars a year."
+  },
+  {
+   "cap": "Divide by 26 paychecks: $66 per check.",
+   "say": "Divide by twenty-six paychecks, and it's sixty-six dollars per check,"
+  },
+  {
+   "join": true,
+   "cap": "moved to a separate savings account the day you get paid.",
+   "say": "moved to a separate savings account the day you get paid."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Next January, the gifts are already paid for.",
+    "hi": [
+     "already",
+     "paid",
+     "for."
+    ]
+   },
+   "say": "Next January, the gifts are already paid for."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "04",
+    "text": "Pick one fun number"
+   },
+   "say": "Step three. Pick one fun number."
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "items": [
+     [
+      "Groceries & gas",
+      320,
+      "ink"
+     ],
+     [
+      "Fun money",
+      100,
+      "gold"
+     ]
+    ],
+    "sub": "per paycheck",
+    "foot": "Spending it isn't failing. It's the plan."
+   },
+   "cap": "Groceries and gas get $320 per paycheck.",
+   "say": "Groceries and gas get three twenty per paycheck."
+  },
+  {
+   "cap": "Then $100 of fun money. No tracking, no guilt.",
+   "say": "Then a hundred dollars of fun money. No tracking, no guilt."
+  },
+  {
+   "say": "When it's gone, it's gone. But spending it isn't failing. It's the plan working."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "05",
+    "text": "Give the leftovers one job"
+   },
+   "say": "Step four. Whatever's left gets one job."
+  },
+  {
+   "scene": {
+    "type": "waterfall",
+    "start": [
+     "Left after bills",
+     665
+    ],
+    "steps": [
+     [
+      "Surprise fund",
+      66
+     ],
+     [
+      "Groceries & gas",
+      320
+     ],
+     [
+      "Fun money",
+      100
+     ]
+    ],
+    "end": "To your goal"
+   },
+   "cap": "Paycheck 1: $665, minus $66, minus $320, minus $100.",
+   "say": "Paycheck one. Six sixty-five, minus sixty-six, minus three twenty, minus a hundred."
+  },
+  {
+   "cap": "$179 left. Paycheck 2 leaves $178.",
+   "say": "One seventy-nine left. Paycheck two leaves one seventy-eight."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Every month, pointed at one target",
+    "value": "$357",
+    "sub": "+ the $96 minimum = $453 a month"
+   },
+   "cap": "That's about $357 a month, pointed at one target: the credit card.",
+   "say": "That's about three fifty-seven a month, and all of it goes to one target. The credit card."
+  },
+  {
+   "scene": {
+    "type": "compare",
+    "head": "$3,200 credit card at 24% APR",
+    "rows": [
+     {
+      "label": "Minimum only · $96/mo",
+      "months": 56,
+      "interest": 2126,
+      "c": "coral"
+     },
+     {
+      "label": "Paycheck method · $453/mo",
+      "months": 8,
+      "interest": 285,
+      "c": "green"
+     }
+    ],
+    "kw0": "paying"
+   },
+   "cap": "$3,200 at 24%. Paying a flat $96 minimum: 56 months and $2,126 in interest.",
+   "say": "Thirty-two hundred dollars, at twenty-four percent. Paying a flat ninety-six dollar minimum takes almost five years, and costs over two thousand dollars in interest."
+  },
+  {
+   "cap": "Paying $453 a month: gone in 8 months, for $285 in interest.",
+   "say": "Paying four fifty-three a month, it's gone in eight months, for under three hundred in interest."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Same income. Same bills. Different plan.",
+    "hi": [
+     "Different",
+     "plan."
+    ]
+   },
+   "say": "Same income. Same bills. A different plan."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Bonus: twice a year",
+    "value": "3 paychecks",
+    "sub": "in one month. Bills already covered."
+   },
+   "say": "And here's a bonus. Paid every two weeks, you get twenty-six checks a year, so twice a year, a month has three paychecks. Your bills are already covered, so that whole check can go straight to your goal."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "items": [
+     "Give every bill a paycheck, then even them out",
+     "Turn surprises into a bill",
+     "Pick one fun number",
+     "Give the leftovers one job"
+    ],
+    "at": [
+     1,
+     2,
+     3,
+     4
+    ]
+   },
+   "say": "So, recap."
+  },
+  {
+   "join": true,
+   "say": "Give every bill a paycheck, and even them out."
+  },
+  {
+   "join": true,
+   "say": "Turn surprises into a bill."
+  },
+  {
+   "join": true,
+   "say": "Pick one fun number."
+  },
+  {
+   "join": true,
+   "say": "And give the leftovers one job."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "The Paycheck Planner spreadsheet: link in the description",
+    "next": "Next: Debt snowball vs avalanche, with real numbers"
+   },
+   "say": "The spreadsheet from this example is linked in the description. Put in your paychecks and bills, and it does the math, including your debt-free date."
+  },
+  {
+   "say": "Subscribe, and next week we'll settle debt snowball versus avalanche, with real numbers."
+  }
+ ]
+}
