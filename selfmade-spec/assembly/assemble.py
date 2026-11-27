@@ -56,10 +56,10 @@ a1=rd(R+'/act1/sfx_placeholder.wav'); out[:len(a1)]+=a1*0.9
 G=30.5
 th=lambda tl: 360*(lambda p:4*p**3 if p<.5 else 1-(-2*p+2)**3/2)(min(1,max(0,(tl-0.45)/(3.25-0.45))))
 passes=[]; prev=0
-for k in range(1,6):
+for k in range(1,7):
     for i in range(1,2000):
         tl=0.45+i*0.0014
-        if th(tl)>=k*60: passes.append(tl); break
+        if th(tl)>=k*360/7: passes.append(tl); break
 for tl in passes:
     d=0.32; x=tt(d); nz=rng.standard_normal(len(x)); env=np.sin(np.pi*x/d)**2
     y=np.convolve(nz,np.ones(12)/12,'same'); at(G+tl-0.16,y*env,0.12)

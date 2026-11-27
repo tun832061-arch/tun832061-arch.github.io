@@ -37,7 +37,7 @@ function sv(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const
 function box(e,cx,cy,w,h,extra=''){e.style.width=w+'px';e.style.height=h+'px';e.style.transform=`translate(${cx-w/2}px,${cy-h/2}px) ${extra}`}
 
 /* ===== CAROUSEL ===== */
-const CARDS=[['black','BLACK','img/friend_placeholder.jpg'],['cream','CREAM'],['grey','GREY'],['burgundy','BURGUNDY'],['hem','THE HEM'],['denim','THE DENIM']];
+const CARDS=[['black','BLACK','img/friend_placeholder.jpg'],['cream','CREAM'],['grey','GREY'],['burgundy','BURGUNDY'],['purple','PURPLE'],['hem','THE HEM'],['denim','THE DENIM']];
 const R=640, N=CARDS.length, STEP=360/N;
 const persp=el('div','',stage); persp.id='persp';
 const tilt=el('div','',persp); tilt.id='tilt';
@@ -112,7 +112,7 @@ function render(t){
  const lv=P(t,0.5,0.9)*(1-P(t,T.expand-0.25,T.expand));
  labs.forEach((l,i)=>{let a=((i*STEP+th)%360+540)%360-180; l.style.transform=`translateY(${a*2.4}px)`; l.style.opacity=lv*clamp(1-Math.abs(a)/34)});
  {let best=0,bd=999;cards.forEach((o,i)=>{let a=Math.abs(((i*STEP+th)%360+540)%360-180);if(a<bd){bd=a;best=i}});
-  idx.textContent=String(best+1).padStart(2,'0')+'  /  06'; idx.style.opacity=lv}
+  idx.textContent=String(best+1).padStart(2,'0')+'  /  '+String(N).padStart(2,'0'); idx.style.opacity=lv}
 
  /* ---------- CTA ---------- */
  const c0=T.cta0;
