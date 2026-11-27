@@ -1,0 +1,255 @@
+{
+ "title": "What $100 a Month Becomes in 5 Years (Savings vs. Credit Card)",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "$100 a month.",
+      "Five years."
+     ]
+    ],
+    "stamp": "Two very different endings."
+   },
+   "say": "A hundred dollars a month, for five years."
+  },
+  {
+   "say": "Where you point it changes the ending completely."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "$100 × 60 months",
+    "value": "$6,000",
+    "sub": "the starting point: just the money itself"
+   },
+   "cap": "Five years is 60 months, so that's $6,000 of your money either way.",
+   "say": "Five years is sixty months, so that's six thousand dollars of your money, either way."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Episode 5 · real numbers",
+    "text": "Where $100 Goes"
+   },
+   "say": "Let's follow it down two roads, with real numbers."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "Road one: savings",
+    "kicker": "ROAD 1"
+   },
+   "say": "Road one. A high-yield savings account."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "$100 a month at 4% for 5 years",
+    "value": "$6,630",
+    "c": "green",
+    "sub": "$630 of that is interest you earned"
+   },
+   "cap": "Put $100 a month into savings earning 4%, and after five years you have $6,630.",
+   "say": "Put a hundred dollars a month into savings earning four percent, and after five years, you have sixty-six thirty."
+  },
+  {
+   "cap": "$630 of that is interest the bank paid you. Rates change; 4% is our example.",
+   "say": "Six hundred and thirty of that is interest the bank paid you. Savings rates change over time, so four percent is just our example."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "Road two: a credit card",
+    "kicker": "ROAD 2"
+   },
+   "say": "Road two. The same hundred dollars a month, but you're paying down a credit card."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Credit card balance · 24% APR",
+    "value": "$4,000",
+    "c": "coral",
+    "sub": "interest: about $80 a month at the start"
+   },
+   "cap": "Say it has $4,000 on it at 24%. That's about $80 of interest in the first month alone.",
+   "say": "Say it has four thousand dollars on it at twenty-four percent. That's about eighty dollars of interest in the first month alone."
+  },
+  {
+   "say": "So of your hundred-dollar payment, only twenty actually goes to the balance."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Five years later",
+    "value": "$1,719",
+    "c": "coral",
+    "sub": "still owed, after paying $6,000"
+   },
+   "cap": "After five years, you've paid $6,000, and you still owe $1,719.",
+   "say": "After five years, you've paid six thousand dollars, and you still owe seventeen nineteen."
+  },
+  {
+   "cap": "$3,719 of what you paid went to interest. Paying it off fully takes 82 months: almost seven years.",
+   "say": "Thirty-seven nineteen of what you paid went to interest. Paying it off completely takes eighty-two months. Almost seven years."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "03",
+    "text": "The gap between the roads",
+    "kicker": "THE SWING"
+   },
+   "say": "Now put the two roads side by side."
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "Same $100 a month, five years",
+    "items": [
+     [
+      "Interest earned: savings",
+      630,
+      "green"
+     ],
+     [
+      "Interest paid: card",
+      3719,
+      "coral"
+     ]
+    ]
+   },
+   "cap": "Savings earned you $630.",
+   "say": "Savings earned you six hundred and thirty dollars."
+  },
+  {
+   "cap": "The card cost you $3,719.",
+   "say": "The card cost you thirty-seven nineteen."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Paying off a 24% card is a guaranteed 24% return.",
+    "hi": [
+     "guaranteed",
+     "24%",
+     "return."
+    ]
+   },
+   "say": "That's why paying off a twenty-four percent card is like earning a guaranteed twenty-four percent. No savings account comes close."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "04",
+    "text": "Double it, then flip it",
+    "kicker": "THE PLAN"
+   },
+   "say": "So here's what happens if you find a second hundred dollars."
+  },
+  {
+   "scene": {
+    "type": "compare",
+    "head": "$4,000 card at 24% APR",
+    "kw0": "hundred",
+    "rows": [
+     {
+      "label": "$100 a month",
+      "months": 82,
+      "interest": 4128,
+      "c": "coral"
+     },
+     {
+      "label": "$200 a month",
+      "months": 26,
+      "interest": 1159,
+      "c": "green"
+     }
+    ]
+   },
+   "cap": "At $100 a month: 82 months and $4,128 in interest.",
+   "say": "At a hundred a month, eighty-two months, and forty-one twenty-eight in interest."
+  },
+  {
+   "cap": "At $200 a month: gone in 26 months, for $1,159.",
+   "say": "At two hundred a month, it's gone in twenty-six months, for eleven fifty-nine."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Then send the same $200 to savings",
+    "value": "$7,188",
+    "c": "green",
+    "sub": "saved by year five, with the card already gone"
+   },
+   "cap": "Then flip the same $200 into savings for the rest of the five years. You end with $7,188 saved, and no card.",
+   "say": "Then flip that same two hundred into savings for the rest of the five years. You end with seventy-one eighty-eight saved, and no card."
+  },
+  {
+   "say": "Versus still owing seventeen nineteen on the slow road."
+  },
+  {
+   "scene": {
+    "type": "ledger",
+    "head": "Saved monthly for 5 years at 4%",
+    "items": [
+     [
+      "$25 a month",
+      1657
+     ],
+     [
+      "$50 a month",
+      3315
+     ],
+     [
+      "$100 a month",
+      6630
+     ],
+     [
+      "$200 a month",
+      13260
+     ]
+    ],
+    "noTotal": true
+   },
+   "say": "And if you're debt-free already, here's what small amounts become in five years."
+  },
+  {
+   "join": true,
+   "cap": "$25 a month: $1,657.",
+   "say": "Twenty-five a month, sixteen fifty-seven."
+  },
+  {
+   "join": true,
+   "cap": "$50: $3,315.",
+   "say": "Fifty, thirty-three fifteen."
+  },
+  {
+   "join": true,
+   "cap": "$100: $6,630.",
+   "say": "A hundred, sixty-six thirty."
+  },
+  {
+   "join": true,
+   "cap": "$200: $13,260.",
+   "say": "Two hundred, thirteen thousand, two sixty."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Find your $100 with the Paycheck Planner: link in the description",
+    "next": "Next: The 3-paycheck months of 2027"
+   },
+   "say": "To find your hundred dollars, the Paycheck Planner in the description shows exactly what's left from each paycheck."
+  },
+  {
+   "say": "Subscribe. Next time: the months in twenty twenty-seven where you get three paychecks, and what to do with them."
+  }
+ ]
+}

@@ -4,7 +4,7 @@
 body{margin:0}</style></head><body><canvas id="c" width="1280" height="720"></canvas><script>
 // thumb.html — episode 1 thumbnail, 1280x720. Rendered by thumb.cjs.
 const X=document.getElementById('c').getContext('2d');
-window.draw=(ep)=>{ if(ep==='ep02') return draw2(); if(ep==='ep03') return draw3(); if(ep==='ep04') return draw4();
+window.draw=(ep)=>{ if(ep==='ep02') return draw2(); if(ep==='ep03') return draw3(); if(ep==='ep04') return draw4(); if(ep==='ep05') return draw5(); if(ep==='ep06') return draw6();
  const g=X.createLinearGradient(0,0,1280,720);g.addColorStop(0,'#16324F');g.addColorStop(1,'#0A1522');X.fillStyle=g;X.fillRect(0,0,1280,720);
  const t=(s,x,y,f,c,al='left')=>{X.font=f;X.fillStyle=c;X.textAlign=al;X.textBaseline='alphabetic';X.fillText(s,x,y)};
  t('YOUR BUDGET',60,190,'900 92px Inter','#F3EFE6');
@@ -41,5 +41,22 @@ function draw4(){ base();
  X.fillStyle='#0C1A2A';X.beginPath();X.roundRect(830,170,400,340,36);X.fill();X.strokeStyle='#FFC857';X.lineWidth=8;X.stroke();
  T('$1,040',1030,290,'400 110px Anton','#8C9CB2','center'); X.strokeStyle='#FF6B5B';X.lineWidth=12;X.beginPath();X.moveTo(890,255);X.lineTo(1170,255);X.stroke();
  T('$600',1030,450,'400 150px Anton','#3DDC97','center');
+}
+
+function draw5(){ base();
+ T('$100/MONTH',60,180,'400 140px Anton','#F3EFE6'); T('5 YEARS LATER',64,270,'900 64px Inter','#8C9CB2');
+ X.fillStyle='#0C1A2A';X.beginPath();X.roundRect(60,320,520,250,30);X.fill();X.strokeStyle='#3DDC97';X.lineWidth=8;X.stroke();
+ T('SAVINGS',100,385,'800 34px Inter','#8C9CB2'); T('+$630',100,530,'400 140px Anton','#3DDC97');
+ X.fillStyle='#0C1A2A';X.beginPath();X.roundRect(660,320,560,250,30);X.fill();X.strokeStyle='#FF6B5B';X.lineWidth=8;X.stroke();
+ T('CREDIT CARD',700,385,'800 34px Inter','#8C9CB2'); T('−$3,719',700,530,'400 140px Anton','#FF6B5B');
+ T('same $100. opposite endings.',64,660,'800 40px Inter','#F3EFE6');
+}
+function draw6(){ base();
+ T('2027',60,200,'400 190px Anton','#FFC857'); T('HAS 3-PAYCHECK',64,300,'900 72px Inter','#F3EFE6'); T('MONTHS',56,470,'400 170px Anton','#3DDC97');
+ T('is one of them yours? →',64,570,'800 44px Inter','#F3EFE6');
+ X.fillStyle='#0C1A2A';X.beginPath();X.roundRect(860,170,360,360,40);X.fill();X.strokeStyle='#3DDC97';X.lineWidth=8;X.stroke();
+ T('JULY',1040,260,'800 44px Inter','#8C9CB2','center');
+ [[960,'2'],[1040,'16'],[1120,'30']].forEach(([x,d])=>{X.fillStyle='#3DDC97';X.beginPath();X.arc(x,360,34,0,7);X.fill();T(d,x,373,'900 34px Inter','#0C1A2A','center')});
+ T('3 paydays',1040,470,'800 40px Inter','#3DDC97','center');
 }
 </script></body></html>

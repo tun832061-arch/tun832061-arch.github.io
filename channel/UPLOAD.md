@@ -136,3 +136,54 @@ For each Short, set **Related video** to its long episode in the Short's setting
 **`ep04-short/build/video.mp4`** → Related video: Episode 4
 - **Title:** $1,040 holiday list, $600 cash. Here's the fix #shorts
 - **Description:** `The January rule and what to cut. Full holiday budget on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
+
+---
+
+## Episode 5: `ep05/build/video.mp4` · thumbnail `ep05/build/thumbnail.png` · captions `ep05/build/video.srt`
+
+**Title:** What $100 a Month Becomes in 5 Years (Savings vs. Credit Card)
+
+**Description:**
+```
+$100 a month for five years is $6,000 either way. In savings at 4% it grows to $6,630. Against a $4,000 credit card at 24%, $3,719 of it goes to interest and you still owe $1,719. Here's the math, plus what happens when you double it and then flip it into savings.
+
+📊 Find your $100 with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:13 Road one: savings
+0:31 Road two: a credit card
+1:01 The gap between the roads
+1:17 Double it, then flip it
+1:54 Get the planner
+
+Educational content, not financial advice. Savings rates change; 4% is an illustrative rate.
+```
+**Tags:** save 100 a month, high yield savings account, credit card interest, pay off credit card, compound interest explained, savings vs debt, personal finance for beginners, money math
+
+**Pinned comment:** `Which road is your $100 on right now: savings or a card? 👇`
+
+---
+
+## Episode 6: `ep06/build/video.mp4` · thumbnail `ep06/build/thumbnail.png` · captions `ep06/build/video.srt`
+
+**Title:** The 3-Paycheck Months of 2027 (and What to Do With Them)
+
+**Description:**
+```
+2027 starts on a Friday, so it has 53 Fridays. If you're paid every other Friday, you'll get two or even three months with a third paycheck, and some people get 27 paychecks this year. Here's exactly which months, and a plan to give each extra check a job before it disappears.
+
+📊 The Paycheck Planner's new Paydays tab finds YOUR 3-paycheck months: [PLANNER LINK]
+
+0:00 Intro
+0:24 Find your months
+1:14 Why it's different
+1:32 Give it a job early
+2:11 Get the planner
+
+Educational content, not financial advice. Your employer's holiday rules may move a payday; check your pay calendar.
+```
+**Tags:** 3 paycheck months 2027, three paycheck months, 27 paychecks 2027, biweekly pay, extra paycheck, paycheck budget, budgeting 2027, biweekly budget
+
+**Pinned comment:** `Which schedule are you on, A (Jan, Jul, Dec) or B (Apr, Oct)? 👇`
+
+**Upload order and timing:** these are Week 3 videos (week of Dec 15). Episode 6 does best before January, while people are planning 2027.

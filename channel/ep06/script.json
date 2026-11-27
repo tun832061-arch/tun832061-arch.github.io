@@ -1,0 +1,322 @@
+{
+ "title": "The 3-Paycheck Months of 2027 (and What to Do With Them)",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "2027 starts",
+      "on a Friday."
+     ]
+    ],
+    "stamp": "That's a big deal."
+   },
+   "cap": "2027 starts on a Friday.",
+   "say": "Twenty twenty-seven starts on a Friday."
+  },
+  {
+   "say": "And if you're paid every other Friday, that could mean an extra paycheck."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "53 Fridays. Up to 27 paychecks.",
+    "hi": [
+     "27",
+     "paychecks."
+    ]
+   },
+   "cap": "A year that starts on a Friday has 53 Fridays. So one every-other-Friday schedule gets 27 paychecks instead of 26.",
+   "say": "A year that starts on a Friday has fifty-three Fridays. So one of the two every-other-Friday schedules gets twenty-seven paychecks, instead of twenty-six."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Episode 6 · real numbers",
+    "text": "3-Paycheck Months"
+   },
+   "say": "And everyone paid every two weeks gets at least two months with three paychecks. Here's exactly which months, and what to do with them."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "Find your months",
+    "kicker": "STEP 1"
+   },
+   "say": "Step one. Find your months."
+  },
+  {
+   "scene": {
+    "type": "yeargrid",
+    "head": "Schedule A · every other Friday from Jan 1",
+    "months": [
+     [
+      1,
+      15,
+      29
+     ],
+     [
+      12,
+      26
+     ],
+     [
+      12,
+      26
+     ],
+     [
+      9,
+      23
+     ],
+     [
+      7,
+      21
+     ],
+     [
+      4,
+      18
+     ],
+     [
+      2,
+      16,
+      30
+     ],
+     [
+      13,
+      27
+     ],
+     [
+      10,
+      24
+     ],
+     [
+      8,
+      22
+     ],
+     [
+      5,
+      19
+     ],
+     [
+      3,
+      17,
+      31
+     ]
+    ],
+    "hiAt": 1,
+    "foot": "Jan 1 check paid Dec 31? Then your months are July & December.",
+    "footAt": 2
+   },
+   "cap": "If your paydays fall on January 1, 15 and 29, you're on schedule A.",
+   "say": "If your paydays fall on January first, fifteenth, and twenty-ninth, you're on schedule A."
+  },
+  {
+   "cap": "Your 3-paycheck months: January, July and December. 27 paychecks in all.",
+   "say": "Your three-paycheck months are January, July, and December. Twenty-seven paychecks in all."
+  },
+  {
+   "cap": "One catch: January 1 is a holiday, so many employers pay on December 31 instead. Then that check counts toward 2026, and your extra months are July and December.",
+   "say": "One catch. January first is a holiday, so many employers pay on December thirty-first instead. Then that check counts toward twenty twenty-six, and your extra months are July and December."
+  },
+  {
+   "scene": {
+    "type": "yeargrid",
+    "head": "Schedule B · every other Friday from Jan 8",
+    "months": [
+     [
+      8,
+      22
+     ],
+     [
+      5,
+      19
+     ],
+     [
+      5,
+      19
+     ],
+     [
+      2,
+      16,
+      30
+     ],
+     [
+      14,
+      28
+     ],
+     [
+      11,
+      25
+     ],
+     [
+      9,
+      23
+     ],
+     [
+      6,
+      20
+     ],
+     [
+      3,
+      17
+     ],
+     [
+      1,
+      15,
+      29
+     ],
+     [
+      12,
+      26
+     ],
+     [
+      10,
+      24
+     ]
+    ],
+    "hiAt": 1
+   },
+   "cap": "If your first paydays are January 8 and 22, you're on schedule B.",
+   "say": "If your first paydays are January eighth and twenty-second, you're on schedule B."
+  },
+  {
+   "cap": "Your 3-paycheck months: April and October. 26 paychecks.",
+   "say": "Your three-paycheck months are April and October. Twenty-six paychecks."
+  },
+  {
+   "say": "Paid on another weekday? Your months shift a little. The planner at the end finds yours."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Paid every two weeks? This one's for you.",
+    "hi": [
+     "every",
+     "two",
+     "weeks?"
+    ]
+   },
+   "cap": "Paid twice a month, like the 15th and the last day? You get exactly 24 paychecks, never a third in one month. This one's for every-two-weeks people.",
+   "say": "And if you're paid twice a month, like on the fifteenth and the last day, you get exactly twenty-four paychecks, and never a third in one month. This one's for every-two-weeks people."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "Why it's different",
+    "kicker": "STEP 2"
+   },
+   "say": "Step two. Understand why the third check is different."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "The third paycheck of the month",
+    "value": "$1,850",
+    "c": "green",
+    "sub": "has no bills attached. They're covered by checks 1 and 2."
+   },
+   "say": "If you budget by paycheck like we did in episode one, your bills are already covered by the first two checks of the month."
+  },
+  {
+   "cap": "So the third check, $1,850 in our example, has nothing attached to it. Which is exactly why it tends to disappear.",
+   "say": "So the third check, eighteen fifty in our example, has nothing attached to it. Which is exactly why it tends to disappear."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "03",
+    "text": "Give it a job early",
+    "kicker": "STEP 3"
+   },
+   "say": "Step three. Give it a job before it lands."
+  },
+  {
+   "scene": {
+    "type": "ledger",
+    "head": "One way to split an extra $1,850",
+    "total": "Total",
+    "items": [
+     [
+      "Debt target",
+      1000
+     ],
+     [
+      "Emergency fund",
+      500
+     ],
+     [
+      "Sinking funds",
+      165
+     ],
+     [
+      "Something fun (10%)",
+      185
+     ]
+    ]
+   },
+   "say": "Here's one way to split it."
+  },
+  {
+   "join": true,
+   "cap": "$1,000 to your debt target.",
+   "say": "A thousand to your debt target."
+  },
+  {
+   "join": true,
+   "cap": "$500 to your emergency fund.",
+   "say": "Five hundred to your emergency fund."
+  },
+  {
+   "join": true,
+   "cap": "$165 to sinking funds.",
+   "say": "A hundred sixty-five to sinking funds."
+  },
+  {
+   "join": true,
+   "cap": "And about 10%, $185, for something fun. You earned it.",
+   "say": "And about ten percent, one eighty-five, for something fun. You earned it."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Extra paychecks in 2027",
+    "value": "$3,700",
+    "c": "green",
+    "sub": "two extra checks, or $5,550 with three"
+   },
+   "cap": "Two extra checks is $3,700 this year. On schedule A, with three, it's $5,550.",
+   "say": "Two extra checks is thirty-seven hundred dollars this year. On schedule A, with three, it's fifty-five fifty."
+  },
+  {
+   "say": "That's a whole credit card paid off, or a real emergency fund, from money you were never budgeting for anyway."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Put the dates in your calendar today.",
+    "hi": [
+     "today."
+    ]
+   },
+   "say": "So, put the dates in your calendar today, and decide the split now, while it's easy."
+  },
+  {
+   "say": "Then set up the transfers ahead of time, so the money moves on payday, before it can disappear."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "The Paycheck Planner's new Paydays tab finds your 3-paycheck months: link in the description",
+    "next": "Next: How to undo holiday debt in 90 days"
+   },
+   "say": "The Paycheck Planner in the description now has a paydays tab. Enter your first payday, and it finds your three-paycheck months."
+  },
+  {
+   "say": "Subscribe for more money math, with real numbers."
+  }
+ ]
+}

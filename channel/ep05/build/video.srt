@@ -1,0 +1,111 @@
+1
+00:00:00,600 --> 00:00:02,708
+A hundred dollars a month, for five years.
+
+2
+00:00:03,128 --> 00:00:05,316
+Where you point it changes the ending completely.
+
+3
+00:00:05,736 --> 00:00:10,147
+Five years is 60 months, so that's $6,000 of your money either way.
+
+4
+00:00:10,917 --> 00:00:13,499
+Let's follow it down two roads, with real numbers.
+
+5
+00:00:14,269 --> 00:00:16,652
+Road one. A high-yield savings account.
+
+6
+00:00:17,072 --> 00:00:23,177
+Put $100 a month into savings earning 4%, and after five years you have $6,630.
+
+7
+00:00:23,597 --> 00:00:31,496
+$630 of that is interest the bank paid you. Rates change; 4% is our example.
+
+8
+00:00:32,266 --> 00:00:36,366
+Road two. The same hundred dollars a month, but you're paying down a credit card.
+
+9
+00:00:36,786 --> 00:00:43,682
+Say it has $4,000 on it at 24%. That's about $80 of interest in the first month alone.
+
+10
+00:00:44,102 --> 00:00:48,209
+So of your hundred-dollar payment, only twenty actually goes to the balance.
+
+11
+00:00:48,629 --> 00:00:53,316
+After five years, you've paid $6,000, and you still owe $1,719.
+
+12
+00:00:53,736 --> 00:01:00,912
+$3,719 of what you paid went to interest. Paying it off fully takes 82 months: almost seven years.
+
+13
+00:01:01,682 --> 00:01:03,601
+Now put the two roads side by side.
+
+14
+00:01:04,021 --> 00:01:06,441
+Savings earned you $630.
+
+15
+00:01:06,861 --> 00:01:08,926
+The card cost you $3,719.
+
+16
+00:01:09,346 --> 00:01:16,844
+That's why paying off a twenty-four percent card is like earning a guaranteed twenty-four percent. No savings account comes close.
+
+17
+00:01:17,614 --> 00:01:20,645
+So here's what happens if you find a second hundred dollars.
+
+18
+00:01:21,065 --> 00:01:25,077
+At $100 a month: 82 months and $4,128 in interest.
+
+19
+00:01:25,497 --> 00:01:29,758
+At $200 a month: gone in 26 months, for $1,159.
+
+20
+00:01:30,178 --> 00:01:37,786
+Then flip the same $200 into savings for the rest of the five years. You end with $7,188 saved, and no card.
+
+21
+00:01:38,206 --> 00:01:41,177
+Versus still owing seventeen nineteen on the slow road.
+
+22
+00:01:41,597 --> 00:01:45,570
+And if you're debt-free already, here's what small amounts become in five years.
+
+23
+00:01:45,730 --> 00:01:48,150
+$25 a month: $1,657.
+
+24
+00:01:48,310 --> 00:01:49,881
+$50: $3,315.
+
+25
+00:01:50,041 --> 00:01:51,763
+$100: $6,630.
+
+26
+00:01:51,923 --> 00:01:54,274
+$200: $13,260.
+
+27
+00:01:55,044 --> 00:02:01,122
+To find your hundred dollars, the Paycheck Planner in the description shows exactly what's left from each paycheck.
+
+28
+00:02:01,542 --> 00:02:07,706
+Subscribe. Next time: the months in twenty twenty-seven where you get three paychecks, and what to do with them.

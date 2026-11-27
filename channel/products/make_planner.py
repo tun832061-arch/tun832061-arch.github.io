@@ -157,24 +157,53 @@ for r in range(4, 364):
 for c in range(1, 36): sc.column_dimensions[CL(c)].width = 13
 sc.freeze_panes = "C4"
 
+
+# ------------------------------------------------------------- Paydays (3-paycheck months)
+pd = wb.create_sheet("Paydays", 4)
+title(pd, "Paydays", "Paid every two weeks? Find the months that bring a third paycheck.")
+pd["A3"] = "Your first payday of the year"; pd["A3"].font = F(bold=True); inp(pd["B3"], dt.date(2027, 1, 1), "mmm d, yyyy")
+pd["C3"] = "Enter the first payday that falls in the year you're planning. Every-two-weeks pay only."; pd["C3"].font = F(size=9, italic=True, color="6B7A8C")
+head(pd, 6, ["#", "Payday"])
+for k in range(27):
+    r = 7 + k; pd[f"A{r}"] = k + 1
+    pd[f"B{r}"] = f'=IF(YEAR($B$3+14*{k})=YEAR($B$3),$B$3+14*{k},"")'; pd[f"B{r}"].number_format = "ddd mmm d, yyyy"
+pd["D6"] = "Month"; pd["E6"] = "Paydays"; pd["F6"] = ""
+for c in "DEF": style(pd[f"{c}6"], **HEAD)
+for m in range(12):
+    r = 7 + m
+    pd[f"D{r}"] = f"=DATE(YEAR($B$3),{m+1},1)"; pd[f"D{r}"].number_format = "mmmm"
+    pd[f"E{r}"] = f'=COUNTIFS($B$7:$B$33,">="&D{r},$B$7:$B$33,"<"&EDATE(D{r},1))'; pd[f"E{r}"].alignment = Alignment(horizontal="center")
+    pd[f"F{r}"] = f'=IF(E{r}>=3,"3 paychecks: extra check!","")'; pd[f"F{r}"].font = F(bold=True, color=GREEN)
+from openpyxl.formatting.rule import FormulaRule
+pd.conditional_formatting.add("D7:F18", FormulaRule(formula=["$E7>=3"], fill=PatternFill("solid", fgColor="D8F5E8")))
+res2 = [("Paychecks this year", "=COUNT(B7:B33)", "0"), ("Months with 3 paychecks", '=COUNTIF(E7:E18,">=3")', "0"),
+        ("Extra paychecks (beyond 2 a month)", "=E21-24", "0"), ("Extra money, at your take-home pay", "=E23*'Paycheck Plan'!B3", USD)]
+for i, (lab, f, fmt) in enumerate(res2):
+    r = 21 + i; pd[f"D{r}"] = lab; pd[f"E{r}"] = f; pd[f"E{r}"].number_format = fmt
+    pd[f"D{r}"].font = pd[f"E{r}"].font = F(bold=True); pd[f"D{r}"].border = pd[f"E{r}"].border = thin
+pd["E24"].fill = PatternFill("solid", fgColor="D8F5E8")
+pd["D26"] = "Bills are already covered by the first two checks each month, so give each extra check a job before it lands."; pd["D26"].font = F(size=9, italic=True, color="6B7A8C")
+widths(pd, [30, 22, 3, 36, 14, 28])
+
 # ------------------------------------------------------------- Start Here content
 title(st, "Paycheck Planner", "From the Paycheck Math channel · Budget by paycheck, not by month.")
 steps = ["1. Paycheck Plan: enter your take-home pay and every bill with its due day. The sheet assigns each bill to a paycheck.",
          "2. Even them out: set the buffer (the sheet suggests an amount) so both paychecks leave about the same.",
          "3. Surprise Fund: list yearly costs (gifts, car repairs, renewals). It tells you what to set aside each paycheck.",
-         "4. Debt Payoff: list your debts and pick Avalanche or Snowball. You get your debt-free date and the interest you save."]
+         "4. Debt Payoff: list your debts and pick Avalanche or Snowball. You get your debt-free date and the interest you save.",
+         "5. Paydays: enter your first payday of the year to see which months bring a third paycheck."]
 st["A4"] = "HOW TO USE"; st["A4"].font = F(bold=True, color=GREEN)
 for i, s_ in enumerate(steps): st[f"A{5+i}"] = s_; st[f"A{5+i}"].font = F(); st[f"A{5+i}"].alignment = Alignment(wrap_text=True)
-st["A10"] = "Legend:"; st["A10"].font = F(bold=True)
-st["A11"] = "Yellow cells with blue text are yours to edit. Everything else calculates. Example values are from the video."; style(st["A11"], **INP)
-st["A13"] = "YOUR NUMBERS"; st["A13"].font = F(bold=True, color=GREEN)
+st["A11"] = "Legend:"; st["A11"].font = F(bold=True)
+st["A12"] = "Yellow cells with blue text are yours to edit. Everything else calculates. Example values are from the video."; style(st["A12"], **INP)
+st["A14"] = "YOUR NUMBERS"; st["A14"].font = F(bold=True, color=GREEN)
 kp = [("Per month to your goal", "='Paycheck Plan'!H14", USD), ("Surprise fund per paycheck", "='Surprise Fund'!B22", USD),
       ("Debt-free in (months)", "='Debt Payoff'!B16", "0"), ("Debt-free date", "='Debt Payoff'!B17", "mmmm yyyy"),
-      ("Interest saved vs. minimums", "='Debt Payoff'!B21", USD)]
+      ("Interest saved vs. minimums", "='Debt Payoff'!B21", USD), ("Extra paychecks this year", "=Paydays!E23", "0")]
 for i, (lab, f, fmt) in enumerate(kp):
-    r = 14 + i; st[f"A{r}"] = lab; st[f"B{r}"] = f; st[f"B{r}"].number_format = fmt
+    r = 15 + i; st[f"A{r}"] = lab; st[f"B{r}"] = f; st[f"B{r}"].number_format = fmt
     st[f"A{r}"].font = F(bold=True); st[f"B{r}"].font = F(bold=True, color="008000", size=13); st[f"A{r}"].border = st[f"B{r}"].border = thin
-st["A20"] = "For education only, not financial advice. Results are estimates; your lender's actual interest and minimums may differ."; st["A20"].font = F(size=9, italic=True, color="6B7A8C")
+st["A22"] = "For education only, not financial advice. Results are estimates; your lender's actual interest and minimums may differ."; st["A22"].font = F(size=9, italic=True, color="6B7A8C")
 widths(st, [100, 18])
 for ws in wb.worksheets: fontall(ws); ws.sheet_view.showGridLines = ws.title == "Payoff Schedule"
 pp.freeze_panes = "A12"

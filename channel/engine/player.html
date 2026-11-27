@@ -187,6 +187,7 @@ D.ledger = sc => {
     txt(it[0], x + 36 * U, y + (rh - 14 * U) / 2, { sz: 40, w: 700, al: 'left', a: cl(q) });
     txt(money(it[1]), x + w - 36 * U, y + (rh - 14 * U) / 2, { sz: 54, fam: 'Anton', w: 400, c: 'gold', al: 'right', a: cl(q) });
   });
+  if (sc.noTotal) return;
   const ty = y0 + n * rh + 30 * U, tp = rv(1, 0, 0.4);
   A(tp); X.fillStyle = P.muted; X.fillRect(x, ty - 6 * U, w, 3 * U); A(1);
   txt((sc.total || 'Total').toUpperCase(), x + 36 * U, ty + 50 * U, { sz: 32, w: 800, c: 'muted', al: 'left', a: tp });
@@ -314,6 +315,23 @@ D.trim = sc => {
   txt('TOTAL', x + 36 * U, ty + 30 * U, { sz: 30, w: 800, c: 'muted', al: 'left', a: rv(0, 0.5, 0.5) });
   txt(money(oldT), oc, ty + 32 * U, { sz: 60, fam: 'Anton', w: 400, c: tp > 0 ? 'muted' : 'ink', al: 'right', a: rv(0, 0.5, 0.5) });
   if (tp > 0) txt(money(newT), nc, ty + 32 * U, { sz: 60, fam: 'Anton', w: 400, c: 'green', al: 'right', a: tp });
+};
+
+D.yeargrid = sc => {
+  const cols = 6, tw0 = 250 * U, th = 220 * U, g = 22 * U, x0 = W / 2 - (cols * tw0 + (cols - 1) * g) / 2, y0 = 210 * U, hi = rv(sc.hiAt ?? 1, 0.2, 0.6);
+  txt(sc.head.toUpperCase(), W / 2, 150 * U, { sz: 32, w: 800, c: 'muted', a: rv(0, 0, 0.5) });
+  'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' ').forEach((m, i) => {
+    const x = x0 + (i % cols) * (tw0 + g), y = y0 + Math.floor(i / cols) * (th + g), p = rv(0, 0.3 + i * 0.08, 0.45), days = sc.months[i], three = days.length === 3;
+    if (p <= 0) return;
+    box(x, y, tw0, th, 22 * U, 'bg2', p); if (three && hi > 0) { box(x, y, tw0, th, 22 * U, 'green', 0.16 * hi); box(x, y, tw0, th, 22 * U, null, hi, 'green'); }
+    txt(m, x + 26 * U, y + 44 * U, { sz: 34, w: 800, al: 'left', a: p });
+    days.forEach((d, j) => {
+      const cx = x + tw0 / 2 + (j - (days.length - 1) / 2) * 66 * U, cy = y + 120 * U;
+      A(p); X.fillStyle = three && hi > 0.5 ? P.green : P.ink; X.beginPath(); X.arc(cx, cy, 24 * U, 0, 7); X.fill(); A(1);
+      txt(String(d), cx, cy + 2 * U, { sz: 24, w: 800, c: 'bg', a: p });
+    });
+    txt(days.length + ' paydays', x + tw0 / 2, y + th - 34 * U, { sz: 22, w: 600, c: three && hi > 0.5 ? 'green' : 'muted', a: p });
+  });
 };
 // ------------------------------------------------------------------ frame
 function bgDraw() {
