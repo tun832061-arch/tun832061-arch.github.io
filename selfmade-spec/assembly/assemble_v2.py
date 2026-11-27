@@ -1,8 +1,9 @@
 # Full film v2: Act1 (0-17.5) + continuous Act2 (17.5-41.0) + placeholder soundtrack synced to Act2 events.
 import numpy as np, subprocess, os, wave, math
 D=os.path.dirname(os.path.abspath(__file__)); R=os.path.dirname(D)
-G=17.5; DUR=41.0; SR=48000
-T=dict(spin=(1.75,8.2),flip0=4.7,expand=8.2,iris=10.3,type0=10.9,swap=13.55,merge=15.55,cta0=16.3,end0=18.9)
+import json
+CJ=json.load(open(R+'/vo/cta.json')); G=CJ['G']; DUR=CJ['total']; SR=48000; SH=G-17.5
+T=dict(spin=(1.75,8.2),flip0=4.7,expand=8.2,iris=10.3,type0=10.9,swap=13.55,merge=15.55,cta0=16.3,end0=19.6)
 B=60/112
 subprocess.run(['ffmpeg','-y','-loglevel','error','-f','concat','-safe','0','-i','/dev/stdin','-c','copy',D+'/_video.mp4'],
   input=f"file '{R}/act1/act1_silent.mp4'\nfile '{R}/act2/act2_silent.mp4'\n".encode(),check=True)
@@ -49,7 +50,7 @@ sub(L(T['cta0']+1.85),0.6,3);
 tone2(L(T['end0']+0.35),[659.3,493.9],0.12,0.22,4)
 swell(L(T['end0']+1.9),0.7,0.25); sub(L(T['end0']+1.9),0.7,2)
 # placeholder groove from the drop to "call ended"
-music=np.zeros_like(out); t0=16.2; tend=L(T['end0']+0.35)
+music=np.zeros_like(out); t0=16.2+SH; tend=L(T['end0']+0.35)
 LOG=[(0,55),(0.75,55),(1.5,65.4),(2.5,82.4),(3.25,73.4)]
 nb=int((tend-t0)/B)
 for b in range(nb):
@@ -67,8 +68,10 @@ for bar in range(nb//4+1):
 music[int(tend*SR):]=0
 duck=np.ones_like(music); duck[int(L(T['cta0'])*SR):int(L(T['end0'])*SR)]=0.45
 out+=music*duck
+w=wave.open(R+'/vo/vo_track.wav'); vo=np.frombuffer(w.readframes(w.getnframes()),'<i2')/32768.0
+n=min(len(vo),len(out)); out*=0.62; out[:n]+=vo[:n]*1.0
 out/=np.abs(out).max(); out*=0.89
 pcm=(np.stack([out,out],1)*32767).astype('<i2')
 w=wave.open(D+'/_audio.wav','wb'); w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR); w.writeframes(pcm.tobytes()); w.close()
-subprocess.run(['ffmpeg','-y','-loglevel','error','-i',D+'/_video.mp4','-i',D+'/_audio.wav','-c:v','copy','-c:a','aac','-b:a','192k','-shortest',D+'/animatic_v6.mp4'],check=True)
+subprocess.run(['ffmpeg','-y','-loglevel','error','-i',D+'/_video.mp4','-i',D+'/_audio.wav','-c:v','copy','-af','loudnorm=I=-14:TP=-1.5:LRA=11','-ar','48000','-c:a','aac','-b:a','192k','-shortest',D+'/animatic_v7.mp4'],check=True)
 print('ok')

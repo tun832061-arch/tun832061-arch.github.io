@@ -31,7 +31,7 @@ html,body{margin:0;background:#000}
 <script src="data.js"></script>
 <script>
 /* Local time t: 0 = 17.5s in the film. */
-const T={cross:[0.05,0.9], toTile:[0.95,1.75], spin:[1.75,8.2], flip0:4.7, expand:8.2, iris:10.3, type0:10.9, swap:13.55, merge:15.55, cta0:16.3, end0:18.9, total:23.5};
+const T={cross:[0.05,0.9], toTile:[0.95,1.75], spin:[1.75,8.2], flip0:4.7, expand:8.2, iris:10.3, type0:10.9, swap:13.55, merge:15.55, cta0:16.3, end0:19.6, total:24.2};
 const B=60/112; // music beat
 const LOGO=window.LOGO, OL=window.OL, S=1080/1536;
 const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), lerp=(a,b,p)=>a+(b-a)*p, prog=(t,a,b)=>clamp((t-a)/(b-a));
@@ -97,7 +97,7 @@ const cream=el('div','a',stage); cream.style.borderRadius='50%'; cream.style.bac
 const rings=[0,1,2,3,4].map(()=>{const r=el('div','a',stage);r.style.borderRadius='50%';r.style.border='2px solid rgba(122,31,43,.16)';r.style.boxSizing='border-box';return r});
 const ctaA=el('div','a',stage), ctaB=el('div','a',stage);
 [ctaA,ctaB].forEach(c=>{c.style.width='1080px';c.style.textAlign='center'});
-const CW=[0.15,0.32,0.42,0.55,0.75,1.30,1.42,1.53,1.66,1.85].map(x=>T.cta0+x), CD=[.15,.1,.12,.2,.3,.1,.1,.12,.15,.4];
+const CW=[0.20,0.74,0.90,1.12,1.36,1.86,2.05,2.26,2.42,2.56].map(x=>T.cta0+x), CD=[.4,.14,.18,.22,.2,.16,.18,.14,.14,.3];
 function words(parent,list,style){const line=el('div','',parent);Object.assign(line.style,style);return list.map(w=>({el:el('span','wd',line,w[0]),t:w[1]}))}
 const A1=words(ctaA,[['Wetin',CW[0]],['you',CW[1]],['dey',CW[2]]],{font:'800 italic 128px/1.05 BX',color:'#0b0b0b'});
 const A2=words(ctaA,[['wait',CW[3]],['for?',CW[4]]],{font:'800 italic 128px/1.05 BX',color:'#0b0b0b'});
@@ -119,7 +119,7 @@ let LC=[0,0],LW=1;
 function init(){const bb=chestLogo.k.getBBox();LC=[bb.x+bb.width/2,bb.y+bb.height/2];LW=bb.width;
   sw.forEach(d=>{d.style.fontSize='330px';const w=d._s.getBoundingClientRect().width;d._fs=Math.min(330,330*880/Math.max(1,w))})}
 function placeLogo(L,cx,cy,w){const s=w/LW;L.o.setAttribute('transform',`translate(${cx} ${cy}) scale(${s}) translate(${-LC[0]} ${-LC[1]})`)}
-function voice(t){let a=0;CW.forEach((w,i)=>{const p=(t-w)/(CD[i]+0.08);if(p>-0.1&&p<1.1)a=Math.max(a,Math.pow(Math.sin(Math.PI*clamp((p+0.1)/1.2)),0.7))});return a*(0.62+0.38*Math.abs(Math.sin(t*2*Math.PI*4.1)))}
+function voice(t){if(window.ENV2){const v=window.ENV2[Math.floor(t*100)];return v||0}let a=0;CW.forEach((w,i)=>{const p=(t-w)/(CD[i]+0.08);if(p>-0.1&&p<1.1)a=Math.max(a,Math.pow(Math.sin(Math.PI*clamp((p+0.1)/1.2)),0.7))});return a*(0.62+0.38*Math.abs(Math.sin(t*2*Math.PI*4.1)))}
 
 function render(t){
  /* --- crossing: sketch -> real shirt, then the frame folds into a tile --- */
