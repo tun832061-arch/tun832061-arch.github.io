@@ -1,0 +1,375 @@
+{
+ "title": "Sinking Funds: Never Be 'Surprised' by an Expense Again",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Christmas is not",
+      "an emergency."
+     ]
+    ],
+    "stamp": "It's on the calendar."
+   },
+   "say": "Christmas is not an emergency."
+  },
+  {
+   "say": "It happens on December twenty-fifth. Every single year."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Most \"surprise\" expenses run on a schedule.",
+    "hi": [
+     "run",
+     "on",
+     "a",
+     "schedule."
+    ]
+   },
+   "say": "And most of the expenses that wreck a budget work the same way. They're not surprises. They're just not monthly."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Episode 3 · real numbers",
+    "text": "Sinking Funds"
+   },
+   "say": "The fix is called a sinking fund. Here's exactly how it works, with real numbers."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "The lumpy year",
+    "kicker": "THE PROBLEM"
+   },
+   "say": "First, the problem."
+  },
+  {
+   "scene": {
+    "type": "ledger",
+    "head": "One year of \"surprises\"",
+    "total": "Per year",
+    "items": [
+     [
+      "Subscriptions · January",
+      120
+     ],
+     [
+      "Medical copays · Mar & Sep",
+      300
+     ],
+     [
+      "Registration · April",
+      180
+     ],
+     [
+      "Car repairs · whenever",
+      500
+     ],
+     [
+      "Holidays & gifts · December",
+      600
+     ]
+    ]
+   },
+   "say": "Remember the example from episode one? Here's when each cost actually lands."
+  },
+  {
+   "join": true,
+   "cap": "Annual subscriptions, $120, in January.",
+   "say": "Annual subscriptions, a hundred and twenty, in January."
+  },
+  {
+   "join": true,
+   "cap": "Medical copays, $300, spread through the year.",
+   "say": "Medical copays, three hundred, spread through the year."
+  },
+  {
+   "join": true,
+   "cap": "Registration, $180, in April.",
+   "say": "Registration, one eighty, in April."
+  },
+  {
+   "join": true,
+   "cap": "Car repairs, $500, whenever the car decides.",
+   "say": "Car repairs, five hundred, whenever the car decides."
+  },
+  {
+   "join": true,
+   "cap": "And the holidays, $600, in December.",
+   "say": "And the holidays, six hundred, in December."
+  },
+  {
+   "scene": {
+    "type": "months",
+    "head": "The same $1,700, month by month",
+    "vals": [
+     120,
+     0,
+     150,
+     180,
+     0,
+     0,
+     500,
+     0,
+     150,
+     0,
+     0,
+     600
+    ],
+    "avgAt": 1,
+    "avgLabel": "$142 a month = $66 a paycheck"
+   },
+   "cap": "On a calendar it looks like this. Some months, nothing. Then July brings a $500 repair, and December wants $600.",
+   "say": "On a calendar, it looks like this. Some months, nothing. Then July brings a five hundred dollar repair, and December wants six hundred."
+  },
+  {
+   "cap": "But averaged out, it's about $142 a month. Or $66 a paycheck.",
+   "say": "But averaged out, it's about a hundred and forty-two dollars a month. Or sixty-six dollars a paycheck."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "Before vs. after",
+    "kicker": "THE MATH"
+   },
+   "say": "Now, here's why paying before beats paying after, even with the exact same money."
+  },
+  {
+   "scene": {
+    "type": "chips",
+    "stagger": 2.2,
+    "items": [
+     {
+      "t": "Costs land on a 24% credit card",
+      "c": "coral"
+     },
+     {
+      "t": "Then you pay $66 a paycheck toward it",
+      "c": "coral"
+     }
+    ]
+   },
+   "cap": "Option one: let the costs land on a credit card at 24%, then pay $66 a paycheck toward it afterward.",
+   "say": "Option one. Let the costs land on a credit card at twenty-four percent, then pay sixty-six dollars a paycheck toward it afterward."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Option one, five years later",
+    "value": "$784",
+    "c": "coral",
+    "sub": "still owed, even after paying $66 every single paycheck"
+   },
+   "cap": "Interest builds while you catch up, so you slowly fall behind. After five years you owe $784, and the interest grows every year.",
+   "say": "Because interest builds while you catch up, you slowly fall behind. After five years, you owe seven hundred and eighty-four dollars, and the interest grows every year."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Option two: save the $66 first",
+    "value": "$0",
+    "c": "green",
+    "sub": "owed. The money is waiting when the bill shows up."
+   },
+   "cap": "Option two: move the same $66 into savings first. When the bill shows up, the money's already there. You owe nothing.",
+   "say": "Option two. Move the same sixty-six dollars into savings first. When the bill shows up, the money's already there. You owe nothing."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Same money. Opposite results.",
+    "hi": [
+     "Opposite",
+     "results."
+    ]
+   },
+   "say": "Same money. Opposite results."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "03",
+    "text": "Build your funds",
+    "kicker": "HOW TO"
+   },
+   "say": "So here's how to set them up, in three steps."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Your bank statements already know your surprises.",
+    "hi": [
+     "already",
+     "know"
+    ]
+   },
+   "say": "Step one. Look backwards. Open last year's bank and card statements, and write down every cost that wasn't monthly."
+  },
+  {
+   "say": "Holidays, birthdays, car stuff, annual renewals, school costs, the vet. If it happened last year, it'll probably happen again."
+  },
+  {
+   "scene": {
+    "type": "equation",
+    "parts": [
+     "$180",
+     "÷",
+     "7",
+     "=",
+     "$26"
+    ],
+    "under": [
+     "registration",
+     "",
+     "paychecks left",
+     "",
+     "per paycheck"
+    ],
+    "at": [
+     0,
+     1,
+     1,
+     1,
+     1
+    ],
+    "kw": [
+     "registration",
+     "divided",
+     "by seven",
+     "is twenty",
+     "twenty-six"
+    ]
+   },
+   "say": "Step two. Split them into two kinds. Deadline funds have a date, like car registration, due in April."
+  },
+  {
+   "cap": "Starting in January, that's 7 paychecks away. $180 divided by 7 is $26 a paycheck.",
+   "say": "Starting in January, that's seven paychecks away. So one eighty, divided by seven, is twenty-six dollars a paycheck."
+  },
+  {
+   "scene": {
+    "type": "equation",
+    "parts": [
+     "$600",
+     "÷",
+     "24",
+     "=",
+     "$25"
+    ],
+    "under": [
+     "holidays",
+     "",
+     "paychecks",
+     "",
+     "per paycheck"
+    ],
+    "at": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "kw": [
+     "six hundred",
+     "over",
+     "twenty-four",
+     "is twenty",
+     "twenty-five"
+    ]
+   },
+   "cap": "The holidays? Start in January, and $600 over 24 paychecks is $25 each.",
+   "say": "The holidays? Start in January, and six hundred dollars over twenty-four paychecks is twenty-five dollars each."
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "Someday funds: fill to a target",
+    "items": [
+     [
+      "Car repairs",
+      500,
+      "gold"
+     ],
+     [
+      "Medical",
+      300,
+      "gold"
+     ]
+    ],
+    "foot": "Use it, then refill it."
+   },
+   "cap": "Someday funds don't have a date. Car repairs, medical bills. Give each a target, like $500 and $300.",
+   "say": "Someday funds don't have a date. Car repairs, medical bills. Give each one a target, like five hundred and three hundred."
+  },
+  {
+   "say": "Fill them a little each paycheck. When you use one, refill it."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Automate it on payday.",
+    "hi": [
+     "payday."
+    ]
+   },
+   "say": "Step three. Automate it. Set a transfer to savings on the same day your paycheck lands, so you never have to decide."
+  },
+  {
+   "say": "One savings account is fine. Just track each fund's balance, or use a bank that lets you split savings into named buckets."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "SINKING FUNDS",
+    "items": [
+     "List every non-monthly cost",
+     "Deadline funds: cost ÷ paychecks left",
+     "Someday funds: fill to a target",
+     "Automate it on payday"
+    ],
+    "at": [
+     1,
+     2,
+     3,
+     4
+    ]
+   },
+   "say": "Recap."
+  },
+  {
+   "join": true,
+   "say": "List every cost that isn't monthly."
+  },
+  {
+   "join": true,
+   "say": "Deadline funds: divide the cost by the paychecks left."
+  },
+  {
+   "join": true,
+   "say": "Someday funds: fill to a target, and refill."
+  },
+  {
+   "join": true,
+   "say": "And automate it on payday."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "The Surprise Fund tab in the Paycheck Planner does this math: link in the description",
+    "next": "Next: The holiday budget that doesn't follow you into March"
+   },
+   "say": "The Paycheck Planner in the description has a surprise fund tab that does this math for you."
+  },
+  {
+   "say": "Subscribe, and next time we'll build a holiday budget that doesn't follow you into March."
+  }
+ ]
+}

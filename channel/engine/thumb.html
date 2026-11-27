@@ -4,7 +4,7 @@
 body{margin:0}</style></head><body><canvas id="c" width="1280" height="720"></canvas><script>
 // thumb.html — episode 1 thumbnail, 1280x720. Rendered by thumb.cjs.
 const X=document.getElementById('c').getContext('2d');
-window.draw=(ep)=>{ if(ep==='ep02') return draw2();
+window.draw=(ep)=>{ if(ep==='ep02') return draw2(); if(ep==='ep03') return draw3(); if(ep==='ep04') return draw4();
  const g=X.createLinearGradient(0,0,1280,720);g.addColorStop(0,'#16324F');g.addColorStop(1,'#0A1522');X.fillStyle=g;X.fillRect(0,0,1280,720);
  const t=(s,x,y,f,c,al='left')=>{X.font=f;X.fillStyle=c;X.textAlign=al;X.textBaseline='alphabetic';X.fillText(s,x,y)};
  t('YOUR BUDGET',60,190,'900 92px Inter','#F3EFE6');
@@ -25,5 +25,21 @@ function draw2(){
  X.fillStyle='#0C1A2A';X.beginPath();X.roundRect(860,170,360,360,40);X.fill();X.strokeStyle='#FF6B5B';X.lineWidth=8;X.stroke();
  t('DIFFERENCE',1040,250,'800 34px Inter','#8C9CB2','center'); t('$42',1040,430,'400 170px Anton','#FF6B5B','center');
  t('?!',1040,500,'900 44px Inter','#F3EFE6','center');
+}
+
+function base(){const g=X.createLinearGradient(0,0,1280,720);g.addColorStop(0,'#16324F');g.addColorStop(1,'#0A1522');X.fillStyle=g;X.fillRect(0,0,1280,720);}
+const T=(s,x,y,f,c,al='left')=>{X.font=f;X.fillStyle=c;X.textAlign=al;X.textBaseline='alphabetic';X.fillText(s,x,y)};
+function draw3(){ base();
+ T('CHRISTMAS',60,190,'400 150px Anton','#F3EFE6'); T('IS NOT AN',64,280,'900 76px Inter','#8C9CB2'); T('EMERGENCY',56,440,'400 148px Anton','#FF6B5B');
+ T('sinking funds, explained →',64,560,'800 44px Inter','#3DDC97');
+ X.fillStyle='#0C1A2A';X.beginPath();X.roundRect(830,180,400,300,36);X.fill();X.strokeStyle='#3DDC97';X.lineWidth=8;X.stroke();
+ T('$600 ÷ 24',1030,290,'400 92px Anton','#F3EFE6','center'); T('= $25',1030,410,'400 110px Anton','#3DDC97','center'); T('per paycheck',1030,455,'800 30px Inter','#8C9CB2','center');
+}
+function draw4(){ base();
+ T('HOLIDAYS',60,190,'400 160px Anton','#F3EFE6'); T('WITHOUT',64,285,'900 80px Inter','#8C9CB2'); T('THE DEBT',56,460,'400 170px Anton','#3DDC97');
+ T('real budget, real numbers →',64,565,'800 44px Inter','#F3EFE6');
+ X.fillStyle='#0C1A2A';X.beginPath();X.roundRect(830,170,400,340,36);X.fill();X.strokeStyle='#FFC857';X.lineWidth=8;X.stroke();
+ T('$1,040',1030,290,'400 110px Anton','#8C9CB2','center'); X.strokeStyle='#FF6B5B';X.lineWidth=12;X.beginPath();X.moveTo(890,255);X.lineTo(1170,255);X.stroke();
+ T('$600',1030,450,'400 150px Anton','#3DDC97','center');
 }
 </script></body></html>

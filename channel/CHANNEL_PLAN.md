@@ -38,7 +38,7 @@ Each episode takes about 1–2 hours of your time: write `script.json`, render, 
 | Week | Long videos | Note |
 |---|---|---|
 | Dec 1 | ✅ Ep1 *Why Your Budget Dies in January* · ✅ Ep2 *Snowball vs Avalanche* | Launch both; list the planner the same day |
-| Dec 8 | Sinking funds: never be "surprised" by Christmas again · Holiday spending: the $X rule | Holiday angle while it's relevant |
+| Dec 8 | ✅ Ep3 *Sinking Funds* · ✅ Ep4 *The Holiday Budget That Doesn't Follow You Into March* | Holiday angle while it's relevant |
 | Dec 15 | What $100/month becomes in 5 years (savings vs credit card) · The 3-paycheck month plan for 2027 | 2027 has two 3-paycheck months for most biweekly earners; list them |
 | Dec 22 | How to undo holiday debt in 90 days · Your 2027 money reset checklist | Publish before Jan 1 for the search spike |
 | Dec 29 | Budget on an irregular income (gig/tips) · Emergency fund: how much is enough, really? | Peak week; consider a 3rd upload |

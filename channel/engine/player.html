@@ -279,6 +279,42 @@ D.end = sc => {
   }
   txt('Educational content, not financial advice. Example numbers are illustrative.', W / 2, H / 2 + (PORT ? 420 : 300) * U, { sz: 22, w: 500, c: 'muted', a: p });
 };
+
+D.months = sc => {
+  const v = sc.vals, n = 12, x0 = 250 * U, x1 = W - 250 * U, slot = (x1 - x0) / n, bw = slot * 0.62, base = 800 * U, mx = Math.max(...v), hs = 470 * U / mx;
+  const avgP = sc.avgAt != null ? rv(sc.avgAt, 0.2, 0.8) : 0, avg = v.reduce((a, b) => a + b, 0) / 12;
+  if (sc.head) txt(sc.head.toUpperCase(), W / 2, 170 * U, { sz: 30, w: 700, c: 'muted', a: rv(0, 0, 0.5) });
+  A(rv(0, 0, 0.5)); X.fillStyle = P.dim; X.fillRect(x0, base, x1 - x0, 3 * U); A(1);
+  'JFMAMJJASOND'.split('').forEach((m, i) => {
+    const x = x0 + i * slot + (slot - bw) / 2, p = rv(0, 0.3 + i * 0.12, 0.5), h = v[i] * hs * p;
+    if (v[i] > 0) { box(x, base - h, bw, h, 10 * U, 'coral', 0.95 * (1 - 0.6 * avgP)); txt(money(v[i]), x + bw / 2, base - h - 30 * U, { sz: 34, fam: 'Anton', w: 400, c: 'coral', a: p * (1 - 0.6 * avgP) }); }
+    txt(m, x + bw / 2, base + 40 * U, { sz: 28, w: 700, c: 'muted', a: rv(0, 0, 0.5) });
+    if (avgP > 0) box(x, base - avg * hs * avgP, bw, avg * hs * avgP, 10 * U, 'green', 0.9);
+  });
+  if (avgP > 0) txt(sc.avgLabel, W / 2, 250 * U, { sz: 44, w: 800, c: 'green', a: avgP });
+};
+D.trim = sc => {
+  const n = sc.rows.length, rh = 76 * U, w = 1140 * U, x = W / 2 - w / 2, y0 = 200 * U, oc = x + w - 300 * U, nc = x + w - 40 * U;
+  txt(sc.head.toUpperCase(), x + 36 * U, y0 - 50 * U, { sz: 30, w: 700, c: 'muted', al: 'left', a: rv(0, 0, 0.5) });
+  txt('NEW', nc, y0 - 50 * U, { sz: 26, w: 800, c: 'green', al: 'right', a: rv(0, 0, 0.5) });
+  const when = a => typeof a[1] === 'string' ? kt(a[0], a[1]) : a[1];
+  let oldT = 0, newT = 0;
+  sc.rows.forEach((r, i) => {
+    const p = rv(0, 0.2 + i * 0.12, 0.4); if (p <= 0) return; const y = y0 + i * rh, at = sc.at[i], q = rv(at[0], when(at), 0.45), same = r[1] === r[2];
+    oldT += r[1]; newT += r[2];
+    box(x, y, w, rh - 12 * U, 16 * U, 'bg2', p);
+    const cy = y + (rh - 12 * U) / 2;
+    txt(r[0], x + 36 * U, cy, { sz: 38, w: 700, al: 'left', a: p });
+    txt(money(r[1]), oc, cy + 2 * U, { sz: 46, fam: 'Anton', w: 400, c: q > 0 && !same ? 'muted' : 'ink', al: 'right', a: p });
+    if (q > 0 && !same) { const ow = tw(money(r[1]), 46, 400, 'Anton'); A(1); X.strokeStyle = P.coral; X.lineWidth = 5 * U; X.beginPath(); X.moveTo(oc - ow - 6 * U, cy); X.lineTo(oc - ow - 6 * U + (ow + 12 * U) * q, cy); X.stroke(); }
+    if (q > 0) txt(same ? 'keep' : money(r[2]), nc, cy + 2 * U, { sz: same ? 32 : 46, fam: same ? 'Inter' : 'Anton', w: same ? 700 : 400, c: same ? 'muted' : 'green', al: 'right', a: q });
+  });
+  const ty = y0 + n * rh + 40 * U, tp = rv(sc.totalAt[0], when(sc.totalAt), 0.6);
+  A(rv(0, 0.5, 0.5)); X.fillStyle = P.muted; X.fillRect(x, ty - 14 * U, w, 3 * U); A(1);
+  txt('TOTAL', x + 36 * U, ty + 30 * U, { sz: 30, w: 800, c: 'muted', al: 'left', a: rv(0, 0.5, 0.5) });
+  txt(money(oldT), oc, ty + 32 * U, { sz: 60, fam: 'Anton', w: 400, c: tp > 0 ? 'muted' : 'ink', al: 'right', a: rv(0, 0.5, 0.5) });
+  if (tp > 0) txt(money(newT), nc, ty + 32 * U, { sz: 60, fam: 'Anton', w: 400, c: 'green', al: 'right', a: tp });
+};
 // ------------------------------------------------------------------ frame
 function bgDraw() {
   const g = X.createRadialGradient(W * 0.3, H * 0.2, 0, W * 0.5, H * 0.5, Math.max(W, H) * 0.8);

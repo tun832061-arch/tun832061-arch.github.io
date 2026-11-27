@@ -65,3 +65,56 @@ Educational content, not financial advice. Example numbers are illustrative.
 **Title:** Paying the minimum on a $3,200 credit card 😬 #shorts
 **Description:** `Full walkthrough on the channel: "Why Your Budget Dies in January". Planner: [PLANNER LINK]. Educational, not financial advice.`
 After uploading, in the Short's settings, set **Related video** to Episode 1. That turns Short viewers into long-form watch hours.
+
+---
+
+## Episode 3: `ep03/build/video.mp4` · thumbnail `ep03/build/thumbnail.png` · captions `ep03/build/video.srt`
+
+**Title:** Sinking Funds: Never Be "Surprised" by an Expense Again
+
+**Description:**
+```
+Christmas is not an emergency. Most "surprise" expenses run on a schedule; they're just not monthly. Here's how sinking funds work, with real numbers: $1,700 of yearly costs becomes $66 a paycheck, and why saving it first beats paying it off later (even with the exact same money).
+
+📊 The Paycheck Planner's Surprise Fund tab does this math for you: [PLANNER LINK]
+
+0:00 Intro
+0:18 The lumpy year
+0:53 Before vs. after
+1:26 Build your funds
+2:31 Recap
+2:42 Get the planner
+
+Educational content, not financial advice. Example numbers are illustrative.
+```
+**Tags:** sinking funds, sinking funds for beginners, how to save for christmas, irregular expenses, budgeting for beginners, paycheck budget, emergency fund vs sinking fund, save money 2027
+
+**Pinned comment:** `What's your most "surprising" yearly expense? Car registration, the vet, birthdays? 👇`
+
+---
+
+## Episode 4: `ep04/build/video.mp4` · thumbnail `ep04/build/thumbnail.png` · captions `ep04/build/video.srt`
+
+**Title:** The Holiday Budget That Doesn't Follow You Into March
+
+**Description:**
+```
+Still paying for last Christmas? Here's a holiday budget built on the cash you actually have. A $1,040 holiday (gifts plus the costs nobody lists) gets trimmed to $600 without borrowing a dollar, plus the January rule and how to make next year easy.
+
+📊 The Paycheck Planner: bills, surprises and debt in one place: [PLANNER LINK]
+
+0:00 Intro
+0:18 Count the cash first
+0:29 Write the real list
+1:01 Don't borrow the gap
+1:20 Trim by priority
+2:11 Fix next year in January
+2:28 Get the planner
+
+Educational content, not financial advice. Example numbers are illustrative.
+```
+**Tags:** holiday budget, christmas budget, how to budget for christmas, avoid holiday debt, christmas on a budget, gift budget, holiday spending, debt free christmas
+
+**Pinned comment:** `Which cut would you make first: Secret Santa, potluck, or homemade gifts? 👇`
+
+**Upload order and timing:** these are Week 2 videos. Post Episode 3 first, then Episode 4 three or four days later. Get Episode 4 out by mid-December, while people are still planning holiday spending.

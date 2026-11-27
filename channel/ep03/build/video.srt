@@ -1,0 +1,139 @@
+1
+00:00:00,600 --> 00:00:02,407
+Christmas is not an emergency.
+
+2
+00:00:02,827 --> 00:00:05,815
+It happens on December twenty-fifth. Every single year.
+
+3
+00:00:06,235 --> 00:00:12,401
+And most of the expenses that wreck a budget work the same way. They're not surprises. They're just not monthly.
+
+4
+00:00:13,171 --> 00:00:17,841
+The fix is called a sinking fund. Here's exactly how it works, with real numbers.
+
+5
+00:00:18,611 --> 00:00:19,731
+First, the problem.
+
+6
+00:00:20,151 --> 00:00:24,623
+Remember the example from episode one? Here's when each cost actually lands.
+
+7
+00:00:24,783 --> 00:00:28,009
+Annual subscriptions, $120, in January.
+
+8
+00:00:28,169 --> 00:00:30,910
+Medical copays, $300, spread through the year.
+
+9
+00:00:31,070 --> 00:00:33,250
+Registration, $180, in April.
+
+10
+00:00:33,410 --> 00:00:36,496
+Car repairs, $500, whenever the car decides.
+
+11
+00:00:36,656 --> 00:00:39,041
+And the holidays, $600, in December.
+
+12
+00:00:39,461 --> 00:00:47,045
+On a calendar it looks like this. Some months, nothing. Then July brings a $500 repair, and December wants $600.
+
+13
+00:00:47,465 --> 00:00:53,174
+But averaged out, it's about $142 a month. Or $66 a paycheck.
+
+14
+00:00:53,944 --> 00:00:58,537
+Now, here's why paying before beats paying after, even with the exact same money.
+
+15
+00:00:58,957 --> 00:01:06,614
+Option one: let the costs land on a credit card at 24%, then pay $66 a paycheck toward it afterward.
+
+16
+00:01:07,034 --> 00:01:16,390
+Interest builds while you catch up, so you slowly fall behind. After five years you owe $784, and the interest grows every year.
+
+17
+00:01:16,810 --> 00:01:24,083
+Option two: move the same $66 into savings first. When the bill shows up, the money's already there. You owe nothing.
+
+18
+00:01:24,503 --> 00:01:26,330
+Same money. Opposite results.
+
+19
+00:01:27,100 --> 00:01:29,375
+So here's how to set them up, in three steps.
+
+20
+00:01:29,795 --> 00:01:36,606
+Step one. Look backwards. Open last year's bank and card statements, and write down every cost that wasn't monthly.
+
+21
+00:01:37,026 --> 00:01:44,508
+Holidays, birthdays, car stuff, annual renewals, school costs, the vet. If it happened last year, it'll probably happen again.
+
+22
+00:01:44,928 --> 00:01:51,334
+Step two. Split them into two kinds. Deadline funds have a date, like car registration, due in April.
+
+23
+00:01:51,754 --> 00:01:58,918
+Starting in January, that's 7 paychecks away. $180 divided by 7 is $26 a paycheck.
+
+24
+00:01:59,338 --> 00:02:05,765
+The holidays? Start in January, and $600 over 24 paychecks is $25 each.
+
+25
+00:02:06,185 --> 00:02:13,314
+Someday funds don't have a date. Car repairs, medical bills. Give each a target, like $500 and $300.
+
+26
+00:02:13,734 --> 00:02:16,855
+Fill them a little each paycheck. When you use one, refill it.
+
+27
+00:02:17,275 --> 00:02:24,032
+Step three. Automate it. Set a transfer to savings on the same day your paycheck lands, so you never have to decide.
+
+28
+00:02:24,452 --> 00:02:31,739
+One savings account is fine. Just track each fund's balance, or use a bank that lets you split savings into named buckets.
+
+29
+00:02:32,159 --> 00:02:32,766
+Recap.
+
+30
+00:02:32,926 --> 00:02:34,737
+List every cost that isn't monthly.
+
+31
+00:02:34,897 --> 00:02:38,092
+Deadline funds: divide the cost by the paychecks left.
+
+32
+00:02:38,252 --> 00:02:40,780
+Someday funds: fill to a target, and refill.
+
+33
+00:02:40,940 --> 00:02:42,289
+And automate it on payday.
+
+34
+00:02:43,059 --> 00:02:47,974
+The Paycheck Planner in the description has a surprise fund tab that does this math for you.
+
+35
+00:02:48,394 --> 00:02:53,260
+Subscribe, and next time we'll build a holiday budget that doesn't follow you into March.
