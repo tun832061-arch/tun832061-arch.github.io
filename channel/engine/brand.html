@@ -1,0 +1,30 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Anton;src:url(../../assets/fonts/Anton-Regular.ttf)}
+@font-face{font-family:Inter;src:url(../../assets/fonts/Inter-Variable.ttf);font-weight:100 900}
+body{margin:0}</style></head><body><canvas id="c"></canvas><script>
+// brand.html — channel profile picture (800x800) and banner (2560x1440). Rendered by brand.cjs.
+const C=document.getElementById('c'),X=C.getContext('2d');
+const P={bg:'#0C1A2A',bg2:'#16324F',ink:'#F3EFE6',muted:'#8C9CB2',green:'#3DDC97',coral:'#FF6B5B',gold:'#FFC857'};
+const t=(s,x,y,f,c,al='center',bl='alphabetic')=>{X.font=f;X.fillStyle=c;X.textAlign=al;X.textBaseline=bl;X.fillText(s,x,y)};
+function bg(w,h){const g=X.createRadialGradient(w*.35,h*.3,0,w*.5,h*.5,Math.max(w,h)*.75);g.addColorStop(0,P.bg2);g.addColorStop(1,P.bg);X.fillStyle=g;X.fillRect(0,0,w,h)}
+window.avatar=()=>{C.width=C.height=800;bg(800,800);
+  // two paycheck bars evening out, behind the monogram
+  X.globalAlpha=.18;X.fillStyle=P.green;X.beginPath();X.roundRect(170,470,200,170,22);X.fill();X.beginPath();X.roundRect(430,470,200,170,22);X.fill();X.globalAlpha=1;
+  t('PM',400,520,'400 400px Anton',P.ink);
+  X.fillStyle=P.green;X.beginPath();X.roundRect(230,565,340,30,15);X.fill();
+  X.beginPath();X.arc(648,190,32,0,7);X.fill();};
+window.banner=()=>{C.width=2560;C.height=1440;bg(2560,1440);
+  X.strokeStyle='#1E3047';X.lineWidth=2;for(let x=0;x<2560;x+=120){X.beginPath();X.moveTo(x,0);X.lineTo(x,1440);X.stroke()}for(let y=0;y<1440;y+=120){X.beginPath();X.moveTo(0,y);X.lineTo(2560,y);X.stroke()}
+  // decorative bars outside the mobile-safe area (seen on desktop/TV)
+  const bars=[[120,260,'coral'],[300,420,'gold'],[2140,180,'green'],[2320,330,'green']];
+  bars.forEach(([x,h,c])=>{X.globalAlpha=.22;X.fillStyle=P[c];X.beginPath();X.roundRect(x,1440-260-h,130,h,16);X.fill();X.globalAlpha=1});
+  // safe area 1546x423 centred: everything that matters lives here
+  const cx=1280,cy=720;
+  X.fillStyle=P.green;X.beginPath();X.arc(cx-560,cy-48,22,0,7);X.fill();
+  t('PAYCHECK MATH',cx-520,cy+10,'400 150px Anton',P.ink,'left');
+  t('Budgeting & debt payoff, with real numbers.',cx-518,cy+100,'700 46px Inter',P.green,'left');
+  t('NEW VIDEOS TUE & FRI',cx-518,cy+170,'800 30px Inter',P.muted,'left');
+  X.fillStyle=P.bg;X.strokeStyle=P.gold;X.lineWidth=5;X.beginPath();X.roundRect(cx+430,cy-120,300,200,26);X.fill();X.stroke();
+  t('$1,850',cx+580,cy-30,'400 84px Anton',P.ink);t('every paycheck',cx+580,cy+30,'700 26px Inter',P.muted);
+  t('has a plan',cx+580,cy+64,'800 26px Inter',P.gold);};
+</script></body></html>
