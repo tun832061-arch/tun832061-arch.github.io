@@ -1,0 +1,170 @@
+{
+ "title": "2027 has 53 Fridays (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "2027 starts",
+      "on a Friday."
+     ]
+    ],
+    "stamp": "53 Fridays."
+   },
+   "cap": "2027 starts on a Friday.",
+   "say": "Twenty twenty-seven starts on a Friday."
+  },
+  {
+   "say": "That means fifty-three Fridays, and extra paychecks."
+  },
+  {
+   "scene": {
+    "type": "yeargrid",
+    "head": "Paid every other Friday from Jan 1",
+    "months": [
+     [
+      1,
+      15,
+      29
+     ],
+     [
+      12,
+      26
+     ],
+     [
+      12,
+      26
+     ],
+     [
+      9,
+      23
+     ],
+     [
+      7,
+      21
+     ],
+     [
+      4,
+      18
+     ],
+     [
+      2,
+      16,
+      30
+     ],
+     [
+      13,
+      27
+     ],
+     [
+      10,
+      24
+     ],
+     [
+      8,
+      22
+     ],
+     [
+      5,
+      19
+     ],
+     [
+      3,
+      17,
+      31
+     ]
+    ],
+    "hiAt": 1,
+    "foot": "Jan 1 check moved to Dec 31? July & December.",
+    "footAt": 1
+   },
+   "cap": "Paid every other Friday starting January 1? You get 27 paychecks.",
+   "say": "Paid every other Friday, starting January first? You get twenty-seven paychecks."
+  },
+  {
+   "say": "Three in January, July, and December."
+  },
+  {
+   "scene": {
+    "type": "yeargrid",
+    "head": "Paid every other Friday from Jan 8",
+    "months": [
+     [
+      8,
+      22
+     ],
+     [
+      5,
+      19
+     ],
+     [
+      5,
+      19
+     ],
+     [
+      2,
+      16,
+      30
+     ],
+     [
+      14,
+      28
+     ],
+     [
+      11,
+      25
+     ],
+     [
+      9,
+      23
+     ],
+     [
+      6,
+      20
+     ],
+     [
+      3,
+      17
+     ],
+     [
+      1,
+      15,
+      29
+     ],
+     [
+      12,
+      26
+     ],
+     [
+      10,
+      24
+     ]
+    ],
+    "hiAt": 0
+   },
+   "cap": "Starting January 8? Three paychecks in April and October.",
+   "say": "Starting January eighth? Three paychecks in April and October."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "The third paycheck",
+    "value": "$1,850",
+    "c": "green",
+    "sub": "has no bills attached. Give it a job before it lands."
+   },
+   "say": "Your bills are already covered by the first two, so plan that third check before it lands."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Find your months: full video on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "say": "Find your months in the full video on my channel."
+  }
+ ]
+}

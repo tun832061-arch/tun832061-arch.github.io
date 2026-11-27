@@ -187,3 +187,65 @@ Educational content, not financial advice. Your employer's holiday rules may mov
 **Pinned comment:** `Which schedule are you on, A (Jan, Jul, Dec) or B (Apr, Oct)? 👇`
 
 **Upload order and timing:** these are Week 3 videos (week of Dec 15). Episode 6 does best before January, while people are planning 2027.
+
+---
+
+## Episode 7: `ep07/build/video.mp4` · thumbnail `ep07/build/thumbnail.png` · captions `ep07/build/video.srt`
+
+**Title:** How to Undo Holiday Debt in 90 Days (Real Numbers)
+
+**Description:**
+```
+$1,500 of holiday spending on a 24% card. Paying a common minimum takes 81 months and $1,442 in interest. This 90-day plan clears it in three months for about $60, without cutting your fun money: stop new charges, find $1,626 in 90 days, pay on payday, and watch it shrink.
+
+📊 Build your payoff plan and debt-free date with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:28 Stop new charges
+0:39 Find the money
+1:15 Pay on payday
+1:30 Watch it shrink
+1:49 Get the planner
+
+Educational content, not financial advice. Minimum-payment formulas vary by card issuer.
+```
+**Tags:** pay off holiday debt, holiday debt, pay off credit card fast, 90 day debt payoff, credit card minimum payment, debt payoff plan, pantry challenge, debt free 2027
+
+**Pinned comment:** `What's your holiday balance this year? No judgment, just the number 👇`
+
+---
+
+## Episode 8: `ep08/build/video.mp4` · thumbnail `ep08/build/thumbnail.png` · captions `ep08/build/video.srt`
+
+**Title:** Your 2027 Money Reset Checklist (8 Steps That Actually Stick)
+
+**Description:**
+```
+New year, new budget? Here's an 8-step money reset for 2027: four things to set up this week and four that run all year. Score yourself as you go. Every step links to an episode with the full math.
+
+📊 Check off five of the eight with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:16 Set it up this week
+0:46 Let it run all year
+1:42 Get the planner
+
+Educational content, not financial advice. 
+```
+**Tags:** money reset 2027, new year budget, budget checklist, financial checklist, budgeting for beginners, emergency fund, sinking funds, paycheck budget
+
+**Pinned comment:** `What's your score out of 8? Drop it below. Zero counts 👇`
+
+**Upload order and timing:** these are Week 4 videos (week of Dec 22). Episode 7 fits right after Christmas. Get Episode 8 live by Dec 30–31 to catch New Year's searches.
+
+---
+
+## Shorts for Episodes 5 and 6
+
+**`ep05-short/build/video.mp4`** → Related video: Episode 5
+- **Title:** $100 a month, 5 years: two very different endings #shorts
+- **Description:** `Savings at 4% vs a $4,000 card at 24%. Full math on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
+
+**`ep06-short/build/video.mp4`** → Related video: Episode 6
+- **Title:** 2027 has 53 Fridays. Check your paychecks #shorts
+- **Description:** `Paid every other Friday? Some months bring a third paycheck. Find yours in the full video. Planner: [PLANNER LINK]. Educational, not financial advice.`

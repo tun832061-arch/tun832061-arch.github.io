@@ -1,0 +1,177 @@
+{
+ "title": "Your 2027 Money Reset Checklist (8 Steps That Actually Stick)",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "New year.",
+      "New budget?"
+     ]
+    ],
+    "stamp": "Let's make it stick."
+   },
+   "say": "New year, new budget?"
+  },
+  {
+   "say": "This year, let's set it up so it actually sticks."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Episode 8 · the checklist",
+    "text": "The 2027 Money Reset"
+   },
+   "cap": "Here's the 2027 money reset: eight things in two parts. Four you do once this week, and four that run all year.",
+   "say": "Here's the twenty twenty-seven money reset. Eight things, in two parts. Four you do once this week, and four that run all year."
+  },
+  {
+   "say": "Keep score as we go. How many can you already check off?"
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "Set it up this week",
+    "kicker": "PART 1"
+   },
+   "say": "Part one. Set it up, this week."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "SET IT UP · THIS WEEK",
+    "items": [
+     "Know your take-home per paycheck",
+     "Give every bill a paycheck",
+     "Turn surprises into sinking funds",
+     "Mark your 3-paycheck months"
+    ],
+    "at": [
+     1,
+     2,
+     3,
+     4
+    ]
+   },
+   "say": "Here's the list."
+  },
+  {
+   "say": "One. Know your take-home pay, per paycheck. Not your salary. The number that actually lands in your account."
+  },
+  {
+   "say": "Two. Give every bill a paycheck, and even the two checks out, so there's no broke week. That's episode one."
+  },
+  {
+   "say": "Three. List every cost that isn't monthly, and turn it into a small amount per paycheck. That's episode three."
+  },
+  {
+   "say": "Four. Find the months with three paychecks, and decide now what each extra one will do. That's episode six."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "Let it run all year",
+    "kicker": "PART 2"
+   },
+   "say": "Part two. Let it run, all year."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "LET IT RUN · ALL YEAR",
+    "items": [
+     "One debt target, every extra dollar",
+     "A starter emergency fund",
+     "Automate everything on payday",
+     "A 15-minute money check-in"
+    ],
+    "at": [
+     1,
+     2,
+     3,
+     4
+    ]
+   },
+   "say": "Here's the rest."
+  },
+  {
+   "say": "Five. List every debt, pick snowball or avalanche, and send every extra dollar at one target. Episode two ran the numbers."
+  },
+  {
+   "say": "Six. Build a starter emergency fund, so one flat tire doesn't land on a credit card."
+  },
+  {
+   "say": "Seven. Automate it. Bills, sinking funds and savings all move on payday, without you deciding every time."
+  },
+  {
+   "say": "And eight. Fifteen minutes, every other Sunday. Check the balances, and adjust one thing."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Starter emergency fund: one month of bills",
+    "value": "$2,371",
+    "c": "green",
+    "sub": "rent, car, phone, insurance and the rest, from episode one"
+   },
+   "cap": "For the emergency fund, a simple first goal is one month of bills. In our example from episode one, that's $2,371.",
+   "say": "For the emergency fund, a simple first goal is one month of bills. In our example from episode one, that's twenty-three seventy-one."
+  },
+  {
+   "say": "Reach it faster by sending one of your three-paycheck months straight there."
+  },
+  {
+   "scene": {
+    "type": "chips",
+    "stagger": 1.0,
+    "items": [
+     {
+      "t": "Did every bill get paid from the right check?",
+      "c": "muted"
+     },
+     {
+      "t": "What surprised me, and which fund covers it?",
+      "c": "muted"
+     },
+     {
+      "t": "How much closer is the debt target?",
+      "c": "muted"
+     }
+    ]
+   },
+   "say": "And the money check-in only needs three questions."
+  },
+  {
+   "say": "Did every bill get paid? What surprised you? And how much closer is the target?"
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Your score: __ / 8",
+    "hi": [
+     "__",
+     "/",
+     "8"
+    ]
+   },
+   "cap": "So, what's your score out of eight? Put it in the comments. Zero is a perfectly good place to start.",
+   "say": "So, what's your score, out of eight? Put it in the comments. Zero is a perfectly good place to start."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Check off five of the eight with the Paycheck Planner: link in the description",
+    "next": "Next: Budgeting on an irregular income"
+   },
+   "say": "The Paycheck Planner in the description covers the first five in one file: bills, surprise funds, paydays, and your debt-free date."
+  },
+  {
+   "say": "Subscribe, and happy new year."
+  }
+ ]
+}

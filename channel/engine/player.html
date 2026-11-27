@@ -282,13 +282,14 @@ D.end = sc => {
 };
 
 D.months = sc => {
-  const v = sc.vals, n = 12, x0 = 250 * U, x1 = W - 250 * U, slot = (x1 - x0) / n, bw = slot * 0.62, base = 800 * U, mx = Math.max(...v), hs = 470 * U / mx;
-  const avgP = sc.avgAt != null ? rv(sc.avgAt, 0.2, 0.8) : 0, avg = v.reduce((a, b) => a + b, 0) / 12;
+  const v = sc.vals, n = v.length, x0 = 250 * U, x1 = W - 250 * U, slot = (x1 - x0) / n, bw = slot * 0.62, base = 800 * U, mx = Math.max(...v), hs = 470 * U / mx;
+  const avgP = sc.avgAt != null ? rv(sc.avgAt, 0.2, 0.8) : 0, avg = v.reduce((a, b) => a + b, 0) / n;
   if (sc.head) txt(sc.head.toUpperCase(), W / 2, 170 * U, { sz: 30, w: 700, c: 'muted', a: rv(0, 0, 0.5) });
   A(rv(0, 0, 0.5)); X.fillStyle = P.dim; X.fillRect(x0, base, x1 - x0, 3 * U); A(1);
-  'JFMAMJJASOND'.split('').forEach((m, i) => {
+  (sc.labels || 'JFMAMJJASOND'.split('')).forEach((m, i) => {
     const x = x0 + i * slot + (slot - bw) / 2, p = rv(0, 0.3 + i * 0.12, 0.5), h = v[i] * hs * p;
-    if (v[i] > 0) { box(x, base - h, bw, h, 10 * U, 'coral', 0.95 * (1 - 0.6 * avgP)); txt(money(v[i]), x + bw / 2, base - h - 30 * U, { sz: 34, fam: 'Anton', w: 400, c: 'coral', a: p * (1 - 0.6 * avgP) }); }
+    if (v[i] > 0) { box(x, base - h, bw, h, 10 * U, sc.c || 'coral', 0.95 * (1 - 0.6 * avgP)); txt(money(v[i]), x + bw / 2, base - h - 30 * U, { sz: 34, fam: 'Anton', w: 400, c: sc.c || 'coral', a: p * (1 - 0.6 * avgP) }); }
+    else if (sc.labels) txt('$0', x + bw / 2, base - 30 * U, { sz: 40, fam: 'Anton', w: 400, c: 'green', a: p });
     txt(m, x + bw / 2, base + 40 * U, { sz: 28, w: 700, c: 'muted', a: rv(0, 0, 0.5) });
     if (avgP > 0) box(x, base - avg * hs * avgP, bw, avg * hs * avgP, 10 * U, 'green', 0.9);
   });
@@ -318,8 +319,8 @@ D.trim = sc => {
 };
 
 D.yeargrid = sc => {
-  const cols = 6, tw0 = 250 * U, th = 220 * U, g = 22 * U, x0 = W / 2 - (cols * tw0 + (cols - 1) * g) / 2, y0 = 210 * U, hi = rv(sc.hiAt ?? 1, 0.2, 0.6);
-  txt(sc.head.toUpperCase(), W / 2, 150 * U, { sz: 32, w: 800, c: 'muted', a: rv(0, 0, 0.5) });
+  const cols = PORT ? 3 : 6, tw0 = (PORT ? 300 : 250) * U, th = (PORT ? 200 : 220) * U, g = 22 * U, x0 = W / 2 - (cols * tw0 + (cols - 1) * g) / 2, y0 = (PORT ? 380 : 210) * U, hi = rv(sc.hiAt ?? 1, 0.2, 0.6);
+  wrap(sc.head.toUpperCase(), W - 160 * U, 32, 800).forEach((h, i) => txt(h, W / 2, (PORT ? 260 : 150) * U + i * 42 * U, { sz: 32, w: 800, c: 'muted', a: rv(0, 0, 0.5) }));
   'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(' ').forEach((m, i) => {
     const x = x0 + (i % cols) * (tw0 + g), y = y0 + Math.floor(i / cols) * (th + g), p = rv(0, 0.3 + i * 0.08, 0.45), days = sc.months[i], three = days.length === 3;
     if (p <= 0) return;

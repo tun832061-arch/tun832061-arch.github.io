@@ -1,0 +1,78 @@
+{
+ "title": "$100 a month: two endings (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "$100 a month.",
+      "5 years."
+     ]
+    ],
+    "stamp": "Two endings."
+   },
+   "say": "A hundred dollars a month, for five years."
+  },
+  {
+   "say": "Two very different endings."
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "Same $100 a month, 5 years",
+    "items": [
+     [
+      "Savings: earned",
+      630,
+      "green"
+     ],
+     [
+      "24% card: interest",
+      3719,
+      "coral"
+     ]
+    ]
+   },
+   "cap": "In savings at 4%, you earn $630.",
+   "say": "In savings at four percent, you earn six hundred and thirty."
+  },
+  {
+   "cap": "Against a $4,000 card at 24%, $3,719 goes to interest.",
+   "say": "Against a four thousand dollar card at twenty-four percent, thirty-seven nineteen goes to interest."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "And on the card, you still owe",
+    "value": "$1,719",
+    "c": "coral",
+    "sub": "after paying $6,000"
+   },
+   "cap": "And after paying $6,000, you still owe $1,719.",
+   "say": "And after paying six thousand dollars, you still owe seventeen nineteen."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Clear the 24% card first.",
+    "hi": [
+     "24%",
+     "card",
+     "first."
+    ]
+   },
+   "say": "So the math says: clear the twenty-four percent card first."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Full math on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "say": "The full math is on my channel."
+  }
+ ]
+}

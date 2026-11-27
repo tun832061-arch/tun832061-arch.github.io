@@ -1,0 +1,279 @@
+{
+ "title": "How to Undo Holiday Debt in 90 Days (Real Numbers)",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Holiday debt?",
+      "90 days."
+     ]
+    ],
+    "stamp": "Gone by spring."
+   },
+   "say": "Holiday debt?"
+  },
+  {
+   "say": "Let's make it disappear in ninety days, with a plan you can start this week."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Holiday balance · 24% APR",
+    "value": "$1,500",
+    "c": "coral",
+    "sub": "about $30 of interest in the first month"
+   },
+   "cap": "Our example: $1,500 of holiday spending on a credit card at 24%.",
+   "say": "Here's our example. Fifteen hundred dollars of holiday spending, sitting on a credit card at twenty-four percent."
+  },
+  {
+   "scene": {
+    "type": "compare",
+    "head": "$1,500 at 24% APR",
+    "kw0": "paying",
+    "rows": [
+     {
+      "label": "Minimum payments",
+      "months": 81,
+      "interest": 1442,
+      "c": "coral"
+     },
+     {
+      "label": "The 90-day plan · $521/mo",
+      "months": 3,
+      "interest": 60,
+      "c": "green"
+     }
+    ]
+   },
+   "cap": "Paying a common minimum (1% of the balance plus interest, at least $35): 81 months and $1,442 in interest.",
+   "say": "Paying the minimum, using a common formula of one percent plus interest, it takes eighty-one months, and costs fourteen hundred and forty-two dollars in interest."
+  },
+  {
+   "cap": "The 90-day plan? 3 months, and about $60.",
+   "say": "The ninety-day plan? Three months, and about sixty dollars."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Episode 7 · real numbers",
+    "text": "The 90-Day Payoff"
+   },
+   "say": "Here's how, in four steps."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "Stop new charges",
+    "kicker": "STEP 1"
+   },
+   "say": "Step one. Stop new charges."
+  },
+  {
+   "scene": {
+    "type": "chips",
+    "stagger": 1.1,
+    "items": [
+     {
+      "t": "Remove it from your phone wallet",
+      "c": "coral"
+     },
+     {
+      "t": "Delete it from browser autofill",
+      "c": "coral"
+     },
+     {
+      "t": "Unlink it from shopping apps",
+      "c": "coral"
+     }
+    ]
+   },
+   "say": "Remove the card from your phone, your browser, and every shopping app. For ninety days, it lives in a drawer."
+  },
+  {
+   "say": "You can't fill a bucket that's still leaking."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "Find the money",
+    "kicker": "STEP 2"
+   },
+   "say": "Step two. Find the money."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Needed over the next 90 days",
+    "value": "$1,561",
+    "sub": "$521 a month, or about $260 a paycheck"
+   },
+   "cap": "To clear $1,500 in three months at 24%, you need about $521 a month. $1,561 in total.",
+   "say": "To clear fifteen hundred in three months, at twenty-four percent, you need about five twenty-one a month. Fifteen sixty-one in total."
+  },
+  {
+   "scene": {
+    "type": "ledger",
+    "head": "Found in the next 90 days",
+    "total": "Found",
+    "items": [
+     [
+      "Goal money from your plan: $357 × 3",
+      1071
+     ],
+     [
+      "Pantry challenge: −$70 groceries × 6",
+      420
+     ],
+     [
+      "Pause subscriptions: $45 × 3",
+      135
+     ]
+    ]
+   },
+   "say": "Here's where it comes from."
+  },
+  {
+   "join": true,
+   "cap": "The goal money from your paycheck plan: $357 a month, for three months.",
+   "say": "The goal money from your paycheck plan. Three fifty-seven a month, for three months."
+  },
+  {
+   "join": true,
+   "cap": "A pantry challenge: eat what's in the cupboards and spend $70 less on groceries each paycheck.",
+   "say": "A pantry challenge. Eat down what's in the cupboards, and spend seventy less on groceries each paycheck."
+  },
+  {
+   "join": true,
+   "cap": "And pause streaming and app subscriptions for three months: about $45 a month.",
+   "say": "And pause your streaming and app subscriptions for three months. About forty-five dollars a month."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "$1,626 found. $65 to spare. Fun money stays.",
+    "hi": [
+     "$65",
+     "to",
+     "spare."
+    ]
+   },
+   "cap": "That's $1,626. Enough, with $65 to spare. And the fun money stays. You're not punishing yourself.",
+   "say": "That's sixteen twenty-six. Enough, with sixty-five to spare. And notice, the fun money stays. You're not punishing yourself."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "03",
+    "text": "Pay on payday",
+    "kicker": "STEP 3"
+   },
+   "say": "Step three. Pay on payday."
+  },
+  {
+   "scene": {
+    "type": "equation",
+    "parts": [
+     "$1,561",
+     "÷",
+     "6",
+     "=",
+     "$260"
+    ],
+    "under": [
+     "needed",
+     "",
+     "paychecks",
+     "",
+     "per paycheck"
+    ],
+    "at": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "kw": [
+     "send",
+     "day",
+     "paycheck",
+     "about",
+     "two sixty"
+    ]
+   },
+   "cap": "Don't wait for the due date. Send about $260 to the card the same day each paycheck lands.",
+   "say": "Don't wait for the due date. Send about two sixty to the card the same day each paycheck lands, before the money can wander off."
+  },
+  {
+   "say": "Paying every two weeks also trims the interest a little, because the balance drops sooner."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "04",
+    "text": "Watch it shrink",
+    "kicker": "STEP 4"
+   },
+   "say": "Step four. Watch it shrink."
+  },
+  {
+   "scene": {
+    "type": "months",
+    "head": "Balance on each payday",
+    "vals": [
+     1500,
+     1254,
+     1005,
+     755,
+     502,
+     246,
+     0
+    ],
+    "labels": [
+     "Start",
+     "Pay 1",
+     "Pay 2",
+     "Pay 3",
+     "Pay 4",
+     "Pay 5",
+     "Pay 6"
+    ]
+   },
+   "cap": "Write the balance down every payday. $1,500. Then about $1,250. Then $1,000. Seeing it drop keeps you going.",
+   "say": "Write the balance down every payday. Fifteen hundred. Then about twelve fifty. Then a thousand. Seeing it drop is what keeps you going."
+  },
+  {
+   "say": "Six paychecks later, it's gone."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Debt gone? Keep the $260 moving, into savings.",
+    "hi": [
+     "into",
+     "savings."
+    ]
+   },
+   "cap": "When it's gone, don't stop the $260. Send it to savings, and next December is already paid for.",
+   "say": "And when it's gone, don't stop the two sixty. Send it to savings, and next December is already paid for."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Build your payoff plan with the Paycheck Planner: link in the description",
+    "next": "Next: Your 2027 money reset checklist"
+   },
+   "say": "The Paycheck Planner in the description builds this plan around your own numbers, and gives you your debt-free date."
+  },
+  {
+   "say": "Subscribe. Next time: the twenty twenty-seven money reset checklist."
+  }
+ ]
+}
