@@ -87,7 +87,7 @@ const w1=['ROCK','IT'].map(w=>el('span','wd',L1,w)), w2=['WITH','ANY'].map(w=>el
 L1.style.fontSize='150px'; L2.style.fontSize='112px'; L2.style.color='#c7c7cc';
 Object.assign(slot.style,{width:'1080px',height:'330px',overflow:'hidden'});
 const sw=['FIT.','STYLE.'].map(w=>{const d=el('div','tl',slot,'');d.style.top='0';d._s=el('span','',d,w);return d});
-const ORB=[['img','img/model_black.jpg'],['img','img/acc_cap.jpg'],['txt','SNEAK<br>ERS'],['img','img/acc_shades.jpg'],['txt','BEANIE'],['img','img/acc_jorts.jpg'],['txt','CHAIN']];
+const ORB=[['img','img/model_black.jpg'],['img','img/acc_cap.jpg'],['img','img/acc_sneakers.jpg'],['img','img/acc_shades.jpg'],['img','img/acc_beanie.jpg'],['img','img/acc_jorts.jpg'],['img','img/acc_chain.jpg']];
 const orbs=ORB.map(([k,v])=>{const o=el('div','orb',stage);if(k==='img'){const im=el('img','',o);im.src=v}else o.innerHTML=v;return o});
 const SW=['#0b0b0b','#EDE4D3','#55575a','#5a1622','#6b3fa0'];
 const sws=SW.map(c=>{const o=el('div','orb',stage);o.style.background=c;o.style.border='2px solid rgba(255,255,255,.7)';return o});

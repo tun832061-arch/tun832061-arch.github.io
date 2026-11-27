@@ -70,5 +70,5 @@ out+=music*duck
 out/=np.abs(out).max(); out*=0.89
 pcm=(np.stack([out,out],1)*32767).astype('<i2')
 w=wave.open(D+'/_audio.wav','wb'); w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR); w.writeframes(pcm.tobytes()); w.close()
-subprocess.run(['ffmpeg','-y','-loglevel','error','-i',D+'/_video.mp4','-i',D+'/_audio.wav','-c:v','copy','-c:a','aac','-b:a','192k','-shortest',D+'/animatic_v4.mp4'],check=True)
+subprocess.run(['ffmpeg','-y','-loglevel','error','-i',D+'/_video.mp4','-i',D+'/_audio.wav','-c:v','copy','-c:a','aac','-b:a','192k','-shortest',D+'/animatic_v5.mp4'],check=True)
 print('ok')
