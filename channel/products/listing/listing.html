@@ -1,0 +1,40 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Anton;src:url(../../../assets/fonts/Anton-Regular.ttf)}
+@font-face{font-family:Inter;src:url(../../../assets/fonts/Inter-Variable.ttf);font-weight:100 900}
+body{margin:0}</style></head><body><canvas id="c" width="2000" height="1500"></canvas><script>
+// listing.html — 5 store listing images (2000x1500) for the Paycheck Planner. Rendered by listing.cjs.
+const C=document.getElementById('c'),X=C.getContext('2d'),W=2000,H=1500;
+const P={bg:'#0C1A2A',bg2:'#16324F',ink:'#F3EFE6',muted:'#8C9CB2',green:'#3DDC97',coral:'#FF6B5B',gold:'#FFC857'};
+const img=s=>new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.src='src/'+s+'.png';});
+const T=(s,x,y,f,c,al='left')=>{X.font=f;X.fillStyle=c;X.textAlign=al;X.textBaseline='alphabetic';X.fillText(s,x,y)};
+function base(){const g=X.createLinearGradient(0,0,W,H);g.addColorStop(0,P.bg2);g.addColorStop(1,'#0A1522');X.fillStyle=g;X.fillRect(0,0,W,H);
+ X.fillStyle=P.green;X.beginPath();X.arc(92,92,14,0,7);X.fill();T('PAYCHECK MATH',122,106,'400 44px Anton',P.ink);}
+function shot(im,x,y,w,rot=0){const h=w*im.height/im.width;X.save();X.translate(x+w/2,y+h/2);X.rotate(rot);
+ X.shadowColor='rgba(0,0,0,.45)';X.shadowBlur=60;X.shadowOffsetY=24;X.fillStyle='#fff';X.beginPath();X.roundRect(-w/2-18,-h/2-18,w+36,h+36,24);X.fill();X.shadowColor='transparent';
+ X.drawImage(im,-w/2,-h/2,w,h);X.restore();return h;}
+function chip(t,x,y,c=P.green){X.font='800 40px Inter';const w=X.measureText(t).width+110;X.fillStyle='rgba(61,220,151,.14)';X.beginPath();X.roundRect(x,y,w,84,42);X.fill();
+ X.strokeStyle=c;X.lineWidth=4;X.stroke();X.fillStyle=c;X.beginPath();X.arc(x+44,y+42,11,0,7);X.fill();T(t,x+72,y+56,'800 40px Inter',P.ink);return w;}
+const draws={
+ async cover(){base();const pp=await img('Plan_Summary');
+  T('PAYCHECK',90,330,'400 200px Anton',P.ink);T('PLANNER',90,540,'400 200px Anton',P.green);
+  T('Budget by paycheck, not by month.',96,630,'700 52px Inter',P.ink);
+  ['Paycheck plan: every bill gets a paycheck','Debt payoff: your debt-free date','Surprise fund: no more "unexpected" bills','Paydays: find your 3-paycheck months'].forEach((s,i)=>{X.fillStyle=P.green;X.beginPath();X.arc(112,722+i*76,12,0,7);X.fill();T(s,144,736+i*76,'600 40px Inter',P.ink)});
+  X.fillStyle=P.gold;X.beginPath();X.roundRect(90,1080,820,110,55);X.fill();T('Excel + Google Sheets · Instant download',500,1150,'800 40px Inter',P.bg,'center');
+  T('Educational tool, not financial advice.',96,1300,'500 30px Inter',P.muted);
+  shot(pp,1030,330,880,-0.035);},
+ async plan(){base();const pp=await img('Paycheck_Plan');
+  T('Give every bill a paycheck.',100,260,'400 120px Anton',P.ink);T('It sorts your bills by due date, then evens out your two paychecks.',104,340,'600 44px Inter',P.muted);
+  shot(pp,110,430,1780);let x=110;[['No more "broke week"',P.green],['Shows what’s left for your goal',P.green],['Up to 25 bills',P.green]].forEach(([t,c])=>{x+=chip(t,x,1290,c)+30});},
+ async debt(){base();const d=await img('Debt_Payoff');
+  T('Know your debt-free date.',100,260,'400 120px Anton',P.ink);T('Snowball or avalanche: it runs the month-by-month math for up to 6 debts.',104,340,'600 44px Inter',P.muted);
+  shot(d,110,430,1780);let x=110;['Debt-free date','Interest saved vs. minimums','Snowball or avalanche'].forEach(t=>{x+=chip(t,x,1290)+30});},
+ async funds(){base();const s=await img('Surprise_Fund'),p=await img('Paydays');
+  T('No more surprises.',100,260,'400 120px Anton',P.ink);T('Turn yearly costs into a small amount per paycheck, and find your extra-paycheck months.',104,340,'600 42px Inter',P.muted);
+  shot(s,110,440,700);shot(p,900,420,990);
+  T('SURPRISE FUND',490,1320,'800 40px Inter',P.green,'center');T('PAYDAYS',1410,1320,'800 40px Inter',P.green,'center');},
+ async videos(){base();const v=await Promise.all(['v1','v2','v3','v4'].map(img));
+  T('As seen on Paycheck Math.',100,260,'400 120px Anton',P.ink);T('Every example in the videos comes from this spreadsheet. Now use your own numbers.',104,340,'600 42px Inter',P.muted);
+  const w=880,h=495;[[100,420],[1020,420],[100,950],[1020,950]].forEach(([x,y],i)=>{X.save();X.beginPath();X.roundRect(x,y,w,h,24);X.clip();X.drawImage(v[i],x,y,w,h);X.restore();X.strokeStyle='rgba(255,255,255,.15)';X.lineWidth=3;X.beginPath();X.roundRect(x,y,w,h,24);X.stroke();});}
+};
+window.draw=async k=>{await document.fonts.load('400 40px Anton');await document.fonts.load('800 40px Inter');X.clearRect(0,0,W,H);await draws[k]();return C.toDataURL('image/png').split(',')[1];};
+</script></body></html>
