@@ -1,0 +1,24 @@
+{
+ "title": "$1,040 holiday list, $600 cash (Short)",
+ "voice": "af_heart", "speed": 1.08,
+ "lines": [
+  { "scene": { "type": "hook", "rows": [["Holiday list:", "$1,040."]], "stamp": "Cash: $600." },
+    "cap": "Say your holiday list comes to $1,040.", "say": "Say your holiday list comes to ten forty." },
+  { "cap": "But you've got $600 in cash.", "say": "But you've got six hundred in cash." },
+  { "scene": { "type": "compare", "head": "$440 gap on a 24% card", "kw0": "fifty",
+      "rows": [{ "label": "Paying $50 a month", "months": 10, "interest": 49, "c": "coral" }] },
+    "cap": "Put the gap on a card at $50 a month? 10 months, and about $49 in interest.",
+    "say": "Put the gap on a card at fifty a month? Ten months, and about fifty in interest." },
+  { "scene": { "type": "bigtext", "text": "Not paid off by January? It's a loan.", "hi": ["loan."], "hc": "coral" },
+    "say": "The rule: if it's not paid off by the January statement, it's a loan, not a gift." },
+  { "scene": { "type": "steps", "head": "CUT INSTEAD", "items": ["Siblings: Secret Santa · −$80", "Dinner: potluck · −$80", "Parents: $30 each · −$60", "Friends: homemade · −$60", "Smaller trims · −$160"], "at": [1, 1, 2, 2, 3] },
+    "say": "So cut instead." },
+  { "say": "Secret Santa for the siblings, and make dinner a potluck." },
+  { "cap": "$30 each for parents, and homemade cookies for friends.", "say": "Thirty each for parents, and homemade cookies for friends." },
+  { "say": "Plus a few smaller trims." },
+  { "scene": { "type": "stat", "label": "New total", "value": "$600", "c": "green", "sub": "Nothing borrowed." },
+    "cap": "New total: $600. Nothing borrowed.", "say": "New total, six hundred. Nothing borrowed." },
+  { "scene": { "type": "end", "cta": "The full holiday budget is on the channel", "next": "Follow for money math with real numbers" },
+    "say": "The full holiday budget is on my channel." }
+ ]
+}

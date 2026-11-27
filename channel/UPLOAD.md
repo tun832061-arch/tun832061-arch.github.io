@@ -118,3 +118,21 @@ Educational content, not financial advice. Example numbers are illustrative.
 **Pinned comment:** `Which cut would you make first: Secret Santa, potluck, or homemade gifts? 👇`
 
 **Upload order and timing:** these are Week 2 videos. Post Episode 3 first, then Episode 4 three or four days later. Get Episode 4 out by mid-December, while people are still planning holiday spending.
+
+---
+
+## Shorts for Episodes 2–4 (vertical, about 30 s each)
+
+For each Short, set **Related video** to its long episode in the Short's settings, and post it 1–2 days after that episode so the episode is live when Short viewers click through.
+
+**`ep02-short/build/video.mp4`** → Related video: Episode 2
+- **Title:** Snowball vs avalanche: the difference was $42 #shorts
+- **Description:** `Same $13,000 of debt, $900 a month, both methods. Full breakdown on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
+
+**`ep03-short/build/video.mp4`** → Related video: Episode 3
+- **Title:** Same $66 a paycheck, opposite results #shorts
+- **Description:** `Paying for "surprise" costs after vs saving first. Sinking funds explained on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
+
+**`ep04-short/build/video.mp4`** → Related video: Episode 4
+- **Title:** $1,040 holiday list, $600 cash. Here's the fix #shorts
+- **Description:** `The January rule and what to cut. Full holiday budget on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`

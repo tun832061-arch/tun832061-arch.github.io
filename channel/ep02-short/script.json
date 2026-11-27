@@ -1,0 +1,22 @@
+{
+ "title": "Snowball vs avalanche: the $42 answer (Short)",
+ "voice": "af_heart", "speed": 1.08,
+ "lines": [
+  { "scene": { "type": "hook", "rows": [["Snowball or", "Avalanche?"]], "stamp": "$42 apart." },
+    "cap": "Snowball or avalanche? We ran both on the same $13,000 of debt.",
+    "say": "Snowball or avalanche? We ran both on the same thirteen thousand dollars of debt." },
+  { "cap": "The difference was $42.", "say": "The difference was forty-two dollars." },
+  { "scene": { "type": "stack", "sub": "Total interest at $900 a month", "items": [["Avalanche", 805, "green"], ["Snowball", 847, "gold"]] },
+    "cap": "Avalanche: $805 in interest.", "say": "The avalanche paid eight hundred and five in interest." },
+  { "cap": "Snowball: $847.", "say": "The snowball, eight forty-seven." },
+  { "scene": { "type": "compare", "head": "First debt gone in…", "kw0": "month",
+      "rows": [{ "label": "Snowball", "months": 2, "c": "gold" }, { "label": "Avalanche", "months": 6, "c": "green" }] },
+    "say": "But the snowball wipes out your first debt in month two." },
+  { "say": "The avalanche takes until month six." },
+  { "scene": { "type": "bigtext", "text": "Pick the one you won't quit.", "hi": ["won't", "quit."] },
+    "say": "So pick the one you won't quit." },
+  { "scene": { "type": "end", "cta": "Full breakdown on the channel", "next": "Follow for money math with real numbers" },
+    "say": "The full breakdown is on my channel." },
+  { "say": "Follow for more money math, with real numbers." }
+ ]
+}

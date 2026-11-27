@@ -1,0 +1,22 @@
+{
+ "title": "Same $66, opposite results (Short)",
+ "voice": "af_heart", "speed": 1.08,
+ "lines": [
+  { "scene": { "type": "hook", "rows": [["Christmas is not", "an emergency."]], "stamp": "It's on the calendar." },
+    "say": "Christmas is not an emergency." },
+  { "say": "It's on the calendar. Every single year." },
+  { "scene": { "type": "stat", "label": "Yearly \"surprise\" costs", "value": "$1,700", "sub": "= $66 a paycheck" },
+    "cap": "Say your yearly surprise costs add up to $1,700. That's $66 a paycheck.",
+    "say": "Say your yearly surprise costs add up to seventeen hundred dollars. That's sixty-six dollars a paycheck." },
+  { "scene": { "type": "stat", "label": "Pay after, on a 24% card", "value": "$784", "c": "coral", "sub": "still owed after 5 years, paying $66 every paycheck" },
+    "cap": "Put them on a credit card and pay $66 a paycheck afterward, and after five years you still owe $784.",
+    "say": "Put them on a credit card and pay sixty-six a paycheck afterward, and after five years, you still owe seven eighty-four." },
+  { "scene": { "type": "stat", "label": "Save the $66 first", "value": "$0", "c": "green", "sub": "owed. Ever." },
+    "cap": "Save the same $66 first, and you owe nothing.",
+    "say": "Save the same sixty-six first, and you owe nothing." },
+  { "scene": { "type": "bigtext", "text": "Same money. Opposite results.", "hi": ["Opposite", "results."] },
+    "say": "Same money. Opposite results." },
+  { "scene": { "type": "end", "cta": "Sinking funds, explained: full video on the channel", "next": "Follow for money math with real numbers" },
+    "say": "It's called a sinking fund. The full video is on my channel." }
+ ]
+}

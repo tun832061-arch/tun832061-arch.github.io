@@ -51,7 +51,7 @@ D.hook = sc => {
   rows.forEach((r, i) => {
     const p = rv(0, i * 1.7, 0.6), y = y0 + i * gapY * U + (1 - p) * 40 * U;
     txt(r[0], W / 2, y - 100 * U, { sz: PORT ? 80 : 76, w: 800, a: p * dimA });
-    txt(r[1], W / 2, y + 45 * U, { sz: PORT ? 150 : 140, fam: 'Anton', w: 400, c: 'gold', a: p * dimA });
+    const fz = Math.min(PORT ? 150 : 140, (PORT ? 150 : 140) * (W - 140 * U) / tw(r[1], PORT ? 150 : 140, 400, 'Anton')); txt(r[1], W / 2, y + 45 * U, { sz: fz, fam: 'Anton', w: 400, c: 'gold', a: p * dimA });
   });
   if (sc.li.length > 1) {
     const p = rb(1, 0.15, 0.45); if (p > 0) {
