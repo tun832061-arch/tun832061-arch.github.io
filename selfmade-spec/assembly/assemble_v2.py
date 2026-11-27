@@ -3,7 +3,7 @@ import numpy as np, subprocess, os, wave, math
 D=os.path.dirname(os.path.abspath(__file__)); R=os.path.dirname(D)
 import json
 CJ=json.load(open(R+'/vo/cta.json')); G=CJ['G']; DUR=CJ['total']; SR=48000; SH=G-17.5
-T=dict(spin=(1.75,8.2),flip0=4.7,expand=8.2,iris=10.3,type0=10.9,swap=13.55,merge=15.55,cta0=16.3,end0=19.6)
+T=dict(spin=(1.75,8.2),flip0=4.7,expand=8.2,iris=10.3,type0=10.9,swap=13.55,merge=15.55,cta0=16.3,end0=19.3)
 B=60/112
 subprocess.run(['ffmpeg','-y','-loglevel','error','-f','concat','-safe','0','-i','/dev/stdin','-c','copy',D+'/_video.mp4'],
   input=f"file '{R}/act1/act1_silent.mp4'\nfile '{R}/act2/act2_silent.mp4'\n".encode(),check=True)
@@ -46,7 +46,7 @@ whoosh(L(T['swap']+0.2),0.4,0.14)  # FIT -> STYLE
 for i in range(7): tick(L(b0+0.3+0.14*i),1500+120*i,0.05)
 swell(L(T['merge']+0.3),0.6,0.22); tick(L(T['merge']+0.3),900,0.1)
 tone2(L(T['cta0']+0.15),[1046.5,783.99],0.09)
-sub(L(T['cta0']+1.85),0.6,3); 
+sub(L(T['cta0']+[c['o'] for c in CJ['cta'] if c['w']=='now!'][0]),0.6,3); 
 tone2(L(T['end0']+0.35),[659.3,493.9],0.12,0.22,4)
 swell(L(T['end0']+1.9),0.7,0.25); sub(L(T['end0']+1.9),0.7,2)
 # placeholder groove from the drop to "call ended"
