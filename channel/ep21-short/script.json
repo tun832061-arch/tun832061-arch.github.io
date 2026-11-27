@@ -1,0 +1,68 @@
+{
+ "title": "File your taxes for free (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Paying to file",
+      "your taxes?"
+     ]
+    ],
+    "stamp": "Check the free routes."
+   },
+   "say": "Paying to file your taxes?"
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Paid tax prep, 10 years",
+    "value": "$1,500",
+    "c": "coral",
+    "sub": "for something many people can do free"
+   },
+   "cap": "$150 a year is $1,500 over ten years.",
+   "say": "A hundred fifty a year is fifteen hundred dollars over ten years."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "FREE ROUTES",
+    "items": [
+     "IRS Free File",
+     "Free File Fillable Forms",
+     "VITA volunteers"
+    ],
+    "at": [
+     0,
+     0,
+     0
+    ],
+    "stagger": 2.6
+   },
+   "say": "Three free routes. IRS Free File, if your income is under the limit. Free File Fillable Forms, for any income. And free VITA help from IRS-certified volunteers."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Start at IRS.gov, not a search ad.",
+    "hi": [
+     "IRS.gov,"
+    ]
+   },
+   "cap": "Start at IRS.gov, not a search ad.",
+   "say": "Start at IRS dot gov, not a search ad."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "File free: full video on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "say": "Details on my channel."
+  }
+ ]
+}

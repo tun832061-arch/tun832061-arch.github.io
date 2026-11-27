@@ -1,0 +1,212 @@
+{
+ "title": "Pay Off Debt or Save First? The Order That Works",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Pay off debt",
+      "or save?"
+     ]
+    ],
+    "stamp": "Do it in order."
+   },
+   "say": "Pay off debt, or save first?"
+  },
+  {
+   "say": "It's the question everyone asks. The answer is: both, in a specific order. Here's the order, and the math behind each step."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Episode 24 · real numbers",
+    "text": "The Money Order"
+   },
+   "say": "Five steps."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "A starter emergency fund",
+    "kicker": "STEP 1"
+   },
+   "say": "Step one. A starter emergency fund."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Starter emergency fund",
+    "value": "$2,371",
+    "c": "green",
+    "sub": "one month of bills, from episode one"
+   },
+   "cap": "Before you attack debt, save one month of bills. In our example, $2,371. Without it, the next car repair goes right back on the card, and you pay off the same debt twice.",
+   "say": "Before you attack debt, save one month of bills. In our example, twenty-three seventy-one. Without it, the next car repair goes right back on the card, and you're paying off the same debt twice."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "Grab the employer match",
+    "kicker": "STEP 2"
+   },
+   "say": "Step two. Grab any employer match."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "An employer match is an instant return.",
+    "hi": [
+     "instant",
+     "return."
+    ]
+   },
+   "say": "If your employer matches retirement contributions, that's often the best return you'll ever see. Say they match fifty cents per dollar, up to six percent of pay."
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "Every $1 you put in",
+    "stagger": 5.0,
+    "items": [
+     [
+      "Paying off a 24% card saves",
+      24,
+      "gold"
+     ],
+     [
+      "A 50% match adds",
+      50,
+      "green"
+     ]
+    ],
+    "foot": "per dollar, per year · plans vary, check yours",
+    "fmt": "cents"
+   },
+   "cap": "On $60,000, 6% is $3,600 a year from you, and $1,800 from your employer. An instant 50% return. Even a 24% card can't beat that.",
+   "say": "On sixty thousand, six percent is thirty-six hundred a year from you, and eighteen hundred from your employer. An instant fifty percent return. Even a twenty-four percent card can't beat that."
+  },
+  {
+   "say": "Plans vary, so check yours."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "03",
+    "text": "Kill high-interest debt",
+    "kicker": "STEP 3"
+   },
+   "say": "Step three. Kill high-interest debt."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Paying off a 24% card",
+    "value": "24%",
+    "c": "green",
+    "sub": "a guaranteed return, no savings account comes close"
+   },
+   "cap": "Credit cards, store cards, anything around 10% or more. Every dollar here earns a guaranteed return equal to the rate. Episodes 2 and 11 have the plans.",
+   "say": "Credit cards, store cards, anything around ten percent or more. Every dollar here earns a guaranteed return equal to the rate. Episodes two and eleven have the plans."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "04",
+    "text": "Finish the emergency fund",
+    "kicker": "STEP 4"
+   },
+   "say": "Step four. Finish the emergency fund."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Full emergency fund, 3 months",
+    "value": "$9,033",
+    "c": "green",
+    "sub": "of essentials, from episode ten"
+   },
+   "cap": "Now build it to 3–6 months of essentials. In our example, 3 months is $9,033. Episode 10 shows how.",
+   "say": "Now build it to three to six months of essentials. In our example, three months is nine thousand and thirty-three. Episode ten shows how."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "05",
+    "text": "Then choose your goals",
+    "kicker": "STEP 5"
+   },
+   "say": "Step five. Then decide: lower-interest debt, or saving for bigger goals."
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "Low-rate debt vs. saving",
+    "fmt": "pct",
+    "stagger": 3.4,
+    "items": [
+     [
+      "Paying a 7% car loan saves",
+      7,
+      "gold"
+     ],
+     [
+      "A savings account earns about",
+      4,
+      "green"
+     ]
+    ]
+   },
+   "cap": "A car loan at 7% versus savings at 4%? Paying the loan earns more. But savings stays flexible. With low-rate debt it's a judgment call, and both are good choices.",
+   "say": "A car loan at seven percent versus savings at four? Paying the loan earns more. But savings stays flexible. With low-rate debt, it's a judgment call, and both are good choices."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "THE ORDER",
+    "items": [
+     "Starter fund: one month of bills",
+     "Grab any employer match",
+     "Kill high-interest debt",
+     "Finish the emergency fund",
+     "Then: low-rate debt or bigger goals"
+    ],
+    "at": [
+     1,
+     1,
+     2,
+     2,
+     3
+    ]
+   },
+   "say": "Recap."
+  },
+  {
+   "join": true,
+   "say": "Starter fund. Employer match."
+  },
+  {
+   "join": true,
+   "say": "Kill high-interest debt. Finish the emergency fund."
+  },
+  {
+   "join": true,
+   "say": "Then choose your goals."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Track your fund and your debt with the Paycheck Planner: link in the description",
+    "next": "Next: Your credit score, explained in numbers"
+   },
+   "say": "The Paycheck Planner in the description tracks the emergency fund and the debt in one place. This is general education, not financial advice."
+  },
+  {
+   "say": "Subscribe for more money math, with real numbers."
+  }
+ ]
+}

@@ -1,0 +1,238 @@
+{
+ "title": "Buy Now, Pay Later: The Math on 4 Payments",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Pay in 4.",
+      "0% interest?"
+     ]
+    ],
+    "stamp": "Here's the catch."
+   },
+   "say": "Buy now, pay later. Four easy payments. Zero interest."
+  },
+  {
+   "say": "Used carefully, it really can cost nothing. But it's built to make spending feel smaller than it is. Let's run the numbers."
+  },
+  {
+   "scene": {
+    "type": "equation",
+    "parts": [
+     "$400",
+     "÷",
+     "4",
+     "=",
+     "$100"
+    ],
+    "under": [
+     "purchase",
+     "",
+     "payments",
+     "",
+     "every 2 weeks"
+    ],
+    "at": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "kw": [
+     "four hundred dollar",
+     "becomes",
+     "four payments",
+     "of a hundred",
+     "hundred, every"
+    ]
+   },
+   "cap": "Here's how it works. A $400 purchase becomes four payments of $100, every two weeks. Pay on time, and pay-in-4 plans often cost zero interest.",
+   "say": "Here's how it works. A four hundred dollar purchase becomes four payments of a hundred, every two weeks. Pay on time, and pay-in-four plans often cost zero interest."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Episode 23 · real numbers",
+    "text": "Buy Now, Pay Later"
+   },
+   "say": "So where's the catch? Three places."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "Stacking",
+    "kicker": "CATCH 1"
+   },
+   "say": "Catch one. Stacking."
+  },
+  {
+   "scene": {
+    "type": "ledger",
+    "head": "Four \"small\" purchases",
+    "total": "Total",
+    "items": [
+     [
+      "Sneakers",
+      120
+     ],
+     [
+      "Headphones",
+      200
+     ],
+     [
+      "A grocery run",
+      160
+     ],
+     [
+      "A gift",
+      280
+     ]
+    ]
+   },
+   "say": "One plan is easy to track. But they add up quietly."
+  },
+  {
+   "cap": "Sneakers, $120.",
+   "join": true,
+   "say": "Sneakers, one twenty."
+  },
+  {
+   "cap": "Headphones, $200.",
+   "join": true,
+   "say": "Headphones, two hundred."
+  },
+  {
+   "cap": "A grocery run, $160.",
+   "join": true,
+   "say": "A grocery run, one sixty."
+  },
+  {
+   "cap": "And a gift, $280.",
+   "join": true,
+   "say": "And a gift, two eighty."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Due every two weeks",
+    "value": "$190",
+    "c": "coral",
+    "sub": "almost double the $100 of fun money in our example budget"
+   },
+   "cap": "$760 in total, split into fours. That's $190 due every two weeks.",
+   "say": "Seven sixty in total, split into fours. That's a hundred ninety due every two weeks."
+  },
+  {
+   "say": "In our example budget, fun money is a hundred per paycheck. These payments alone take almost double."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "Missed payments",
+    "kicker": "CATCH 2"
+   },
+   "say": "Catch two. Fees when a payment misses."
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "One missed $100 payment",
+    "stagger": 3.0,
+    "items": [
+     [
+      "Late fee",
+      8,
+      "coral"
+     ],
+     [
+      "Bank overdraft fee",
+      35,
+      "coral"
+     ]
+    ],
+    "foot": "$43 in fees on a $100 payment"
+   },
+   "cap": "If autopay hits an empty account, you can get a late fee from the lender and an overdraft fee from your bank. Say $8, plus $35.",
+   "say": "If autopay hits an empty account, you can get a late fee from the lender, and an overdraft fee from your bank. Say eight dollars, plus thirty-five."
+  },
+  {
+   "cap": "$43 in fees on a $100 payment. Fees vary, so check your own lender and bank.",
+   "say": "Forty-three dollars in fees, on a hundred dollar payment. Fees vary, so check your own lender and bank."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "03",
+    "text": "It feels cheaper",
+    "kicker": "CATCH 3"
+   },
+   "say": "Catch three. It makes things feel cheaper."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "$100 feels smaller than $400. It isn't.",
+    "hi": [
+     "It",
+     "isn't."
+    ],
+    "hc": "coral"
+   },
+   "cap": "$100 sounds like a lot less than $400. That's the point. And some longer buy-now-pay-later loans do charge interest, so read which kind you're getting.",
+   "say": "A hundred dollars sounds like a lot less than four hundred. That's the point. And some longer buy-now-pay-later loans do charge interest, so read which kind you're getting."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "USE IT ONLY IF…",
+    "items": [
+     "You could pay in full today",
+     "Payments fit inside your fun money",
+     "It's your only active plan",
+     "Autopay comes from a funded account"
+    ],
+    "at": [
+     1,
+     2,
+     3,
+     4
+    ]
+   },
+   "say": "So here's a simple rule."
+  },
+  {
+   "join": true,
+   "say": "Only use it if you could pay in full today."
+  },
+  {
+   "join": true,
+   "say": "If the payments fit inside your fun money."
+  },
+  {
+   "join": true,
+   "say": "If it's your only active plan."
+  },
+  {
+   "join": true,
+   "say": "And if autopay comes from an account that's funded."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "See what's really free each paycheck: Paycheck Planner, link in the description",
+    "next": "Next: Pay off debt or save? The order that works"
+   },
+   "say": "The Paycheck Planner in the description shows exactly what's free in each paycheck, before you split anything into four."
+  },
+  {
+   "say": "Subscribe. Next time: pay off debt, or save first?"
+  }
+ ]
+}

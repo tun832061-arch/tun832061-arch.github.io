@@ -682,3 +682,67 @@ Educational content, not financial advice. Rates and costs are illustrative.
 **`ep20-short/build/video.mp4`** → Related video: Episode 20
 - **Title:** Tax refund advance: the 70% catch #shorts
 - **Description:** `What "0%" refund advances really cost. The free way on the channel. Planner: [PLANNER LINK]. Educational, not tax advice.`
+
+---
+
+## Episode 23: `ep23/build/video.mp4` · thumbnail `ep23/build/thumbnail.png` · captions `ep23/build/video.srt`
+
+**Title:** Buy Now, Pay Later: The Math on 4 Payments
+
+**Description:**
+```
+Pay-in-4 can really cost nothing. But four "small" plans ($760 total) mean $190 due every two weeks, almost double the fun money in our example budget. One missed payment can bring a late fee and an overdraft fee: $43 on a $100 payment. Here's a simple 4-part rule for using it safely.
+
+📊 See what's really free each paycheck with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:24 Stacking
+0:48 Missed payments
+1:06 It feels cheaper
+1:29 Get the planner
+
+Educational content, not financial advice. Fees vary by lender and bank; check your own terms.
+```
+**Tags:** buy now pay later, pay in 4, BNPL, is buy now pay later bad, overdraft fees, late fees, budgeting, spending habits
+
+**Pinned comment:** `How many pay-in-4 plans do you have open right now? 👇`
+
+---
+
+## Episode 24: `ep24/build/video.mp4` · thumbnail `ep24/build/thumbnail.png` · captions `ep24/build/video.srt`
+
+**Title:** Pay Off Debt or Save First? The Order That Works
+
+**Description:**
+```
+Both, in order: 1) a starter emergency fund (one month of bills), 2) any employer retirement match, 3) high-interest debt, 4) a full 3–6 month emergency fund, 5) then low-rate debt or bigger goals. The math: a 50% match beats even a 24% card, and a 24% card beats any savings account.
+
+📊 Track your fund and your debt with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:11 A starter emergency fund
+0:26 Grab the employer match
+0:52 Kill high-interest debt
+1:06 Finish the emergency fund
+1:17 Then choose your goals
+1:42 Get the planner
+
+Educational content, not financial advice. Retirement plans vary; check yours.
+```
+**Tags:** pay off debt or save, debt vs savings, emergency fund first, employer match, financial order of operations, pay off credit card, personal finance steps, money priorities
+
+**Pinned comment:** `Which step are you on right now: 1, 2, 3, 4 or 5? 👇`
+
+**Upload order and timing:** these are February Week 3 videos (week of Feb 16).
+
+---
+
+## Shorts for Episodes 21 and 22
+
+**`ep21-short/build/video.mp4`** → Related video: Episode 21
+- **Title:** Stop paying to file your taxes (3 free routes) #shorts
+- **Description:** `IRS Free File, Fillable Forms, VITA. Full video on the channel. Planner: [PLANNER LINK]. Educational, not tax advice.`
+
+**`ep22-short/build/video.mp4`** → Related video: Episode 22
+- **Title:** How much car can you afford on $60K? #shorts
+- **Description:** `The 20/4/10 math and the long-loan trap. Full video on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`

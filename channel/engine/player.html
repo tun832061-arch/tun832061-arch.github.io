@@ -215,7 +215,7 @@ D.stack = sc => {
     const [sk, sd] = sc.stagger ? [0, 0.1 + i * sc.stagger] : [i, 0.1]; const q = rb(sk, sd, 0.45); if (q <= 0) return; const y = y0 + i * (h + 30 * U);
     box(x, y, w, h, 26 * U, 'bg2', cl(q)); box(x, y, 12 * U, h, 6 * U, it[2], cl(q));
     txt(it[0], x + 60 * U, y + h / 2, { sz: 50, w: 700, al: 'left', a: cl(q) });
-    txt(money(it[1] * eo((L(sk) - sd) / 0.8)), x + w - 50 * U, y + h / 2 + 4 * U, { sz: 100, fam: 'Anton', w: 400, c: it[2], al: 'right', a: cl(q) });
+    txt(((v) => sc.fmt === 'pct' ? Math.round(v) + '%' : sc.fmt === 'cents' ? Math.round(v) + '¢' : money(v))(it[1] * eo((L(sk) - sd) / 0.8)), x + w - 50 * U, y + h / 2 + 4 * U, { sz: 100, fam: 'Anton', w: 400, c: it[2], al: 'right', a: cl(q) });
   });
 };
 D.waterfall = sc => {

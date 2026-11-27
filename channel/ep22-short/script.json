@@ -1,0 +1,77 @@
+{
+ "title": "How much car can you afford? (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "How much car",
+      "can you afford?"
+     ]
+    ],
+    "stamp": "Less than the dealer says."
+   },
+   "say": "How much car can you afford?"
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Max car payment on $60,000",
+    "value": "$200",
+    "c": "green",
+    "sub": "a month, after insurance, gas and upkeep"
+   },
+   "cap": "On $60,000 a year, 10% is $500 a month for everything car-related. After insurance, gas and upkeep, that's a $200 payment.",
+   "say": "On sixty thousand a year, ten percent is five hundred a month for everything car-related. After insurance, gas and upkeep, that's a two hundred dollar payment."
+  },
+  {
+   "scene": {
+    "type": "compare",
+    "head": "$30,000 at 7%",
+    "rows": [
+     {
+      "label": "4 years · $718/mo",
+      "months": 48,
+      "interest": 4483,
+      "c": "gold"
+     },
+     {
+      "label": "6 years · $511/mo",
+      "months": 72,
+      "interest": 6826,
+      "c": "coral"
+     }
+    ]
+   },
+   "cap": "And watch the long loan. Four years on $30,000: $4,483 in interest.",
+   "say": "And watch the long loan. Four years on thirty thousand: forty-four eighty-three in interest."
+  },
+  {
+   "cap": "Six years: $6,826. That's $2,343 more.",
+   "say": "Six years: sixty-eight twenty-six. That's twenty-three forty-three more."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Answer with a total price.",
+    "hi": [
+     "total",
+     "price."
+    ]
+   },
+   "say": "Asked for a monthly payment? Answer with a total price."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "The 20/4/10 math on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "cap": "The full 20/4/10 math is on my channel.",
+   "say": "The full 20/4/10 math is on my channel."
+  }
+ ]
+}
