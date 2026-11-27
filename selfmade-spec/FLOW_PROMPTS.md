@@ -1,0 +1,14 @@
+# Flow prompts — next batch (images only)
+
+## Step 1 — Colourway recolours (Image edit, attach R01_take1)
+- CREAM: Keep this image identical: same shirt shape, folds, lighting, framing and background. Change only the colours: the shirt body becomes warm cream, the flame graphic becomes solid black, the chest embroidery becomes black.
+- GREY: Keep this image identical: same shirt shape, folds, lighting, framing and background. Change only the shirt body colour to charcoal grey. Keep the distressed off-white flame band and the white chest embroidery.
+- BURGUNDY: Keep this image identical: same shirt shape, folds, lighting, framing and background. Change only the colours: the shirt body becomes deep burgundy, the flame band becomes a pale blush-cream that fades upward into the burgundy, the chest embroidery stays white.
+
+## Step 2 — Carousel card models (Image, 9:16; attach the matching shirt image)
+STYLE (end every prompt with this): Premium streetwear campaign photography, charcoal concrete studio with a curved wall and a soft vertical slit of light, large soft key light from the left, warm rim light from behind, monochrome palette, natural skin texture, realistic heavyweight cotton with true weight and folds, subtle film grain, shot from knee height on a 50mm lens, vertical 9:16 frame, no text, no watermark.
+
+- BLACK (the Friend; attach ref_model.png + R01_take1): Knees-up portrait of the young man in the first reference image, same face, hair, earrings and jewellery, wearing the black polo shirt with the flame hem from the second reference image, tucked loosely over very baggy black acid-wash jeans. One hand lifting his black rectangular sunglasses, the other hand in his pocket, body angled slightly, calm confident expression. + STYLE
+- CREAM (attach the cream shirt): Knees-up portrait of a young Nigerian woman in her early twenties, deep brown skin, short natural afro, small gold hoop earrings, wearing the cream polo shirt with the black flame hem from the reference image over very baggy light vintage-blue jeans, relaxed stance with both hands in her pockets, looking just past the camera. + STYLE
+- GREY (attach the grey shirt): Knees-up portrait of a tall, lean young Nigerian man around 22, dark skin, shoulder-length locs tied back, thin silver chain, wearing the charcoal-grey polo shirt with the flame hem from the reference image over very baggy black acid-wash jeans, arms loose, turning slightly toward the camera with a direct gaze. + STYLE
+- BURGUNDY (attach the burgundy shirt): Knees-up portrait of an athletic young Nigerian man around 24, medium-dark brown skin, low-cut fade with waves, neat short beard, thin silver chain worn over the shirt, wearing the burgundy polo shirt with the blush-cream flame hem from the reference image over very baggy light vintage-blue jeans, confident half-smile, one hand in his pocket. + STYLE
