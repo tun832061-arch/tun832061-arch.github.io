@@ -1,0 +1,91 @@
+{
+ "title": "Irregular income? Pay yourself a salary (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Paycheck never",
+      "the same?"
+     ]
+    ],
+    "stamp": "Pay yourself a salary."
+   },
+   "say": "Paycheck different every month?"
+  },
+  {
+   "say": "Stop budgeting on your average."
+  },
+  {
+   "scene": {
+    "type": "months",
+    "head": "Income, last 12 months",
+    "vals": [
+     2900,
+     3600,
+     2400,
+     4100,
+     3200,
+     2700,
+     3800,
+     2200,
+     3500,
+     4400,
+     2600,
+     3000
+    ],
+    "c": "gold"
+   },
+   "cap": "Spend the $3,200 average every month, and 5 months out of 12 come up short.",
+   "say": "Spend the thirty-two hundred average every month, and five months out of twelve come up short."
+  },
+  {
+   "scene": {
+    "type": "months",
+    "head": "Same income, smoothed",
+    "vals": [
+     2900,
+     3600,
+     2400,
+     4100,
+     3200,
+     2700,
+     3800,
+     2200,
+     3500,
+     4400,
+     2600,
+     3000
+    ],
+    "c": "gold",
+    "line": 2800,
+    "avgAt": 0,
+    "avgLabel": "Your salary: $2,800"
+   },
+   "cap": "Instead, send every dollar to one holding account, and pay yourself a steady $2,800.",
+   "say": "Instead, send every dollar to one holding account, and pay yourself a steady twenty-eight hundred."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Holding account by December",
+    "value": "$4,800",
+    "c": "green",
+    "sub": "and it never once ran dry"
+   },
+   "cap": "The holding account never runs dry, and by December it's $4,800 ahead.",
+   "say": "The holding account never runs dry, and by December, it's forty-eight hundred ahead."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Full 4-step method on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "say": "The full four steps are on my channel."
+  }
+ ]
+}

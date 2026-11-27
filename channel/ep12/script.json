@@ -1,0 +1,204 @@
+{
+ "title": "Credit Card Minimum Payments: The 17-Year Trap (The Math)",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Minimum payment",
+      "due: $150"
+     ]
+    ],
+    "stamp": "Almost 17 years."
+   },
+   "cap": "Minimum payment due: $150.",
+   "say": "Minimum payment due: a hundred and fifty dollars."
+  },
+  {
+   "say": "It looks manageable. That's the point."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Credit card · 24% APR",
+    "value": "$5,000",
+    "c": "coral",
+    "sub": "a common minimum: 1% of the balance + that month's interest"
+   },
+   "cap": "Here's a $5,000 balance at 24%. Many cards set the minimum at 1% of the balance, plus that month's interest.",
+   "say": "Here's a five thousand dollar balance at twenty-four percent. Many cards set the minimum at one percent of the balance, plus that month's interest."
+  },
+  {
+   "cap": "So the first minimum is $150. $100 of it is interest. Only $50 touches the balance.",
+   "say": "So the first minimum is a hundred and fifty. A hundred of it is interest. Only fifty touches the balance."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Episode 12 · the math",
+    "text": "The Minimum Trap"
+   },
+   "say": "Here's why that number keeps you paying for years."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "The shrinking minimum",
+    "kicker": "THE TRAP"
+   },
+   "say": "The trap. The minimum shrinks as you pay."
+  },
+  {
+   "scene": {
+    "type": "months",
+    "head": "Your minimum payment over time",
+    "vals": [
+     150,
+     134,
+     106,
+     83,
+     45
+    ],
+    "labels": [
+     "Month 1",
+     "Year 1",
+     "Year 3",
+     "Year 5",
+     "Year 10"
+    ]
+   },
+   "cap": "A year in, it's down to $134. By year five, $83. By year ten, $45.",
+   "say": "A year in, it's down to one thirty-four. By year five, eighty-three. By year ten, forty-five."
+  },
+  {
+   "say": "It feels like progress. But a smaller payment means the balance barely moves."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Paying only the minimum",
+    "value": "201 months",
+    "c": "coral",
+    "sub": "almost 17 years · $8,442 in interest"
+   },
+   "cap": "Paying only the minimum takes 201 months. Almost 17 years. And $8,442 in interest. More than the original balance.",
+   "say": "Paying only the minimum takes two hundred and one months. Almost seventeen years. And eighty-four forty-two in interest. More than the original balance."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "Freeze the payment",
+    "kicker": "THE FIX"
+   },
+   "say": "The fix is simple. Freeze the payment."
+  },
+  {
+   "scene": {
+    "type": "compare",
+    "head": "$5,000 at 24% APR",
+    "rows": [
+     {
+      "label": "Minimum (it shrinks)",
+      "months": 201,
+      "interest": 8442,
+      "c": "coral"
+     },
+     {
+      "label": "Fixed $150, every month",
+      "months": 56,
+      "interest": 3322,
+      "c": "gold"
+     },
+     {
+      "label": "Fixed $250, every month",
+      "months": 26,
+      "interest": 1449,
+      "c": "green"
+     }
+    ]
+   },
+   "say": "Paying the shrinking minimum: two hundred and one months."
+  },
+  {
+   "cap": "Keep paying the first minimum, $150, every month, even as the minimum drops: 56 months, and $3,322 in interest.",
+   "say": "Keep paying the first minimum, a hundred and fifty, every month, even as the minimum drops. Fifty-six months, and thirty-three twenty-two in interest."
+  },
+  {
+   "cap": "Pay $250, and it's gone in 26 months, for $1,449.",
+   "say": "Pay two fifty, and it's gone in twenty-six months, for fourteen forty-nine."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Your statement already shows this math.",
+    "hi": [
+     "already",
+     "shows"
+    ]
+   },
+   "say": "And here's something most people skip. In the US, your card statement has a box showing how long minimum payments will take, and the monthly payment that clears it in three years."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "To pay it off in 3 years",
+    "value": "$197",
+    "c": "green",
+    "sub": "a month: look for this number on your statement"
+   },
+   "cap": "For this card, that's about $197 a month. Gone in three years.",
+   "say": "For this card, that's about one ninety-seven a month. Gone in three years."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "THIS WEEK",
+    "items": [
+     "Find the minimum-payment box on your statement",
+     "Freeze your payment at today's minimum or more",
+     "Set autopay to that fixed amount",
+     "Send raises and windfalls at it"
+    ],
+    "at": [
+     1,
+     2,
+     3,
+     4
+    ]
+   },
+   "say": "So, this week."
+  },
+  {
+   "join": true,
+   "say": "Find the minimum-payment box on your statement."
+  },
+  {
+   "join": true,
+   "say": "Freeze your payment at today's minimum, or more."
+  },
+  {
+   "join": true,
+   "say": "Set autopay to that fixed amount, not the minimum."
+  },
+  {
+   "join": true,
+   "say": "And send raises and windfalls straight at it."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "See your real payoff date with the Paycheck Planner: link in the description",
+    "next": "Next: Where your tax refund should go"
+   },
+   "say": "Minimum formulas vary by card, so check yours. The Paycheck Planner in the description shows your real payoff date."
+  },
+  {
+   "say": "Subscribe for more money math, with real numbers."
+  }
+ ]
+}

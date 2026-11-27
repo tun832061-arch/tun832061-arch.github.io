@@ -313,3 +313,64 @@ Educational content, not financial advice.
 **`ep08-short/build/video.mp4`** → Related video: Episode 8
 - **Title:** The 2027 money reset: what's your score out of 8? #shorts
 - **Description:** `Eight steps that make a budget stick. All explained on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
+
+---
+
+## Episode 11: `ep11/build/video.mp4` · thumbnail `ep11/build/thumbnail.png` · captions `ep11/build/video.srt`
+
+**Title:** How to Pay Off $10,000 of Debt: 3 Real Scenarios
+
+**Description:**
+```
+$10,000 on a 24% credit card, three ways. $300 a month: 56 months and $6,644 in interest. $500 a month: 26 months and $2,899. $500 plus a tax refund and two extra paychecks: 16 months and $1,543. Same debt, 40 months and $5,100 apart.
+
+📊 Get your own debt-free date with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:15 Plan A: $300 a month
+0:27 Plan B: $500 a month
+0:40 Plan C: $500 + windfalls
+1:10 Get the planner
+
+Educational content, not financial advice. Tax refund amounts vary; use your own numbers.
+```
+**Tags:** pay off 10000 debt, how to pay off credit card debt, debt payoff plan, credit card debt, pay off debt fast, tax refund debt, debt free 2027, debt payoff calculator
+
+**Pinned comment:** `Which plan are you on: A, B or C? 👇`
+
+---
+
+## Episode 12: `ep12/build/video.mp4` · thumbnail `ep12/build/thumbnail.png` · captions `ep12/build/video.srt`
+
+**Title:** Credit Card Minimum Payments: The 17-Year Trap (The Math)
+
+**Description:**
+```
+A $5,000 card at 24% with a $150 minimum looks manageable. But the minimum shrinks as you pay, so paying only the minimum takes 201 months (almost 17 years) and $8,442 in interest. The fix: freeze your payment. A fixed $150 takes 56 months, and $250 takes 26. Plus the box on your statement that already shows this math.
+
+📊 See your real payoff date with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:24 The shrinking minimum
+0:47 Freeze the payment
+1:34 Get the planner
+
+Educational content, not financial advice. Minimum-payment formulas vary by card issuer.
+```
+**Tags:** credit card minimum payment, minimum payment trap, how credit card interest works, pay off credit card, credit card debt, minimum payment warning, fixed payment, debt payoff
+
+**Pinned comment:** `Check your statement: how many years does YOUR minimum-payment box say? 👇`
+
+**Upload order and timing:** these are Week 6 videos (week of Jan 5).
+
+---
+
+## Shorts for Episodes 9 and 10
+
+**`ep09-short/build/video.mp4`** → Related video: Episode 9
+- **Title:** Paycheck different every month? Pay yourself a salary #shorts
+- **Description:** `Smooth a bumpy income with a holding account. Full 4 steps on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
+
+**`ep10-short/build/video.mp4`** → Related video: Episode 10
+- **Title:** How big should your emergency fund be? #shorts
+- **Description:** `Count essentials, not income. Find your number on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`

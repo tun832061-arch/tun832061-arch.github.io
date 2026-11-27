@@ -1,0 +1,207 @@
+{
+ "title": "How to Pay Off $10,000 of Debt: 3 Real Scenarios",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "$10,000",
+      "of debt?"
+     ]
+    ],
+    "stamp": "3 ways out."
+   },
+   "cap": "$10,000 of credit card debt.",
+   "say": "Ten thousand dollars of credit card debt."
+  },
+  {
+   "say": "Let's run three real ways to pay it off, and see exactly what each one costs."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Credit card · 24% APR",
+    "value": "$10,000",
+    "c": "coral",
+    "sub": "about $200 of interest in the first month"
+   },
+   "cap": "At 24%, that's about $200 of interest in the first month alone.",
+   "say": "At twenty-four percent, that's about two hundred dollars of interest in the first month alone."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Episode 11 · real numbers",
+    "text": "The $10,000 Payoff"
+   },
+   "say": "Same debt. Three plans."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "A",
+    "text": "$300 a month",
+    "kicker": "PLAN A"
+   },
+   "say": "Plan A. Three hundred dollars a month."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Plan A · $300 a month",
+    "value": "56 months",
+    "c": "coral",
+    "sub": "$6,644 in interest"
+   },
+   "cap": "That's 56 months. Almost five years. And $6,644 in interest.",
+   "say": "That's fifty-six months. Almost five years. And sixty-six forty-four in interest."
+  },
+  {
+   "say": "That's two-thirds of the original debt, paid again, just in interest."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "B",
+    "text": "$500 a month",
+    "kicker": "PLAN B"
+   },
+   "say": "Plan B. Find two hundred more, and pay five hundred a month."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Plan B · $500 a month",
+    "value": "26 months",
+    "c": "gold",
+    "sub": "$2,899 in interest"
+   },
+   "cap": "26 months, and $2,899 in interest.",
+   "say": "Twenty-six months, and twenty-eight ninety-nine in interest."
+  },
+  {
+   "cap": "$200 more a month saves about $3,700, and two and a half years.",
+   "say": "Two hundred more a month saves about thirty-seven hundred dollars, and two and a half years."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "C",
+    "text": "$500 + windfalls",
+    "kicker": "PLAN C"
+   },
+   "cap": "Plan C: the same $500 a month, plus the money that shows up anyway.",
+   "say": "Plan C. The same five hundred a month, plus the money that shows up anyway."
+  },
+  {
+   "scene": {
+    "type": "ledger",
+    "head": "Windfalls in 2027, sent straight to the card",
+    "total": "Extra to debt",
+    "items": [
+     [
+      "Tax refund · March",
+      2000
+     ],
+     [
+      "Extra paycheck · July",
+      1000
+     ],
+     [
+      "Extra paycheck · December",
+      1000
+     ]
+    ]
+   },
+   "say": "Here's what Plan C adds."
+  },
+  {
+   "cap": "A $2,000 tax refund in March.",
+   "join": true,
+   "say": "A two thousand dollar tax refund in March."
+  },
+  {
+   "cap": "$1,000 from the extra paycheck in July.",
+   "join": true,
+   "say": "A thousand from the extra paycheck in July."
+  },
+  {
+   "cap": "And another $1,000 from December's.",
+   "join": true,
+   "say": "And another thousand from December's."
+  },
+  {
+   "scene": {
+    "type": "compare",
+    "head": "$10,000 at 24% APR",
+    "rows": [
+     {
+      "label": "Plan A · $300/mo",
+      "months": 56,
+      "interest": 6644,
+      "c": "coral"
+     },
+     {
+      "label": "Plan B · $500/mo",
+      "months": 26,
+      "interest": 2899,
+      "c": "gold"
+     },
+     {
+      "label": "Plan C · $500/mo + windfalls",
+      "months": 16,
+      "interest": 1543,
+      "c": "green"
+     }
+    ]
+   },
+   "say": "Now, side by side."
+  },
+  {
+   "say": "Plan B. Twenty-six months."
+  },
+  {
+   "cap": "Plan C: 16 months, and $1,543 in interest.",
+   "say": "Plan C. Sixteen months, and fifteen forty-three in interest."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Same debt. 40 months and $5,100 apart.",
+    "hi": [
+     "40",
+     "months",
+     "$5,100"
+    ]
+   },
+   "cap": "Same debt. 40 months and $5,100 apart.",
+   "say": "Same debt. Forty months, and fifty-one hundred dollars apart."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Give every windfall a job before it arrives.",
+    "hi": [
+     "before",
+     "it",
+     "arrives."
+    ]
+   },
+   "say": "So decide now where your windfalls go, before they show up and quietly get spent."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Get your own debt-free date with the Paycheck Planner: link in the description",
+    "next": "Next: Credit card minimums are built to keep you paying"
+   },
+   "say": "Your tax refund will vary, so use your own numbers. The Paycheck Planner in the description gives you your debt-free date."
+  },
+  {
+   "say": "Subscribe. Next time: why the minimum payment keeps you paying for almost seventeen years."
+  }
+ ]
+}

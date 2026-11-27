@@ -1,0 +1,87 @@
+1
+00:00:00,600 --> 00:00:03,366
+Minimum payment due: $150.
+
+2
+00:00:03,786 --> 00:00:05,790
+It looks manageable. That's the point.
+
+3
+00:00:06,210 --> 00:00:14,225
+Here's a $5,000 balance at 24%. Many cards set the minimum at 1% of the balance, plus that month's interest.
+
+4
+00:00:14,645 --> 00:00:20,955
+So the first minimum is $150. $100 of it is interest. Only $50 touches the balance.
+
+5
+00:00:21,725 --> 00:00:24,100
+Here's why that number keeps you paying for years.
+
+6
+00:00:24,870 --> 00:00:27,060
+The trap. The minimum shrinks as you pay.
+
+7
+00:00:27,480 --> 00:00:33,218
+A year in, it's down to $134. By year five, $83. By year ten, $45.
+
+8
+00:00:33,638 --> 00:00:37,956
+It feels like progress. But a smaller payment means the balance barely moves.
+
+9
+00:00:38,376 --> 00:00:46,908
+Paying only the minimum takes 201 months. Almost 17 years. And $8,442 in interest. More than the original balance.
+
+10
+00:00:47,678 --> 00:00:49,767
+The fix is simple. Freeze the payment.
+
+11
+00:00:50,187 --> 00:00:52,999
+Paying the shrinking minimum: two hundred and one months.
+
+12
+00:00:53,419 --> 00:01:02,293
+Keep paying the first minimum, $150, every month, even as the minimum drops: 56 months, and $3,322 in interest.
+
+13
+00:01:02,713 --> 00:01:07,172
+Pay $250, and it's gone in 26 months, for $1,449.
+
+14
+00:01:07,592 --> 00:01:17,807
+And here's something most people skip. In the US, your card statement has a box showing how long minimum payments will take, and the monthly payment that clears it in three years.
+
+15
+00:01:18,227 --> 00:01:22,173
+For this card, that's about $197 a month. Gone in three years.
+
+16
+00:01:22,593 --> 00:01:23,456
+So, this week.
+
+17
+00:01:23,616 --> 00:01:25,957
+Find the minimum-payment box on your statement.
+
+18
+00:01:26,117 --> 00:01:28,511
+Freeze your payment at today's minimum, or more.
+
+19
+00:01:28,671 --> 00:01:31,377
+Set autopay to that fixed amount, not the minimum.
+
+20
+00:01:31,537 --> 00:01:33,795
+And send raises and windfalls straight at it.
+
+21
+00:01:34,565 --> 00:01:41,360
+Minimum formulas vary by card, so check yours. The Paycheck Planner in the description shows your real payoff date.
+
+22
+00:01:41,780 --> 00:01:44,535
+Subscribe for more money math, with real numbers.

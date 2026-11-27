@@ -282,18 +282,18 @@ D.end = sc => {
 };
 
 D.months = sc => {
-  const v = sc.vals, n = v.length, x0 = 250 * U, x1 = W - 250 * U, slot = (x1 - x0) / n, bw = slot * 0.62, base = 800 * U, mx = Math.max(...v), hs = 470 * U / mx;
+  const v = sc.vals, n = v.length, x0 = (PORT ? 70 : 250) * U, x1 = W - (PORT ? 70 : 250) * U, slot = (x1 - x0) / n, bw = slot * 0.62, base = PORT ? H * 0.62 : 800 * U, mx = Math.max(...v), hs = (PORT ? 620 : 470) * U / mx, vsz = PORT && n > 8 ? 24 : 34;
   const avgP = sc.avgAt != null ? rv(sc.avgAt, 0.2, 0.8) : 0, avg = sc.line != null ? sc.line : v.reduce((a, b) => a + b, 0) / n;
-  if (sc.head) txt(sc.head.toUpperCase(), W / 2, 170 * U, { sz: 30, w: 700, c: 'muted', a: rv(0, 0, 0.5) });
+  if (sc.head) txt(sc.head.toUpperCase(), W / 2, (PORT ? 330 : 170) * U, { sz: 30, w: 700, c: 'muted', a: rv(0, 0, 0.5) });
   A(rv(0, 0, 0.5)); X.fillStyle = P.dim; X.fillRect(x0, base, x1 - x0, 3 * U); A(1);
   (sc.labels || 'JFMAMJJASOND'.split('')).forEach((m, i) => {
     const x = x0 + i * slot + (slot - bw) / 2, p = rv(0, 0.3 + i * 0.12, 0.5), h = v[i] * hs * p;
-    if (v[i] > 0) { box(x, base - h, bw, h, 10 * U, sc.c || 'coral', 0.95 * (1 - 0.6 * avgP)); txt(money(v[i]), x + bw / 2, base - h - 30 * U, { sz: 34, fam: 'Anton', w: 400, c: sc.c || 'coral', a: p * (1 - 0.6 * avgP) }); }
+    if (v[i] > 0) { box(x, base - h, bw, h, 10 * U, sc.c || 'coral', 0.95 * (1 - 0.6 * avgP)); txt(money(v[i]), x + bw / 2, base - h - 30 * U, { sz: vsz, fam: 'Anton', w: 400, c: sc.c || 'coral', a: p * (1 - 0.6 * avgP) }); }
     else if (sc.labels) txt('$0', x + bw / 2, base - 30 * U, { sz: 40, fam: 'Anton', w: 400, c: 'green', a: p });
     txt(m, x + bw / 2, base + 40 * U, { sz: 28, w: 700, c: 'muted', a: rv(0, 0, 0.5) });
     if (avgP > 0) box(x, base - avg * hs * avgP, bw, avg * hs * avgP, 10 * U, 'green', 0.9);
   });
-  if (avgP > 0) txt(sc.avgLabel, W / 2, 250 * U, { sz: 44, w: 800, c: 'green', a: avgP });
+  if (avgP > 0) txt(sc.avgLabel, W / 2, (PORT ? 400 : 250) * U, { sz: 44, w: 800, c: 'green', a: avgP });
 };
 D.trim = sc => {
   const n = sc.rows.length, rh = 76 * U, w = 1140 * U, x = W / 2 - w / 2, y0 = 200 * U, oc = x + w - 300 * U, nc = x + w - 40 * U;

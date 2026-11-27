@@ -1,0 +1,73 @@
+{
+ "title": "Emergency fund: find your number (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Emergency fund:",
+      "how much?"
+     ]
+    ],
+    "stamp": "Count essentials."
+   },
+   "say": "How big should your emergency fund be?"
+  },
+  {
+   "say": "Count essentials, not income."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Monthly essentials",
+    "value": "$3,011",
+    "sub": "if your income stopped, you'd still owe these"
+   },
+   "cap": "In our example, rent, car, insurance, utilities, phone, minimums, groceries and gas come to $3,011 a month.",
+   "say": "In our example, rent, car, insurance, utilities, phone, minimums, groceries and gas come to thirty and eleven a month."
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "Your target",
+    "stagger": 2.6,
+    "items": [
+     [
+      "3 months",
+      9033,
+      "green"
+     ],
+     [
+      "6 months",
+      18066,
+      "gold"
+     ]
+    ]
+   },
+   "cap": "3 months is $9,033. Six months, about $18,000.",
+   "say": "Three months is nine thousand and thirty-three. Six months, about eighteen thousand."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Start with one month. Then build.",
+    "hi": [
+     "one",
+     "month."
+    ]
+   },
+   "say": "Too big? Start with one month of bills, then build from there."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Find your number: full video on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "say": "How to pick your number is on my channel."
+  }
+ ]
+}

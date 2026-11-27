@@ -42,7 +42,7 @@ Each episode takes about 1–2 hours of your time: write `script.json`, render, 
 | Dec 15 | ✅ Ep5 *What $100 a Month Becomes in 5 Years* · ✅ Ep6 *The 3-Paycheck Months of 2027* | 2027 has two 3-paycheck months for most biweekly earners; list them |
 | Dec 22 | ✅ Ep7 *How to Undo Holiday Debt in 90 Days* · ✅ Ep8 *Your 2027 Money Reset Checklist* | Publish before Jan 1 for the search spike |
 | Dec 29 | ✅ Ep9 *How to Budget on an Irregular Income* · ✅ Ep10 *Emergency Fund: How Much Is Enough?* | Peak week; consider a 3rd upload |
-| Jan 5 | Pay off $10,000 of debt: 3 real scenarios · Credit card minimums are designed to trap you (the math) | |
+| Jan 5 | ✅ Ep11 *How to Pay Off $10,000 of Debt* · ✅ Ep12 *Credit Card Minimum Payments: The 17-Year Trap* | |
 | Jan 12 | Where your tax refund should go (decision tree) · Rent vs income: the real number | Tax season starts |
 | Jan 19 | Why you're broke on a good salary (lifestyle creep math) · Balance transfer cards: when they're worth it | |
 | Jan 26 | Budgeting as a couple: 3 systems compared · One month in: fixing the budget you started | Reaction to January; strong retention topic |
