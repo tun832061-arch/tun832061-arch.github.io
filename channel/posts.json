@@ -622,5 +622,53 @@
   "desc": "Four check-in questions, with real numbers. Full video on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.",
   "tags": "budget check in, monthly budget review, is my budget working, debt payoff progress, shorts",
   "related": "Episode 26: The 60-Day Money Check-In: Is Your Plan Working?"
+ },
+ {
+  "id": "ep27",
+  "date": "2027-03-05",
+  "kind": "Episode",
+  "n": 27,
+  "file": "channel/ep27/build/video.mp4",
+  "thumb": "channel/ep27/build/thumbnail.png",
+  "captions": "channel/ep27/build/video.srt",
+  "title": "Owe Taxes? How to Pay Without a Credit Card",
+  "desc": "Owe $2,400 in taxes? First, file on time even if you can't pay: the late-filing penalty is usually far bigger than the late-payment one. Then compare: a credit card at $450 a month costs about $215 in fees and interest; an IRS short-term payment plan costs about $86. Plus how to avoid owing next year.\n\n📊 Fit a payment plan into your paychecks with the Paycheck Planner: [PLANNER LINK]\n\n0:00 Intro\n0:16 File on time anyway\n0:36 The credit card route\n0:52 An IRS payment plan\n1:23 Don't owe next year\n1:44 Get the planner\n\nEducational content, not financial advice. Not tax advice. IRS rates, fees and penalties change; check IRS.gov. IRS interest rate shown is as of late 2026.",
+  "tags": "owe taxes, can't pay taxes, IRS payment plan, pay taxes with credit card, tax penalty, failure to file penalty, W-4 withholding, tax season 2027",
+  "pin": "Did you owe or get a refund this year? 👇"
+ },
+ {
+  "id": "short27",
+  "date": "2027-03-07",
+  "kind": "Short",
+  "n": 27,
+  "file": "channel/ep27-short/build/video.mp4",
+  "title": "Owe taxes? Don't reach for a credit card yet #shorts",
+  "desc": "File on time, then compare: card vs IRS short-term plan. Full video on the channel. Planner: [PLANNER LINK]. Educational, not tax advice.",
+  "tags": "owe taxes, can't pay taxes, IRS payment plan, pay taxes with credit card, shorts",
+  "related": "Episode 27: Owe Taxes? How to Pay Without a Credit Card"
+ },
+ {
+  "id": "ep28",
+  "date": "2027-03-09",
+  "kind": "Episode",
+  "n": 28,
+  "file": "channel/ep28/build/video.mp4",
+  "thumb": "channel/ep28/build/thumbnail.png",
+  "captions": "channel/ep28/build/video.srt",
+  "title": "The Subscription Audit: Find $50 a Month in 15 Minutes",
+  "desc": "Nine subscriptions, $126 a month, over $1,500 a year. In 15 minutes: find them all (statements, app store, email), sort into keep, rotate or cut, and stop them creeping back. Result: $48 a month, $576 a year.\n\n📊 Give your found money a job with the Paycheck Planner: [PLANNER LINK]\n\n0:00 Intro\n0:25 Keep, rotate or cut\n0:50 Stop the creep\n\nEducational content, not financial advice.",
+  "tags": "subscription audit, cancel subscriptions, save money on subscriptions, streaming subscriptions, budgeting tips, money saving tips, how to save money, personal finance",
+  "pin": "How many subscriptions did you find? 👇"
+ },
+ {
+  "id": "short28",
+  "date": "2027-03-11",
+  "kind": "Short",
+  "n": 28,
+  "file": "channel/ep28-short/build/video.mp4",
+  "title": "9 subscriptions, $126 a month: the 15-minute audit #shorts",
+  "desc": "Keep, rotate or cut. Full audit on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.",
+  "tags": "subscription audit, cancel subscriptions, save money on subscriptions, streaming subscriptions, shorts",
+  "related": "Episode 28: The Subscription Audit: Find $50 a Month in 15 Minutes"
  }
 ]

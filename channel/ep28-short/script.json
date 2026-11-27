@@ -1,0 +1,58 @@
+{
+ "title": "The 15-minute subscription audit (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "9 subscriptions.",
+      "$126 a month?"
+     ]
+    ],
+    "stamp": "Audit time."
+   },
+   "cap": "Nine subscriptions. $126 a month.",
+   "say": "Nine subscriptions. A hundred twenty-six dollars a month."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "KEEP · ROTATE · CUT",
+    "items": [
+     "Keep one streaming service",
+     "Rotate the others month to month",
+     "Cut what you barely use"
+    ],
+    "at": [
+     0,
+     0,
+     0
+    ],
+    "stagger": 2.4
+   },
+   "say": "Keep one streaming service, and rotate the rest. Cut the app you don't use. Cut the delivery membership you used twice."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Found in 15 minutes",
+    "value": "$576",
+    "c": "green",
+    "sub": "a year, from subscriptions you won't miss"
+   },
+   "cap": "15 minutes. $48 a month. $576 a year.",
+   "say": "Fifteen minutes. Forty-eight dollars a month. Five seventy-six a year."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "The full audit, on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "say": "The full audit is on my channel."
+  }
+ ]
+}

@@ -58,6 +58,10 @@ Before posting: replace `[PLANNER LINK]` with your store link (or delete that se
 | Sun Feb 28 | Short 25 | [The 2 things that move your credit score most #shorts](#short25) |
 | Tue Mar 2 | **Episode 26** | [The 60-Day Money Check-In: Is Your Plan Working?](#ep26) |
 | Thu Mar 4 | Short 26 | [60 days in: is your money plan working? #shorts](#short26) |
+| Fri Mar 5 | **Episode 27** | [Owe Taxes? How to Pay Without a Credit Card](#ep27) |
+| Sun Mar 7 | Short 27 | [Owe taxes? Don't reach for a credit card yet #shorts](#short27) |
+| Tue Mar 9 | **Episode 28** | [The Subscription Audit: Find $50 a Month in 15 Minutes](#ep28) |
+| Thu Mar 11 | Short 28 | [9 subscriptions, $126 a month: the 15-minute audit #shorts](#short28) |
 
 ---
 
@@ -1525,4 +1529,115 @@ Four check-in questions, with real numbers. Full video on the channel. Planner: 
 **Tags**
 ```
 budget check in, monthly budget review, is my budget working, debt payoff progress, shorts
+```
+
+---
+
+<a id="ep27"></a>
+## Fri Mar 5, 2027 · Episode 27
+
+**File:** `channel/ep27/build/video.mp4`
+**Thumbnail:** `channel/ep27/build/thumbnail.png` · **Captions:** `channel/ep27/build/video.srt`
+
+**Title**
+```
+Owe Taxes? How to Pay Without a Credit Card
+```
+**Description**
+```
+Owe $2,400 in taxes? First, file on time even if you can't pay: the late-filing penalty is usually far bigger than the late-payment one. Then compare: a credit card at $450 a month costs about $215 in fees and interest; an IRS short-term payment plan costs about $86. Plus how to avoid owing next year.
+
+📊 Fit a payment plan into your paychecks with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:16 File on time anyway
+0:36 The credit card route
+0:52 An IRS payment plan
+1:23 Don't owe next year
+1:44 Get the planner
+
+Educational content, not financial advice. Not tax advice. IRS rates, fees and penalties change; check IRS.gov. IRS interest rate shown is as of late 2026.
+```
+**Tags**
+```
+owe taxes, can't pay taxes, IRS payment plan, pay taxes with credit card, tax penalty, failure to file penalty, W-4 withholding, tax season 2027
+```
+**Pinned comment**
+```
+Did you owe or get a refund this year? 👇
+```
+
+---
+
+<a id="short27"></a>
+## Sun Mar 7, 2027 · Short 27
+
+**File:** `channel/ep27-short/build/video.mp4`
+**Related video:** Episode 27: Owe Taxes? How to Pay Without a Credit Card
+
+**Title**
+```
+Owe taxes? Don't reach for a credit card yet #shorts
+```
+**Description**
+```
+File on time, then compare: card vs IRS short-term plan. Full video on the channel. Planner: [PLANNER LINK]. Educational, not tax advice.
+```
+**Tags**
+```
+owe taxes, can't pay taxes, IRS payment plan, pay taxes with credit card, shorts
+```
+
+---
+
+<a id="ep28"></a>
+## Tue Mar 9, 2027 · Episode 28
+
+**File:** `channel/ep28/build/video.mp4`
+**Thumbnail:** `channel/ep28/build/thumbnail.png` · **Captions:** `channel/ep28/build/video.srt`
+
+**Title**
+```
+The Subscription Audit: Find $50 a Month in 15 Minutes
+```
+**Description**
+```
+Nine subscriptions, $126 a month, over $1,500 a year. In 15 minutes: find them all (statements, app store, email), sort into keep, rotate or cut, and stop them creeping back. Result: $48 a month, $576 a year.
+
+📊 Give your found money a job with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:25 Keep, rotate or cut
+0:50 Stop the creep
+
+Educational content, not financial advice.
+```
+**Tags**
+```
+subscription audit, cancel subscriptions, save money on subscriptions, streaming subscriptions, budgeting tips, money saving tips, how to save money, personal finance
+```
+**Pinned comment**
+```
+How many subscriptions did you find? 👇
+```
+
+---
+
+<a id="short28"></a>
+## Thu Mar 11, 2027 · Short 28
+
+**File:** `channel/ep28-short/build/video.mp4`
+**Related video:** Episode 28: The Subscription Audit: Find $50 a Month in 15 Minutes
+
+**Title**
+```
+9 subscriptions, $126 a month: the 15-minute audit #shorts
+```
+**Description**
+```
+Keep, rotate or cut. Full audit on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.
+```
+**Tags**
+```
+subscription audit, cancel subscriptions, save money on subscriptions, streaming subscriptions, shorts
 ```

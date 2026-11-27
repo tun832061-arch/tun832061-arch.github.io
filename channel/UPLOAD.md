@@ -820,3 +820,62 @@ Educational content, not financial advice.
 **`ep26-short/build/video.mp4`** → Related video: Episode 26
 - **Title:** 60 days in: is your money plan working? #shorts
 - **Description:** `Four check-in questions, with real numbers. Full video on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
+
+---
+
+## Episode 27: `ep27/build/video.mp4` · thumbnail `ep27/build/thumbnail.png` · captions `ep27/build/video.srt`
+
+**Title:** Owe Taxes? How to Pay Without a Credit Card
+
+**Description:**
+```
+Owe $2,400 in taxes? First, file on time even if you can't pay: the late-filing penalty is usually far bigger than the late-payment one. Then compare: a credit card at $450 a month costs about $215 in fees and interest; an IRS short-term payment plan costs about $86. Plus how to avoid owing next year.
+
+📊 Fit a payment plan into your paychecks with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:16 File on time anyway
+0:36 The credit card route
+0:52 An IRS payment plan
+1:23 Don't owe next year
+1:44 Get the planner
+
+Educational content, not financial advice. Not tax advice. IRS rates, fees and penalties change; check IRS.gov. IRS interest rate shown is as of late 2026.
+```
+**Tags:** owe taxes, can't pay taxes, IRS payment plan, pay taxes with credit card, tax penalty, failure to file penalty, W-4 withholding, tax season 2027
+
+**Pinned comment:** `Did you owe or get a refund this year? 👇`
+
+---
+
+## Episode 28: `ep28/build/video.mp4` · thumbnail `ep28/build/thumbnail.png` · captions `ep28/build/video.srt`
+
+**Title:** The Subscription Audit: Find $50 a Month in 15 Minutes
+
+**Description:**
+```
+Nine subscriptions, $126 a month, over $1,500 a year. In 15 minutes: find them all (statements, app store, email), sort into keep, rotate or cut, and stop them creeping back. Result: $48 a month, $576 a year.
+
+📊 Give your found money a job with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:25 Keep, rotate or cut
+0:50 Stop the creep
+
+Educational content, not financial advice. 
+```
+**Tags:** subscription audit, cancel subscriptions, save money on subscriptions, streaming subscriptions, budgeting tips, money saving tips, how to save money, personal finance
+
+**Pinned comment:** `How many subscriptions did you find? 👇`
+
+---
+
+## Shorts for Episodes 27 and 28
+
+**`ep27-short/build/video.mp4`** → Related video: Episode 27
+- **Title:** Owe taxes? Don't reach for a credit card yet #shorts
+- **Description:** `File on time, then compare: card vs IRS short-term plan. Full video on the channel. Planner: [PLANNER LINK]. Educational, not tax advice.`
+
+**`ep28-short/build/video.mp4`** → Related video: Episode 28
+- **Title:** 9 subscriptions, $126 a month: the 15-minute audit #shorts
+- **Description:** `Keep, rotate or cut. Full audit on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`

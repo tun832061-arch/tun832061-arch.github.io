@@ -1,0 +1,209 @@
+{
+ "title": "Owe Taxes? How to Pay Without a Credit Card",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "You owe taxes.",
+      "Now what?"
+     ]
+    ],
+    "stamp": "Don't panic. Do math."
+   },
+   "say": "You did your taxes, and you owe."
+  },
+  {
+   "say": "Before you reach for a credit card, let's compare the options, with real numbers."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Tax bill due in April",
+    "value": "$2,400",
+    "c": "coral",
+    "sub": "with $450 a month to pay it down"
+   },
+   "cap": "Our example: a $2,400 tax bill, and $450 a month to put toward it.",
+   "say": "Our example: a twenty-four hundred dollar tax bill, and four fifty a month to put toward it."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Episode 27 · real numbers",
+    "text": "Owe Taxes?"
+   },
+   "say": "Rule number one comes before any of the math."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "File on time anyway",
+    "kicker": "RULE 1"
+   },
+   "say": "File on time, even if you can't pay."
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "Penalty per month on $2,400",
+    "stagger": 5.5,
+    "items": [
+     [
+      "Filing late (about 5%)",
+      120,
+      "coral"
+     ],
+     [
+      "Paying late (about 0.5%)",
+      12,
+      "gold"
+     ]
+    ]
+   },
+   "cap": "The penalty for filing late is usually much bigger than for paying late: generally 5% of the unpaid tax per month, versus 0.5%. On $2,400, that's about $120 a month, versus $12.",
+   "say": "The penalty for filing late is usually much bigger than the penalty for paying late. Generally five percent of the unpaid tax per month, versus half a percent. On twenty-four hundred, that's about a hundred twenty a month, versus twelve."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Can't pay? File on time anyway.",
+    "hi": [
+     "File",
+     "on",
+     "time"
+    ]
+   },
+   "say": "So file by the deadline no matter what. Then pick how to pay."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "The credit card route",
+    "kicker": "OPTION 1"
+   },
+   "say": "Option one. Put it on a credit card."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "$2,400 on a 24% card, $450 a month",
+    "value": "$215",
+    "c": "coral",
+    "sub": "about $45 processing fee + $170 interest"
+   },
+   "cap": "Card payment processors charge a fee, often around 2%: about $45 here. Then 24% interest. Paying $450 a month, it's about $215 in total.",
+   "say": "Card payment processors charge a fee, often around two percent. About forty-five dollars here. Then twenty-four percent interest. Paying four fifty a month, it's about two hundred fifteen dollars in total."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "03",
+    "text": "An IRS payment plan",
+    "kicker": "OPTION 2"
+   },
+   "say": "Option two. An IRS payment plan."
+  },
+  {
+   "scene": {
+    "type": "compare",
+    "head": "Paying $2,400 at $450 a month",
+    "rows": [
+     {
+      "label": "Credit card · 24% + fee",
+      "months": 6,
+      "interest": 215,
+      "c": "coral"
+     },
+     {
+      "label": "IRS short-term plan",
+      "months": 6,
+      "interest": 86,
+      "c": "green"
+     }
+    ],
+    "costLabel": "cost"
+   },
+   "cap": "If you can pay within 180 days, the IRS short-term plan has no setup fee. You still owe interest (7% a year as of late 2026) plus the small late-payment penalty.",
+   "say": "If you can pay within a hundred and eighty days, the IRS short-term plan has no setup fee. You still owe interest, seven percent a year as of late twenty twenty-six, plus the small late-payment penalty."
+  },
+  {
+   "cap": "Same six months. About $86 instead of $215.",
+   "say": "Same six months. About eighty-six dollars instead of two fifteen."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Apply at IRS.gov. Check the current fees first.",
+    "hi": [
+     "IRS.gov."
+    ]
+   },
+   "cap": "Longer plans exist too, with a setup fee that's lower if you apply online with automatic payments. Rates and fees change, so check IRS.gov before you apply.",
+   "say": "Longer plans exist too, with a setup fee that's lower if you apply online with automatic payments. Rates and fees change, so check IRS dot gov before you apply."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "04",
+    "text": "Don't owe next year",
+    "kicker": "OPTION 3"
+   },
+   "say": "And option three. Don't owe next year."
+  },
+  {
+   "scene": {
+    "type": "equation",
+    "parts": [
+     "$2,400",
+     "÷",
+     "26",
+     "=",
+     "$92"
+    ],
+    "under": [
+     "tax owed",
+     "",
+     "paychecks",
+     "",
+     "more withheld"
+    ],
+    "at": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "kw": [
+     "twenty-four hundred over",
+     "over",
+     "twenty-six",
+     "about ninety",
+     "ninety-two"
+    ]
+   },
+   "cap": "Owing usually means too little was withheld. Adjust your W-4 so a little more comes out of each check: $2,400 over 26 paychecks is about $92 each.",
+   "say": "Owing usually means too little was withheld. Adjust your W-4 so a little more comes out of each check. Twenty-four hundred over twenty-six paychecks is about ninety-two dollars each."
+  },
+  {
+   "say": "Freelance or side income? Set the tax aside every time you're paid. Episode thirty-one covers it."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Fit a payment plan into your paychecks: Paycheck Planner, link in the description",
+    "next": "Next: The subscription audit"
+   },
+   "say": "This is general education, not tax advice. The Paycheck Planner in the description fits the payment plan into your paychecks."
+  },
+  {
+   "say": "Subscribe for more money math, with real numbers."
+  }
+ ]
+}

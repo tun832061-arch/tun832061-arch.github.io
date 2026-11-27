@@ -61,8 +61,8 @@ By March the channel should have 4 months of uploads, so the plan shifts: keep t
 
 | Post date | Episode | Angle and key number to build around |
 |---|---|---|
-| Fri Mar 5 | Ep27 *Owe Taxes? How to Pay Without a Credit Card* | Federal tax day is usually mid-April (check IRS.gov). Compare an IRS payment plan's setup fee and interest with putting the bill on a 24% card. |
-| Tue Mar 9 | Ep28 *The Subscription Audit: Find $50 a Month in 15 Minutes* | Example list of 9 subscriptions; cutting 4 frees $50/mo = $600/yr, or about 2 months off the Ep1 card. |
+| Fri Mar 5 | ✅ Ep27 *Owe Taxes? How to Pay Without a Credit Card* | Federal tax day is usually mid-April (check IRS.gov). Compare an IRS payment plan's setup fee and interest with putting the bill on a 24% card. |
+| Tue Mar 9 | ✅ Ep28 *The Subscription Audit: Find $50 a Month in 15 Minutes* | Example list of 9 subscriptions; cutting 4 frees $50/mo = $600/yr, or about 2 months off the Ep1 card. |
 | Fri Mar 12 | Ep29 *High-Yield Savings Accounts, Explained in Numbers* | $9,033 emergency fund (Ep10) at a big-bank rate vs a high-yield rate for a year. Always say rates change. |
 | Tue Mar 16 | Ep30 *How Much House Can You Afford? (The Real Number)* | Completes the rent (Ep14) and car (Ep22) trilogy: work back from take-home, include taxes, insurance and repairs, not just the mortgage. |
 | Fri Mar 19 | Ep31 *Side Hustle Money: Set Aside Taxes First* | $500/month of side income: set aside a share for taxes before spending (tell viewers to check their own rate). Pairs with Ep9. |

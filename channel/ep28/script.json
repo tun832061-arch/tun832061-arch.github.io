@@ -1,0 +1,282 @@
+{
+ "title": "The Subscription Audit: Find $50 a Month in 15 Minutes",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "How many",
+      "subscriptions?"
+     ]
+    ],
+    "stamp": "Count them."
+   },
+   "say": "How many subscriptions are you paying for right now?"
+  },
+  {
+   "say": "Most people guess low. Here's a fifteen-minute audit, with real numbers."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "Find them all",
+    "kicker": "STEP 1"
+   },
+   "say": "Step one. Find them all."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "LOOK IN 3 PLACES",
+    "items": [
+     "Last 2 months of bank and card statements",
+     "Your phone's app store subscriptions",
+     "Email: search \"receipt\" and \"renewal\""
+    ],
+    "at": [
+     0,
+     0,
+     0
+    ],
+    "stagger": 2.2
+   },
+   "say": "Check three places: your last two bank and card statements, your phone's app store subscriptions, and your email for receipts and renewals."
+  },
+  {
+   "scene": {
+    "type": "ledger",
+    "head": "Monthly subscriptions found",
+    "total": "Per month",
+    "stagger": 0.7,
+    "items": [
+     [
+      "Streaming service 1",
+      18
+     ],
+     [
+      "Streaming service 2",
+      16
+     ],
+     [
+      "Streaming service 3",
+      12
+     ],
+     [
+      "Music",
+      12
+     ],
+     [
+      "Cloud storage",
+      3
+     ],
+     [
+      "Gym",
+      40
+     ],
+     [
+      "Fitness app",
+      10
+     ],
+     [
+      "News",
+      5
+     ],
+     [
+      "Delivery membership",
+      10
+     ]
+    ]
+   },
+   "say": "Here's what our example found."
+  },
+  {
+   "cap": "Nine subscriptions. $126 a month. Over $1,500 a year.",
+   "say": "Nine subscriptions. A hundred twenty-six dollars a month. Over fifteen hundred a year."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "Keep, rotate or cut",
+    "kicker": "STEP 2"
+   },
+   "say": "Step two. Sort them: keep, rotate, or cut."
+  },
+  {
+   "scene": {
+    "type": "trim",
+    "head": "Per month",
+    "newLabel": "AFTER",
+    "rows": [
+     [
+      "Streaming service 1",
+      18,
+      18
+     ],
+     [
+      "Streaming 2: rotate",
+      16,
+      0
+     ],
+     [
+      "Streaming 3: rotate",
+      12,
+      0
+     ],
+     [
+      "Music",
+      12,
+      12
+     ],
+     [
+      "Cloud storage",
+      3,
+      3
+     ],
+     [
+      "Gym",
+      40,
+      40
+     ],
+     [
+      "Fitness app (have a gym)",
+      10,
+      0
+     ],
+     [
+      "News",
+      5,
+      5
+     ],
+     [
+      "Delivery (used twice)",
+      10,
+      0
+     ]
+    ],
+    "at": [
+     [
+      1,
+      0.1
+     ],
+     [
+      1,
+      "rotate"
+     ],
+     [
+      1,
+      "rotate"
+     ],
+     [
+      1,
+      0.1
+     ],
+     [
+      1,
+      0.1
+     ],
+     [
+      1,
+      0.1
+     ],
+     [
+      2,
+      0.1
+     ],
+     [
+      1,
+      0.1
+     ],
+     [
+      3,
+      0.1
+     ]
+    ],
+    "totalAt": [
+     4,
+     0.1
+    ]
+   },
+   "say": "Here's how it shakes out."
+  },
+  {
+   "say": "Keep one streaming service, and rotate the others. Subscribe for a month when there's a show you want, then cancel."
+  },
+  {
+   "say": "Cut the fitness app. You already pay for a gym."
+  },
+  {
+   "say": "And the delivery membership got used twice. Cut it."
+  },
+  {
+   "cap": "From $126 a month, down to $78.",
+   "say": "From a hundred twenty-six a month, down to seventy-eight."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Found in 15 minutes",
+    "value": "$576",
+    "c": "green",
+    "sub": "a year ($48 a month), almost the whole holiday fund from episode four"
+   },
+   "cap": "That's $48 a month, or $576 a year.",
+   "say": "That's forty-eight dollars a month, or five seventy-six a year."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "03",
+    "text": "Stop the creep",
+    "kicker": "STEP 3"
+   },
+   "say": "Step three. Stop it from creeping back."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "KEEP IT CLEAN",
+    "items": [
+     "Calendar reminder before every free trial ends",
+     "Annual renewals → your surprise fund",
+     "Redo the audit every 6 months"
+    ],
+    "at": [
+     0,
+     0,
+     0
+    ],
+    "stagger": 2.6
+   },
+   "say": "Put a reminder on your calendar the day before every free trial ends. Move annual renewals into your surprise fund, so they're planned. And redo this audit every six months."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Found money needs a job, today.",
+    "hi": [
+     "a",
+     "job,"
+    ]
+   },
+   "cap": "And give the $48 a job right away, or it'll quietly get spent somewhere else.",
+   "say": "And give the forty-eight a job right away, or it'll quietly get spent somewhere else."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Give your found money a job: Paycheck Planner, link in the description",
+    "next": "Next: High-yield savings accounts, explained"
+   },
+   "cap": "The Paycheck Planner in the description shows where that $48 should go.",
+   "say": "The Paycheck Planner in the description shows where that forty-eight should go."
+  },
+  {
+   "say": "Subscribe for more money math, with real numbers."
+  }
+ ]
+}

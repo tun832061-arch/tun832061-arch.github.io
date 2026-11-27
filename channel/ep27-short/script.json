@@ -1,0 +1,76 @@
+{
+ "title": "Owe taxes? Don't use a credit card (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "You owe taxes.",
+      "Now what?"
+     ]
+    ],
+    "stamp": "File on time anyway."
+   },
+   "say": "Owe taxes this year?"
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "Penalty per month on $2,400",
+    "stagger": 2.8,
+    "items": [
+     [
+      "Filing late",
+      120,
+      "coral"
+     ],
+     [
+      "Paying late",
+      12,
+      "gold"
+     ]
+    ]
+   },
+   "say": "First, file on time even if you can't pay. The late-filing penalty is usually about ten times the late-payment one."
+  },
+  {
+   "scene": {
+    "type": "compare",
+    "head": "$2,400 at $450 a month",
+    "rows": [
+     {
+      "label": "Credit card",
+      "months": 6,
+      "interest": 215,
+      "c": "coral"
+     },
+     {
+      "label": "IRS short-term plan",
+      "months": 6,
+      "interest": 86,
+      "c": "green"
+     }
+    ],
+    "costLabel": "cost"
+   },
+   "cap": "Then compare. $2,400 on a credit card at $450 a month: about $215 in fees and interest.",
+   "say": "Then compare. Twenty-four hundred on a credit card at four fifty a month: about two fifteen in fees and interest."
+  },
+  {
+   "cap": "An IRS short-term plan: about $86.",
+   "say": "An IRS short-term plan: about eighty-six."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Full video on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "cap": "Check current fees at IRS.gov. Full video on my channel.",
+   "say": "Check current fees at IRS dot gov. Full video on my channel."
+  }
+ ]
+}
