@@ -6,7 +6,9 @@ from fontTools.pens.boundsPen import BoundsPen
 P='/tmp/claude-0/-home-user-tun832061-arch-github-io/1d336f03-7800-5438-a46b-f354cd03bd18/scratchpad/'
 main=TTFont(P+'npmfonts/fontsource-barlow-semi-condensed-5.3.0/files/barlow-semi-condensed-latin-600-italic.woff')
 sub=TTFont(P+'npmfonts/fontsource-barlow-5.3.0/files/barlow-latin-700-italic.woff')
-cfg=json.load(open(P+'logo/cfg.json'))
+import os
+OUT=os.path.dirname(os.path.abspath(__file__))+'/'
+cfg=json.load(open(OUT+'cfg.json'))
 
 def glyph(font,ch,x,base,scale=1.0):
     gs=font.getGlyphSet(); name=font.getBestCmap()[ord(ch)]
@@ -94,6 +96,7 @@ def svg(mode):
  <path id="trendz" d="{' '.join(tpaths)}" {style}/>
 </g>
 </svg>'''
-open(P+'logo/selfmade_logo.svg','w').write(svg('solid'))
-open(P+'logo/selfmade_logo_outline.svg','w').write(svg('outline'))
+open(OUT+'selfmade_logo.svg','w').write(svg('solid'))
+open(OUT+'selfmade_logo_outline.svg','w').write(svg('outline'))
+json.dump({"glyphs":paths,"trendz":tpaths,"swash":swash,"center":center,"skew":sk,"gap":c['gap'],"stem":c['stem'],"bbox":[-c['pad']-60,-c['pad']-60,W,H]},open(OUT+'logo.json','w'))
 print("ok", right_E)
