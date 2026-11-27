@@ -6,10 +6,14 @@ def rd(p):
     w=wave.open(p); return np.frombuffer(w.readframes(w.getnframes()),'<i2').astype(float)/32768.0
 def wr(p,x):
     w=wave.open(p,'wb'); w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes((np.clip(x,-1,1)*32767).astype('<i2').tobytes()); w.close()
+import sys
+MODE=sys.argv[1] if len(sys.argv)>1 else 'main'
+PITCH={'C':0.84,'F':1.10} if MODE=='portfolio' else {'C':1.0,'F':1.0}
 raw=rd(D+'/raw.wav')
 CLEAN="highpass=f=90,afftdn=nf=-30:nr=14,equalizer=f=250:t=q:w=1:g=-2,equalizer=f=3200:t=q:w=1.2:g=5,acompressor=threshold=-20dB:ratio=3:attack=5:release=90:makeup=2,alimiter=limit=0.9"
 PHONE="highpass=f=320,lowpass=f=3400,afftdn=nf=-30:nr=14,equalizer=f=1600:t=q:w=1:g=4,acompressor=threshold=-22dB:ratio=4:attack=3:release=60:makeup=3,alimiter=limit=0.9"
-def proc(x,flt):
+def proc(x,flt,who=None):
+    if who and PITCH[who]!=1.0: flt=f'rubberband=pitch={PITCH[who]}:formant=shifted:pitchq=quality,'+flt
     wr(D+'/_in.wav',x); subprocess.run(['ffmpeg','-y','-loglevel','error','-i',D+'/_in.wav','-af',flt,'-ar',str(SR),D+'/_out.wav'],check=True); return rd(D+'/_out.wav')[:len(x)]
 def cut(a,b,f=0.012):
     x=raw[int(a*SR):int(b*SR)].copy(); n=int(f*SR); r=np.linspace(0,1,n); x[:n]*=r; x[-n:]*=r[::-1]; return x
@@ -40,22 +44,23 @@ film=np.zeros(int(TOTAL*SR)); dry=np.zeros_like(film)
 def place(x,t,buf):
     i=int(t*SR); buf[i:i+len(x)]+=x[:len(buf)-i]
 # Collins 1 (phone)
-x=cut(*C1[:2]); place(proc(x,PHONE),C1[2],film); place(x,C1[2],dry)
+x=cut(*C1[:2]); place(proc(x,PHONE,'C'),C1[2],film); place(x,C1[2],dry)
 # Friend 1 (clean, local)
-x=cut(*F1[:2]); place(proc(x,CLEAN),F1[2],film); place(x,F1[2],dry)
+x=cut(*F1[:2]); place(proc(x,CLEAN,'F'),F1[2],film); place(x,F1[2],dry)
 # Collins 2a (phone)
-x=cut(*C2a[:2]); place(proc(x,PHONE),C2a[2],film); place(x,C2a[2],dry)
+x=cut(*C2a[:2]); place(proc(x,PHONE,'C'),C2a[2],film); place(x,C2a[2],dry)
 # Collins 2b: phone, then "sets" opens up to full voice with a short tail
 x=join([cut(a,b) for a,b in C2b_parts])
-ph=proc(x,PHONE); cl=proc(x,CLEAN+",aecho=0.8:0.55:70|140:0.22|0.12")
+ph=proc(x,PHONE,'C'); cl=proc(x,CLEAN+",aecho=0.8:0.55:70|140:0.22|0.12",'C')
 k=int((c2b_map(SETS_RAW)-C2b_start)*SR); n=int(0.1*SR); m=np.ones(len(x)); m[k:]=0; m[k:k+n]=np.linspace(1,0,n)
 y=ph*m+cl*(1-m)*1.15
 tail=np.zeros(int(0.6*SR)); y=np.concatenate([y,tail])
 place(y,C2b_start,film); place(x,C2b_start,dry)
 # Friend 2 (clean)
-x=cut(*CTA_RAW); t_cta=G+CTA0_LOCAL; place(proc(x,CLEAN),t_cta,film); place(x,t_cta,dry)
+x=cut(*CTA_RAW); t_cta=G+CTA0_LOCAL; place(proc(x,CLEAN,'F'),t_cta,film); place(x,t_cta,dry)
 film/=max(1e-9,np.abs(film).max()); film*=0.95
-wr(D+'/vo_track.wav',film)
+wr(D+('/vo_track_portfolio.wav' if MODE=='portfolio' else '/vo_track.wav'),film)
+if MODE=='portfolio': print('portfolio track written'); raise SystemExit
 # envelopes at 100 Hz (from the dry voice)
 h=SR//100; env=np.array([np.sqrt(np.mean(dry[i:i+h]**2)) for i in range(0,len(dry)-h,h)])
 env=np.clip(20*np.log10(env+1e-9),-50,0); env=(env+50)/50; env=np.clip((env-0.25)/0.6,0,1)

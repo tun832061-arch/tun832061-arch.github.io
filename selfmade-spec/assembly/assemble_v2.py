@@ -68,10 +68,12 @@ for bar in range(nb//4+1):
 music[int(tend*SR):]=0
 duck=np.ones_like(music); duck[int(L(T['cta0'])*SR):int(L(T['end0'])*SR)]=0.45
 out+=music*duck
-w=wave.open(R+'/vo/vo_track.wav'); vo=np.frombuffer(w.readframes(w.getnframes()),'<i2')/32768.0
+import sys
+VARIANT=sys.argv[1] if len(sys.argv)>1 else 'main'
+w=wave.open(R+('/vo/vo_track_portfolio.wav' if VARIANT=='portfolio' else '/vo/vo_track.wav')); vo=np.frombuffer(w.readframes(w.getnframes()),'<i2')/32768.0
 n=min(len(vo),len(out)); out*=0.62; out[:n]+=vo[:n]*1.0
 out/=np.abs(out).max(); out*=0.89
 pcm=(np.stack([out,out],1)*32767).astype('<i2')
 w=wave.open(D+'/_audio.wav','wb'); w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR); w.writeframes(pcm.tobytes()); w.close()
-subprocess.run(['ffmpeg','-y','-loglevel','error','-i',D+'/_video.mp4','-i',D+'/_audio.wav','-c:v','copy','-af','loudnorm=I=-14:TP=-1.5:LRA=11','-ar','48000','-c:a','aac','-b:a','192k','-shortest',D+'/animatic_v7.mp4'],check=True)
+subprocess.run(['ffmpeg','-y','-loglevel','error','-i',D+'/_video.mp4','-i',D+'/_audio.wav','-c:v','copy','-af','loudnorm=I=-14:TP=-1.5:LRA=11','-ar','48000','-c:a','aac','-b:a','192k','-shortest',D+('/animatic_v7_portfolio.mp4' if VARIANT=='portfolio' else '/animatic_v7.mp4')],check=True)
 print('ok')
