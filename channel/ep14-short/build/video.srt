@@ -1,0 +1,19 @@
+1
+00:00:00,600 --> 00:00:02,010
+How much rent can you afford?
+
+2
+00:00:02,430 --> 00:00:04,107
+The popular rules aim too high.
+
+3
+00:00:04,527 --> 00:00:15,827
+On a $60,000 salary, a landlord would approve $1,667. 30% says $1,500. Working back from take-home pay, the real number is $1,287.
+
+4
+00:00:16,247 --> 00:00:21,564
+Rent at the 30% number leaves just $157 a month for every goal you have.
+
+5
+00:00:22,334 --> 00:00:24,130
+Find your real number on my channel.

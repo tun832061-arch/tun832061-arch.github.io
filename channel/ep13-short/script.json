@@ -1,0 +1,72 @@
+{
+ "title": "Tax refund: 4 questions first (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Tax refund",
+      "coming?"
+     ]
+    ],
+    "stamp": "Give it a job."
+   },
+   "say": "Getting a tax refund?"
+  },
+  {
+   "say": "Ask four questions, in order. Stop at the first no."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "STOP AT THE FIRST NO",
+    "items": [
+     "Bills caught up?",
+     "Starter emergency fund?",
+     "High-interest debt gone?",
+     "Sinking funds on track?"
+    ],
+    "at": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "stagger": 1.4
+   },
+   "say": "Bills caught up? Starter emergency fund? High-interest debt gone? Sinking funds on track?"
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "$1,800 for one year",
+    "stagger": 4.0,
+    "items": [
+     [
+      "Savings at 4%: earns",
+      72,
+      "gold"
+     ],
+     [
+      "24% card: saves",
+      432,
+      "green"
+     ]
+    ]
+   },
+   "cap": "Why debt beats savings: $1,800 earns $72 a year in savings, but saves $432 on a 24% card.",
+   "say": "Why debt beats savings: eighteen hundred earns seventy-two dollars a year in savings, but saves four thirty-two on a twenty-four percent card."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Full decision path on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "say": "The full decision path is on my channel."
+  }
+ ]
+}

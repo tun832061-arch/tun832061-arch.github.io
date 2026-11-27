@@ -44,7 +44,7 @@ Each episode takes about 1–2 hours of your time: write `script.json`, render, 
 | Dec 29 | ✅ Ep9 *How to Budget on an Irregular Income* · ✅ Ep10 *Emergency Fund: How Much Is Enough?* | Peak week; consider a 3rd upload |
 | Jan 5 | ✅ Ep11 *How to Pay Off $10,000 of Debt* · ✅ Ep12 *Credit Card Minimum Payments: The 17-Year Trap* | |
 | Jan 12 | ✅ Ep13 *Where Your Tax Refund Should Go* · ✅ Ep14 *How Much Rent Can You Really Afford?* | Tax season starts |
-| Jan 19 | Why you're broke on a good salary (lifestyle creep math) · Balance transfer cards: when they're worth it | |
+| Jan 19 | ✅ Ep15 *Why You're Broke on a Good Salary* · ✅ Ep16 *Balance Transfer Cards: When They're Worth It* | |
 | Jan 26 | Budgeting as a couple: 3 systems compared · One month in: fixing the budget you started | Reaction to January; strong retention topic |
 
 **Shorts:** for each long video, cut 1–2 Shorts of 20–40 s around its single most surprising number, and link each Short to its long video (*Related video*).

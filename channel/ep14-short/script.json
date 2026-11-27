@@ -1,0 +1,68 @@
+{
+ "title": "Rent: the real number (Short)",
+ "voice": "af_heart",
+ "speed": 1.08,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "How much rent",
+      "can you afford?"
+     ]
+    ],
+    "stamp": "Not 30%."
+   },
+   "say": "How much rent can you afford?"
+  },
+  {
+   "say": "The popular rules aim too high."
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "Max rent on a $60,000 salary",
+    "stagger": 3.0,
+    "items": [
+     [
+      "Landlord rule",
+      1667,
+      "coral"
+     ],
+     [
+      "30% rule",
+      1500,
+      "gold"
+     ],
+     [
+      "Real number",
+      1287,
+      "green"
+     ]
+    ]
+   },
+   "cap": "On a $60,000 salary, a landlord would approve $1,667. 30% says $1,500. Working back from take-home pay, the real number is $1,287.",
+   "say": "On a sixty thousand dollar salary, a landlord would approve sixteen sixty-seven. Thirty percent says fifteen hundred. But working back from take-home pay, the real number is twelve eighty-seven."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Left for goals at $1,500 rent",
+    "value": "$157",
+    "c": "coral",
+    "sub": "a month, for debt, savings, everything"
+   },
+   "cap": "Rent at the 30% number leaves just $157 a month for every goal you have.",
+   "say": "Rent at the thirty percent number leaves just a hundred fifty-seven a month for every goal you have."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Find your real number on the channel",
+    "next": "Follow for money math with real numbers"
+   },
+   "say": "Find your real number on my channel."
+  }
+ ]
+}

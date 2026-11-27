@@ -23,7 +23,6 @@ In this video, a $1,850 biweekly paycheck goes from "broke every other week" to 
 1:51 Turn surprises into a bill
 2:19 Pick one fun number
 2:34 Give the leftovers one job
-3:22 Recap
 3:31 Get the planner
 
 Next: Debt snowball vs avalanche, with real numbers.
@@ -436,3 +435,64 @@ Educational content, not financial advice. Example salary and take-home are illu
 **`ep12-short/build/video.mp4`** → Related video: Episode 12
 - **Title:** The minimum payment trap: 201 months #shorts
 - **Description:** `Why the minimum shrinks, and how to escape it. Full math on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
+
+---
+
+## Episode 15: `ep15/build/video.mp4` · thumbnail `ep15/build/thumbnail.png` · captions `ep15/build/video.srt`
+
+**Title:** Why You're Broke on a Good Salary (Lifestyle Creep Math)
+
+**Description:**
+```
+Four years of raises took take-home pay from $3,200 to $4,400 a month, and every dollar disappeared into a nicer apartment, a newer car, takeout and "everything a bit nicer." Saved: $0. The half-raise rule fixes it: half of every raise to your life, half to your future. That's about $19,096 in four years. Plus a 4-step creep audit for this week.
+
+📊 See where every paycheck goes with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:13 Where the raises went
+0:51 The half-raise rule
+1:22 The creep audit
+1:37 Get the planner
+
+Educational content, not financial advice. 
+```
+**Tags:** lifestyle creep, lifestyle inflation, broke on a good salary, living paycheck to paycheck, what to do with a raise, save your raise, budgeting, personal finance
+
+**Pinned comment:** `Be honest: what crept up most for you? Car, rent, or takeout? 👇`
+
+---
+
+## Episode 16: `ep16/build/video.mp4` · thumbnail `ep16/build/thumbnail.png` · captions `ep16/build/video.srt`
+
+**Title:** Balance Transfer Cards: When They're Worth It (Real Numbers)
+
+**Description:**
+```
+A 0% balance transfer on $5,000: pay $287 a month for 18 months, plus a $150 fee, and you save about $1,059 versus staying on a 24% card. But pay only $150 a month and $2,450 is still there when the promo ends, back at full interest. How it works, when it's worth it, and four questions to ask before you transfer.
+
+📊 Plan your payoff before the promo ends with the Paycheck Planner: [PLANNER LINK]
+
+0:00 Intro
+0:19 How it works
+0:39 When it's worth it
+1:04 How it goes wrong
+
+Educational content, not financial advice. Card terms vary; read your card's terms before transferring.
+```
+**Tags:** balance transfer, 0 percent balance transfer, balance transfer credit card, is a balance transfer worth it, balance transfer fee, pay off credit card debt, credit card interest, debt payoff
+
+**Pinned comment:** `Have you done a balance transfer? Did you clear it before the promo ended? 👇`
+
+**Upload order and timing:** these are Week 8 videos (week of Jan 19).
+
+---
+
+## Shorts for Episodes 13 and 14
+
+**`ep13-short/build/video.mp4`** → Related video: Episode 13
+- **Title:** Tax refund? Ask these 4 questions first #shorts
+- **Description:** `Stop at the first no. Full decision path on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`
+
+**`ep14-short/build/video.mp4`** → Related video: Episode 14
+- **Title:** The 30% rent rule is too high. Here's the real number #shorts
+- **Description:** `Landlord rule vs 30% vs your real number. Full math on the channel. Planner: [PLANNER LINK]. Educational, not financial advice.`

@@ -1,0 +1,83 @@
+1
+00:00:00,600 --> 00:00:03,820
+A 0% balance transfer sounds like free money.
+
+2
+00:00:04,240 --> 00:00:07,780
+Sometimes it is. Sometimes it's a trap. Let's run the numbers.
+
+3
+00:00:08,200 --> 00:00:14,646
+Our example: $5,000 on a card at 24%. About $100 of interest a month.
+
+4
+00:00:15,416 --> 00:00:19,176
+Here's how a balance transfer works, when it's worth it, and how it goes wrong.
+
+5
+00:00:19,946 --> 00:00:20,797
+How it works.
+
+6
+00:00:21,217 --> 00:00:35,005
+You move the balance to a new card that charges 0% for a promo period, often 12 to 21 months. In exchange, you pay a one-time fee, often 3% to 5%. You'll usually need good credit to qualify.
+
+7
+00:00:35,425 --> 00:00:39,427
+At 3%, the fee on $5,000 is $150.
+
+8
+00:00:40,197 --> 00:00:41,042
+When it's worth it.
+
+9
+00:00:41,462 --> 00:00:50,777
+Say the promo lasts 18 months. $5,150 divided by 18 is $287 a month. Pay that, and it's gone right as the promo ends.
+
+10
+00:00:51,197 --> 00:00:58,010
+Stay on the 24% card, paying the same $287: 22 months, and $1,209 in interest.
+
+11
+00:00:58,430 --> 00:01:03,895
+The transfer: 18 months, and just the $150 fee. About $1,059 saved.
+
+12
+00:01:04,665 --> 00:01:05,904
+Now, how it goes wrong.
+
+13
+00:01:06,324 --> 00:01:12,658
+Pay only $150 a month, and when the promo ends, $2,450 is still there, back at full interest.
+
+14
+00:01:13,078 --> 00:01:15,505
+So before you transfer, ask four questions.
+
+15
+00:01:15,925 --> 00:01:19,744
+Can you pay it off before the promo ends? Divide by the months, and check.
+
+16
+00:01:20,164 --> 00:01:22,781
+Is the fee smaller than the interest you'd pay otherwise?
+
+17
+00:01:23,201 --> 00:01:28,323
+Will you stop using the old card? Moving the debt, then filling the old card back up, doubles it.
+
+18
+00:01:28,743 --> 00:01:36,218
+And read the terms. On many cards, a late payment can end the 0% early, and new purchases may not get the promo rate.
+
+19
+00:01:36,638 --> 00:01:41,290
+A balance transfer buys you time. It doesn't pay the debt. The plan still has to.
+
+20
+00:01:42,060 --> 00:01:46,527
+The Paycheck Planner in the description shows the exact payment to clear it in time.
+
+21
+00:01:46,947 --> 00:01:49,703
+Subscribe for more money math, with real numbers.

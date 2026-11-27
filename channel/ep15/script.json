@@ -1,0 +1,258 @@
+{
+ "title": "Why You're Broke on a Good Salary (Lifestyle Creep Math)",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "Good salary.",
+      "Still broke?"
+     ]
+    ],
+    "stamp": "It's not the salary."
+   },
+   "say": "Good salary, and still broke by the end of the month?"
+  },
+  {
+   "say": "You're not bad with money. Your spending grew with your pay. It has a name: lifestyle creep."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Episode 15 · real numbers",
+    "text": "Lifestyle Creep"
+   },
+   "say": "Here's the math of how a raise disappears, and the one rule that stops it."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "Where the raises went",
+    "kicker": "THE CREEP"
+   },
+   "say": "First, where the raises went."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Four years of raises",
+    "value": "+$1,200",
+    "c": "green",
+    "sub": "a month: take-home went from $3,200 to $4,400"
+   },
+   "cap": "Our example got a raise every year. Over four years, take-home went from $3,200 a month to $4,400. $1,200 more, every month.",
+   "say": "Our example got a raise every year. Over four years, take-home went from thirty-two hundred a month to forty-four hundred. Twelve hundred more, every month."
+  },
+  {
+   "scene": {
+    "type": "ledger",
+    "head": "Where the extra $1,200 a month went",
+    "total": "Absorbed",
+    "items": [
+     [
+      "Nicer apartment",
+      300
+     ],
+     [
+      "Newer car payment",
+      250
+     ],
+     [
+      "Takeout & delivery",
+      200
+     ],
+     [
+      "Subscriptions & apps",
+      60
+     ],
+     [
+      "Everything a bit nicer",
+      390
+     ]
+    ]
+   },
+   "say": "Here's where it went."
+  },
+  {
+   "cap": "A nicer apartment: $300 more.",
+   "join": true,
+   "say": "A nicer apartment, three hundred more."
+  },
+  {
+   "cap": "A newer car payment: $250 more.",
+   "join": true,
+   "say": "A newer car payment, two fifty more."
+  },
+  {
+   "cap": "Takeout and delivery: $200 more.",
+   "join": true,
+   "say": "Takeout and delivery, two hundred more."
+  },
+  {
+   "cap": "Subscriptions and apps: $60.",
+   "join": true,
+   "say": "Subscriptions and apps, sixty."
+  },
+  {
+   "cap": "And everything just a bit nicer: $390.",
+   "join": true,
+   "say": "And everything just a bit nicer, three ninety."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Saved from four years of raises",
+    "value": "$0",
+    "c": "coral",
+    "sub": "still living paycheck to paycheck"
+   },
+   "say": "Savings from four years of raises? Zero. Same stress. Nicer stuff."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Spending ratchets up easily. It almost never comes back down.",
+    "hi": [
+     "almost",
+     "never"
+    ],
+    "hc": "coral"
+   },
+   "say": "And here's the catch. Spending ratchets up easily, but it almost never comes back down. A new lease, or a car payment, locks it in for years."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "The half-raise rule",
+    "kicker": "THE FIX"
+   },
+   "say": "The fix is the half-raise rule."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "Every raise: half to your life, half to your future.",
+    "hi": [
+     "half",
+     "to",
+     "your",
+     "future."
+    ]
+   },
+   "say": "Every time you get a raise, half goes to your life, and half goes straight to savings or debt, before you ever see it."
+  },
+  {
+   "scene": {
+    "type": "stack",
+    "sub": "Each $300 raise",
+    "stagger": 2.6,
+    "items": [
+     [
+      "To enjoy",
+      150,
+      "gold"
+     ],
+     [
+      "Saved, automatically",
+      150,
+      "green"
+     ]
+    ]
+   },
+   "cap": "So each $300 raise means $150 more to enjoy, and $150 saved automatically. You still feel every raise.",
+   "say": "So each three hundred dollar raise means a hundred fifty more to enjoy, and a hundred fifty saved automatically. You still feel every raise."
+  },
+  {
+   "scene": {
+    "type": "months",
+    "head": "Saved each month from raises",
+    "vals": [
+     150,
+     300,
+     450,
+     600
+    ],
+    "labels": [
+     "Year 1",
+     "Year 2",
+     "Year 3",
+     "Year 4"
+    ],
+    "c": "green"
+   },
+   "cap": "Year one: $150 a month. Year two: $300. By year four: $600 a month.",
+   "say": "Year one, a hundred fifty a month. Year two, three hundred. By year four, six hundred a month."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "After four years at 4%",
+    "value": "$19,096",
+    "c": "green",
+    "sub": "from money you never got used to spending"
+   },
+   "cap": "After four years at 4%, that's about $19,096. From money you never got used to spending.",
+   "say": "After four years, at four percent, that's about nineteen thousand dollars. From money you never got used to spending."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "03",
+    "text": "The creep audit",
+    "kicker": "THIS WEEK"
+   },
+   "say": "Already crept? Do a creep audit this week."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "THE CREEP AUDIT",
+    "items": [
+     "Pull a statement from 3 years ago",
+     "Compare it to last month, line by line",
+     "Mark each increase: worth it, or not?",
+     "Cut one, and automate the savings"
+    ],
+    "at": [
+     1,
+     2,
+     3,
+     4
+    ]
+   },
+   "say": "Here's how."
+  },
+  {
+   "join": true,
+   "say": "Pull a statement from three years ago."
+  },
+  {
+   "join": true,
+   "say": "Compare it to last month, line by line."
+  },
+  {
+   "join": true,
+   "say": "Mark every increase. Worth it, or not?"
+  },
+  {
+   "join": true,
+   "say": "Then cut one that's not worth it, and send that money to savings automatically."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "See where every paycheck goes with the Paycheck Planner: link in the description",
+    "next": "Next: Balance transfer cards: when they're worth it"
+   },
+   "say": "The Paycheck Planner in the description shows exactly where each paycheck goes, so creep has nowhere to hide."
+  },
+  {
+   "say": "Subscribe. Next time: balance transfer cards, and when they're actually worth it."
+  }
+ ]
+}

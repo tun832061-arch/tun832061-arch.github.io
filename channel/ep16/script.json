@@ -1,0 +1,254 @@
+{
+ "title": "Balance Transfer Cards: When They're Worth It (Real Numbers)",
+ "voice": "af_heart",
+ "speed": 1.05,
+ "lines": [
+  {
+   "scene": {
+    "type": "hook",
+    "rows": [
+     [
+      "0% balance",
+      "transfer?"
+     ]
+    ],
+    "stamp": "Read this first."
+   },
+   "cap": "A 0% balance transfer sounds like free money.",
+   "say": "A zero percent balance transfer sounds like free money."
+  },
+  {
+   "say": "Sometimes it is. Sometimes it's a trap. Let's run the numbers."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Credit card · 24% APR",
+    "value": "$5,000",
+    "c": "coral",
+    "sub": "about $100 of interest a month"
+   },
+   "cap": "Our example: $5,000 on a card at 24%. About $100 of interest a month.",
+   "say": "Our example: five thousand dollars on a card at twenty-four percent. About a hundred dollars of interest a month."
+  },
+  {
+   "scene": {
+    "type": "title",
+    "kicker": "Episode 16 · real numbers",
+    "text": "Balance Transfers"
+   },
+   "say": "Here's how a balance transfer works, when it's worth it, and how it goes wrong."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "01",
+    "text": "How it works",
+    "kicker": "THE BASICS"
+   },
+   "say": "How it works."
+  },
+  {
+   "scene": {
+    "type": "chips",
+    "stagger": 2.5,
+    "items": [
+     {
+      "t": "Move the balance to a new card",
+      "c": "muted"
+     },
+     {
+      "t": "0% for a promo period, often 12–21 months",
+      "c": "muted"
+     },
+     {
+      "t": "One-time fee, often 3–5%",
+      "c": "coral"
+     }
+    ]
+   },
+   "cap": "You move the balance to a new card that charges 0% for a promo period, often 12 to 21 months. In exchange, you pay a one-time fee, often 3% to 5%. You'll usually need good credit to qualify.",
+   "say": "You move the balance to a new card that charges zero percent for a promo period, often twelve to twenty-one months. In exchange, you pay a one-time fee, often three to five percent. You'll usually need good credit to qualify."
+  },
+  {
+   "scene": {
+    "type": "equation",
+    "parts": [
+     "3%",
+     "×",
+     "$5,000",
+     "=",
+     "$150"
+    ],
+    "under": [
+     "fee",
+     "",
+     "balance",
+     "",
+     "one-time"
+    ],
+    "at": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "kw": [
+     "three percent",
+     "fee on",
+     "five thousand",
+     "is a",
+     "fifty"
+    ]
+   },
+   "cap": "At 3%, the fee on $5,000 is $150.",
+   "say": "At three percent, the fee on five thousand is a hundred fifty dollars."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "02",
+    "text": "When it's worth it",
+    "kicker": "THE WIN"
+   },
+   "say": "When it's worth it."
+  },
+  {
+   "scene": {
+    "type": "equation",
+    "parts": [
+     "$5,150",
+     "÷",
+     "18",
+     "=",
+     "$287"
+    ],
+    "under": [
+     "balance + fee",
+     "",
+     "promo months",
+     "",
+     "per month"
+    ],
+    "at": [
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "kw": [
+     "fifty-one fifty",
+     "divided",
+     "by eighteen",
+     "is two",
+     "two eighty-seven"
+    ]
+   },
+   "cap": "Say the promo lasts 18 months. $5,150 divided by 18 is $287 a month. Pay that, and it's gone right as the promo ends.",
+   "say": "Say the promo lasts eighteen months. Fifty-one fifty, divided by eighteen, is two eighty-seven a month. Pay that, and it's gone right as the promo ends."
+  },
+  {
+   "scene": {
+    "type": "compare",
+    "head": "Paying $287 a month on $5,000",
+    "kw0": "paying",
+    "rows": [
+     {
+      "label": "Stay on the 24% card",
+      "months": 22,
+      "interest": 1209,
+      "c": "coral"
+     },
+     {
+      "label": "0% transfer · cost is the $150 fee",
+      "months": 18,
+      "interest": 150,
+      "c": "green"
+     }
+    ]
+   },
+   "cap": "Stay on the 24% card, paying the same $287: 22 months, and $1,209 in interest.",
+   "say": "Stay on the twenty-four percent card, paying the same two eighty-seven: twenty-two months, and twelve oh nine in interest."
+  },
+  {
+   "cap": "The transfer: 18 months, and just the $150 fee. About $1,059 saved.",
+   "say": "The transfer: eighteen months, and just the hundred fifty dollar fee. About a thousand dollars saved."
+  },
+  {
+   "scene": {
+    "type": "section",
+    "n": "03",
+    "text": "How it goes wrong",
+    "kicker": "THE TRAPS"
+   },
+   "say": "Now, how it goes wrong."
+  },
+  {
+   "scene": {
+    "type": "stat",
+    "label": "Paying only $150 a month on the transfer",
+    "value": "$2,450",
+    "c": "coral",
+    "sub": "still owed when the 0% promo ends"
+   },
+   "cap": "Pay only $150 a month, and when the promo ends, $2,450 is still there, back at full interest.",
+   "say": "Pay only a hundred fifty a month, and when the promo ends, twenty-four fifty is still there, back at full interest."
+  },
+  {
+   "scene": {
+    "type": "steps",
+    "head": "BEFORE YOU TRANSFER",
+    "items": [
+     "Can you clear it before the promo ends?",
+     "Is the fee less than the interest you'd pay?",
+     "Will you stop using the old card?",
+     "Have you read the terms?"
+    ],
+    "at": [
+     1,
+     2,
+     3,
+     4
+    ]
+   },
+   "say": "So before you transfer, ask four questions."
+  },
+  {
+   "say": "Can you pay it off before the promo ends? Divide by the months, and check."
+  },
+  {
+   "say": "Is the fee smaller than the interest you'd pay otherwise?"
+  },
+  {
+   "say": "Will you stop using the old card? Moving the debt, then filling the old card back up, doubles it."
+  },
+  {
+   "cap": "And read the terms. On many cards, a late payment can end the 0% early, and new purchases may not get the promo rate.",
+   "say": "And read the terms. On many cards, a late payment can end the zero percent early, and new purchases may not get the promo rate."
+  },
+  {
+   "scene": {
+    "type": "bigtext",
+    "text": "A transfer buys time. It doesn't pay the debt.",
+    "hi": [
+     "buys",
+     "time."
+    ]
+   },
+   "say": "A balance transfer buys you time. It doesn't pay the debt. The plan still has to."
+  },
+  {
+   "scene": {
+    "type": "end",
+    "cta": "Plan your payoff before the promo ends with the Paycheck Planner: link in the description",
+    "next": "Next: Budgeting as a couple: 3 systems compared"
+   },
+   "say": "The Paycheck Planner in the description shows the exact payment to clear it in time."
+  },
+  {
+   "say": "Subscribe for more money math, with real numbers."
+  }
+ ]
+}
