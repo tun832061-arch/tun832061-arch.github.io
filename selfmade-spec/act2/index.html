@@ -79,7 +79,7 @@ const chestLogo=makeLogo(svg);
 
 /* ===== FRIEND full-frame layer (expanded black tile -> iris) ===== */
 const friend=el('div','a',stage); friend.style.width='1080px'; friend.style.height='1920px'; friend.style.overflow='hidden';
-const friendImg=el('img','a',friend); friendImg.src='img/model_black.jpg'; Object.assign(friendImg.style,{width:'1080px',height:'1920px',objectFit:'cover'});
+const friendImg=el('img','a',friend); friendImg.src='img/model_purple.jpg'; Object.assign(friendImg.style,{width:'1080px',height:'1920px',objectFit:'cover'});
 
 /* ===== KINETIC TYPE + ORBIT ===== */
 const L1=el('div','tl',stage), L2=el('div','tl',stage), slot=el('div','a',stage);
@@ -87,7 +87,7 @@ const w1=['ROCK','IT'].map(w=>el('span','wd',L1,w)), w2=['WITH','ANY'].map(w=>el
 L1.style.fontSize='150px'; L2.style.fontSize='112px'; L2.style.color='#c7c7cc';
 Object.assign(slot.style,{width:'1080px',height:'330px',overflow:'hidden'});
 const sw=['FIT.','STYLE.'].map(w=>{const d=el('div','tl',slot,'');d.style.top='0';d._s=el('span','',d,w);return d});
-const ORB=[['img','img/model_black.jpg'],['img','img/acc_cap.jpg'],['img','img/acc_sneakers.jpg'],['img','img/acc_shades.jpg'],['img','img/acc_beanie.jpg'],['img','img/acc_jorts.jpg'],['img','img/acc_chain.jpg']];
+const ORB=[['img','img/model_purple.jpg'],['img','img/acc_cap.jpg'],['img','img/acc_sneakers.jpg'],['img','img/acc_shades.jpg'],['img','img/acc_beanie.jpg'],['img','img/acc_jorts.jpg'],['img','img/acc_chain.jpg']];
 const orbs=ORB.map(([k,v])=>{const o=el('div','orb',stage);if(k==='img'){const im=el('img','',o);im.src=v}else o.innerHTML=v;return o});
 const SW=['#0b0b0b','#EDE4D3','#55575a','#5a1622','#6b3fa0'];
 const sws=SW.map(c=>{const o=el('div','orb',stage);o.style.background=c;o.style.border='2px solid rgba(255,255,255,.7)';return o});
@@ -127,7 +127,7 @@ function render(t){
  const tile=E.inOutExpo(prog(t,T.toTile[0],T.toTile[1]));
  sk.style.opacity=1-P(t,0.45,0.95,'inOutCubic');
  placeLogo(chestLogo,OL.chestlogo.c[0]*S,OL.chestlogo.c[1]*S,OL.chestlogo.w*S); chestLogo.o.style.opacity=1-P(t,0.45,0.8,'inOutCubic');
- const spin=E.inOutSine(prog(t,T.spin[0],T.spin[1])), th=-720*spin;
+ const EXI=4; const spin=E.inOutSine(prog(t,T.spin[0],T.spin[1])), th=-(360+EXI*STEP)*spin;
  const tl=P(t,1.7,2.4,'inOutCubic')*(1-P(t,T.expand-0.6,T.expand,'inOutCubic'));
  tilt.style.transform=`translateY(${-40*tl}px) rotateZ(${-8*tl}deg) rotateX(${6*tl}deg)`;
  ring.style.transform=`translateZ(${-R}px)`;
@@ -136,12 +136,12 @@ function render(t){
  cards.forEach((o,i)=>{
   const a=i*STEP+th, ca=Math.cos(a*Math.PI/180);
   let s=1,rad=44,op=1,br=0.3+0.7*Math.pow((ca+1)/2,1.4);
-  if(i===0){s=lerp(2,1,tile)*lerp(1,2,ex);rad=44*tile*(1-ex);br=lerp(br,1,Math.max(1-tile,ex))}
-  else op=P(t,1.45+0.06*i,2.0+0.06*i,'outCubic')*(1-P(t,T.expand-0.1,T.expand+0.25,'outCubic'));
+  if(i===0){s*=lerp(2,1,tile);rad*=tile;br=lerp(br,1,1-tile)} else op=P(t,1.45+0.06*i,2.0+0.06*i,'outCubic');
+  if(i===EXI){s*=lerp(1,2,ex);rad*=(1-ex);br=lerp(br,1,ex)} else op*=(1-P(t,T.expand-0.1,T.expand+0.25,'outCubic'));
   const fl=E.inOutCubic(prog(t,T.flip0+0.22*i,T.flip0+0.22*i+0.6));
   o.c.style.transform=`rotateY(${a}deg) translateZ(${R}px) scale(${s})`; o.c.style.opacity=op*(ca<-0.2?0:1);
   o.f.style.transform=`rotateY(${180*fl}deg)`;
-  [o.front,o.back].forEach(f=>{f.fa.style.borderRadius=rad+'px';f.sh.style.opacity=1-br;f.fa.querySelector('.edge').style.opacity=(i===0)?Math.min(tile,1-ex):1});
+  [o.front,o.back].forEach(f=>{f.fa.style.borderRadius=rad+'px';f.sh.style.opacity=1-br;f.fa.querySelector('.edge').style.opacity=(i===0?tile:1)*(i===EXI?1-ex:1)});
   if(i===0){const m=rv*1.25; o.front.fa.style.webkitMaskImage=t<T.cross[1]?`linear-gradient(to top,#000 ${m*100-12}%,transparent ${m*100}%)`:'none'}
  });
  const lv=P(t,2.0,2.4)*(1-P(t,T.expand-0.35,T.expand));

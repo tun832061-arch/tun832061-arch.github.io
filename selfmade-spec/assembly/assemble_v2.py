@@ -30,10 +30,10 @@ L=lambda x:G+x
 whoosh(L(0.45),0.6,0.14,14); whoosh(L(1.35),0.5,0.12)
 # card passes (every 72deg of a 720deg sine-eased spin)
 s0,s1=T['spin']
-for k in range(1,10):
+for k in range(1,9):
     lo,hi=0.0,1.0
     for _ in range(40):
-        m=(lo+hi)/2; th=720*(-(math.cos(math.pi*m)-1)/2)
+        m=(lo+hi)/2; th=648*(-(math.cos(math.pi*m)-1)/2)
         lo,hi=(m,hi) if th<k*72 else (lo,m)
     whoosh(L(s0+(s1-s0)*lo),0.3,0.09)
 for i in range(5): tick(L(T['flip0']+0.22*i+0.3),1200,0.05)
@@ -70,5 +70,5 @@ out+=music*duck
 out/=np.abs(out).max(); out*=0.89
 pcm=(np.stack([out,out],1)*32767).astype('<i2')
 w=wave.open(D+'/_audio.wav','wb'); w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR); w.writeframes(pcm.tobytes()); w.close()
-subprocess.run(['ffmpeg','-y','-loglevel','error','-i',D+'/_video.mp4','-i',D+'/_audio.wav','-c:v','copy','-c:a','aac','-b:a','192k','-shortest',D+'/animatic_v5.mp4'],check=True)
+subprocess.run(['ffmpeg','-y','-loglevel','error','-i',D+'/_video.mp4','-i',D+'/_audio.wav','-c:v','copy','-c:a','aac','-b:a','192k','-shortest',D+'/animatic_v6.mp4'],check=True)
 print('ok')
