@@ -49,25 +49,13 @@ tone2(L(T['cta0']+0.15),[1046.5,783.99],0.09)
 sub(L(T['cta0']+[c['o'] for c in CJ['cta'] if c['w']=='now!'][0]),0.6,3); 
 tone2(L(T['end0']+0.35),[659.3,493.9],0.12,0.22,4)
 swell(L(T['end0']+1.9),0.7,0.25); sub(L(T['end0']+1.9),0.7,2)
-# placeholder groove from the drop to "call ended"
-music=np.zeros_like(out); t0=16.2+SH; tend=L(T['end0']+0.35)
-LOG=[(0,55),(0.75,55),(1.5,65.4),(2.5,82.4),(3.25,73.4)]
-nb=int((tend-t0)/B)
-for b in range(nb):
-    t=t0+b*B
-    x=tt(0.25); f=50+90*np.exp(-x*40); at(t,np.sin(2*np.pi*np.cumsum(f)/SR)*np.exp(-x*12),0.5,music)
-    for s in range(4):
-        x=tt(0.05); at(t+s*B/4,np.diff(np.r_[0,rng.standard_normal(len(x))])*np.exp(-x*90),0.05 if s%2 else 0.03,music)
-    if b%2==1:
-        x=tt(0.18); at(t,np.convolve(rng.standard_normal(len(x)),[1,-1],'same')*np.exp(-x*25),0.08,music)
-for bar in range(nb//4+1):
-    for pos,f0 in LOG:
-        t=t0+(bar*4+pos)*B
-        if t<tend-0.1:
-            x=tt(0.4); f=f0*(1+0.6*np.exp(-x*30)); at(t,np.tanh(1.6*np.sin(2*np.pi*np.cumsum(f)/SR))*np.exp(-x*6),0.32,music)
+# original instrumental from the drop to "call ended"
+import sys as _s; _s.path.insert(0,D); from music import render as _mus
+tend=L(T['end0']+0.35); t0=16.2+SH
+music=_mus(DUR,t0,tend)
 music[int(tend*SR):]=0
 duck=np.ones_like(music); duck[int(L(T['cta0'])*SR):int(L(T['end0'])*SR)]=0.45
-out+=music*duck
+out+=music*duck*1.5
 import sys
 VARIANT=sys.argv[1] if len(sys.argv)>1 else 'main'
 w=wave.open(R+('/vo/vo_track_portfolio.wav' if VARIANT=='portfolio' else '/vo/vo_track.wav')); vo=np.frombuffer(w.readframes(w.getnframes()),'<i2')/32768.0
