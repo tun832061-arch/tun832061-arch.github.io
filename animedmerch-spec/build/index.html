@@ -23,7 +23,8 @@ html,body{margin:0;background:#000}
 <body><div id="stage"></div>
 <script>
 const B=60/140;
-const T={drop:3.0, freeze:3.0+16*B, title:3.0+22*B, manga:3.0+29*B, cta:3.0+45*B, end:3.0+50*B, total:28.6};
+const T={drop:3.0, freeze:3.0+16*B, title:3.0+24*B, manga:3.0+32*B, cta:3.0+48*B, end:3.0+55*B, total:30.8};
+const CV=T.cta+0.05; const CW=[0,0.20,0.36,0.64,0.78,1.0].map(x=>CV+x), SW=CV+1.62, CW3=[CV+1.80,CV+2.10], NOWT=CV+2.36;
 const PG=[T.manga, T.manga+16*B/3, T.manga+32*B/3];
 const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), lerp=(a,b,p)=>a+(b-a)*p, prog=(t,a,b)=>clamp((t-a)/(b-a));
 const E={outExpo:p=>p>=1?1:1-Math.pow(2,-10*p),inExpo:p=>p<=0?0:Math.pow(2,10*p-10),
@@ -133,9 +134,9 @@ function render(t){
  /* cold open */
  open.style.display=t<T.drop+0.05?'block':'none';
  zenkai.style.clipPath=`inset(0 0 ${100-100*P(t,0.2,0.8,'inOutCubic')}% 0)`; zenkai.style.opacity=1-P(t,2.45,2.6);
- type(sub1,'Previously… on Animedmerch.',t,0.6,2.0); sub1.style.opacity=1-P(t,2.45,2.6);
+ type(sub1,'Previously… on Animedmerch.',t,0.2,2.1); sub1.style.opacity=1-P(t,2.45,2.6);
  ikuzo.style.opacity=(t>=2.6&&t<T.drop)?1:0; ikuzo.style.transform=`translate(${shake(2.6,22,0.4)}px,0) scale(${lerp(1.4,1,P(t,2.6,2.75))})`;
- {let f=0; for(const [t0,d,m] of [[T.drop,0.25,1],[T.title,0.2,1],[T.cta+0.1+3*B+0.1+B+0.05,0.12,0.7]]){const p=prog(t,t0,t0+d); if(t>=t0&&p<1) f=Math.max(f,m*(1-p))} flash.style.opacity=f}
+ {let f=0; for(const [t0,d,m] of [[T.drop,0.25,1],[T.title,0.2,1],[NOWT,0.12,0.7]]){const p=prog(t,t0,t0+d); if(t>=t0&&p<1) f=Math.max(f,m*(1-p))} flash.style.opacity=f}
  /* recap */
  const inRecap=t>=T.drop && t<T.title; recap.style.display=inRecap?'block':'none';
  if(inRecap){
@@ -168,7 +169,7 @@ function render(t){
  }
  crackP.forEach((p,i)=>{const L=p.getTotalLength();p.setAttribute('stroke-dasharray',L);p.setAttribute('stroke-dashoffset',L*(1-P(t,T.freeze+0.04+i*0.015,T.freeze+0.22+i*0.015)))});
  crack.style.display=(t>=T.freeze&&t<T.title)?'block':'none';
- type(sub2,'Eight pieces…  and they still thought we were done.',t,T.freeze+0.3,T.freeze+1.9); sub2.style.display=(t>=T.freeze&&t<T.title)?'block':'none';
+ type(sub2,'Eight pieces…  and they still thought we were done.',t,T.freeze+0.15,T.freeze+2.9); sub2.style.display=(t>=T.freeze&&t<T.title)?'block':'none';
  /* title */
  const inT=t>=T.title&&t<PG[0]+0.3; title.style.display=inT?'block':'none';
  if(inT){drawFocus(TF,t,540,640,320,50,0.8);
@@ -177,7 +178,7 @@ function render(t){
   sai.style.opacity=P(t,T.title+0.4,T.title+0.6); sai.style.transform=`translateY(${20*(1-P(t,T.title+0.4,T.title+0.7))}px)`;
   fe.style.opacity=1;kin(fe,T.title+0.6,t,0.03,0.35,60); slam(n910,T.title+0.95,t,true);
   sil.forEach((g,k)=>{const p=E.outBack(prog(t,T.title+1.3+k*0.18,T.title+1.65+k*0.18),2);const x=k?750:330;g.setAttribute('transform',`translate(${x} ${1470+8*Math.sin(t*3+k)}) scale(${p})`)});
-  type(sub3,'Final episode.  The last two pieces.',t,T.title+0.5,T.title+1.7);
+  type(sub3,'Final episode.  The last two pieces.',t,T.title+0.3,T.title+3.0);
   title.style.transform=`translateX(${shake(T.title,18,0.25)+shake(T.title+0.95,12)}px)`;
  }
  /* manga pages */
@@ -195,10 +196,10 @@ function render(t){
  /* CTA */
  const inC=t>=T.cta&&t<T.end+0.1; cta.style.display=inC?'block':'none'; cta.style.zIndex=20;
  if(inC){drawFocus(CF,t,540,860,520,80,1);
-  const c0=T.cta; [...W1,...W2].forEach((w,i)=>slam(w,c0+0.1+i*B/2,t));
-  const sw=c0+0.1+6*B/2+0.1; ctaA.style.opacity=t<sw?1:0; ctaB.style.opacity=t>=sw?1:0;
-  W3.forEach((w,i)=>slam(w,sw+i*B/2,t)); W4.forEach(w=>slam(w,sw+B+0.05,t,true));
-  cta.style.transform=`translate(${shake(sw+B+0.05,26,0.3)}px,${shake(sw+B+0.05,14,0.3)}px)`;
+  [...W1,...W2].forEach((w,i)=>slam(w,CW[i],t));
+  const sw=SW; ctaA.style.opacity=t<sw?1:0; ctaB.style.opacity=t>=sw?1:0;
+  W3.forEach((w,i)=>slam(w,CW3[i],t)); W4.forEach(w=>slam(w,NOWT,t,true));
+  cta.style.transform=`translate(${shake(NOWT,26,0.3)}px,${shake(NOWT,14,0.3)}px)`;
  }
  /* end card */
  const inE=t>=T.end; end.style.display=inE?'block':'none'; end.style.zIndex=30;

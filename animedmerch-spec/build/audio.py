@@ -1,7 +1,8 @@
 # Original anime-phonk score + SFX for the Animedmerch spec (fully synthesised, no samples).
 import numpy as np, wave
 SR=48000; B=60/140; DROP=3.0
-T=dict(drop=DROP,freeze=DROP+16*B,title=DROP+22*B,manga=DROP+29*B,cta=DROP+45*B,end=DROP+50*B,total=28.6)
+T=dict(drop=DROP,freeze=DROP+16*B,title=DROP+24*B,manga=DROP+32*B,cta=DROP+48*B,end=DROP+55*B,total=30.8)
+CV=T['cta']+0.05; CW=[CV+x for x in (0,0.20,0.36,0.64,0.78,1.0)]; CW3=[CV+1.80,CV+2.10]; NOWT=CV+2.36
 PG=[T['manga'],T['manga']+16*B/3,T['manga']+32*B/3]
 rng=np.random.default_rng(3); out=np.zeros(int(T['total']*SR)+SR)
 def tt(d): return np.arange(int(d*SR))/SR
@@ -75,15 +76,29 @@ beat_section(T['manga'],T['end'])
 for p in PG: at(p-0.25,whoosh(0.35),0.25)
 # CTA slams
 c0=T['cta']
-for i in range(6): at(c0+0.1+i*B/2,impact()[:int(0.3*SR)],0.18)
+for tw in CW: at(tw,impact()[:int(0.3*SR)],0.14)
 sw=c0+0.1+3*B+0.1
-for i in range(2): at(sw+i*B/2,impact()[:int(0.3*SR)],0.2)
-at(sw+B+0.05,impact(),0.6); at(sw+B+0.05,taiko(),0.6)
+for tw in CW3: at(tw,impact()[:int(0.3*SR)],0.16)
+at(NOWT,impact(),0.6); at(NOWT,taiko(),0.6)
 # end: logo hit, then "to be continued" sting
 at(T['end'],taiko(),0.5)
 tb=T['end']+1.6
 for k,m in enumerate([57,64,69,72,76]): at(tb+k*0.05,koto(m,2.5),0.18)
 x=tt(1.8); at(tb,sum(np.sin(2*np.pi*nf(m)*x) for m in (45,52,57))*np.exp(-x*1.6)*0.1)
+# ---- narrator (best takes from the recording) with anime-preview treatment
+import subprocess
+VO=[(0.20,2.45,0.15,'n'),(29.95,30.80,2.35,'s'),(31.95,35.05,T['freeze']+0.12,'n'),(14.90,18.05,T['title']+0.25,'n'),(18.75,21.35,CV,'h')]
+FX={'n':"highpass=f=80,afftdn=nf=-28,equalizer=f=120:t=q:w=1:g=3,equalizer=f=3000:t=q:w=1:g=4,acompressor=threshold=-20dB:ratio=4:attack=5:release=120:makeup=3,aecho=0.8:0.5:60|120:0.18|0.1,alimiter=limit=0.9",
+    's':"highpass=f=90,afftdn=nf=-28,acompressor=threshold=-18dB:ratio=5:attack=2:release=80:makeup=2,aecho=0.8:0.6:90|180|270:0.35|0.22|0.12,alimiter=limit=0.9",
+    'h':"highpass=f=90,afftdn=nf=-28,equalizer=f=2500:t=q:w=1:g=5,acompressor=threshold=-18dB:ratio=5:attack=2:release=80:makeup=3,aecho=0.8:0.5:70|140:0.22|0.12,alimiter=limit=0.9"}
+vo=np.zeros_like(out)
+for a,b,t0,k in VO:
+    subprocess.run(['ffmpeg','-loglevel','error','-y','-ss',str(a),'-to',str(b+0.25),'-i','narr_raw.wav','-af',FX[k]+',afade=t=in:d=0.02','-ar','48000','-ac','1','_v.wav'],check=True)
+    ww=wave.open('_v.wav'); v=np.frombuffer(ww.readframes(ww.getnframes()),'<i2')/32768.0
+    i=int(t0*SR); n=min(len(v),len(vo)-i); vo[i:i+n]+=v[:n]
+# duck music under the voice
+env=np.convolve(np.abs(vo),np.ones(2400)/2400,'same'); duck=1-0.55*np.clip(env/0.05,0,1)
+out=out/np.abs(out).max()*duck*0.8+vo/np.abs(vo).max()*0.95
 out/=np.abs(out).max(); out*=0.9
 pcm=(np.stack([out,out],1)*32767).astype('<i2')
 w=wave.open('score.wav','wb'); w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR); w.writeframes(pcm.tobytes()); w.close()
