@@ -9,9 +9,10 @@ html,body{margin:0;background:#000}
 #stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#050505;color:#fff;font-family:'Dela Gothic One',sans-serif}
 .a{position:absolute;left:0;top:0}
 .full{position:absolute;left:0;top:0;width:1080px;height:1920px}
-.panel{position:absolute;box-sizing:border-box;border:10px solid #fff;outline:7px solid #000;background:#fff;overflow:hidden}
+.panel{position:absolute;box-sizing:border-box;border:4px solid rgba(255,255,255,.85);border-radius:56px;background:#111;overflow:hidden;box-shadow:0 40px 90px rgba(0,0,0,.65)}
+.ch{display:inline-block}.wm{display:inline-block;overflow:hidden;vertical-align:top;margin-right:.22em;padding-bottom:.06em}.wm>span{display:inline-block}
 .panel img{width:100%;height:100%;object-fit:cover;display:block}
-.mp{position:absolute;box-sizing:border-box;border:9px solid #0a0a0a;background:#fff;overflow:hidden}
+.mp{position:absolute;box-sizing:border-box;border-radius:40px;background:#fff;overflow:hidden;box-shadow:0 18px 44px rgba(0,0,0,.22)}
 .mp img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
 .mp img.cover{object-fit:cover}
 .halftone{background-image:radial-gradient(rgba(0,0,0,.55) 1.4px,transparent 1.6px);background-size:9px 9px}
@@ -60,7 +61,7 @@ const pcs=PIECES.map(([img,name],i)=>{const L=el('div','full',recap);L.style.bac
   const num=el('div','a',L,'No.'+String(i+1).padStart(2,'0')); Object.assign(num.style,{font:"400 170px/1 'Dela Gothic One'",color:'transparent',webkitTextStroke:'4px #fff',left:'60px',top:'150px',opacity:.9});
   const pan=el('div','panel',L); const im=el('img','',pan); im.src=`img/${img}.jpg`; if(img.startsWith('cl')) im.style.objectFit='contain';
   const tag=el('div','a',L,'<span style="color:#D0021B">♣</span> BLACK CLOVER DROP'); Object.assign(tag.style,{font:"400 34px 'Dela Gothic One'",left:'70px',top:'1460px',letterSpacing:'.06em'});
-  const nm=el('div','a',L,name); Object.assign(nm.style,{font:"400 60px/1.1 'Dela Gothic One'",left:'70px',top:'1515px',width:'940px',color:'#fff'});
+  const nm=el('div','a',L,name.split(' ').map(w=>`<span class="wm"><span>${w}</span></span>`).join('')); Object.assign(nm.style,{font:"400 60px/1.1 'Dela Gothic One'",left:'70px',top:'1515px',width:'940px',color:'#fff'});
   const bar=el('div','a',L); Object.assign(bar.style,{left:'70px',top:'1670px',height:'14px',background:'#D0021B'});
   return {L,F,num,pan,im,tag,nm,bar}});
 const slashSvg=sv('svg',{width:1080,height:1920,viewBox:'0 0 1080 1920',class:'a'},recap); slashSvg.style.zIndex=20;
@@ -94,12 +95,12 @@ const PAGES=[
 const LAY=[[60,330,560,820],[650,330,370,400],[650,750,370,400],[60,1180,960,520]];
 const pages=PAGES.map((pg,pi)=>{const L=el('div','full',stage);L.style.background='#f3efe6';
   const ht=el('div','full halftone',L); ht.style.opacity=.06;
-  const ban=el('div','a',L); Object.assign(ban.style,{left:'0',top:'120px',width:'1080px',height:'170px',background:'#0a0a0a'});
+  const ban=el('div','a',L); Object.assign(ban.style,{left:'40px',top:'120px',width:'1000px',height:'170px',background:'#0a0a0a',borderRadius:'48px'});
   const bt=el('div','big',L,pg.t); Object.assign(bt.style,{top:'142px',font:"400 92px 'Dela Gothic One'",color:'#fff'}); bt.style.top='160px';
-  const jp=el('div','a',L,pg.jp); Object.assign(jp.style,{left:'930px',top:'300px',font:"400 44px/1 'Dela Gothic One'",color:'#D0021B',writingMode:'vertical-rl'});
+  const jp=el('div','a',L,pg.jp); Object.assign(jp.style,{left:'930px',top:'300px',font:"400 44px/1 'Dela Gothic One'",color:'#D0021B',writingMode:'vertical-rl',display:'none'});
   const mps=pg.items.map(([src,c],k)=>{const m=el('div','mp',L);const [x,y,w,h]=LAY[k];Object.assign(m.style,{left:x+'px',top:y+'px',width:w+'px',height:h+'px'});
     const im=el('img',c||'',m);im.src=`img/${src}.${src.startsWith('pack')?'png':'jpg'}`;return {m,im}});
-  if(pi===2){const cap=el('div','a',mps[3].m,'PACKAGING THAT HITS');Object.assign(cap.style,{left:'24px',bottom:'22px',top:'auto',font:"400 46px 'Dela Gothic One'",color:'#fff',background:'#D0021B',padding:'6px 16px'})}
+  if(pi===2){const cap=el('div','a',mps[3].m,'PACKAGING THAT HITS');Object.assign(cap.style,{left:'24px',bottom:'22px',top:'auto',font:"400 46px 'Dela Gothic One'",color:'#fff',background:'#D0021B',padding:'8px 24px',borderRadius:'999px'})}
   return {L,bt,mps,ban}});
 const pnum=el('div','a',stage,''); Object.assign(pnum.style,{left:'60px',top:'1760px',font:"400 30px 'Dela Gothic One'",color:'#0a0a0a'});
 
@@ -112,7 +113,7 @@ const W2=words(ctaA,['ON','YOUR','DRIP.'],{top:'810px',font:"400 98px/1 'Dela Go
 const W3=words(ctaB,['COP','YOURS'],{top:'600px',font:"400 118px/1 'Dela Gothic One'"});
 const W4=words(ctaB,['NOW!'],{top:'760px',font:"400 360px/1 'Dela Gothic One'",color:'#D0021B',webkitTextStroke:'6px #fff'});
 const end=el('div','full',stage); end.style.background='#0a0a0a';
-const ecard=el('div','a',end); Object.assign(ecard.style,{background:'#fff',border:'12px solid #0a0a0a',outline:'8px solid #fff',boxSizing:'border-box'});
+const ecard=el('div','a',end); Object.assign(ecard.style,{background:'#fff',borderRadius:'56px',boxShadow:'0 40px 100px rgba(0,0,0,.6)',boxSizing:'border-box',overflow:'hidden'});
 const logo=el('img','a',ecard); logo.src='img/logo_raw.png';
 const site=el('div','big',ecard,'WWW.ANIMEDMERCH.COM'); Object.assign(site.style,{font:"400 44px 'Dela Gothic One'",color:'#0a0a0a'});
 const site2=el('div','big',ecard,'LINK IN BIO · ORDER ON WHATSAPP'); Object.assign(site2.style,{font:"400 26px 'Dela Gothic One'",color:'#D0021B',letterSpacing:'.03em'});
@@ -121,6 +122,8 @@ const tbc=el('div','a',end); const tbcS=sv('svg',{width:760,height:150,viewBox:'
 sv('path',{d:'M0,20 L600,20 L600,0 L760,75 L600,150 L600,130 L0,130 Z',fill:'#D0021B',stroke:'#fff','stroke-width':6},tbcS);
 const tbt=sv('text',{x:300,y:96,'text-anchor':'middle','font-family':'Dela Gothic One','font-size':56,fill:'#fff'},tbcS); tbt.textContent='TO BE CONTINUED';
 
+function charsOf(e){if(!e._c){e.innerHTML=[...e.textContent].map(c=>`<span class="ch">${c===' '?'&nbsp;':c}</span>`).join('');e._c=[...e.children]}return e._c}
+function kin(e,t0,t,step=0.03,dur=0.35,dy=70){charsOf(e).forEach((c,k)=>{const a=t0+k*step;const p=E.outBack(prog(t,a,a+dur),1.6);c.style.opacity=clamp(prog(t,a,a+0.08));c.style.transform=`translateY(${dy*(1-p)}px) rotate(${(1-p)*(k%2?8:-8)}deg)`})}
 function type(el,txt,t,a,b){const ws=txt.split(/\s+/);const step=(b-a)/ws.length;
  el.innerHTML=ws.map((w,i)=>{const p=prog(t,a+i*step,a+i*step+0.18);const e=1-Math.pow(1-p,3);return `<span style="display:inline-block;opacity:${p};transform:translateY(${14*(1-e)}px);filter:blur(${4*(1-e)}px);margin-right:.25em">${w}</span>`}).join('')}
 function slam(w,t0,t,big){const p=prog(t,t0,t0+0.22);w.style.opacity=t>=t0?1:0;w.style.transform=`scale(${lerp(big?1.8:1.35,1,E.outExpo(p))})`}
@@ -149,8 +152,8 @@ function render(t){
    const W=760,H=1040; o.pan.style.width=W+'px';o.pan.style.height=H+'px';
    o.pan.style.transform=`translate(${160+shake(t0,16)}px,${360}px) rotate(${lerp(rot*2.4,rot,E.outExpo(p))}deg) scale(${lerp(1.18,1,E.outExpo(p))})`;
    o.im.style.transform=`scale(${1+0.05*prog(tr,t0,t0+2*B)})`;
-   o.num.style.transform=`translateX(${lerp(-300,0,P(tr,t0,t0+0.25))}px)`;
-   o.nm.style.clipPath=`inset(0 ${100-100*P(tr,t0+0.08,t0+0.35,'outCubic')}% 0 0)`;
+   kin(o.num,t0,tr,0.035,0.32,90);
+   [...o.nm.querySelectorAll('.wm>span')].forEach((sp,k)=>{const p=E.outExpo(prog(tr,t0+0.1+k*0.06,t0+0.45+k*0.06));sp.style.transform=`translateY(${110*(1-p)}%)`});
    o.bar.style.width=(940*P(tr,t0+0.05,t0+0.4))+'px'; {const f=1-P(t,T.freeze+0.1,T.freeze+0.4);o.nm.style.opacity=f;o.tag.style.opacity=f;o.bar.style.opacity=f}
    drawFocus(o.F,tr,540,880,560,70,0.9);
   });
@@ -172,7 +175,7 @@ function render(t){
   leaves.forEach((l,k)=>{const p=E.outBack(prog(t,T.title+0.05+k*0.07,T.title+0.4+k*0.07),1.8);const a=k*72+18*(1-p);
    l.setAttribute('transform',`translate(540 640) rotate(${a}) translate(0 -${lerp(0,120,p)}) scale(${p*1.35})`)});
   sai.style.opacity=P(t,T.title+0.4,T.title+0.6); sai.style.transform=`translateY(${20*(1-P(t,T.title+0.4,T.title+0.7))}px)`;
-  slam(fe,T.title+0.6,t); slam(n910,T.title+0.95,t,true);
+  fe.style.opacity=1;kin(fe,T.title+0.6,t,0.03,0.35,60); slam(n910,T.title+0.95,t,true);
   sil.forEach((g,k)=>{const p=E.outBack(prog(t,T.title+1.3+k*0.18,T.title+1.65+k*0.18),2);const x=k?750:330;g.setAttribute('transform',`translate(${x} ${1470+8*Math.sin(t*3+k)}) scale(${p})`)});
   type(sub3,'Final episode.  The last two pieces.',t,T.title+0.5,T.title+1.7);
   title.style.transform=`translateX(${shake(T.title,18,0.25)+shake(T.title+0.95,12)}px)`;
@@ -182,7 +185,7 @@ function render(t){
   const on=t>=t0-0.3&&t<t1+0.3; pg.L.style.display=on?'block':'none'; if(!on)return;
   const inP=E.inOutExpo(prog(t,t0-0.3,t0)), outP=E.inOutExpo(prog(t,t1-0.05,t1+0.25));
   pg.L.style.transform=`translateX(${lerp(1100,0,inP)-1100*outP}px) skewX(${-6*(1-inP)+6*outP}deg)`; pg.L.style.zIndex=10+pi;
-  pg.bt.style.transform=`scale(${lerp(1.4,1,P(t,t0,t0+0.25))})`;
+  kin(pg.bt,t0,t,0.035,0.35,90);
   pg.mps.forEach((m,k)=>{const a=t0+0.12+k*B/2; const p=E.outBack(prog(t,a,a+0.3),1.6);
    m.m.style.opacity=t>=a?1:0; m.m.style.transform=`scale(${lerp(0.82,1,p)}) rotate(${(1-p)*(k%2?3:-3)}deg)`;
    m.im.style.transform=`scale(${1+0.06*prog(t,a,t1)})`});
@@ -203,7 +206,7 @@ function render(t){
   const cw=880,ch=760; ecard.style.width=cw+'px'; ecard.style.height=ch+'px';
   ecard.style.transform=`translate(${100}px,${470}px) rotate(${(1-p)*-6}deg) scale(${lerp(0.6,1,p)})`; ecard.style.opacity=t>=T.end?1:0;
   logo.style.width='620px'; logo.style.transform=`translate(${(cw-24-620)/2}px,110px)`;
-  site.style.top='430px'; site.style.width=(cw-24)+'px'; site.style.opacity=P(t,T.end+0.35,T.end+0.55);
+  site.style.top='430px'; site.style.width=(cw-24)+'px'; site.style.opacity=1;kin(site,T.end+0.35,t,0.012,0.3,40);
   site2.style.top='520px'; site2.style.width=(cw-24)+'px'; site2.style.opacity=P(t,T.end+0.5,T.end+0.7);
   const tb=T.end+1.6; const tp=E.outExpo(prog(t,tb,tb+0.35));
   tbc.style.transform=`translate(${lerp(-800,260,tp)}px,1420px)`; tint.style.opacity=t>=tb?1:0;
