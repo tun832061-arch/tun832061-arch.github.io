@@ -65,7 +65,7 @@ const pcs=PIECES.map(([img,name],i)=>{const L=el('div','full',recap);L.style.bac
   return {L,F,num,pan,im,tag,nm,bar}});
 const slashSvg=sv('svg',{width:1080,height:1920,viewBox:'0 0 1080 1920',class:'a'},recap); slashSvg.style.zIndex=20;
 const slash=sv('polygon',{fill:'#000'},slashSvg), slashEdge=sv('polyline',{fill:'none',stroke:'#fff','stroke-width':6},slashSvg);
-const sub2=el('div','sub',stage,''); sub2.style.top='1500px'; sub2.style.zIndex=30;
+const sub2=el('div','sub',stage,''); sub2.style.top='1740px'; sub2.style.zIndex=30;
 const crack=sv('svg',{width:1080,height:1920,viewBox:'0 0 1080 1920',class:'a'},stage); crack.style.zIndex=25;
 const crackP=(()=>{const r=rnd(42);const c=[560,860];const ps=[];for(let k=0;k<9;k++){let a=k/9*Math.PI*2+r()*0.4,x=c[0],y=c[1],d=`M${x},${y}`;for(let s=0;s<7;s++){a+=(r()-.5)*0.7;const L=60+r()*120;x+=Math.cos(a)*L;y+=Math.sin(a)*L;d+=`L${x.toFixed(0)},${y.toFixed(0)}`}
   ps.push(sv('path',{d,fill:'none',stroke:'#fff','stroke-width':5,'stroke-linejoin':'bevel'},crack))}return ps})();
@@ -121,7 +121,8 @@ const tbc=el('div','a',end); const tbcS=sv('svg',{width:760,height:150,viewBox:'
 sv('path',{d:'M0,20 L600,20 L600,0 L760,75 L600,150 L600,130 L0,130 Z',fill:'#D0021B',stroke:'#fff','stroke-width':6},tbcS);
 const tbt=sv('text',{x:300,y:96,'text-anchor':'middle','font-family':'Dela Gothic One','font-size':56,fill:'#fff'},tbcS); tbt.textContent='TO BE CONTINUED';
 
-function type(el,txt,t,a,b){const n=Math.floor(txt.length*prog(t,a,b));el.textContent=txt.slice(0,n)}
+function type(el,txt,t,a,b){const ws=txt.split(/\s+/);const step=(b-a)/ws.length;
+ el.innerHTML=ws.map((w,i)=>{const p=prog(t,a+i*step,a+i*step+0.18);const e=1-Math.pow(1-p,3);return `<span style="display:inline-block;opacity:${p};transform:translateY(${14*(1-e)}px);filter:blur(${4*(1-e)}px);margin-right:.25em">${w}</span>`}).join('')}
 function slam(w,t0,t,big){const p=prog(t,t0,t0+0.22);w.style.opacity=t>=t0?1:0;w.style.transform=`scale(${lerp(big?1.8:1.35,1,E.outExpo(p))})`}
 
 function render(t){
@@ -150,7 +151,7 @@ function render(t){
    o.im.style.transform=`scale(${1+0.05*prog(tr,t0,t0+2*B)})`;
    o.num.style.transform=`translateX(${lerp(-300,0,P(tr,t0,t0+0.25))}px)`;
    o.nm.style.clipPath=`inset(0 ${100-100*P(tr,t0+0.08,t0+0.35,'outCubic')}% 0 0)`;
-   o.bar.style.width=(940*P(tr,t0+0.05,t0+0.4))+'px';
+   o.bar.style.width=(940*P(tr,t0+0.05,t0+0.4))+'px'; {const f=1-P(t,T.freeze+0.1,T.freeze+0.4);o.nm.style.opacity=f;o.tag.style.opacity=f;o.bar.style.opacity=f}
    drawFocus(o.F,tr,540,880,560,70,0.9);
   });
   // slash band
