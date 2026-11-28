@@ -3,3 +3,6 @@ refs/
 *.wav
 build/fonts/
 build/img/
+deliver/
+build/g.gram
+build/_v.wav
