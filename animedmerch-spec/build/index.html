@@ -1,0 +1,212 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<title>Animedmerch — Black Clover Finale (spec)</title>
+<link rel="stylesheet" href="fonts/dela-gothic-one/index.css">
+<link rel="stylesheet" href="fonts/potta-one/index.css">
+<link rel="stylesheet" href="fonts/bangers/index.css">
+<style>
+html,body{margin:0;background:#000}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#050505;color:#fff;font-family:'Dela Gothic One',sans-serif}
+.a{position:absolute;left:0;top:0}
+.full{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.panel{position:absolute;box-sizing:border-box;border:10px solid #fff;outline:7px solid #000;background:#fff;overflow:hidden}
+.panel img{width:100%;height:100%;object-fit:cover;display:block}
+.mp{position:absolute;box-sizing:border-box;border:9px solid #0a0a0a;background:#fff;overflow:hidden}
+.mp img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.mp img.cover{object-fit:cover}
+.halftone{background-image:radial-gradient(rgba(0,0,0,.55) 1.4px,transparent 1.6px);background-size:9px 9px}
+.sub{position:absolute;left:60px;width:960px;text-align:center;font-family:'Dela Gothic One';font-size:50px;line-height:1.25;color:#fff;-webkit-text-stroke:0;text-shadow:0 0 6px #000,0 3px 0 #000,3px 0 0 #000,-3px 0 0 #000,0 -3px 0 #000}
+.big{position:absolute;left:0;width:1080px;text-align:center;line-height:1;white-space:nowrap}
+.wd{display:inline-block;margin-right:.18em}.wd:last-child{margin-right:0}
+</style></head>
+<body><div id="stage"></div>
+<script>
+const B=60/140;
+const T={drop:3.0, freeze:3.0+16*B, title:3.0+22*B, manga:3.0+29*B, cta:3.0+45*B, end:3.0+50*B, total:28.6};
+const PG=[T.manga, T.manga+16*B/3, T.manga+32*B/3];
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), lerp=(a,b,p)=>a+(b-a)*p, prog=(t,a,b)=>clamp((t-a)/(b-a));
+const E={outExpo:p=>p>=1?1:1-Math.pow(2,-10*p),inExpo:p=>p<=0?0:Math.pow(2,10*p-10),
+ inOutExpo:p=>p<=0?0:p>=1?1:p<.5?Math.pow(2,20*p-10)/2:(2-Math.pow(2,-20*p+10))/2,
+ outBack:(p,s=1.7)=>{const c=s+1;return 1+c*Math.pow(p-1,3)+s*Math.pow(p-1,2)},inOutCubic:p=>p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2,outCubic:p=>1-Math.pow(1-p,3)};
+const P=(t,a,b,e='outExpo')=>E[e](prog(t,a,b));
+const stage=document.getElementById('stage');
+function el(tag,cls,parent,html){const e=document.createElement(tag);if(cls)e.className=cls;if(html!=null)e.innerHTML=html;(parent||stage).appendChild(e);return e}
+const NS='http://www.w3.org/2000/svg';
+function sv(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent&&parent.appendChild(e);return e}
+function rnd(seed){let s=seed*9301+49297;return()=>{s=(s*9301+49297)%233280;return s/233280}}
+function words(parent,list,style){const line=el('div','big',parent);Object.assign(line.style,style);return list.map(w=>el('span','wd',line,w))}
+
+/* ---------- reusable focus lines (manga speed lines) ---------- */
+function focusLines(parent,color){const s=sv('svg',{width:1080,height:1920,viewBox:'0 0 1080 1920',class:'a'},parent);const g=sv('g',{fill:color},s);return {s,g}}
+function drawFocus(F,t,cx,cy,r0,n,op){const r=rnd(Math.floor(t*12)+7);let d='';
+ for(let i=0;i<n;i++){const a=r()*Math.PI*2, w=0.004+r()*0.012, ri=r0*(0.75+r()*0.5), ro=1500;
+  d+=`M${cx+Math.cos(a-w)*ro},${cy+Math.sin(a-w)*ro}L${cx+Math.cos(a)*ri},${cy+Math.sin(a)*ri}L${cx+Math.cos(a+w)*ro},${cy+Math.sin(a+w)*ro}Z`}
+ F.g.innerHTML=`<path d="${d}"/>`; F.s.style.opacity=op}
+
+/* =============== 1. COLD OPEN =============== */
+const open=el('div','full',stage);
+const zenkai=el('div','a',open,'前<br>回'); Object.assign(zenkai.style,{left:'760px',top:'360px',font:"400 230px/1.05 'Potta One'",color:'#fff'});
+const sub1=el('div','sub',open,''); sub1.style.top='1520px';
+const ikuzo=el('div','big',open,'行くぞ!'); Object.assign(ikuzo.style,{top:'780px',font:"400 260px 'Dela Gothic One'",color:'#D0021B',webkitTextStroke:'6px #fff'});
+const flash=el('div','full',stage); flash.style.background='#fff'; flash.style.zIndex=50;
+
+/* =============== 2. RECAP: No.01 -> No.08 =============== */
+const PIECES=[['p01','DEVIL UNION LONGSLEEVE'],['p02','YAMI ACID-WASH TEE'],['p03','BLACK BULL TRACK PANTS'],['cl09','BLACK BULL SHORTS'],
+ ['p05','BLACK CLOVER TEE'],['p06','ANTI MAGIC POLO'],['p07','YUNO ACID-WASH'],['p08','DEMON SKULL LONGSLEEVE']];
+const recap=el('div','full',stage);
+const RF=focusLines(recap,'#D0021B');
+const pcs=PIECES.map(([img,name],i)=>{const L=el('div','full',recap);L.style.background='#050505';
+  const F=focusLines(L,'rgba(208,2,27,.85)');
+  const num=el('div','a',L,'No.'+String(i+1).padStart(2,'0')); Object.assign(num.style,{font:"400 170px/1 'Dela Gothic One'",color:'transparent',webkitTextStroke:'4px #fff',left:'60px',top:'150px',opacity:.9});
+  const pan=el('div','panel',L); const im=el('img','',pan); im.src=`img/${img}.jpg`; if(img.startsWith('cl')) im.style.objectFit='contain';
+  const tag=el('div','a',L,'<span style="color:#D0021B">♣</span> BLACK CLOVER DROP'); Object.assign(tag.style,{font:"400 34px 'Dela Gothic One'",left:'70px',top:'1460px',letterSpacing:'.06em'});
+  const nm=el('div','a',L,name); Object.assign(nm.style,{font:"400 60px/1.1 'Dela Gothic One'",left:'70px',top:'1515px',width:'940px',color:'#fff'});
+  const bar=el('div','a',L); Object.assign(bar.style,{left:'70px',top:'1670px',height:'14px',background:'#D0021B'});
+  return {L,F,num,pan,im,tag,nm,bar}});
+const slashSvg=sv('svg',{width:1080,height:1920,viewBox:'0 0 1080 1920',class:'a'},recap); slashSvg.style.zIndex=20;
+const slash=sv('polygon',{fill:'#000'},slashSvg), slashEdge=sv('polyline',{fill:'none',stroke:'#fff','stroke-width':6},slashSvg);
+const sub2=el('div','sub',stage,''); sub2.style.top='1500px'; sub2.style.zIndex=30;
+const crack=sv('svg',{width:1080,height:1920,viewBox:'0 0 1080 1920',class:'a'},stage); crack.style.zIndex=25;
+const crackP=(()=>{const r=rnd(42);const c=[560,860];const ps=[];for(let k=0;k<9;k++){let a=k/9*Math.PI*2+r()*0.4,x=c[0],y=c[1],d=`M${x},${y}`;for(let s=0;s<7;s++){a+=(r()-.5)*0.7;const L=60+r()*120;x+=Math.cos(a)*L;y+=Math.sin(a)*L;d+=`L${x.toFixed(0)},${y.toFixed(0)}`}
+  ps.push(sv('path',{d,fill:'none',stroke:'#fff','stroke-width':5,'stroke-linejoin':'bevel'},crack))}return ps})();
+
+/* =============== 3. TITLE CARD =============== */
+const title=el('div','full',stage); title.style.background='#8B0000';
+const tht=el('div','full halftone',title); tht.style.opacity=.18;
+const TF=focusLines(title,'rgba(0,0,0,.35)');
+const tsv=sv('svg',{width:1080,height:1920,viewBox:'0 0 1080 1920',class:'a'},title);
+const HEART='M0,-10 C -30,-60 -95,-40 -80,10 C -68,48 -20,70 0,95 C 20,70 68,48 80,10 C 95,-40 30,-60 0,-10 Z';
+const leaves=[0,1,2,3,4].map(k=>sv('path',{d:HEART,fill:'#0a0a0a',stroke:'#fff','stroke-width':4},tsv));
+const sai=el('div','big',title,'最 終 話'); Object.assign(sai.style,{top:'880px',font:"400 70px 'Dela Gothic One'",letterSpacing:'.2em'});
+const fe=el('div','big',title,'FINAL EPISODE'); Object.assign(fe.style,{top:'980px',font:"400 92px 'Dela Gothic One'"});
+const n910=el('div','big',title,'No.09 & No.10'); Object.assign(n910.style,{top:'1100px',font:"400 112px 'Dela Gothic One'",color:'#0a0a0a',webkitTextStroke:'5px #fff'});
+const TEE='M-120,-150 L-50,-170 Q0,-140 50,-170 L120,-150 L190,-60 L130,-20 L110,-60 L110,170 L-110,170 L-110,-60 L-130,-20 L-190,-60 Z';
+const sil=[0,1].map(k=>{const g=sv('g',{},tsv);sv('path',{d:TEE,fill:'#0a0a0a',stroke:'#fff','stroke-width':5},g);const tx=sv('text',{x:0,y:70,'text-anchor':'middle','font-family':'Bangers','font-size':190,fill:'#fff'},g);tx.textContent='?';return g});
+const sub3=el('div','sub',title,''); sub3.style.top='1760px';
+
+/* =============== 4. MANGA PAGES =============== */
+const PAGES=[
+ {t:'CLOTHING',jp:'服',items:[['knit','cover'],['hood1'],['cl04'],['hood4']]},
+ {t:'ACCESSORIES',jp:'アクセサリー',items:[['cp00'],['ac00'],['cp01'],['cp06']]},
+ {t:'DECOR',jp:'インテリア',items:[['dc05'],['dc09','cover'],['dc00'],['pack_10.2','cover']]},
+];
+// panel layout (x,y,w,h) inside page, manga-style with a slanted feel via skew per panel
+const LAY=[[60,330,560,820],[650,330,370,400],[650,750,370,400],[60,1180,960,520]];
+const pages=PAGES.map((pg,pi)=>{const L=el('div','full',stage);L.style.background='#f3efe6';
+  const ht=el('div','full halftone',L); ht.style.opacity=.06;
+  const ban=el('div','a',L); Object.assign(ban.style,{left:'0',top:'120px',width:'1080px',height:'170px',background:'#0a0a0a'});
+  const bt=el('div','big',L,pg.t); Object.assign(bt.style,{top:'142px',font:"400 92px 'Dela Gothic One'",color:'#fff'}); bt.style.top='160px';
+  const jp=el('div','a',L,pg.jp); Object.assign(jp.style,{left:'930px',top:'300px',font:"400 44px/1 'Dela Gothic One'",color:'#D0021B',writingMode:'vertical-rl'});
+  const mps=pg.items.map(([src,c],k)=>{const m=el('div','mp',L);const [x,y,w,h]=LAY[k];Object.assign(m.style,{left:x+'px',top:y+'px',width:w+'px',height:h+'px'});
+    const im=el('img',c||'',m);im.src=`img/${src}.${src.startsWith('pack')?'png':'jpg'}`;return {m,im}});
+  if(pi===2){const cap=el('div','a',mps[3].m,'PACKAGING THAT HITS');Object.assign(cap.style,{left:'24px',bottom:'22px',top:'auto',font:"400 46px 'Dela Gothic One'",color:'#fff',background:'#D0021B',padding:'6px 16px'})}
+  return {L,bt,mps,ban}});
+const pnum=el('div','a',stage,''); Object.assign(pnum.style,{left:'60px',top:'1760px',font:"400 30px 'Dela Gothic One'",color:'#0a0a0a'});
+
+/* =============== 5. CTA + END =============== */
+const cta=el('div','full',stage); cta.style.background='#050505';
+const CF=focusLines(cta,'rgba(208,2,27,.9)');
+const ctaA=el('div','full',cta), ctaB=el('div','full',cta);
+const W1=words(ctaA,['NEVER','GIVE','UP'],{top:'680px',font:"400 98px/1 'Dela Gothic One'"});
+const W2=words(ctaA,['ON','YOUR','DRIP.'],{top:'810px',font:"400 98px/1 'Dela Gothic One'",color:'#D0021B'});
+const W3=words(ctaB,['COP','YOURS'],{top:'600px',font:"400 118px/1 'Dela Gothic One'"});
+const W4=words(ctaB,['NOW!'],{top:'760px',font:"400 360px/1 'Dela Gothic One'",color:'#D0021B',webkitTextStroke:'6px #fff'});
+const end=el('div','full',stage); end.style.background='#0a0a0a';
+const ecard=el('div','a',end); Object.assign(ecard.style,{background:'#fff',border:'12px solid #0a0a0a',outline:'8px solid #fff',boxSizing:'border-box'});
+const logo=el('img','a',ecard); logo.src='img/logo_raw.png';
+const site=el('div','big',ecard,'WWW.ANIMEDMERCH.COM'); Object.assign(site.style,{font:"400 44px 'Dela Gothic One'",color:'#0a0a0a'});
+const site2=el('div','big',ecard,'LINK IN BIO · ORDER ON WHATSAPP'); Object.assign(site2.style,{font:"400 26px 'Dela Gothic One'",color:'#D0021B',letterSpacing:'.03em'});
+const tint=el('div','full',end); tint.style.background='rgba(150,60,0,.28)'; tint.style.mixBlendMode='multiply';
+const tbc=el('div','a',end); const tbcS=sv('svg',{width:760,height:150,viewBox:'0 0 760 150'},tbc);
+sv('path',{d:'M0,20 L600,20 L600,0 L760,75 L600,150 L600,130 L0,130 Z',fill:'#D0021B',stroke:'#fff','stroke-width':6},tbcS);
+const tbt=sv('text',{x:300,y:96,'text-anchor':'middle','font-family':'Dela Gothic One','font-size':56,fill:'#fff'},tbcS); tbt.textContent='TO BE CONTINUED';
+
+function type(el,txt,t,a,b){const n=Math.floor(txt.length*prog(t,a,b));el.textContent=txt.slice(0,n)}
+function slam(w,t0,t,big){const p=prog(t,t0,t0+0.22);w.style.opacity=t>=t0?1:0;w.style.transform=`scale(${lerp(big?1.8:1.35,1,E.outExpo(p))})`}
+
+function render(t){
+ const shake=(t0,amp=14,dur=0.18)=>{const p=prog(t,t0,t0+dur);return (p>0&&p<1)?amp*(1-p)*Math.sin(t*120):0};
+ /* cold open */
+ open.style.display=t<T.drop+0.05?'block':'none';
+ zenkai.style.clipPath=`inset(0 0 ${100-100*P(t,0.2,0.8,'inOutCubic')}% 0)`; zenkai.style.opacity=1-P(t,2.45,2.6);
+ type(sub1,'Previously… on Animedmerch.',t,0.6,2.0); sub1.style.opacity=1-P(t,2.45,2.6);
+ ikuzo.style.opacity=(t>=2.6&&t<T.drop)?1:0; ikuzo.style.transform=`translate(${shake(2.6,22,0.4)}px,0) scale(${lerp(1.4,1,P(t,2.6,2.75))})`;
+ {let f=0; for(const [t0,d,m] of [[T.drop,0.25,1],[T.title,0.2,1],[T.cta+0.1+3*B+0.1+B+0.05,0.12,0.7]]){const p=prog(t,t0,t0+d); if(t>=t0&&p<1) f=Math.max(f,m*(1-p))} flash.style.opacity=f}
+ /* recap */
+ const inRecap=t>=T.drop && t<T.title; recap.style.display=inRecap?'block':'none';
+ if(inRecap){
+  const tr=Math.min(t,T.freeze);
+  let cur=Math.min(7,Math.floor((tr-T.drop)/(2*B)));
+  pcs.forEach((o,i)=>{
+   const t0=T.drop+i*2*B; const on=i===cur||(i===cur+1&&false);
+   o.L.style.display=(i===cur||i===cur-1)?'block':'none';
+   // reveal of piece i via diagonal slash
+   const sp=E.inOutCubic(prog(tr,t0-0.09,t0+0.09)); const X=lerp(-500,1600,sp);
+   o.L.style.clipPath=i===0?'none':`polygon(0 0,${X+300}px 0,${X-300}px 1920px,0 1920px)`;
+   o.L.style.zIndex=i;
+   const p=prog(tr,t0,t0+0.3); const rot=(i%2?3:-3);
+   const W=760,H=1040; o.pan.style.width=W+'px';o.pan.style.height=H+'px';
+   o.pan.style.transform=`translate(${160+shake(t0,16)}px,${360}px) rotate(${lerp(rot*2.4,rot,E.outExpo(p))}deg) scale(${lerp(1.18,1,E.outExpo(p))})`;
+   o.im.style.transform=`scale(${1+0.05*prog(tr,t0,t0+2*B)})`;
+   o.num.style.transform=`translateX(${lerp(-300,0,P(tr,t0,t0+0.25))}px)`;
+   o.nm.style.clipPath=`inset(0 ${100-100*P(tr,t0+0.08,t0+0.35,'outCubic')}% 0 0)`;
+   o.bar.style.width=(940*P(tr,t0+0.05,t0+0.4))+'px';
+   drawFocus(o.F,tr,540,880,560,70,0.9);
+  });
+  // slash band
+  const k=Math.round((tr-T.drop)/(2*B)); const ts=T.drop+k*2*B; const sp=prog(tr,ts-0.09,ts+0.09);
+  if(k>0&&k<8&&sp>0&&sp<1){const X=lerp(-500,1600,E.inOutCubic(sp));slash.setAttribute('points',`${X+300},0 ${X+380},0 ${X-220},1920 ${X-300},1920`);slashEdge.setAttribute('points',`${X+380},0 ${X-220},1920`);slashSvg.style.display='block'}
+  else slashSvg.style.display='none';
+  // freeze: desaturate + crack
+  const fz=P(t,T.freeze,T.freeze+0.5,'outCubic');
+  recap.style.filter=fz>0?`grayscale(${fz}) brightness(${1-0.45*fz}) contrast(1.1)`:'none';
+  recap.style.transform=`scale(${1+0.025*fz})`;
+ }
+ crackP.forEach((p,i)=>{const L=p.getTotalLength();p.setAttribute('stroke-dasharray',L);p.setAttribute('stroke-dashoffset',L*(1-P(t,T.freeze+0.04+i*0.015,T.freeze+0.22+i*0.015)))});
+ crack.style.display=(t>=T.freeze&&t<T.title)?'block':'none';
+ type(sub2,'Eight pieces…  and they still thought we were done.',t,T.freeze+0.3,T.freeze+1.9); sub2.style.display=(t>=T.freeze&&t<T.title)?'block':'none';
+ /* title */
+ const inT=t>=T.title&&t<PG[0]+0.3; title.style.display=inT?'block':'none';
+ if(inT){drawFocus(TF,t,540,640,320,50,0.8);
+  leaves.forEach((l,k)=>{const p=E.outBack(prog(t,T.title+0.05+k*0.07,T.title+0.4+k*0.07),1.8);const a=k*72+18*(1-p);
+   l.setAttribute('transform',`translate(540 640) rotate(${a}) translate(0 -${lerp(0,120,p)}) scale(${p*1.35})`)});
+  sai.style.opacity=P(t,T.title+0.4,T.title+0.6); sai.style.transform=`translateY(${20*(1-P(t,T.title+0.4,T.title+0.7))}px)`;
+  slam(fe,T.title+0.6,t); slam(n910,T.title+0.95,t,true);
+  sil.forEach((g,k)=>{const p=E.outBack(prog(t,T.title+1.3+k*0.18,T.title+1.65+k*0.18),2);const x=k?750:330;g.setAttribute('transform',`translate(${x} ${1470+8*Math.sin(t*3+k)}) scale(${p})`)});
+  type(sub3,'Final episode.  The last two pieces.',t,T.title+0.5,T.title+1.7);
+  title.style.transform=`translateX(${shake(T.title,18,0.25)+shake(T.title+0.95,12)}px)`;
+ }
+ /* manga pages */
+ pages.forEach((pg,pi)=>{const t0=PG[pi], t1=pi<2?PG[pi+1]:T.cta;
+  const on=t>=t0-0.3&&t<t1+0.3; pg.L.style.display=on?'block':'none'; if(!on)return;
+  const inP=E.inOutExpo(prog(t,t0-0.3,t0)), outP=E.inOutExpo(prog(t,t1-0.05,t1+0.25));
+  pg.L.style.transform=`translateX(${lerp(1100,0,inP)-1100*outP}px) skewX(${-6*(1-inP)+6*outP}deg)`; pg.L.style.zIndex=10+pi;
+  pg.bt.style.transform=`scale(${lerp(1.4,1,P(t,t0,t0+0.25))})`;
+  pg.mps.forEach((m,k)=>{const a=t0+0.12+k*B/2; const p=E.outBack(prog(t,a,a+0.3),1.6);
+   m.m.style.opacity=t>=a?1:0; m.m.style.transform=`scale(${lerp(0.82,1,p)}) rotate(${(1-p)*(k%2?3:-3)}deg)`;
+   m.im.style.transform=`scale(${1+0.06*prog(t,a,t1)})`});
+ });
+ pnum.style.display=(t>=PG[0]&&t<T.cta)?'block':'none'; pnum.style.zIndex=15;
+ pnum.textContent='PAGE '+(t<PG[1]?1:t<PG[2]?2:3)+' / 3';
+ /* CTA */
+ const inC=t>=T.cta&&t<T.end+0.1; cta.style.display=inC?'block':'none'; cta.style.zIndex=20;
+ if(inC){drawFocus(CF,t,540,860,520,80,1);
+  const c0=T.cta; [...W1,...W2].forEach((w,i)=>slam(w,c0+0.1+i*B/2,t));
+  const sw=c0+0.1+6*B/2+0.1; ctaA.style.opacity=t<sw?1:0; ctaB.style.opacity=t>=sw?1:0;
+  W3.forEach((w,i)=>slam(w,sw+i*B/2,t)); W4.forEach(w=>slam(w,sw+B+0.05,t,true));
+  cta.style.transform=`translate(${shake(sw+B+0.05,26,0.3)}px,${shake(sw+B+0.05,14,0.3)}px)`;
+ }
+ /* end card */
+ const inE=t>=T.end; end.style.display=inE?'block':'none'; end.style.zIndex=30;
+ if(inE){const p=E.outBack(prog(t,T.end,T.end+0.35),1.5);
+  const cw=880,ch=760; ecard.style.width=cw+'px'; ecard.style.height=ch+'px';
+  ecard.style.transform=`translate(${100}px,${470}px) rotate(${(1-p)*-6}deg) scale(${lerp(0.6,1,p)})`; ecard.style.opacity=t>=T.end?1:0;
+  logo.style.width='620px'; logo.style.transform=`translate(${(cw-24-620)/2}px,110px)`;
+  site.style.top='430px'; site.style.width=(cw-24)+'px'; site.style.opacity=P(t,T.end+0.35,T.end+0.55);
+  site2.style.top='520px'; site2.style.width=(cw-24)+'px'; site2.style.opacity=P(t,T.end+0.5,T.end+0.7);
+  const tb=T.end+1.6; const tp=E.outExpo(prog(t,tb,tb+0.35));
+  tbc.style.transform=`translate(${lerp(-800,260,tp)}px,1420px)`; tint.style.opacity=t>=tb?1:0;
+ }
+}
+window.render=render; window.init=()=>{}; window.T=T;
+</script></body></html>

@@ -1,3 +1,5 @@
 refs/
 *.mp4
 *.wav
+build/fonts/
+build/img/
